@@ -293,6 +293,28 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .proc h3{font-size:16px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px;color:var(--olive)}
 .proc p{font-size:13.5px;color:var(--text-light);line-height:1.75}
 
+/* ============ TEAM / WHO TURNS UP ============ */
+.team-sec{background:var(--white);padding-top:64px;padding-bottom:64px;border-bottom:1px solid var(--border)}
+@media(min-width:640px){.team-sec{padding-top:80px;padding-bottom:80px}}
+@media(min-width:1024px){.team-sec{padding-top:112px;padding-bottom:112px}}
+.team-sec .sec-h2{margin-bottom:14px}
+.team-lead{font-size:15px;color:var(--text-light);line-height:1.75;max-width:520px;margin-bottom:36px}
+@media(min-width:1024px){.team-lead{font-size:15.5px;margin-bottom:56px}}
+.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+@media(min-width:640px){.team-grid{gap:20px}}
+@media(min-width:1024px){.team-grid{grid-template-columns:repeat(4,1fr);gap:24px}}
+.tm-card{background:var(--stone);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:background .3s,border-color .3s}
+.tm-card:hover{background:var(--stone-2);border-color:var(--border-2)}
+.tm-panel{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--olive-deep)}
+.tm-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
+.tm-card:hover .tm-panel>img{transform:scale(1.04)}
+.tm-code{position:absolute;top:12px;left:12px;z-index:2;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9);background:rgba(21,29,19,.6);border-radius:999px;padding:4px 10px;backdrop-filter:blur(2px);text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.tm-body{padding:15px 15px 19px}
+@media(min-width:1024px){.tm-body{padding:20px 20px 24px}}
+.tm-name{font-size:15.5px;font-weight:600;letter-spacing:-.01em;color:var(--olive);line-height:1.2;margin-bottom:6px}
+@media(min-width:1024px){.tm-name{font-size:17px}}
+.tm-trade{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark)}
+
 /* ============ CLIENTS ============ */
 .clients-sec{background:var(--white);padding-top:64px;padding-bottom:64px}
 @media(min-width:640px){.clients-sec{padding-top:80px;padding-bottom:80px}}
@@ -691,11 +713,43 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   </div>
 </section>
 
-<!-- ============ 5 · WHO WE WORK WITH ============ -->
-<section class="clients-sec">
+<!-- ============ 5 &middot; WHO TURNS UP ============ -->
+<section class="team-sec">
   <div class="wrap">
     <div class="px badge-row reveal">
       <span class="badge-num">5</span>
+      <span class="badge-label">Who turns up</span>
+    </div>
+    <div class="px reveal">
+      <h2 class="sec-h2">This is who shows up.</h2>
+      <p class="team-lead">A few of the crew. Real people, real tickets, their own tools &mdash; not a name texted to you the morning of.</p>
+    </div>
+    <div class="px team-grid">
+      <div class="tm-card reveal">
+        <div class="tm-panel"><span class="tm-code">TH&mdash;01</span><img src="lewis-plumber.jpg" alt="Lewis &mdash; plumber, Ready Now Tradie Hire" width="800" height="800" loading="lazy"></div>
+        <div class="tm-body"><div class="tm-name">Lewis</div><div class="tm-trade">Plumber</div></div>
+      </div>
+      <div class="tm-card reveal">
+        <div class="tm-panel"><span class="tm-code">TH&mdash;02</span><img src="jake-tiler.jpg" alt="Jake &mdash; tiler, Ready Now Tradie Hire" width="800" height="800" loading="lazy"></div>
+        <div class="tm-body"><div class="tm-name">Jake</div><div class="tm-trade">Tiler</div></div>
+      </div>
+      <div class="tm-card reveal">
+        <div class="tm-panel"><span class="tm-code">TH&mdash;03</span><img src="macca-needham.jpg" alt="Macca Needham &mdash; roofer, Ready Now Tradie Hire" width="800" height="800" loading="lazy"></div>
+        <div class="tm-body"><div class="tm-name">Macca Needham</div><div class="tm-trade">Roofer</div></div>
+      </div>
+      <div class="tm-card reveal">
+        <div class="tm-panel"><span class="tm-code">TH&mdash;04</span><img src="teika-kakahi.jpg" alt="Teika Kakahi &mdash; apprentice roofer, Ready Now Tradie Hire" width="800" height="800" loading="lazy"></div>
+        <div class="tm-body"><div class="tm-name">Teika Kakahi</div><div class="tm-trade">Apprentice Roofer</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 6 &middot; WHO WE WORK WITH ============ -->
+<section class="clients-sec">
+  <div class="wrap">
+    <div class="px badge-row reveal">
+      <span class="badge-num">6</span>
       <span class="badge-label">Who we work with</span>
     </div>
     <div class="px reveal">
