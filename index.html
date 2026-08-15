@@ -302,7 +302,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 @media(min-width:1024px){.team-lead{font-size:15.5px;margin-bottom:56px}}
 .team-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
 @media(min-width:640px){.team-grid{gap:20px}}
-@media(min-width:1024px){.team-grid{grid-template-columns:repeat(4,1fr);gap:24px}}
+@media(min-width:1024px){.team-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
 .tm-card{background:var(--stone);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:background .3s,border-color .3s}
 .tm-card:hover{background:var(--stone-2);border-color:var(--border-2)}
 .tm-panel{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--olive-deep)}
@@ -396,6 +396,8 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 @media(min-width:640px){.footer-bar{margin:0 -32px}}
 .footer-bar p{font-size:13px;color:rgba(255,255,255,.5)}
 .footer-bar .f-latitude{color:var(--gold)}
+.footer-bar .f-privacy{color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}
+.footer-bar .f-privacy:hover{color:var(--gold)}
 
 .slot-big,.sp-big,.ledger-num,.cta-number{font-weight:800;letter-spacing:-.01em}
 .sec-h2{font-weight:600}
@@ -815,6 +817,40 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
           </div>
         </div>
       </div>
+      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-5" aria-label="Anfal Mehdaoui, Traffic Control &mdash; show details">
+        <div class="tm-panel">
+          <span class="tm-code">TH&mdash;05</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          <img src="anfal-mehdaoui.jpg" alt="Anfal Mehdaoui &mdash; traffic controller, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
+        </div>
+        <div class="tm-body"><div class="tm-name">Anfal Mehdaoui</div><div class="tm-trade">Traffic Control</div></div>
+        <div class="tm-detail" id="tmd-5">
+          <div class="tm-detail-in">
+            <dl class="tm-dl">
+              <div><dt>Trade</dt><dd>Traffic Control</dd></div>
+              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
+              <div><dt>Tickets</dt><dd>White card, blue card &amp; yellow card</dd></div>
+              <div><dt>Availability</dt><dd>Ready now</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
+      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-6" aria-label="Laurence Warnimont, General Labourer &mdash; show details">
+        <div class="tm-panel">
+          <span class="tm-code">TH&mdash;06</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
+          <img src="laurence-warnimont.jpg" alt="Laurence Warnimont &mdash; general labourer, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
+        </div>
+        <div class="tm-body"><div class="tm-name">Laurence Warnimont</div><div class="tm-trade">General Labourer</div></div>
+        <div class="tm-detail" id="tmd-6">
+          <div class="tm-detail-in">
+            <dl class="tm-dl">
+              <div><dt>Trade</dt><dd>General Labourer</dd></div>
+              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
+              <div><dt>Tickets</dt><dd>White card, first aid, forklift (LF) &amp; driver's licence</dd></div>
+              <div><dt>On the tools</dt><dd>2+ years</dd></div>
+            </dl>
+          </div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -903,7 +939,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
   </div>
   <div class="footer-bar">
-    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | Built by <span class="f-latitude">Latitude Marketing</span></p>
+    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
 </footer>
 
