@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Labour Hire Services Sydney | Carpentry, Electrical, Plumbing &amp; More</title>
-<meta name="description" content="Carpentry, electrical, plumbing, tiling, concreting and general labour hire across wider Sydney. Qualified tradies with their own tools — same-day or booked ahead. Call 0432 910 369.">
+<meta name="description" content="Eight trades across wider Sydney &mdash; carpentry, electrical, plumbing, tiling, concreting, roofing, traffic control and general labour. Own tools, real site experience.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -18,7 +18,7 @@
 <meta property="og:url" content="https://readynowtradiehire.com.au/services.html">
 <meta property="og:title" content="Labour Hire Services Sydney | Ready Now Tradie Hire">
 <meta property="og:description" content="Carpentry, electrical, plumbing, tiling, concreting and general labour hire across wider Sydney. Qualified tradies with their own tools — same-day or booked ahead. Call 0432 910 369.">
-<meta property="og:image" content="https://readynowtradiehire.com.au/og-image.jpg">
+<meta property="og:image" content="https://readynowtradiehire.com.au/social-share.jpg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="Ready Now Tradie Hire — tradies on site today, wider Sydney">
@@ -468,6 +468,41 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .ac-list li{position:relative;padding-left:24px;font-size:13.5px;color:var(--text-light);line-height:1.65}
 .ac-list li::before{content:'';position:absolute;left:0;top:7px;width:10px;height:2px;background:var(--gold);border-radius:2px}
 .ac-list li b{color:var(--olive);font-weight:600}
+
+/* ---------- crew under each trade ---------- */
+.svc-crew{margin-top:26px;padding-top:22px;border-top:1px solid var(--border)}
+.svc-crew-lbl{font-family:var(--mono);font-size:10px;letter-spacing:.2em;
+  text-transform:uppercase;color:var(--text-faint);display:block;margin-bottom:14px}
+.svc-crew-row{display:flex;flex-wrap:wrap;gap:10px}
+.crew{display:flex;align-items:center;gap:11px;background:var(--white);
+  border:1px solid var(--border);border-radius:999px;padding:6px 16px 6px 6px;
+  text-decoration:none;transition:border-color .22s,transform .22s,box-shadow .22s}
+.crew:hover{border-color:var(--gold);transform:translateY(-1px);
+  box-shadow:0 4px 14px rgba(36,30,24,.07)}
+.crew img{width:38px;height:38px;border-radius:999px;object-fit:cover;flex:none;
+  background:var(--stone-2)}
+.crew .cn{display:block;font-size:13.5px;font-weight:600;color:var(--olive);
+  letter-spacing:-.01em;line-height:1.3}
+.crew .ct{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--text-faint)}
+.crew .cgo{margin-left:4px;color:var(--gold-dark);flex:none;opacity:0;transition:opacity .22s}
+.crew:hover .cgo{opacity:1}
+
+/* ---------- sticky mobile action bar ---------- */
+.mbar{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;
+  background:rgba(23,19,16,.97);backdrop-filter:blur(12px);
+  border-top:1px solid rgba(255,255,255,.1);padding:10px 12px calc(10px + env(safe-area-inset-bottom));
+  gap:9px;transform:translateY(110%);transition:transform .35s var(--ease)}
+.mbar.up{transform:translateY(0)}
+@media(max-width:820px){.mbar{display:flex}body{padding-bottom:72px}}
+.mbar a{flex:1;display:inline-flex;align-items:center;justify-content:center;gap:8px;
+  border-radius:999px;padding:13px 10px;font-family:var(--body);font-size:14px;
+  font-weight:600;text-decoration:none;letter-spacing:-.01em}
+.mbar .call{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.3)}
+.mbar .book{background:var(--gold);color:#fff}
+.mbar svg{flex:none}
+.footer-bar .f-privacy{color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}
+.footer-bar .f-privacy:hover{color:var(--gold)}
 </style>
 </head>
 <body>
@@ -485,8 +520,8 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
     <div class="nav-right">
       <a class="nav-note" href="tel:+61432910369" style="text-decoration:none">Call 0432 910 369</a>
-      <a href="contact.html" class="pillbtn pillbtn-dark">
-        <span class="roll"><i><b>Request Now</b><b>Request Now</b></i></span>
+      <a href="booking.html" class="pillbtn pillbtn-dark">
+        <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
         <span class="circ"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </a>
     </div>
@@ -503,11 +538,12 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     <div class="sheet-links">
       <a href="index.html">Home</a>
       <a href="services.html">Services</a>
+        <a href="booking.html">Book</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
-    <a href="contact.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
-      <span class="roll"><i><b>Request Now</b><b>Request Now</b></i></span>
+    <a href="booking.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
+      <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
     <a href="tel:+61432910369" class="pillbtn pillbtn-dark">
@@ -524,17 +560,17 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
   <div class="wrap px ph-inner">
     <span class="ph-eyebrow">Our Trades &middot; Wider Sydney</span>
-    <h1>Six trades. <em>One call.</em></h1>
+    <h1>Eight trades. <em>One call.</em></h1>
     <p class="ph-sub">Qualified tradies, apprentices and labourers &mdash; same-day or booked ahead. Everyone turns up with their own tools.</p>
     <div class="ph-cta">
-      <a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Request a Quote</b><b>Request a Quote</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      <a href="booking.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book a Tradie</b><b>Book a Tradie</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
       <a href="tel:+61432910369" class="btn-ghost">Call 0432 910 369</a>
     </div>
   </div>
 </section>
 
 <div class="jump" aria-label="Jump to a trade">
-  <div class="wrap px"><div class="jump-inner"><a href="#carpentry">Carpentry</a><a href="#electrical">Electrical</a><a href="#plumbing">Plumbing</a><a href="#tiling">Tiling</a><a href="#concreting">Concreting</a><a href="#general-labour">General Labour</a></div></div>
+  <div class="wrap px"><div class="jump-inner"><a href="#carpentry">Carpentry</a><a href="#electrical">Electrical</a><a href="#plumbing">Plumbing</a><a href="#tiling">Tiling</a><a href="#concreting">Concreting</a><a href="#general-labour">General Labour</a><a href="#roofing">Roofing</a><a href="#traffic-control">Traffic Control</a></div></div>
 </div>
 
 <section class="svc" id="carpentry">
@@ -546,7 +582,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <p class="svc-lead">Formwork, framing and fix-out carpenters. Own tools, real site experience, working from the first hour.</p>
         <ul class="svc-list"><li>Formwork and structural framing</li><li>Wall and roof framing</li><li>Fix-out and finishing</li><li>Decking and external timber</li></ul>
         <p class="svc-when-line">Chippie's off sick and the frame has to be up before the crane books out.</p>
-        <div class="svc-btn"><a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Request Carpentry</b><b>Request Carpentry</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+        <div class="svc-btn"><a href="booking.html?trade=Carpentry" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Carpentry</b><b>Book Carpentry</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
       </div>
       <div class="svc-media reveal">
         <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="carpentry.jpg" alt="Carpentry — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
@@ -568,7 +604,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <p class="svc-lead">Licensed sparkies for rough-ins and fit-offs. Licences verified before they're on our books.</p>
         <ul class="svc-list"><li>Rough-in and cable pulling</li><li>Fit-off and switchboards</li><li>Data, comms and TV cabling</li><li>Site and temporary power</li></ul>
         <p class="svc-when-line">Rough-in has to be signed off before the plasterer starts Monday.</p>
-        <div class="svc-btn"><a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Request Electrical</b><b>Request Electrical</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+        <div class="svc-btn"><a href="booking.html?trade=Electrical" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Electrical</b><b>Book Electrical</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
       </div>
       <div class="svc-media reveal">
         <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="electrical.jpg" alt="Electrical — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
@@ -590,7 +626,9 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <p class="svc-lead">Licensed plumbers for rough-ins, fit-offs and drainage. Tools in the ute, no hand-holding.</p>
         <ul class="svc-list"><li>Rough-in &mdash; water, waste, vent</li><li>Fit-off and tapware</li><li>Drainage and stormwater</li><li>Hot water and gas</li></ul>
         <p class="svc-when-line">Waterproofer's booked Thursday and the rough-in still isn't done.</p>
-        <div class="svc-btn"><a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Request Plumbing</b><b>Request Plumbing</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+        <div class="svc-btn"><a href="booking.html?trade=Plumbing" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Plumbing</b><b>Book Plumbing</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+      
+        <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-row"><a class="crew" href="booking.html?worker=Lewis%20Slatter&amp;trade=Plumbing"><img src="lewis-slatter.jpg" alt="Lewis Slatter" loading="lazy" onerror="this.remove()"><span><span class="cn">Lewis Slatter</span><span class="ct">Plumber</span></span><svg class="cgo" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
       </div>
       <div class="svc-media reveal">
         <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="plumbing.jpg" alt="Plumbing — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
@@ -612,7 +650,9 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <p class="svc-lead">Wall and floor tilers, including large-format and wet areas. The trade where cheap hands show up fastest.</p>
         <ul class="svc-list"><li>Wall and floor tiling</li><li>Large-format installation</li><li>Wet areas and waterproofing prep</li><li>Screeding and levelling</li></ul>
         <p class="svc-when-line">Bathroom's behind and handover is next week.</p>
-        <div class="svc-btn"><a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Request Tiling</b><b>Request Tiling</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+        <div class="svc-btn"><a href="booking.html?trade=Tiling" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Tiling</b><b>Book Tiling</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+      
+        <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-row"><a class="crew" href="booking.html?worker=Jake%20Littlewood&amp;trade=Tiling"><img src="jake-littlewood.jpg" alt="Jake Littlewood" loading="lazy" onerror="this.remove()"><span><span class="cn">Jake Littlewood</span><span class="ct">Tiler</span></span><svg class="cgo" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
       </div>
       <div class="svc-media reveal">
         <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="tiling.jpg" alt="Tiling — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
@@ -634,7 +674,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <p class="svc-lead">Concreters and steel fixers for pours, slabs and finishing. Pour days don't move &mdash; so neither do we.</p>
         <ul class="svc-list"><li>Slab pours, resi and commercial</li><li>Steel fixing and mesh</li><li>Formwork set-up and strip</li><li>Finishing and exposed aggregate</li></ul>
         <p class="svc-when-line">Truck's booked for 6am Friday and you're two bodies short.</p>
-        <div class="svc-btn"><a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Request Concreting</b><b>Request Concreting</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+        <div class="svc-btn"><a href="booking.html?trade=Concreting" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Concreting</b><b>Book Concreting</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
       </div>
       <div class="svc-media reveal">
         <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="concreting.jpg" alt="Concreting — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
@@ -656,7 +696,9 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <p class="svc-lead">Labourers and work-ready apprentices with a White Card, PPE and the sense to be useful unsupervised.</p>
         <ul class="svc-list"><li>Site labour and clean-up</li><li>Materials handling and load-out</li><li>Demolition and strip-out</li><li>Trade assistance</li></ul>
         <p class="svc-when-line">Site's a mess, inspection's tomorrow, everyone else is on the tools.</p>
-        <div class="svc-btn"><a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Request General Labour</b><b>Request General Labour</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+        <div class="svc-btn"><a href="booking.html?trade=General%20Labour" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book General Labour</b><b>Book General Labour</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+      
+        <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-row"><a class="crew" href="booking.html?worker=Laurence%20Warnimont&amp;trade=General%20Labour"><img src="laurence-warnimont.jpg" alt="Laurence Warnimont" loading="lazy" onerror="this.remove()"><span><span class="cn">Laurence Warnimont</span><span class="ct">General Labourer</span></span><svg class="cgo" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
       </div>
       <div class="svc-media reveal">
         <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="labour.jpg" alt="General Labour — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
@@ -670,11 +712,58 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
   </div>
 </section>
+<section class="svc" id="roofing">
+  <div class="wrap px">
+    <div class="svc-grid">
+      <div class="reveal">
+        <div class="badge-row"><span class="badge-num">7</span><span class="badge-label">Roofing</span></div>
+        <h2>Roofing</h2>
+        <p class="svc-lead">Metal and tile roofers with working-at-heights tickets. Own tools, own harness, straight up the ladder.</p>
+        <ul class="svc-list"><li>Metal roofing and cladding</li><li>Tile replacement and repointing</li><li>Gutter, fascia and downpipes</li><li>Roof safety and edge protection</li></ul>
+        <p class="svc-when-line">Rain forecast Thursday and the roof is still open.</p>
+        <div class="svc-btn"><a href="booking.html?trade=Roofing" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Roofing</b><b>Book Roofing</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+        <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-row"><a class="crew" href="booking.html?worker=Macca%20Needham&amp;trade=Roofing"><img src="macca-needham.jpg" alt="Macca Needham" loading="lazy" onerror="this.remove()"><span><span class="cn">Macca Needham</span><span class="ct">Roofer</span></span><svg class="cgo" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a><a class="crew" href="booking.html?worker=Teika%20Kakahi&amp;trade=Roofing"><img src="teika-kakahi.jpg" alt="Teika Kakahi" loading="lazy" onerror="this.remove()"><span><span class="cn">Teika Kakahi</span><span class="ct">Apprentice Roofer</span></span><svg class="cgo" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+      </div>
+      <div class="svc-media reveal">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="roofing.jpg" alt="Roofing &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <div class="svc-media-inner">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <span class="svc-code">TR&mdash;07</span><span class="svc-tag">Ticketed</span>
+          </div>
+          <div class="svc-media-big">Roofing</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section><section class="svc" id="traffic-control">
+  <div class="wrap px">
+    <div class="svc-grid">
+      <div class="reveal">
+        <div class="badge-row"><span class="badge-num">8</span><span class="badge-label">Traffic Control</span></div>
+        <h2>Traffic Control</h2>
+        <p class="svc-lead">Ticketed traffic controllers for road, site and civil works. Blue and yellow card holders ready to go.</p>
+        <ul class="svc-list"><li>Stop/slow and site access control</li><li>Traffic guidance scheme setup</li><li>Road, civil and utility works</li><li>Crane lifts and heavy deliveries</li></ul>
+        <p class="svc-when-line">Concrete pour booked and you need the street managed by 6am.</p>
+        <div class="svc-btn"><a href="booking.html?trade=Traffic%20Control" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Traffic Control</b><b>Book Traffic Control</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+        <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-row"><a class="crew" href="booking.html?worker=Anfal%20Mehdaoui&amp;trade=Traffic%20Control"><img src="anfal-mehdaoui.jpg" alt="Anfal Mehdaoui" loading="lazy" onerror="this.remove()"><span><span class="cn">Anfal Mehdaoui</span><span class="ct">Traffic Control</span></span><svg class="cgo" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div>
+      </div>
+      <div class="svc-media reveal">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="traffic-control.jpg" alt="Traffic Control &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <div class="svc-media-inner">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <span class="svc-code">TR&mdash;08</span><span class="svc-tag">Ticketed</span>
+          </div>
+          <div class="svc-media-big">Traffic Control</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
 
 <!-- ============ COVERAGE ============ -->
 <section class="process-sec">
   <div class="wrap">
-    <div class="px badge-row reveal"><span class="badge-num">7</span><span class="badge-label">How booking works</span></div>
+    <div class="px badge-row reveal"><span class="badge-num">9</span><span class="badge-label">How booking works</span></div>
     <div class="px reveal"><h2 class="sec-h2">Two ways to get someone on site.</h2></div>
     <div class="px proc-grid reveal"><div class="proc"><span class="proc-num">OPTION / 01</span><h3>Same-day</h3><p>Call us. We'll tell you straight away what we can cover.</p></div><div class="proc"><span class="proc-num">OPTION / 02</span><h3>Booked ahead</h3><p>Lock trades in early with a deposit, before the busy stretch.</p></div><div class="proc"><span class="proc-num">AREA / 03</span><h3>Wider Sydney</h3><p>Based in Cronulla, working right across Sydney. Ask about your site.</p></div><div class="proc"><span class="proc-num">TERMS / 04</span><h3>No lock-in</h3><p>A day, a week, or the length of the job.</p></div></div>
   </div>
@@ -722,6 +811,8 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <li><a href="services.html#tiling">Tiling</a></li>
         <li><a href="services.html#concreting">Concreting</a></li>
         <li><a href="services.html#general-labour">General Labour</a></li>
+        <li><a href="services.html#roofing">Roofing</a></li>
+        <li><a href="services.html#traffic-control">Traffic Control</a></li>
       </ul>
     </div>
     <div class="f-col">
@@ -742,7 +833,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
   </div>
   <div class="footer-bar">
-    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | Built by <span class="f-latitude">Latitude Marketing</span></p>
+    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
 </footer>
 <script>
@@ -789,6 +880,19 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 })();
 </script>
 <noscript><style>.reveal{opacity:1;transform:none}</style></noscript>
+
+<div class="mbar" id="mbar" aria-label="Quick actions">
+  <a class="call" href="tel:+61432910369"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
+  <a class="book" href="booking.html"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="18" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>Book a Tradie</a>
+</div>
+<script>
+(function(){
+  var bar = document.getElementById('mbar');
+  if(!bar) return;
+  function tick(){ bar.classList.toggle('up', window.scrollY > 320); }
+  window.addEventListener('scroll', tick, {passive:true}); tick();
+})();
+</script>
 </body>
 
 
