@@ -3,15 +3,15 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Book a Tradie | Ready Now Tradie Hire</title>
-<meta name="description" content="Book a qualified tradie, apprentice or labourer for your Sydney site. Pick the trade, pick the day, send it through.">
+<title>Work With Us | Ready Now Tradie Hire</title>
+<meta name="description" content="Looking for work on Sydney sites? Register with Ready Now Tradie Hire. Tradies, apprentices and labourers with their own tools and tickets.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
 <meta name="theme-color" content="#171310">
-<link rel="canonical" href="https://readynowtradiehire.com.au/booking.html">
+<link rel="canonical" href="https://readynowtradiehire.com.au/work.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ready Now Tradie Hire">
 <meta property="og:locale" content="en_AU">
@@ -535,6 +535,80 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   text-transform:uppercase;color:var(--text-faint)}
 .bk-recap dd{margin:0;color:var(--olive);font-weight:500;text-align:right}
 </style>
+
+<style>
+.wk-sec{background:var(--stone);padding:120px 20px 80px}
+@media(min-width:640px){.wk-sec{padding:140px 32px 96px}}
+.wk-wrap{max-width:820px;margin:0 auto}
+.wk-eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;
+  color:var(--gold);display:block;margin-bottom:16px}
+.wk-wrap h1{font-size:clamp(2rem,5.2vw,3.2rem);font-weight:500;letter-spacing:-.025em;
+  color:var(--olive);line-height:1.06;margin-bottom:14px}
+.wk-lead{font-size:15px;color:var(--text-light);line-height:1.8;max-width:520px;margin-bottom:34px}
+
+.wk-why{display:grid;gap:12px;grid-template-columns:1fr;margin-bottom:38px}
+@media(min-width:640px){.wk-why{grid-template-columns:repeat(3,1fr)}}
+.wk-why div{background:var(--white);border:1px solid var(--border);border-radius:14px;
+  padding:18px 20px}
+.wk-why .n{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--gold-dark);display:block;margin-bottom:7px}
+.wk-why p{font-size:13.5px;color:var(--text-light);line-height:1.7;margin:0}
+.wk-why strong{color:var(--olive);font-weight:600}
+
+.wk-card{background:var(--white);border:1px solid var(--border);border-radius:20px;padding:30px 24px}
+@media(min-width:640px){.wk-card{padding:38px 36px}}
+.wk-card h2{font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--olive);
+  margin-bottom:6px}
+.wk-card .hint{font-size:13.5px;color:var(--text-light);line-height:1.7;margin-bottom:24px}
+.wk-fs{border:0;padding:0;margin:0 0 26px}
+.wk-fs legend{font-family:var(--mono);font-size:10px;letter-spacing:.18em;text-transform:uppercase;
+  color:var(--text-faint);padding:0;margin-bottom:14px}
+.wk-row{display:grid;gap:16px;margin-bottom:16px}
+@media(min-width:560px){.wk-row.two{grid-template-columns:1fr 1fr}}
+.wk-field label{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--text-light);margin-bottom:7px}
+.wk-field input,.wk-field select,.wk-field textarea{width:100%;background:var(--stone);
+  border:1px solid var(--border);border-radius:11px;padding:13px 14px;font-family:var(--body);
+  font-size:15px;color:var(--text);transition:border-color .22s,background .22s}
+.wk-field textarea{min-height:90px;resize:vertical}
+.wk-field input:focus,.wk-field select:focus,.wk-field textarea:focus{outline:none;
+  border-color:var(--gold);background:var(--white)}
+.wk-field .req{color:var(--gold-dark)}
+.wk-err{display:none;font-size:12.5px;color:#B4471F;margin-top:6px}
+.wk-field.bad input,.wk-field.bad select{border-color:#B4471F}
+
+.wk-chips{display:flex;flex-wrap:wrap;gap:9px}
+.wk-chip{border:1px solid var(--border);background:var(--stone);border-radius:999px;
+  padding:10px 17px;cursor:pointer;font-family:var(--body);font-size:13.5px;font-weight:500;
+  color:var(--olive);transition:border-color .2s,background .2s}
+.wk-chip:hover{border-color:var(--border-2)}
+.wk-chip[aria-pressed="true"]{border-color:var(--gold);background:rgba(228,113,30,.07);
+  color:var(--gold-dark)}
+.wk-chip:focus-visible{outline:2px solid var(--gold);outline-offset:2px}
+
+.wk-consent{background:var(--stone);border:1px solid var(--border);border-left:3px solid var(--gold);
+  border-radius:0 12px 12px 0;padding:18px 20px;margin-bottom:20px}
+.wk-consent label{display:flex;gap:12px;align-items:flex-start;cursor:pointer;
+  font-size:13.5px;color:var(--text-light);line-height:1.7}
+.wk-consent input{margin-top:3px;width:17px;height:17px;flex:none;accent-color:var(--gold)}
+.wk-consent strong{color:var(--olive);font-weight:600}
+.wk-consent.bad{border-color:#B4471F;border-left-color:#B4471F}
+
+.wk-submit{display:inline-flex;align-items:center;gap:10px;background:var(--olive-deep);
+  color:var(--white);border:0;border-radius:999px;padding:15px 28px;font-family:var(--body);
+  font-size:14.5px;font-weight:500;cursor:pointer;transition:background .25s}
+.wk-submit:hover{background:var(--gold-dark)}
+.wk-submit[disabled]{opacity:.5;cursor:not-allowed}
+.wk-note{font-size:12.5px;color:var(--text-faint);line-height:1.7;margin-top:16px}
+.wk-note a{color:var(--gold-dark)}
+
+.wk-done{display:none;text-align:center;padding:14px 0 6px}
+.wk-done.on{display:block}
+.wk-done .tick{width:58px;height:58px;border-radius:999px;background:rgba(228,113,30,.1);
+  color:var(--gold-dark);display:grid;place-items:center;margin:0 auto 20px}
+.wk-done h2{font-size:23px;margin-bottom:10px}
+.wk-done p{font-size:14.5px;color:var(--text-light);line-height:1.8;max-width:400px;margin:0 auto}
+</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -598,151 +672,166 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 </div>
 
 <main id="main">
-<section class="bk-sec">
-  <div class="bk-wrap">
+<section class="wk-sec">
+  <div class="wk-wrap">
 
-    <div class="bk-head">
-      <span class="bk-eyebrow">Book a tradie</span>
-      <h1>Tell us what you need<br>and when.</h1>
-      <p>Three quick steps. Every worker turns up with their own tools and real site
-      experience. Sydney metro, same day or booked ahead.</p>
+    <span class="wk-eyebrow">Work with us</span>
+    <h1>Looking for work<br>on Sydney sites?</h1>
+    <p class="wk-lead">Tell us what you do, what tickets you hold and when you're available.
+    If you turn up with your own tools and know a site, we want to hear from you.</p>
+
+    <div class="wk-why">
+      <div><span class="n">01</span><p><strong>Real site work.</strong> Builders and site
+      managers across wider Sydney. Not warehouse fill-in.</p></div>
+      <div><span class="n">02</span><p><strong>You pick the days.</strong> Full days, weeks
+      or ongoing. Tell us what suits.</p></div>
+      <div><span class="n">03</span><p><strong>On the site.</strong> Good workers get their own
+      profile so builders can ask for you by name.</p></div>
     </div>
 
-    <div class="bk-steps" id="bkSteps">
-      <div class="bk-step active" data-s="1"><div class="track"><i></i></div><span class="lbl">01 &middot; Trade</span></div>
-      <div class="bk-step" data-s="2"><div class="track"><i></i></div><span class="lbl">02 &middot; When</span></div>
-      <div class="bk-step" data-s="3"><div class="track"><i></i></div><span class="lbl">03 &middot; Site</span></div>
-    </div>
+    <div class="wk-card">
+      <div id="wkForm">
+        <h2>Register your details</h2>
+        <p class="hint">Takes about two minutes. We'll call you if there's a fit.</p>
 
-    <div class="bk-card">
-      <input type="text" id="bkGotcha" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+        <fieldset class="wk-fs">
+          <legend>About you</legend>
+          <div class="wk-row two">
+            <div class="wk-field" id="fName">
+              <label for="wkName">Full name <span class="req">*</span></label>
+              <input type="text" id="wkName" autocomplete="name" required>
+              <span class="wk-err">We need your name.</span>
+            </div>
+            <div class="wk-field" id="fPhone">
+              <label for="wkPhone">Mobile <span class="req">*</span></label>
+              <input type="tel" id="wkPhone" autocomplete="tel" required>
+              <span class="wk-err">Enter a valid mobile number.</span>
+            </div>
+          </div>
+          <div class="wk-row two">
+            <div class="wk-field">
+              <label for="wkEmail">Email</label>
+              <input type="email" id="wkEmail" autocomplete="email">
+            </div>
+            <div class="wk-field" id="fSuburb">
+              <label for="wkSuburb">Suburb you live in <span class="req">*</span></label>
+              <input type="text" id="wkSuburb" required>
+              <span class="wk-err">Where are you based?</span>
+            </div>
+          </div>
+        </fieldset>
 
-      <!-- ---------------- STEP 1 ---------------- -->
-      <div class="bk-panel on" data-p="1">
-        <div id="bkWorkerChip"></div>
-        <h2>What trade do you need?</h2>
-        <p class="hint">Pick one. If you need more than one trade on site, tell us in the
-        notes at step three.</p>
-        <div class="bk-grid" id="bkTrades">
-          <button type="button" class="bk-tile" data-trade="Carpentry" aria-pressed="false"><span class="t">Carpentry</span><span class="s">Chippies</span></button>
-          <button type="button" class="bk-tile" data-trade="Electrical" aria-pressed="false"><span class="t">Electrical</span><span class="s">Sparkies</span></button>
-          <button type="button" class="bk-tile" data-trade="Plumbing" aria-pressed="false"><span class="t">Plumbing</span><span class="s">Plumbers</span></button>
-          <button type="button" class="bk-tile" data-trade="Tiling" aria-pressed="false"><span class="t">Tiling</span><span class="s">Tilers</span></button>
-          <button type="button" class="bk-tile" data-trade="Concreting" aria-pressed="false"><span class="t">Concreting</span><span class="s">Concreters</span></button>
-          <button type="button" class="bk-tile" data-trade="Roofing" aria-pressed="false"><span class="t">Roofing</span><span class="s">Roofers</span></button>
-          <button type="button" class="bk-tile" data-trade="Traffic Control" aria-pressed="false"><span class="t">Traffic Control</span><span class="s">Ticketed</span></button>
-          <button type="button" class="bk-tile" data-trade="General Labour" aria-pressed="false"><span class="t">General Labour</span><span class="s">Labourers</span></button>
-          <button type="button" class="bk-tile" data-trade="Not sure yet" aria-pressed="false"><span class="t">Not sure yet</span><span class="s">We'll advise</span></button>
+        <fieldset class="wk-fs">
+          <legend>What you do</legend>
+          <div class="wk-field" style="margin-bottom:12px">
+            <label>Trade <span class="req">*</span></label>
+          </div>
+          <div class="wk-chips" id="wkTrades">
+          <button type="button" class="wk-chip" data-g="trade" data-v="Carpentry" aria-pressed="false">Carpentry</button>
+          <button type="button" class="wk-chip" data-g="trade" data-v="Electrical" aria-pressed="false">Electrical</button>
+          <button type="button" class="wk-chip" data-g="trade" data-v="Plumbing" aria-pressed="false">Plumbing</button>
+          <button type="button" class="wk-chip" data-g="trade" data-v="Tiling" aria-pressed="false">Tiling</button>
+          <button type="button" class="wk-chip" data-g="trade" data-v="Concreting" aria-pressed="false">Concreting</button>
+          <button type="button" class="wk-chip" data-g="trade" data-v="Roofing" aria-pressed="false">Roofing</button>
+          <button type="button" class="wk-chip" data-g="trade" data-v="Traffic Control" aria-pressed="false">Traffic Control</button>
+          <button type="button" class="wk-chip" data-g="trade" data-v="General Labour" aria-pressed="false">General Labour</button>
+          <button type="button" class="wk-chip" data-g="trade" data-v="Trades Assistant" aria-pressed="false">Trades Assistant</button>
+          </div>
+          <div class="wk-err" id="tradeErr" style="margin-top:10px">Pick at least one trade.</div>
+          <div class="wk-row two" style="margin-top:20px">
+            <div class="wk-field">
+              <label for="wkLevel">Level</label>
+              <select id="wkLevel">
+                <option>Qualified tradesperson</option>
+                <option>Apprentice</option>
+                <option>Labourer</option>
+                <option>Trades assistant</option>
+              </select>
+            </div>
+            <div class="wk-field">
+              <label for="wkYears">Years on site</label>
+              <select id="wkYears">
+                <option>Less than 1</option><option>1&ndash;2</option><option>3&ndash;5</option>
+                <option>5&ndash;10</option><option>10+</option>
+              </select>
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="wk-fs">
+          <legend>Tickets and licences</legend>
+          <div class="wk-chips" id="wkTickets">
+          <button type="button" class="wk-chip" data-g="ticket" data-v="White Card" aria-pressed="false">White Card</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Blue Card" aria-pressed="false">Blue Card</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Yellow Card" aria-pressed="false">Yellow Card</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Working at Heights" aria-pressed="false">Working at Heights</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="First Aid" aria-pressed="false">First Aid</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Forklift (LF)" aria-pressed="false">Forklift (LF)</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="EWP" aria-pressed="false">EWP</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Asbestos Awareness" aria-pressed="false">Asbestos Awareness</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Confined Space" aria-pressed="false">Confined Space</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Driver's Licence" aria-pressed="false">Driver's Licence</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Own Vehicle" aria-pressed="false">Own Vehicle</button>
+          <button type="button" class="wk-chip" data-g="ticket" data-v="Own Tools" aria-pressed="false">Own Tools</button>
+          </div>
+          <div class="wk-row" style="margin-top:20px">
+            <div class="wk-field">
+              <label for="wkLicence">Licence or ticket numbers</label>
+              <input type="text" id="wkLicence" placeholder="Trade licence, white card number, anything relevant">
+            </div>
+          </div>
+        </fieldset>
+
+        <fieldset class="wk-fs">
+          <legend>Availability</legend>
+          <div class="wk-row two">
+            <div class="wk-field">
+              <label for="wkAvail">When can you start</label>
+              <select id="wkAvail">
+                <option>Straight away</option><option>Within a week</option>
+                <option>Within a month</option><option>Just registering for later</option>
+              </select>
+            </div>
+            <div class="wk-field">
+              <label for="wkDays">What you're after</label>
+              <select id="wkDays">
+                <option>Full time / ongoing</option><option>A few days a week</option>
+                <option>Odd days here and there</option><option>Weekends</option>
+              </select>
+            </div>
+          </div>
+          <div class="wk-row">
+            <div class="wk-field">
+              <label for="wkNotes">Anything else</label>
+              <textarea id="wkNotes" placeholder="What you've worked on, who you've worked for, anything we should know."></textarea>
+            </div>
+          </div>
+        </fieldset>
+
+        <div class="wk-consent" id="fConsent">
+          <label>
+            <input type="checkbox" id="wkConsent">
+            <span>I agree that if I'm taken on, <strong>Ready Now Tradie Hire can show my
+            first name, trade, tickets and photo</strong> on their website and social media so
+            builders can request me by name. I can ask for it to be taken down at any time.</span>
+          </label>
         </div>
-        <div class="bk-actions">
-          <button type="button" class="bk-next" id="bkNext1" disabled>Continue</button>
-        </div>
+
+        <button type="button" class="wk-submit" id="wkSubmit">Send my details</button>
+
+        <p class="wk-note">We'll only use your details to find you work. Nothing is published
+        without your say-so. See our <a href="privacy.html">Privacy Policy</a>.<br>
+        Rather talk? Ring <a href="tel:+61432910369">0432 910 369</a>.</p>
       </div>
 
-      <!-- ---------------- STEP 2 ---------------- -->
-      <div class="bk-panel" data-p="2">
-        <h2>When do you need them?</h2>
-        <p class="hint">If it is today, ring us on 0432 910 369 &mdash; that is faster than
-        a form.</p>
-        <div class="bk-row two">
-          <div class="bk-field" id="fStart">
-            <label for="bkStart">Start date <span class="req">*</span></label>
-            <input type="date" id="bkStart" name="Start date" required>
-            <span class="bk-err">Pick a start date.</span>
-          </div>
-          <div class="bk-field">
-            <label for="bkTime">On site by</label>
-            <select id="bkTime" name="On site by">
-              <option value="">No preference</option>
-              <option>6:00am</option><option>6:30am</option><option>7:00am</option>
-              <option>8:00am</option><option>Midday</option><option>Afternoon</option>
-            </select>
-          </div>
-        </div>
-        <div class="bk-field" style="margin-bottom:6px">
-          <label>How long for? <span class="req">*</span></label>
-        </div>
-        <div class="bk-grid" id="bkDur">
-          <button type="button" class="bk-tile" data-dur="Half day" aria-pressed="false"><span class="t">Half day</span></button>
-          <button type="button" class="bk-tile" data-dur="Full day" aria-pressed="false"><span class="t">Full day</span></button>
-          <button type="button" class="bk-tile" data-dur="2-3 days" aria-pressed="false"><span class="t">2-3 days</span></button>
-          <button type="button" class="bk-tile" data-dur="1 week" aria-pressed="false"><span class="t">1 week</span></button>
-          <button type="button" class="bk-tile" data-dur="Ongoing" aria-pressed="false"><span class="t">Ongoing</span></button>
-        </div>
-        <div class="bk-row two" style="margin-top:18px">
-          <div class="bk-field">
-            <label for="bkQty">How many workers</label>
-            <select id="bkQty" name="Workers needed">
-              <option>1</option><option>2</option><option>3</option>
-              <option>4</option><option>5+</option>
-            </select>
-          </div>
-        </div>
-        <div class="bk-actions">
-          <button type="button" class="bk-next" id="bkNext2" disabled>Continue</button>
-          <button type="button" class="bk-back" data-back="1">Back</button>
-        </div>
-      </div>
-
-      <!-- ---------------- STEP 3 ---------------- -->
-      <div class="bk-panel" data-p="3">
-        <h2>Where and who do we call?</h2>
-        <p class="hint">Last step. We come back to you to confirm before anyone is locked in.</p>
-        <div class="bk-row two">
-          <div class="bk-field" id="fName">
-            <label for="bkName">Your name <span class="req">*</span></label>
-            <input type="text" id="bkName" name="Name" autocomplete="name" required>
-            <span class="bk-err">We need a name.</span>
-          </div>
-          <div class="bk-field" id="fPhone">
-            <label for="bkPhone">Mobile <span class="req">*</span></label>
-            <input type="tel" id="bkPhone" name="Phone" autocomplete="tel" required>
-            <span class="bk-err">Enter a valid mobile number.</span>
-          </div>
-        </div>
-        <div class="bk-row two">
-          <div class="bk-field">
-            <label for="bkCo">Company</label>
-            <input type="text" id="bkCo" name="Company" autocomplete="organization">
-          </div>
-          <div class="bk-field">
-            <label for="bkEmail">Email</label>
-            <input type="email" id="bkEmail" name="Email" autocomplete="email">
-          </div>
-        </div>
-        <div class="bk-row">
-          <div class="bk-field" id="fSite">
-            <label for="bkSite">Site address or suburb <span class="req">*</span></label>
-            <input type="text" id="bkSite" name="Site address" required>
-            <span class="bk-err">Where is the job?</span>
-          </div>
-        </div>
-        <div class="bk-row">
-          <div class="bk-field">
-            <label for="bkNotes">Anything else</label>
-            <textarea id="bkNotes" name="Notes" placeholder="What the job is, site access, inductions needed, more than one trade."></textarea>
-          </div>
-        </div>
-        <div class="bk-actions">
-          <button type="button" class="bk-next" id="bkSubmit">Send booking request</button>
-          <button type="button" class="bk-back" data-back="2">Back</button>
-        </div>
-        <p class="bk-note">By sending this you agree we can contact you about the booking.
-        See our <a href="privacy.html" style="color:var(--gold-dark)">Privacy Policy</a>.</p>
-      </div>
-
-      <!-- ---------------- DONE ---------------- -->
-      <div class="bk-done" id="bkDone">
+      <div class="wk-done" id="wkDone">
         <div class="tick"><svg width="26" height="26" viewBox="0 0 24 24" fill="none"
           stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round">
           <polyline points="20 6 9 17 4 12"/></svg></div>
-        <h2>Request received.</h2>
-        <p id="bkPromise">We'll call or text you to confirm who's coming before anything is
-        locked in. If you need someone today, ring
-        <a href="tel:+61432910369" style="color:var(--gold-dark)">0432 910 369</a>.</p>
-        <dl class="bk-recap" id="bkRecap"></dl>
+        <h2>Got it. Thanks mate.</h2>
+        <p>Your details are with us. If there's a fit we'll give you a call. If you want to chase
+        it up, ring <a href="tel:+61432910369" style="color:var(--gold-dark)">0432 910 369</a>.</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -868,180 +957,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 })();
 </script>
 
-<script>
-(function(){
-  /* ---- SET THIS ONCE SAM CONFIRMS HIS RESPONSE TIME ---- */
-  /* Leave as '' until Sam confirms a response time he can hit every time.
-     Set e.g. '30 minutes' and the promise line switches on automatically. */
-  var CONFIRM_WINDOW = '';
-  /* ---- PASTE THE REAL FORMSPREE ID HERE ---- */
-  var FORM_ENDPOINT  = 'https://formspree.io/f/xrpzypon';
 
-  var d = document, state = {trade:'', dur:'', worker:''};
-  var panels = d.querySelectorAll('.bk-panel'), steps = d.querySelectorAll('.bk-step');
-
-  function go(n){
-    panels.forEach(function(p){ p.classList.toggle('on', p.dataset.p == n); });
-    steps.forEach(function(s){
-      s.classList.toggle('active', s.dataset.s == n);
-      s.classList.toggle('done', +s.dataset.s < n);
-    });
-    window.scrollTo({top: d.querySelector('.bk-head').offsetTop - 90, behavior:'smooth'});
-  }
-
-  function pick(wrap, key, btnId){
-    d.querySelectorAll(wrap + ' .bk-tile').forEach(function(b){
-      b.addEventListener('click', function(){
-        d.querySelectorAll(wrap + ' .bk-tile').forEach(function(x){
-          x.setAttribute('aria-pressed','false'); });
-        b.setAttribute('aria-pressed','true');
-        state[key] = b.dataset.trade || b.dataset.dur;
-        check2(); if(btnId) d.getElementById(btnId).disabled = false;
-      });
-    });
-  }
-  pick('#bkTrades','trade','bkNext1');
-  pick('#bkDur','dur');
-
-  function check2(){
-    var ok = state.dur && d.getElementById('bkStart').value;
-    var b = d.getElementById('bkNext2'); if(b) b.disabled = !ok;
-  }
-  d.getElementById('bkStart').addEventListener('change', check2);
-  d.getElementById('bkStart').min = new Date().toISOString().split('T')[0];
-
-  d.getElementById('bkNext1').addEventListener('click', function(){ go(2); });
-  d.getElementById('bkNext2').addEventListener('click', function(){ go(3); });
-  d.querySelectorAll('.bk-back').forEach(function(b){
-    b.addEventListener('click', function(){ go(b.dataset.back); });
-  });
-
-  /* worker pre-select from ?worker=Anfal%20Mehdaoui&trade=Traffic%20Control */
-  var q = new URLSearchParams(location.search);
-  var w = q.get('worker'), t = q.get('trade');
-  if(w){
-    state.worker = w;
-    d.getElementById('bkWorkerChip').innerHTML =
-      '<span class="bk-chip">Booking ' + w.replace(/[<>]/g,'') +
-      ' <button type="button" id="bkClear" aria-label="Clear worker">&times;</button></span>';
-    d.getElementById('bkClear').addEventListener('click', function(){
-      state.worker=''; d.getElementById('bkWorkerChip').innerHTML=''; });
-  }
-  if(t){
-    var tile = d.querySelector('#bkTrades .bk-tile[data-trade="' + t.replace(/"/g,'') + '"]');
-    if(tile) tile.click();
-  }
-
-  function bad(id, cond){
-    d.getElementById(id).classList.toggle('bad', cond); return cond;
-  }
-
-  d.getElementById('bkSubmit').addEventListener('click', function(){
-    var name = d.getElementById('bkName').value.trim();
-    var ph   = d.getElementById('bkPhone').value.replace(/[^0-9+]/g,'');
-    var site = d.getElementById('bkSite').value.trim();
-    var e1 = bad('fName', !name), e2 = bad('fPhone', ph.length < 8), e3 = bad('fSite', !site);
-    if(e1 || e2 || e3) return;
-
-    var btn = this; btn.disabled = true; btn.textContent = 'Sending...';
-
-    if(d.getElementById('bkGotcha').value){ done({}); return; }
-
-    var subj = 'BOOKING - ' + (state.trade || 'Tradie')
-             + (state.worker ? ' - ' + state.worker : '')
-             + ' - ' + d.getElementById('bkStart').value;
-
-    var payload = {
-      '_subject': subj,
-      'Worker requested': state.worker || 'Any available',
-      'Trade': state.trade,
-      'Start date': d.getElementById('bkStart').value,
-      'On site by': d.getElementById('bkTime').value || 'No preference',
-      'Duration': state.dur,
-      'Workers needed': d.getElementById('bkQty').value,
-      'Name': name, 'Phone': ph,
-      'Company': d.getElementById('bkCo').value.trim(),
-      'Email': d.getElementById('bkEmail').value.trim(),
-      'email': d.getElementById('bkEmail').value.trim(),
-      'Site address': site,
-      'Notes': d.getElementById('bkNotes').value.trim()
-    };
-
-    console.log('[booking] posting to', FORM_ENDPOINT, payload);
-
-    function fallbackPost(){
-      /* No CORS, no JS dependency - the browser posts it like a normal form.
-         Used if fetch is blocked, offline, or Formspree rejects the AJAX call. */
-      console.warn('[booking] falling back to native form post');
-      var f = d.createElement('form');
-      f.method = 'POST'; f.action = FORM_ENDPOINT; f.style.display = 'none';
-      Object.keys(payload).forEach(function(k){
-        var i = d.createElement('input');
-        i.type = 'hidden'; i.name = k; i.value = payload[k];
-        f.appendChild(i);
-      });
-      d.body.appendChild(f); f.submit();
-    }
-
-    var timedOut = false;
-    var timer = setTimeout(function(){ timedOut = true; fallbackPost(); }, 8000);
-
-    fetch(FORM_ENDPOINT, {
-      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
-      body: JSON.stringify(payload)
-    }).then(function(r){
-      return r.json().catch(function(){ return {}; }).then(function(body){
-        return {ok: r.ok, status: r.status, body: body};
-      });
-    }).then(function(res){
-      if(timedOut) return;
-      clearTimeout(timer);
-      console.log('[booking] response', res.status, res.body);
-      if(res.ok){
-        var qp = new URLSearchParams({
-          trade: state.trade || '',
-          worker: state.worker || '',
-          start: d.getElementById('bkStart').value,
-          duration: state.dur || ''
-        });
-        location.href = 'thanks.html?' + qp.toString();
-        return;
-      }
-      var msg = '';
-      if(res.body && res.body.errors && res.body.errors.length){
-        msg = res.body.errors.map(function(e){ return e.message; }).join(' ');
-      } else if(res.body && res.body.error){
-        msg = res.body.error;
-      }
-      console.error('[booking] formspree rejected:', res.status, msg);
-      fallbackPost();
-    }).catch(function(err){
-      if(timedOut) return;
-      clearTimeout(timer);
-      console.error('[booking] fetch failed:', err);
-      fallbackPost();
-    });
-  });
-
-  function done(p){
-    panels.forEach(function(x){ x.classList.remove('on'); });
-    steps.forEach(function(s){ s.classList.add('done'); });
-    if(CONFIRM_WINDOW){
-      var el = d.getElementById('bkPromise');
-      el.innerHTML = el.innerHTML.replace("We'll call or text you to confirm",
-        "We'll confirm within <strong>" + CONFIRM_WINDOW + "</strong> during work hours and let you know");
-    }
-    d.getElementById('bkRecap').innerHTML =
-      '<div><dt>Trade</dt><dd>' + p['Trade'] + '</dd></div>' +
-      (state.worker ? '<div><dt>Worker</dt><dd>' + state.worker + '</dd></div>' : '') +
-      '<div><dt>Start</dt><dd>' + p['Start date'] + '</dd></div>' +
-      '<div><dt>Duration</dt><dd>' + p['Duration'] + '</dd></div>' +
-      '<div><dt>Site</dt><dd>' + p['Site address'] + '</dd></div>';
-    d.getElementById('bkDone').classList.add('on');
-    window.scrollTo({top: d.querySelector('.bk-head').offsetTop - 90, behavior:'smooth'});
-  }
-})();
-</script>
 
 <div class="mbar" id="mbar" aria-label="Quick actions">
   <a class="call" href="tel:+61432910369"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg>Call</a>
@@ -1053,6 +969,88 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   if(!bar) return;
   function tick(){ bar.classList.toggle('up', window.scrollY > 320); }
   window.addEventListener('scroll', tick, {passive:true}); tick();
+})();
+</script>
+
+<script>
+(function(){
+  var FORM_ENDPOINT = 'https://formspree.io/f/xrpzypon';
+  var d = document, picked = {trade:[], ticket:[]};
+
+  d.querySelectorAll('.wk-chip').forEach(function(b){
+    b.addEventListener('click', function(){
+      var g = b.dataset.g, v = b.dataset.v, on = b.getAttribute('aria-pressed') === 'true';
+      b.setAttribute('aria-pressed', !on);
+      if(on){ picked[g] = picked[g].filter(function(x){ return x !== v; }); }
+      else { picked[g].push(v); }
+      if(g === 'trade' && picked.trade.length){
+        d.getElementById('tradeErr').style.display = 'none';
+      }
+    });
+  });
+
+  function bad(id, cond){ d.getElementById(id).classList.toggle('bad', cond); return cond; }
+
+  d.getElementById('wkSubmit').addEventListener('click', function(){
+    var name = d.getElementById('wkName').value.trim();
+    var ph   = d.getElementById('wkPhone').value.replace(/[^0-9+]/g,'');
+    var sub  = d.getElementById('wkSuburb').value.trim();
+    var e1 = bad('fName', !name), e2 = bad('fPhone', ph.length < 8), e3 = bad('fSuburb', !sub);
+    var e4 = !picked.trade.length;
+    d.getElementById('tradeErr').style.display = e4 ? 'block' : 'none';
+    var consent = d.getElementById('wkConsent').checked;
+    var e5 = !consent;
+    d.getElementById('fConsent').classList.toggle('bad', e5);
+    if(e1 || e2 || e3 || e4 || e5) return;
+
+    var btn = this; btn.disabled = true; btn.textContent = 'Sending...';
+
+    var payload = {
+      '_subject': 'WORKER - ' + picked.trade.join(', ') + ' - ' + name,
+      'Name': name, 'Phone': ph,
+      'Email': d.getElementById('wkEmail').value.trim(),
+      'email': d.getElementById('wkEmail').value.trim(),
+      'Suburb': sub,
+      'Trade': picked.trade.join(', '),
+      'Level': d.getElementById('wkLevel').value,
+      'Years on site': d.getElementById('wkYears').value,
+      'Tickets': picked.ticket.join(', ') || 'None listed',
+      'Licence numbers': d.getElementById('wkLicence').value.trim(),
+      'Can start': d.getElementById('wkAvail').value,
+      'Looking for': d.getElementById('wkDays').value,
+      'Notes': d.getElementById('wkNotes').value.trim(),
+      'Consent to appear on site': 'YES - agreed ' + new Date().toISOString()
+    };
+
+    function fallbackPost(){
+      var f = d.createElement('form');
+      f.method = 'POST'; f.action = FORM_ENDPOINT; f.style.display = 'none';
+      Object.keys(payload).forEach(function(k){
+        var i = d.createElement('input');
+        i.type = 'hidden'; i.name = k; i.value = payload[k];
+        f.appendChild(i);
+      });
+      d.body.appendChild(f); f.submit();
+    }
+    var timedOut = false;
+    var timer = setTimeout(function(){ timedOut = true; fallbackPost(); }, 8000);
+
+    fetch(FORM_ENDPOINT, {
+      method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
+      body: JSON.stringify(payload)
+    }).then(function(r){
+      if(timedOut) return;
+      clearTimeout(timer);
+      if(!r.ok) throw new Error('rejected');
+      d.getElementById('wkForm').style.display = 'none';
+      d.getElementById('wkDone').classList.add('on');
+      window.scrollTo({top: d.querySelector('.wk-wrap').offsetTop - 90, behavior:'smooth'});
+    }).catch(function(){
+      if(timedOut) return;
+      clearTimeout(timer);
+      fallbackPost();
+    });
+  });
 })();
 </script>
 </body>
