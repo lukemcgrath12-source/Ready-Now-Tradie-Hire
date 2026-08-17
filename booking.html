@@ -964,21 +964,59 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       'Notes': d.getElementById('bkNotes').value.trim()
     };
 
+    console.log('[booking] posting to', FORM_ENDPOINT, payload);
+
+    function fallbackPost(){
+      /* No CORS, no JS dependency - the browser posts it like a normal form.
+         Used if fetch is blocked, offline, or Formspree rejects the AJAX call. */
+      console.warn('[booking] falling back to native form post');
+      var f = d.createElement('form');
+      f.method = 'POST'; f.action = FORM_ENDPOINT; f.style.display = 'none';
+      Object.keys(payload).forEach(function(k){
+        var i = d.createElement('input');
+        i.type = 'hidden'; i.name = k; i.value = payload[k];
+        f.appendChild(i);
+      });
+      d.body.appendChild(f); f.submit();
+    }
+
+    var timedOut = false;
+    var timer = setTimeout(function(){ timedOut = true; fallbackPost(); }, 8000);
+
     fetch(FORM_ENDPOINT, {
       method:'POST', headers:{'Content-Type':'application/json','Accept':'application/json'},
       body: JSON.stringify(payload)
     }).then(function(r){
-      if(!r.ok) throw new Error('bad response');
-      var qp = new URLSearchParams({
-        trade: state.trade || '',
-        worker: state.worker || '',
-        start: d.getElementById('bkStart').value,
-        duration: state.dur || ''
+      return r.json().catch(function(){ return {}; }).then(function(body){
+        return {ok: r.ok, status: r.status, body: body};
       });
-      location.href = 'thanks.html?' + qp.toString();
-    }).catch(function(){
-      btn.disabled = false; btn.textContent = 'Send booking request';
-      alert('That did not send. Please ring 0432 910 369 and we will sort it out.');
+    }).then(function(res){
+      if(timedOut) return;
+      clearTimeout(timer);
+      console.log('[booking] response', res.status, res.body);
+      if(res.ok){
+        var qp = new URLSearchParams({
+          trade: state.trade || '',
+          worker: state.worker || '',
+          start: d.getElementById('bkStart').value,
+          duration: state.dur || ''
+        });
+        location.href = 'thanks.html?' + qp.toString();
+        return;
+      }
+      var msg = '';
+      if(res.body && res.body.errors && res.body.errors.length){
+        msg = res.body.errors.map(function(e){ return e.message; }).join(' ');
+      } else if(res.body && res.body.error){
+        msg = res.body.error;
+      }
+      console.error('[booking] formspree rejected:', res.status, msg);
+      fallbackPost();
+    }).catch(function(err){
+      if(timedOut) return;
+      clearTimeout(timer);
+      console.error('[booking] fetch failed:', err);
+      fallbackPost();
     });
   });
 
