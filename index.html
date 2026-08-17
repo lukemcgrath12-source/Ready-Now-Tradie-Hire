@@ -1195,9 +1195,11 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   var cards=[].slice.call(document.querySelectorAll('.tm-card'));
   function setOpen(c,v){c.classList.toggle('open',v);c.setAttribute('aria-expanded',v?'true':'false');}
   cards.forEach(function(c){
-    function toggle(e){e.preventDefault();var v=!c.classList.contains('open');cards.forEach(function(o){if(o!==c)setOpen(o,false);});setOpen(c,v);}
+    function toggle(e){if(e.target.closest('a,button')) return;e.preventDefault();var v=!c.classList.contains('open');cards.forEach(function(o){if(o!==c)setOpen(o,false);});setOpen(c,v);}
     c.addEventListener('click',toggle);
-    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')toggle(e);});
+    var bk=c.querySelector('.tm-book');
+    if(bk){bk.addEventListener('click',function(e){e.stopPropagation();});}
+    c.addEventListener('keydown',function(e){if(e.target.closest('a,button')) return;if(e.key==='Enter'||e.key===' ')toggle(e);});
   });
   document.addEventListener('click',function(e){if(!e.target.closest('.tm-card'))cards.forEach(function(o){setOpen(o,false);});});
 })();
