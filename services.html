@@ -476,7 +476,10 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .gear-item{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--stone);
   display:flex;flex-direction:column;transition:border-color .3s,background .3s}
 .gear-item:hover{border-color:var(--border-2);background:var(--stone-2)}
-.gear-pic{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--olive-deep)}
+.gear-pic{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--olive-deep);transition:aspect-ratio .2s}
+.gear-pic.noimg{aspect-ratio:auto;height:34px}
+.gear-pic.noimg .slot-contours{opacity:.3}
+.gear-pic.noimg .gear-tag{top:50%;transform:translateY(-50%)}
 .gear-pic>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .gear-tag{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--mono);font-size:9px;
   letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92);background:rgba(21,29,19,.6);
@@ -858,7 +861,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         one invoice, one bloke accountable for both.</p>
         <div class="gear-grid">
           <div class="gear-item">
-            <div class="gear-pic"><span class="gear-tag">Delivered</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="skip-bin.jpg" alt="Skip Bins &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.remove()"></div>
+            <div class="gear-pic"><span class="gear-tag">Delivered</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="skip-bin.jpg" alt="Skip Bins &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.closest('.gear-pic').classList.add('noimg');this.remove()"></div>
             <div class="gear-in">
               <div class="gear-name">Skip Bins</div>
               <p class="gear-desc">Site clean-ups, strip-outs and demo waste. Dropped where you want it and collected when you're done.</p>
@@ -867,7 +870,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
             </div>
           </div>
           <div class="gear-item">
-            <div class="gear-pic"><span class="gear-tag">With operator</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="tipper.jpg" alt="Tipper Truck &amp; Operator &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.remove()"></div>
+            <div class="gear-pic"><span class="gear-tag">With operator</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="tipper.jpg" alt="Tipper Truck &amp; Operator &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.closest('.gear-pic').classList.add('noimg');this.remove()"></div>
             <div class="gear-in">
               <div class="gear-name">Tipper Truck &amp; Operator</div>
               <p class="gear-desc">Truck and driver together, not dry hire. Spoil removal, material runs and site clean-outs.</p>
