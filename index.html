@@ -177,6 +177,31 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 @media(min-width:640px){.badge-label{font-size:13px;padding:6px 16px}}
 .sec-h2{font-size:clamp(1.5rem,4vw,3.2rem);font-weight:500;line-height:1.12;letter-spacing:-.02em;color:var(--olive)}
 .sec-h2 .br{display:none}
+
+/* ---------- labour + gear bundle ---------- */
+.bundle-sec{padding:0 0 var(--sec-pad)}
+.bundle{border:1px solid var(--border);border-radius:22px;overflow:hidden;background:var(--stone);
+  display:grid;grid-template-columns:1fr}
+@media(min-width:900px){.bundle{grid-template-columns:1.05fr .95fr}}
+.bundle-body{padding:30px 26px 32px}
+@media(min-width:900px){.bundle-body{padding:44px 42px 46px;display:flex;flex-direction:column;justify-content:center}}
+.bundle-eyebrow{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;
+  color:var(--gold-dark);margin-bottom:14px}
+.bundle h3{font-size:clamp(1.5rem,3.4vw,2.35rem);font-weight:600;line-height:1.12;letter-spacing:-.02em;
+  color:var(--olive);margin-bottom:14px}
+.bundle p{font-size:15px;line-height:1.65;color:var(--olive-soft);margin-bottom:20px;max-width:46ch}
+.bundle-row{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:24px}
+.bundle-chip{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;
+  color:var(--olive);border:1px solid var(--border-2);border-radius:999px;padding:7px 14px}
+.bundle-chip.on{background:var(--gold);border-color:var(--gold);color:var(--olive-deep);font-weight:700}
+.bundle-media{position:relative;min-height:240px;background:var(--olive-deep);overflow:hidden}
+@media(min-width:900px){.bundle-media{min-height:100%}}
+.bundle-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.bundle-media-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
+  padding:22px;background:linear-gradient(to top,rgba(21,29,19,.88) 0%,rgba(21,29,19,.25) 55%,transparent 100%)}
+.bundle-big{font-family:var(--display);font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:700;
+  line-height:1.05;color:#fff;text-transform:uppercase;letter-spacing:-.01em}
+
 @media(min-width:640px){.sec-h2 .br{display:block}.sec-h2 .sp{display:none}}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .reveal.in{opacity:1;transform:none}
@@ -401,8 +426,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .footer-bar{border-top:1px solid rgba(255,255,255,.09);padding:26px 20px;text-align:center;margin:0 -20px}
 @media(min-width:640px){.footer-bar{margin:0 -32px}}
 .footer-bar p{font-size:13px;color:rgba(255,255,255,.5)}
-.footer-bar .f-latitude{color:var(--gold);text-decoration:none;transition:opacity .3s}
-.footer-bar .f-latitude:hover{opacity:.72}
+.footer-bar .f-latitude{color:var(--gold)}
 .footer-bar .f-privacy{color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}
 .footer-bar .f-privacy:hover{color:var(--gold)}
 
@@ -758,11 +782,49 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   </div>
 </section>
 
-<!-- ============ 4 · HOW IT WORKS ============ -->
-<section class="process-sec">
+
+<!-- ============ 4 &middot; LABOUR + GEAR ============ -->
+<section class="bundle-sec">
   <div class="wrap">
     <div class="px badge-row reveal">
       <span class="badge-num">4</span>
+      <span class="badge-label">Labour &amp; gear</span>
+    </div>
+    <div class="px reveal">
+      <div class="bundle">
+        <div class="bundle-body">
+          <div class="bundle-eyebrow">One call &middot; One invoice</div>
+          <h3>Book the bloke and the gear he needs.</h3>
+          <p>Most jobs need more than a set of hands. Add a skip or a tipper to the same booking
+          and it comes back quoted together &mdash; not three phone calls and three invoices to chase.</p>
+          <div class="bundle-row">
+            <span class="bundle-chip on">Worker</span>
+            <span class="bundle-chip on">Skip bin</span>
+            <span class="bundle-chip on">Tipper &amp; operator</span>
+            <span class="bundle-chip">Gear on request</span>
+          </div>
+          <div class="hero-cta" style="margin:0">
+            <a href="booking.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book labour &amp; gear</b><b>Book labour &amp; gear</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+            <a href="services.html#gear" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">See what we cover</a>
+          </div>
+        </div>
+        <div class="bundle-media">
+          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg>
+          <img src="gear.jpg" alt="Site gear and labour supplied together &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.remove()">
+          <div class="bundle-media-in">
+            <div class="bundle-big">Labour<br>&amp; Gear</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ 5 · HOW IT WORKS ============ -->
+<section class="process-sec">
+  <div class="wrap">
+    <div class="px badge-row reveal">
+      <span class="badge-num">5</span>
       <span class="badge-label">How it works</span>
     </div>
     <div class="px reveal">
@@ -784,7 +846,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <section class="team-sec">
   <div class="wrap">
     <div class="px badge-row reveal">
-      <span class="badge-num">5</span>
+      <span class="badge-num">6</span>
       <span class="badge-label">Who turns up</span>
     </div>
     <div class="px reveal">
@@ -911,8 +973,8 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
             <dl class="tm-dl">
               <div><dt>Trade</dt><dd>Electrician</dd></div>
               <div><dt>Covers</dt><dd>Sydney metro</dd></div>
-              <div><dt>Tickets</dt><dd>[CONFIRM &mdash; electrical licence no.]</dd></div>
-              <div><dt>On the tools</dt><dd>[CONFIRM &mdash; years]</dd></div>
+              <div><dt>Tickets</dt><dd>Licensed electrician + white card</dd></div>
+              <div><dt>On the tools</dt><dd>7 years</dd></div>
             </dl>
             <a class="tm-book" href="booking.html?worker=Hayden%20Budd&amp;trade=Electrical"><span>Book Hayden</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
           </div>
@@ -926,7 +988,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <section class="clients-sec">
   <div class="wrap">
     <div class="px badge-row reveal">
-      <span class="badge-num">6</span>
+      <span class="badge-num">7</span>
       <span class="badge-label">Who we work with</span>
     </div>
     <div class="px reveal">
@@ -988,6 +1050,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <li><a href="services.html#roofing">Roofing</a></li>
         <li><a href="services.html#traffic-control">Traffic Control</a></li>
         <li><a href="services.html#forklift">Forklift Driving</a></li>
+        <li><a href="services.html#gear">Gear &amp; Equipment</a></li>
         <li><a href="services.html#general-labour">General Labour</a></li>
       </ul>
     </div>
@@ -1009,7 +1072,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
   </div>
   <div class="footer-bar">
-    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <a href="https://www.latitudemarketing.au/" target="_blank" rel="noopener" class="f-latitude">Latitude Marketing</a></p>
+    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
 </footer>
 

@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Labour Hire Services Sydney | Carpentry, Electrical, Plumbing &amp; More</title>
-<meta name="description" content="Labour hire across wider Sydney &mdash; carpentry, electrical, plumbing, tiling, concreting, roofing, traffic control, forklift driving and general labour. Own tools, real site experience.">
+<meta name="description" content="Labour hire across wider Sydney &mdash; carpentry, electrical, plumbing, tiling, concreting, roofing, traffic control, forklift driving and general labour, plus skip bins and tipper trucks arranged on the same booking. Own tools, real site experience.">
 <link rel="icon" href="/favicon.ico" sizes="any">
 <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
@@ -351,8 +351,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .footer-bar{border-top:1px solid rgba(255,255,255,.09);padding:26px 20px;text-align:center;margin:0 -20px}
 @media(min-width:640px){.footer-bar{margin:0 -32px}}
 .footer-bar p{font-size:13px;color:rgba(255,255,255,.5)}
-.footer-bar .f-latitude{color:var(--gold);text-decoration:none;transition:opacity .3s}
-.footer-bar .f-latitude:hover{opacity:.72}
+.footer-bar .f-latitude{color:var(--gold)}
 
 .slot-big,.sp-big,.ledger-num,.cta-number{font-weight:800;letter-spacing:-.01em}
 .sec-h2{font-weight:600}
@@ -469,6 +468,36 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .ac-list li{position:relative;padding-left:24px;font-size:13.5px;color:var(--text-light);line-height:1.65}
 .ac-list li::before{content:'';position:absolute;left:0;top:7px;width:10px;height:2px;background:var(--gold);border-radius:2px}
 .ac-list li b{color:var(--olive);font-weight:600}
+
+
+/* ---------- gear & equipment ---------- */
+.gear-grid{display:grid;grid-template-columns:1fr;gap:14px;margin-top:18px}
+@media(min-width:768px){.gear-grid{grid-template-columns:1fr 1fr}}
+.gear-item{border:1px solid var(--border);border-radius:16px;overflow:hidden;background:var(--stone);
+  display:flex;flex-direction:column;transition:border-color .3s,background .3s}
+.gear-item:hover{border-color:var(--border-2);background:var(--stone-2)}
+.gear-pic{position:relative;aspect-ratio:16/10;overflow:hidden;background:var(--olive-deep)}
+.gear-pic>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.gear-tag{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--mono);font-size:9px;
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92);background:rgba(21,29,19,.6);
+  border-radius:999px;padding:4px 10px;backdrop-filter:blur(2px)}
+.gear-in{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1}
+.gear-name{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.01em;
+  color:var(--olive);margin-bottom:6px;line-height:1.15}
+.gear-desc{font-size:13.5px;line-height:1.55;color:var(--olive-soft);margin-bottom:12px}
+.gear-meta{list-style:none;margin:0 0 15px;padding:0;display:grid;gap:6px}
+.gear-meta li{font-size:12.5px;line-height:1.4;color:var(--olive-soft);padding-left:15px;position:relative}
+.gear-meta li:before{content:"";position:absolute;left:0;top:7px;width:5px;height:5px;
+  border-radius:999px;background:var(--gold)}
+.gear-book{margin-top:auto;display:inline-flex;align-items:center;justify-content:space-between;gap:10px;
+  padding:10px 16px;border-radius:999px;background:var(--gold);color:var(--olive-deep);
+  font-size:13.5px;font-weight:700;text-decoration:none;transition:background .25s,transform .25s}
+.gear-book:hover{background:#F0832F;transform:translateY(-1px)}
+.gear-book:focus-visible{outline:2px solid var(--olive);outline-offset:2px}
+.gear-note{margin-top:20px;padding:14px 16px;border:1px solid var(--border);
+  border-left:3px solid var(--gold);border-radius:10px;background:var(--stone)}
+.gear-note p{font-size:13px;line-height:1.6;color:var(--olive-soft);margin:0}
+@media(prefers-reduced-motion:reduce){.gear-item,.gear-book{transition:none}}
 
 /* ---------- crew under each trade (big profile cards) ---------- */
 .svc-crew{margin-top:30px;padding-top:24px;border-top:1px solid var(--border)}
@@ -607,7 +636,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 </section>
 
 <div class="jump" aria-label="Jump to a trade">
-  <div class="wrap px"><div class="jump-inner"><a href="#carpentry">Carpentry</a><a href="#electrical">Electrical</a><a href="#plumbing">Plumbing</a><a href="#tiling">Tiling</a><a href="#concreting">Concreting</a><a href="#general-labour">General Labour</a><a href="#roofing">Roofing</a><a href="#traffic-control">Traffic Control</a><a href="#forklift">Forklift</a></div></div>
+  <div class="wrap px"><div class="jump-inner"><a href="#carpentry">Carpentry</a><a href="#electrical">Electrical</a><a href="#plumbing">Plumbing</a><a href="#tiling">Tiling</a><a href="#concreting">Concreting</a><a href="#general-labour">General Labour</a><a href="#roofing">Roofing</a><a href="#traffic-control">Traffic Control</a><a href="#forklift">Forklift</a><a href="#gear">Gear &amp; Equipment</a></div></div>
 </div>
 
 <section class="svc" id="carpentry">
@@ -642,7 +671,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <ul class="svc-list"><li>Rough-in and cable pulling</li><li>Fit-off and switchboards</li><li>Data, comms and TV cabling</li><li>Site and temporary power</li></ul>
         <p class="svc-when-line">Rough-in has to be signed off before the plasterer starts Monday.</p>
         <div class="svc-btn"><a href="booking.html?trade=Electrical" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Electrical</b><b>Book Electrical</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
-      <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s8" aria-label="Hayden Budd, Electrician &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;07</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="hayden-budd.jpg" alt="Hayden Budd &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Hayden Budd</div><div class="tm-trade">Electrician</div></div><div class="tm-detail" id="tmd-s8"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Electrician</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>[CONFIRM &mdash; electrical licence no.]</dd></div><div><dt>On the tools</dt><dd>[CONFIRM &mdash; years]</dd></div></dl><a class="tm-book" href="booking.html?worker=Hayden%20Budd&amp;trade=Electrical"><span>Book Hayden</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
+      <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s8" aria-label="Hayden Budd, Electrician &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;07</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="hayden-budd.jpg" alt="Hayden Budd &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Hayden Budd</div><div class="tm-trade">Electrician</div></div><div class="tm-detail" id="tmd-s8"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Electrician</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>Licensed electrician + white card</dd></div><div><dt>On the tools</dt><dd>7 years</dd></div></dl><a class="tm-book" href="booking.html?worker=Hayden%20Budd&amp;trade=Electrical"><span>Book Hayden</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
       </div>
       <div class="svc-media reveal">
         <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="electrical.jpg" alt="Electrical — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
@@ -819,6 +848,53 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       </div>
     </div>
   </div>
+</section><section class="svc" id="gear">
+  <div class="wrap px">
+    <div class="svc-grid">
+      <div class="reveal">
+        <div class="badge-row"><span class="badge-num">10</span><span class="badge-label">Gear &amp; Equipment</span></div>
+        <h2>Gear &amp; Equipment</h2>
+        <p class="svc-lead">Book the worker and the gear that worker needs on the same job. One call,
+        one invoice, one bloke accountable for both.</p>
+        <div class="gear-grid">
+          <div class="gear-item">
+            <div class="gear-pic"><span class="gear-tag">Delivered</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="skip-bin.jpg" alt="Skip Bins &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.remove()"></div>
+            <div class="gear-in">
+              <div class="gear-name">Skip Bins</div>
+              <p class="gear-desc">Site clean-ups, strip-outs and demo waste. Dropped where you want it and collected when you're done.</p>
+              <ul class="gear-meta"><li>Range of sizes, we'll size it to the job</li><li>Delivery and collection arranged</li><li>Goes on the same invoice as your labour</li></ul>
+              <a class="gear-book" href="booking.html?gear=Skip%20bin"><span>Add to a booking</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+          </div>
+          <div class="gear-item">
+            <div class="gear-pic"><span class="gear-tag">With operator</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="tipper.jpg" alt="Tipper Truck &amp; Operator &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.remove()"></div>
+            <div class="gear-in">
+              <div class="gear-name">Tipper Truck &amp; Operator</div>
+              <p class="gear-desc">Truck and driver together, not dry hire. Spoil removal, material runs and site clean-outs.</p>
+              <ul class="gear-meta"><li>Licensed operator included</li><li>Half day, full day or ongoing</li><li>Same booking as the rest of your crew</li></ul>
+              <a class="gear-book" href="booking.html?gear=Tipper%20truck%20%2B%20operator"><span>Add to a booking</span><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+            </div>
+          </div>
+        </div>
+        <div class="gear-note">
+          <p><strong>Need something else?</strong> Scaffold, plant and specialist gear can be arranged
+          on request &mdash; give us a ring on <a href="tel:+61432910369" style="color:var(--gold-dark)">0432 910 369</a>
+          and we'll sort it. Every supplier we use is checked the same way we check our workers:
+          licence sighted, insurance current.</p>
+        </div>
+        <div class="svc-btn" style="margin-top:22px"><a href="booking.html?trade=Gear%20only" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book gear</b><b>Book gear</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
+      </div>
+      <div class="svc-media reveal">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="gear.jpg" alt="Site gear and equipment &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <div class="svc-media-inner">
+          <div style="display:flex;justify-content:space-between;align-items:flex-start">
+            <span class="svc-code">TR&mdash;10</span><span class="svc-tag">Arranged</span>
+          </div>
+          <div class="svc-media-big">Gear &amp;<br>Equipment</div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
 
 <!-- ============ COVERAGE ============ -->
@@ -875,6 +951,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <li><a href="services.html#roofing">Roofing</a></li>
         <li><a href="services.html#traffic-control">Traffic Control</a></li>
         <li><a href="services.html#forklift">Forklift Driving</a></li>
+        <li><a href="services.html#gear">Gear &amp; Equipment</a></li>
       </ul>
     </div>
     <div class="f-col">
@@ -895,7 +972,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
   </div>
   <div class="footer-bar">
-    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <a href="https://www.latitudemarketing.au/" target="_blank" rel="noopener" class="f-latitude">Latitude Marketing</a></p>
+    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
 </footer>
 <script>

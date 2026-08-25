@@ -395,8 +395,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .footer-bar{border-top:1px solid rgba(255,255,255,.09);padding:26px 20px;text-align:center;margin:0 -20px}
 @media(min-width:640px){.footer-bar{margin:0 -32px}}
 .footer-bar p{font-size:13px;color:rgba(255,255,255,.5)}
-.footer-bar .f-latitude{color:var(--gold);text-decoration:none;transition:opacity .3s}
-.footer-bar .f-latitude:hover{opacity:.72}
+.footer-bar .f-latitude{color:var(--gold)}
 
 .slot-big,.sp-big,.ledger-num,.cta-number{font-weight:800;letter-spacing:-.01em}
 .sec-h2{font-weight:600}
@@ -602,14 +601,15 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     <div class="bk-head">
       <span class="bk-eyebrow">Book a tradie</span>
       <h1>Tell us what you need<br>and when.</h1>
-      <p>Three quick steps. Every worker turns up with their own tools and real site
+      <p>Four quick steps. Every worker turns up with their own tools and real site
       experience. Sydney metro, same day or booked ahead.</p>
     </div>
 
     <div class="bk-steps" id="bkSteps">
       <div class="bk-step active" data-s="1"><div class="track"><i></i></div><span class="lbl">01 &middot; Trade</span></div>
       <div class="bk-step" data-s="2"><div class="track"><i></i></div><span class="lbl">02 &middot; When</span></div>
-      <div class="bk-step" data-s="3"><div class="track"><i></i></div><span class="lbl">03 &middot; Site</span></div>
+      <div class="bk-step" data-s="3"><div class="track"><i></i></div><span class="lbl">03 &middot; Gear</span></div>
+      <div class="bk-step" data-s="4"><div class="track"><i></i></div><span class="lbl">04 &middot; Site</span></div>
     </div>
 
     <div class="bk-card">
@@ -618,6 +618,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <!-- ---------------- STEP 1 ---------------- -->
       <div class="bk-panel on" data-p="1">
         <div id="bkWorkerChip"></div>
+        <div id="bkGearChip"></div>
         <h2>What trade do you need?</h2>
         <p class="hint">Pick one. If you need more than one trade on site, tell us in the
         notes at step three.</p>
@@ -632,6 +633,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
           <button type="button" class="bk-tile" data-trade="Forklift Driving" aria-pressed="false"><span class="t">Forklift Driving</span><span class="s">LF ticketed</span></button>
           <button type="button" class="bk-tile" data-trade="General Labour" aria-pressed="false"><span class="t">General Labour</span><span class="s">Labourers</span></button>
           <button type="button" class="bk-tile" data-trade="Not sure yet" aria-pressed="false"><span class="t">Not sure yet</span><span class="s">We'll advise</span></button>
+          <button type="button" class="bk-tile" data-trade="Gear only" aria-pressed="false"><span class="t">Gear only</span><span class="s">No worker needed</span></button>
         </div>
         <div class="bk-actions">
           <button type="button" class="bk-next" id="bkNext1" disabled>Continue</button>
@@ -683,8 +685,24 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         </div>
       </div>
 
-      <!-- ---------------- STEP 3 ---------------- -->
+      <!-- ---------------- STEP 3 &mdash; GEAR ---------------- -->
       <div class="bk-panel" data-p="3">
+        <h2>Need gear with this job?</h2>
+        <p class="hint">Optional. Tick anything you want us to arrange and it comes back
+        quoted on the same job, one invoice. Leave it blank if you just need the worker.</p>
+        <div class="bk-grid" id="bkGear">
+          <button type="button" class="bk-tile" data-gear="Skip bin" aria-pressed="false"><span class="t">Skip bin</span><span class="s">Delivered &amp; collected</span></button>
+          <button type="button" class="bk-tile" data-gear="Tipper truck + operator" aria-pressed="false"><span class="t">Tipper truck</span><span class="s">Truck and driver</span></button>
+          <button type="button" class="bk-tile" data-gear="Something else" aria-pressed="false"><span class="t">Something else</span><span class="s">Tell us at step four</span></button>
+        </div>
+        <div class="bk-actions">
+          <button type="button" class="bk-next" id="bkNext3">Skip, no gear needed</button>
+          <button type="button" class="bk-back" data-back="2">Back</button>
+        </div>
+      </div>
+
+      <!-- ---------------- STEP 4 ---------------- -->
+      <div class="bk-panel" data-p="4">
         <h2>Where and who do we call?</h2>
         <p class="hint">Last step. We come back to you to confirm before anyone is locked in.</p>
         <div class="bk-row two">
@@ -724,7 +742,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         </div>
         <div class="bk-actions">
           <button type="button" class="bk-next" id="bkSubmit">Send booking request</button>
-          <button type="button" class="bk-back" data-back="2">Back</button>
+          <button type="button" class="bk-back" data-back="3">Back</button>
         </div>
         <p class="bk-note">By sending this you agree we can contact you about the booking.
         See our <a href="privacy.html" style="color:var(--gold-dark)">Privacy Policy</a>.</p>
@@ -768,6 +786,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <li><a href="services.html#roofing">Roofing</a></li>
         <li><a href="services.html#traffic-control">Traffic Control</a></li>
         <li><a href="services.html#forklift">Forklift Driving</a></li>
+        <li><a href="services.html#gear">Gear &amp; Equipment</a></li>
         <li><a href="services.html#general-labour">General Labour</a></li>
       </ul>
     </div>
@@ -789,7 +808,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
   </div>
   <div class="footer-bar">
-    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | Built by <a href="https://www.latitudemarketing.au/" target="_blank" rel="noopener" class="f-latitude">Latitude Marketing</a></p>
+    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
 </footer>
 
@@ -879,7 +898,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   /* ---- PASTE THE REAL FORMSPREE ID HERE ---- */
   var FORM_ENDPOINT  = 'https://formspree.io/f/xrpzypon';
 
-  var d = document, state = {trade:'', dur:'', worker:''};
+  var d = document, state = {trade:'', dur:'', worker:'', gear:[]};
   var panels = d.querySelectorAll('.bk-panel'), steps = d.querySelectorAll('.bk-step');
 
   function go(n){
@@ -905,6 +924,19 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   pick('#bkTrades','trade','bkNext1');
   pick('#bkDur','dur');
 
+  /* gear is multi-select and entirely optional */
+  d.querySelectorAll('#bkGear .bk-tile').forEach(function(b){
+    b.addEventListener('click', function(){
+      var on = b.getAttribute('aria-pressed') === 'true';
+      b.setAttribute('aria-pressed', on ? 'false' : 'true');
+      var g = b.dataset.gear;
+      if(on){ state.gear = state.gear.filter(function(x){ return x !== g; }); }
+      else if(state.gear.indexOf(g) === -1){ state.gear.push(g); }
+      var nx = d.getElementById('bkNext3');
+      if(nx) nx.textContent = state.gear.length ? 'Continue' : 'Skip, no gear needed';
+    });
+  });
+
   function check2(){
     var ok = state.dur && d.getElementById('bkStart').value;
     var b = d.getElementById('bkNext2'); if(b) b.disabled = !ok;
@@ -914,6 +946,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 
   d.getElementById('bkNext1').addEventListener('click', function(){ go(2); });
   d.getElementById('bkNext2').addEventListener('click', function(){ go(3); });
+  d.getElementById('bkNext3').addEventListener('click', function(){ go(4); });
   d.querySelectorAll('.bk-back').forEach(function(b){
     b.addEventListener('click', function(){ go(b.dataset.back); });
   });
@@ -933,6 +966,24 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     var tile = d.querySelector('#bkTrades .bk-tile[data-trade="' + t.replace(/"/g,'') + '"]');
     if(tile) tile.click();
   }
+  /* gear pre-select from ?gear=Skip%20bin */
+  var g0 = q.get('gear');
+  if(g0){
+    var gt = d.querySelector('#bkGear .bk-tile[data-gear="' + g0.replace(/"/g,'') + '"]');
+    if(gt){
+      gt.click();
+      d.getElementById('bkGearChip').innerHTML =
+        '<span class="bk-chip">Adding ' + g0.replace(/[<>]/g,'') +
+        ' <button type="button" id="bkGearClear" aria-label="Remove gear">&times;</button></span>';
+      d.getElementById('bkGearClear').addEventListener('click', function(){
+        gt.click(); d.getElementById('bkGearChip').innerHTML = '';
+      });
+    }
+    if(!t){
+      var only = d.querySelector('#bkTrades .bk-tile[data-trade="Gear only"]');
+      if(only) only.click();
+    }
+  }
 
   function bad(id, cond){
     d.getElementById(id).classList.toggle('bad', cond); return cond;
@@ -951,6 +1002,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 
     var subj = 'BOOKING - ' + (state.trade || 'Tradie')
              + (state.worker ? ' - ' + state.worker : '')
+             + (state.gear.length ? ' + GEAR' : '')
              + ' - ' + d.getElementById('bkStart').value;
 
     var payload = {
@@ -961,6 +1013,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       'On site by': d.getElementById('bkTime').value || 'No preference',
       'Duration': state.dur,
       'Workers needed': d.getElementById('bkQty').value,
+      'Gear requested': state.gear.length ? state.gear.join(', ') : 'None',
       'Name': name, 'Phone': ph,
       'Company': d.getElementById('bkCo').value.trim(),
       'Email': d.getElementById('bkEmail').value.trim(),
@@ -1004,7 +1057,8 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
           trade: state.trade || '',
           worker: state.worker || '',
           start: d.getElementById('bkStart').value,
-          duration: state.dur || ''
+          duration: state.dur || '',
+          gear: state.gear.join(', ')
         });
         location.href = 'thanks.html?' + qp.toString();
         return;
