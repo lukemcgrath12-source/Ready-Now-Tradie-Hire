@@ -26,7 +26,7 @@
 <meta name="twitter:title" content="Find a Tradie in Sydney | Ready Now Tradie Hire">
 <meta name="twitter:description" content="Find tradies, builders and labourers across wider Sydney and call them direct. On the tools? List your trade free and get hired.">
 <meta name="twitter:image" content="https://readynowtradiehire.com.au/og-image.jpg">
-<link rel="preconnect" href="https://d2ol7oe51mr4n9.cloudfront.net" crossorigin>
+<link rel="preload" as="image" href="truck-wrap-1200.webp" type="image/webp" imagesrcset="truck-wrap-720.webp 720w, truck-wrap-1200.webp 1200w" imagesizes="(min-width:1024px) 46vw, 100vw">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -219,18 +219,11 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .footer-logo-img{height:60px;width:auto;display:block;margin-bottom:18px}
 .footer-bar .f-privacy{color:rgba(255,255,255,.6);text-decoration:none}.footer-bar .f-privacy:hover{color:var(--gold)}.f-col a:focus-visible,.f-socials a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 
-/* ============ HOME v3: scroll video hero ============ */
+/* ============ HOME v4: truck-wrap hero ============ */
 .slot-contours{position:absolute;inset:0;opacity:.5}
 .vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
 body.home{background:var(--olive-deep)}
 main{background:var(--white)}
-.ld{position:fixed;inset:0;z-index:9999;background:#14171C;display:flex;align-items:center;justify-content:center;transition:opacity .35s var(--ease),visibility .35s}
-.ld.out{opacity:0;visibility:hidden;pointer-events:none}
-.ld img{height:72px;width:auto}
-.ld-bar{position:absolute;left:50%;bottom:22%;width:160px;height:1px;margin-left:-80px;background:rgba(255,255,255,.14);overflow:hidden}
-.ld-bar i{position:absolute;inset:0;background:var(--gold);transform-origin:0 50%;animation:ldfill 3.2s cubic-bezier(.22,1,.36,1) forwards}
-@keyframes ldfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
-
 /* nav on the dark scene */
 .navwrap.on-dark .navbar{background:rgba(20,23,28,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:none}
 .navwrap.on-dark .nav-links a{color:rgba(255,255,255,.88)}
@@ -244,46 +237,56 @@ main{background:var(--white)}
 .navwrap.on-dark .nav-logochip{background:rgba(255,255,255,.08)}
 .navbar{transition:background .35s var(--ease),box-shadow .3s}
 
-.hx{position:relative;height:420vh;background:#14171C}
-@media(max-width:760px){.hx{height:220vh}}
-.hx-scene{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#14171C url(https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/33150b94-09f7-47da-a7c9-3ae76c2dd7eb.jpg) center/cover no-repeat}
-.hx-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
-.hx-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(18,24,34,.55) 0%,rgba(18,24,34,0) 34%),linear-gradient(to top,rgba(18,24,34,.5) 0%,rgba(18,24,34,0) 30%)}
-.hx-stage{position:absolute;left:0;right:0;top:92px;perspective:900px;display:flex;justify-content:center;padding:0 24px;pointer-events:none}
-.hx-copy{width:100%;max-width:920px;text-align:center;transform-origin:50% 100%;will-change:transform,opacity;pointer-events:auto}
-.hx-label{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8CC3E6;margin-bottom:18px}
-.hx h1{font-size:clamp(2.4rem,4.6vw,4.2rem);font-weight:600;line-height:1.05;letter-spacing:-.03em;color:#fff;text-shadow:0 2px 30px rgba(10,14,20,.45)}
-.hx h1 em{font-style:normal;color:var(--gold)}
-.hx-sub{font-size:17px;line-height:1.6;color:rgba(255,255,255,.72);max-width:46ch;margin:16px auto 0;text-shadow:0 1px 14px rgba(10,14,20,.5)}
-.hx .sx{margin:28px auto 0}
-.hx-alt{margin-top:14px;font-size:14px;color:rgba(255,255,255,.72)}
-.hx-alt a{color:#fff;font-weight:600;text-underline-offset:3px}
-.hx-alt a:hover{color:#8CC3E6}
-.hx-alt a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
-.hx-cue{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;color:rgba(255,255,255,.8);white-space:nowrap;pointer-events:none}
-.hx-cue i{display:block;height:1px;margin-top:9px;background:rgba(255,255,255,.75);transform-origin:0 50%}
-.hx-steps{position:absolute;left:28px;bottom:36px;width:430px;max-width:calc(100% - 56px);list-style:none;display:grid;gap:4px;opacity:0;will-change:transform,opacity}
-.hx-step{display:grid;grid-template-columns:36px 1fr;align-items:start;gap:10px;padding:6px 0}
-.hx-num{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.72);transition:background .35s var(--ease),color .35s var(--ease)}
-.hx-title{display:block;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.72);line-height:30px;transition:font-size .35s var(--ease),color .35s var(--ease)}
-.hx-p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
-.hx-p>div{overflow:hidden}
-.hx-p p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.78);border-left:1px solid rgba(255,255,255,.3);padding:2px 0 4px 14px;margin:4px 0 6px}
-.hx-step.on .hx-num{background:#fff;color:var(--olive-deep);font-weight:600}
-.hx-step.on .hx-title{font-size:18px;color:#fff;font-weight:600}
-.hx-step.on .hx-p{grid-template-rows:1fr}
-.hx-steps-panel{background:rgba(18,22,28,.42);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:14px 16px}
-@media(max-width:760px){
-  .hx-stage{top:96px;padding:0 18px}
-  .hx h1{font-size:clamp(38px,11vw,48px)}
-  .hx-sub{font-size:15px;max-width:34ch}
-  .hx-steps{left:18px;right:18px;width:auto;max-width:none;bottom:22px}
-  .hx-cue{bottom:28px}
-  .hx .sx{margin-top:22px}
-}
-@media(max-width:760px) and (max-height:700px){.hx-sub{display:none}}
-.reduced .hx-p,.reduced .hx-num,.reduced .hx-title,.reduced .navbar{transition:none}
-
+.hero4{position:relative;overflow:hidden;background:#1F2023;color:#fff;padding:104px 0 40px}
+@media(min-width:640px){.hero4{padding:124px 0 56px}}
+@media(min-width:1024px){.hero4{padding:136px 0 72px}}
+.h4-bg{position:absolute;inset:0;pointer-events:none;background:radial-gradient(900px 520px at 85% 18%,rgba(72,148,196,.20),transparent 62%),radial-gradient(700px 480px at 0% 100%,rgba(91,92,94,.45),transparent 70%),linear-gradient(180deg,#1F2023 0%,#26282C 100%)}
+.h4-bg::after{content:"";position:absolute;inset:0;opacity:.05;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
+.h4-grid{position:relative;display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+@media(min-width:1024px){.h4-grid{grid-template-columns:1.02fr .98fr;gap:48px}}
+.h4-top{display:flex;flex-wrap:wrap;align-items:center;gap:8px 10px;font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.88);margin-bottom:18px}
+.h4-top i{font-style:normal;color:var(--gold);font-weight:700}
+.hero4 h1{font-size:clamp(2.35rem,9.6vw,4.6rem);font-weight:700;line-height:1.02;letter-spacing:-.035em;color:#fff}
+@media(min-width:1024px){.hero4 h1{font-size:clamp(3.4rem,4.9vw,4.9rem)}}
+.hero4 h1 span{display:block}
+.hero4 h1 em{font-style:normal;color:var(--gold);display:block}
+.h4-sub{font-size:16px;line-height:1.65;color:rgba(255,255,255,.74);max-width:44ch;margin-top:16px}
+@media(min-width:640px){.h4-sub{font-size:17px}}
+.hero4 .sx{margin-top:24px;max-width:640px}
+@media(min-width:720px){.hero4 .sx{grid-template-columns:1fr 1.05fr auto}.hero4 .sx-fld{padding:6px 18px}.hero4 .sx-go{padding:0 22px}}
+.h4-actions{display:flex;flex-wrap:wrap;align-items:center;gap:10px 20px;margin-top:18px}
+.h4-call{display:inline-flex;align-items:center;gap:10px;min-height:46px;padding:0 18px 0 8px;border-radius:999px;border:1px solid rgba(255,255,255,.22);color:#fff;text-decoration:none;font-size:15px;font-weight:600;transition:border-color .25s var(--ease),background .25s var(--ease),transform .2s var(--ease)}
+.h4-call b{width:32px;height:32px;border-radius:999px;background:var(--gold-dark);display:flex;align-items:center;justify-content:center}
+.h4-call:hover{border-color:var(--gold);background:rgba(72,148,196,.1)}
+.h4-call:active{transform:scale(.98)}
+.h4-call:focus-visible,.h4-join:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+.h4-join{font-size:14.5px;color:rgba(255,255,255,.78);text-decoration:none;border-radius:4px}
+.h4-join u{color:#fff;font-weight:600;text-underline-offset:4px;text-decoration-color:var(--gold)}
+.h4-join:hover u{color:#8CC3E6}
+.h4-truck{position:relative;margin:0;border-radius:22px;overflow:hidden;background:#2A2B2E;box-shadow:0 30px 70px rgba(0,0,0,.45);aspect-ratio:1200/876}
+@media(min-width:1024px){.h4-truck{border-radius:26px}}
+.h4-truck img{width:100%;height:100%;object-fit:cover;display:block}
+.h4-truck figcaption{position:absolute;left:14px;bottom:14px;font-family:var(--mono);font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;color:#fff;background:rgba(31,32,35,.72);-webkit-backdrop-filter:blur(4px);backdrop-filter:blur(4px);border-radius:999px;padding:6px 12px}
+/* the three truck panels */
+.tray{position:relative;margin-top:32px;background:#5B5C5E;border-radius:22px;display:grid;grid-template-columns:1fr;box-shadow:inset 0 1px 0 rgba(255,255,255,.08),0 20px 50px rgba(0,0,0,.3)}
+@media(min-width:1024px){.tray{margin-top:52px;grid-template-columns:repeat(3,1fr)}}
+.tp{position:relative;display:flex;flex-direction:column;align-items:center;text-align:center;padding:26px 22px 28px;gap:12px}
+.tp+.tp::before{content:"";position:absolute;left:24px;right:24px;top:0;height:1px;background:rgba(255,255,255,.55)}
+@media(min-width:1024px){.tp{padding:30px 30px 32px}.tp+.tp::before{left:0;right:auto;top:26px;bottom:26px;width:2px;height:auto}}
+.tp-ico{width:58px;height:58px;border-radius:999px;background:#fff;color:#1F2023;display:flex;align-items:center;justify-content:center;margin-bottom:-18px;position:relative;z-index:1;box-shadow:0 0 0 3px #5B5C5E}
+.tp-label{background:var(--gold-dark);color:#fff;font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;padding:9px 16px 6px;border-radius:3px;line-height:1}
+.tp p{font-size:15.5px;line-height:1.55;color:#fff;max-width:28ch;font-weight:500}
+.tp p span{display:block;font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.tp .pillbtn{margin-top:6px}
+.tp-soon{margin-top:6px;display:inline-flex;align-items:center;gap:10px;flex-wrap:wrap;justify-content:center}
+.tp-soon b{font-family:var(--mono);font-size:11px;letter-spacing:.16em;text-transform:uppercase;border:1px solid rgba(255,255,255,.5);color:#fff;border-radius:999px;padding:9px 14px}
+.tp-soon a{color:#fff;font-size:14px;font-weight:600;text-underline-offset:4px;text-decoration-color:var(--gold);border-radius:4px}
+.tp-soon a:hover{color:#BFDDF0}
+.tp-soon a:focus-visible{outline:2px solid #fff;outline-offset:3px}
+.rise{opacity:0;transform:translateY(22px);animation:rise4 .8s cubic-bezier(.22,1,.36,1) forwards}
+.rise.d1{animation-delay:.08s}.rise.d2{animation-delay:.16s}.rise.d3{animation-delay:.24s}.rise.d4{animation-delay:.32s}.rise.d5{animation-delay:.4s}
+@keyframes rise4{to{opacity:1;transform:none}}
+@media(prefers-reduced-motion:reduce){.rise{opacity:1;transform:none;animation:none}}
 /* search */
 .sx{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#fff;border-radius:18px;padding:6px;max-width:780px;box-shadow:0 18px 50px rgba(10,14,20,.35);text-align:left}
 .sx-go{grid-column:1/-1}
@@ -316,8 +319,6 @@ main{background:var(--white)}
 
 /* find + trades */
 .find{background:var(--stone)}
-.find .sx{margin:0 0 48px;max-width:none}
-@media(min-width:1024px){.find .sx{max-width:860px}}
 .tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
 @media(min-width:640px){.tt-grid{grid-template-columns:repeat(4,1fr);gap:14px}}
 @media(min-width:1200px){.tt-grid{grid-template-columns:repeat(7,1fr)}}
@@ -368,20 +369,6 @@ main{background:var(--white)}
 .nw-area{font-size:13px;color:var(--text-light);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
 .nw-date{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint);margin-top:2px}
 
-/* get more work band */
-.work-band{background:var(--olive-deep);position:relative;overflow:hidden}
-.work-in{position:relative;display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
-@media(min-width:960px){.work-in{grid-template-columns:1.2fr 1fr;gap:56px}}
-.work-band h2{font-size:clamp(1.9rem,5vw,3.6rem);font-weight:600;letter-spacing:-.03em;line-height:1.04;color:#fff}
-.work-band h2 em{font-style:normal;color:var(--gold)}
-.work-band p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.7);margin-top:16px;max-width:46ch}
-.work-list{list-style:none;display:grid;gap:12px;margin-bottom:26px}
-.work-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:rgba(255,255,255,.88);line-height:1.5}
-.work-list svg{flex-shrink:0;margin-top:2px;color:var(--gold)}
-.work-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:28px 24px}
-@media(min-width:640px){.work-card{padding:34px 32px}}
-.work-card .pillbtn{border:0}
-
 /* FAQ */
 .faq-list{display:grid;gap:10px;max-width:880px}
 .faq{background:#fff;border:1px solid var(--border);border-radius:16px}
@@ -398,17 +385,12 @@ main{background:var(--white)}
 .faq-sec{background:var(--stone-2)}
 .bundle-sec{background:var(--white)}
 .bundle-sec .bundle{margin-top:0}
-@media(prefers-reduced-motion:reduce){.ld-bar i{animation:none;transform:none}.tt,.nw,.faq summary i{transition:none}}
+@media(prefers-reduced-motion:reduce){.tt,.nw,.faq summary i{transition:none}}
 </style>
 <style id="sheet-vis-fix">.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
 <body class="home">
 <a class="skip-link" href="#main">Skip to content</a>
-
-<div class="ld" id="ld" aria-hidden="true">
-  <img src="logo-v2.png" alt="" width="100" height="72">
-  <div class="ld-bar"><i></i></div>
-</div>
 
 <div class="navwrap" id="navwrap">
   <nav class="navbar" aria-label="Main navigation">
@@ -459,20 +441,19 @@ main{background:var(--white)}
 
 <main id="main">
 
-<!-- ============ HERO: scroll-driven video ============ -->
-<section class="hx" id="hx" aria-label="Ready Now Tradie Hire">
-  <div class="hx-scene" id="hxScene">
-    <video class="hx-video" id="hxVideo" muted playsinline preload="auto" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/33150b94-09f7-47da-a7c9-3ae76c2dd7eb.jpg" aria-hidden="true" data-desktop="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/65fdef53-5686-4659-8761-52d61bf1a4f7.mp4" data-mobile="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/9a30e5e9-9f03-4755-9bc1-7bcf1510aab3.mp4" data-fallback="hero.mp4"></video>
-    <div class="hx-shade" aria-hidden="true"></div>
-    <div class="hx-stage">
-      <div class="hx-copy" id="hxCopy">
-        <p class="hx-label">Ready Now Tradie Hire &middot; Wider Sydney</p>
-        <h1>Tradies, builders and labourers across Sydney, one call away. <em>Ready now.</em></h1>
-        <p class="hx-sub">Search by trade and area, check the profile and call them direct. Free to list, no lock-in.</p>
-        <form class="sx " action="members.html" method="get" role="search" aria-label="Find a tradie">
+<!-- ============ HERO: truck wrap ============ -->
+<section class="hero4" id="top" aria-labelledby="heroH">
+  <div class="h4-bg" aria-hidden="true"></div>
+  <div class="wrap px h4-grid">
+    <div class="h4-copy">
+      <p class="h4-top rise">Same day <i aria-hidden="true">&middot;</i> Wider Sydney <i aria-hidden="true">&middot;</i> No lock-in</p>
+      <h1 id="heroH" class="rise d1"><span>Need a tradie?</span><span>Want more work?</span><em>Ready now.</em></h1>
+      <p class="h4-sub rise d2">Tradies, builders and labourers across wider Sydney. Search by trade and suburb, check the profile and call them direct.</p>
+      <div class="rise d3">
+      <form class="sx" action="members.html" method="get" role="search" aria-label="Find a tradie">
         <div class="sx-fld">
-          <label for="hxTrade">What trade<span class="sx-long"> do you need</span>?</label>
-          <select id="hxTrade" name="trade">
+          <label for="h4Trade">What trade<span class="sx-long"> do you need</span>?</label>
+          <select id="h4Trade" name="trade">
             <option value="">All trades</option>
             <option value="Builders">Builders</option>
             <option value="Carpenters">Carpenters</option>
@@ -491,58 +472,57 @@ main{background:var(--white)}
           </select>
         </div>
         <div class="sx-fld">
-          <label for="hxQ">Suburb or area</label>
-          <input id="hxQ" name="q" type="search" placeholder="e.g. Cronulla" autocomplete="address-level2" enterkeyhint="search" maxlength="60">
+          <label for="h4Q">Suburb or area</label>
+          <input id="h4Q" name="q" type="search" placeholder="e.g. Cronulla" autocomplete="address-level2" enterkeyhint="search" maxlength="60">
         </div>
         <button type="submit" class="sx-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button>
       </form>
-        <p class="hx-alt">On the tools? <a href="join.html">List your trade free</a></p>
+      </div>
+      <div class="h4-actions rise d4">
+        <a class="h4-call" href="tel:+61432910369" aria-label="Call Ready Now on 0432 910 369"><b><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.13.96.36 1.9.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.9.34 1.85.57 2.81.7A2 2 0 0 1 22 16.92z"/></svg></b>Call 0432 910 369</a>
+        <a class="h4-join" href="join.html">On the tools? <u>List your trade free</u></a>
       </div>
     </div>
-    <div class="hx-cue" id="hxCue" aria-hidden="true">SCROLL TO SEE HOW IT WORKS<i id="hxCueLine"></i></div>
-    <ol class="hx-steps hx-steps-panel" id="hxSteps" aria-label="How Ready Now works">
-      <li class="hx-step on" data-step="0"><span class="hx-num">01</span><div class="hx-txt"><span class="hx-title">Pick your trade</span><div class="hx-p"><div><p>Search by trade and the suburb or area you need them in.</p></div></div></div></li>
-      <li class="hx-step" data-step="1"><span class="hx-num">02</span><div class="hx-txt"><span class="hx-title">Check the profile</span><div class="hx-p"><div><p>Photo, area and a few lines on what they do. Business name and ABN if they have added them.</p></div></div></div></li>
-      <li class="hx-step" data-step="2"><span class="hx-num">03</span><div class="hx-txt"><span class="hx-title">Call them direct</span><div class="hx-p"><div><p>One tap rings their phone. No middleman and no booking fees.</p></div></div></div></li>
-      <li class="hx-step" data-step="3"><span class="hx-num">04</span><div class="hx-txt"><span class="hx-title">On the tools? List free</span><div class="hx-p"><div><p>Put your trade on Ready Now and get found by builders and locals.</p></div></div></div></li>
-    </ol>
+    <figure class="h4-truck rise d2">
+      <picture>
+        <source type="image/webp" srcset="truck-wrap-720.webp 720w, truck-wrap-1200.webp 1200w" sizes="(min-width:1024px) 46vw, 100vw">
+        <img src="truck-wrap-1200.jpg" srcset="truck-wrap-720.jpg 720w, truck-wrap-1200.jpg 1200w" sizes="(min-width:1024px) 46vw, 100vw" width="1200" height="876" alt="The Ready Now Tradie Hire truck in its charcoal and blue wrap, parked outside a warehouse" fetchpriority="high" decoding="async">
+      </picture>
+      <figcaption>On the road across wider Sydney</figcaption>
+    </figure>
+  </div>
+  <div class="wrap px">
+    <div class="tray" role="list" aria-label="What Ready Now does">
+      <div class="tp rise d3" role="listitem">
+        <span class="tp-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M6.5 10a5.5 5.5 0 0 1 11 0"/><path d="M4.5 10h15"/><path d="M12 4.5V3"/><path d="M8.2 12.5a3.8 3.8 0 0 0 7.6 0"/><path d="M4.5 21c.7-3.3 3.7-5.3 7.5-5.3s6.8 2 7.5 5.3"/></svg></span>
+        <h2 class="tp-label">Tradies</h2>
+        <p><span>Want more work?</span>Sign up now and get hired.</p>
+        <a href="join.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      </div>
+      <div class="tp rise d4" role="listitem">
+        <span class="tp-ico"><svg width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/><path d="M15.5 6.5V4h2.5v4.5"/></svg></span>
+        <h2 class="tp-label">Builders</h2>
+        <p><span>Need a tradie?</span>We have them available.</p>
+        <a href="members.html" class="pillbtn pillbtn-light"><span class="roll"><i><b>Find a Tradie</b><b aria-hidden="true">Find a Tradie</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
+      </div>
+      <div class="tp rise d5" role="listitem">
+        <span class="tp-ico"><svg width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2.5" y="12" width="9" height="5" rx="1"/><path d="M4.5 12V9h4.5l2 3"/><path d="M11 13.5l4.5-6.5 4 2.8-1.2 4.2"/><path d="M18.3 14l2.7 3.5h-4.5"/><rect x="2" y="17.5" width="10" height="3.5" rx="1.75"/></svg></span>
+        <h2 class="tp-label">Equipment</h2>
+        <p><span>Hire out yours</span>or use someone else's.</p>
+        <div class="tp-soon"><b>Coming soon</b><a href="#equipment">Find out more</a></div>
+      </div>
+    </div>
   </div>
 </section>
 
 <!-- ============ FIND + POPULAR TRADES ============ -->
 <section class="sec find" id="find" aria-labelledby="findH">
   <div class="wrap px">
-    <span class="eyebrow">Find a tradie</span>
-    <h2 class="sec-h2" id="findH" style="margin-bottom:24px">Who do you need?</h2>
-    <form class="sx on-light" action="members.html" method="get" role="search" aria-label="Find a tradie">
-        <div class="sx-fld">
-          <label for="fdTrade">What trade<span class="sx-long"> do you need</span>?</label>
-          <select id="fdTrade" name="trade">
-            <option value="">All trades</option>
-            <option value="Builders">Builders</option>
-            <option value="Carpenters">Carpenters</option>
-            <option value="Electricians">Electricians</option>
-            <option value="Plumbers">Plumbers</option>
-            <option value="Roofers">Roofers</option>
-            <option value="Concreters">Concreters</option>
-            <option value="Tilers">Tilers</option>
-            <option value="Painters">Painters</option>
-            <option value="Plasterers">Plasterers</option>
-            <option value="Bricklayers">Bricklayers</option>
-            <option value="Landscapers">Landscapers</option>
-            <option value="Labourers">Labourers</option>
-            <option value="Traffic Control">Traffic Control</option>
-            <option value="Other">Other trades</option>
-          </select>
-        </div>
-        <div class="sx-fld">
-          <label for="fdQ">Suburb or area</label>
-          <input id="fdQ" name="q" type="search" placeholder="e.g. Cronulla" autocomplete="address-level2" enterkeyhint="search" maxlength="60">
-        </div>
-        <button type="submit" class="sx-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button>
-      </form>
+    <span class="eyebrow">Browse by trade</span>
+    <h2 class="sec-h2" id="findH" style="margin-bottom:28px">Who do you need?</h2>
+    
     <div class="sec-head" style="margin-bottom:22px">
-      <h3 class="tt-h" style="font-size:20px;font-weight:600;color:var(--olive);letter-spacing:-.01em">Popular trades</h3>
+      <p class="sec-lead" style="margin:0">Every trade on Ready Now, with how many are listed right now.</p>
       <a href="members.html" class="textlink">See everyone listed</a>
     </div>
     <div class="tt-grid" id="ttGrid">
@@ -612,32 +592,12 @@ main{background:var(--white)}
   </div>
 </section>
 
-<!-- ============ GET MORE WORK ============ -->
-<section class="sec work-band" id="more-work" aria-labelledby="workH">
-  <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0;opacity:.35"><g fill="none" stroke="#4894C4" stroke-width="1"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/></g></svg>
-  <div class="wrap px work-in">
-    <div>
-      <span class="eyebrow" style="color:#8CC3E6">For tradies</span>
-      <h2 id="workH">Want more work? <em>List your trade free.</em></h2>
-      <p>Builders and locals across wider Sydney search Ready Now for your trade. Put your name and number in front of them.</p>
-    </div>
-    <div class="work-card">
-      <ul class="work-list">
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Free for now. No card, no lock-in.</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Your profile goes live straight away.</li>
-        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>People call you direct. No middleman.</li>
-      </ul>
-      <a href="join.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-    </div>
-  </div>
-</section>
-
 <!-- ============ EQUIPMENT (coming soon) ============ -->
 <section class="sec bundle-sec" id="equipment" aria-labelledby="eqH">
   <div class="wrap px">
     <div class="bundle">
       <div class="bundle-body">
-        <div class="bundle-eyebrow">Equipment hire &middot; Coming soon</div>
+        <div class="bundle-eyebrow">Equipment &middot; Coming soon</div>
         <h3 id="eqH">Hire out yours or use someone else's.</h3>
         <p>Equipment hire is on the way. Soon you'll be able to list gear you're not using, or find a skip, tipper or tool someone nearby is hiring out. It's not live yet. Got gear sitting idle? Let us know and we'll be in touch when it opens.</p>
         <div class="bundle-row">
@@ -725,13 +685,6 @@ main{background:var(--white)}
 </footer>
 <script>
 (function(){
-  var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if(reduced) document.documentElement.classList.add('reduced');
-
-  /* ---- loader: out 350ms after the first frame, or 3.5s max ---- */
-  var ld = document.getElementById('ld'), ldDone = false;
-  function ldOut(delay){ if(ldDone) return; ldDone = true; setTimeout(function(){ ld.classList.add('out'); }, delay); }
-  if(reduced) ldOut(0); else setTimeout(function(){ ldOut(0); }, 3500);
 
   /* ---- mobile sheet ---- */
   var layer = document.getElementById('sheetLayer');
@@ -742,96 +695,17 @@ main{background:var(--white)}
   layer.querySelectorAll('.sheet-links a').forEach(function(a){ a.addEventListener('click', function(){ setSheet(false); }); });
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && layer.classList.contains('open')) setSheet(false); });
 
-  /* ---- hero ---- */
-  var track = document.getElementById('hx'), video = document.getElementById('hxVideo');
-  var copy = document.getElementById('hxCopy'), cue = document.getElementById('hxCue'), cueLine = document.getElementById('hxCueLine');
-  var stepsEl = document.getElementById('hxSteps'), steps = [].slice.call(stepsEl.querySelectorAll('.hx-step'));
-  var navwrap = document.getElementById('navwrap');
-  var clamp = function(v){ return v < 0 ? 0 : v > 1 ? 1 : v; };
-  var ease = function(t){ return t < .5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2) / 2; };
-  var dur = 0, cur = 0, ready = false, active = -1;
-
-  if(!reduced){
-    var small = window.matchMedia('(max-width: 900px)').matches;
-    var triedFallback = false;
-    video.src = small ? video.dataset.mobile : video.dataset.desktop;
-    video.addEventListener('error', function(){
-      if(triedFallback){ ldOut(0); return; }
-      triedFallback = true; video.src = video.dataset.fallback; video.load();
-    });
-    video.addEventListener('loadedmetadata', function(){
-      dur = video.duration || 0; ready = dur > 0;
-      // iOS needs a play/pause before seeking works
-      var pr = video.play(); if(pr && pr.then) pr.then(function(){ video.pause(); }).catch(function(){});
-    });
-    video.addEventListener('loadeddata', function(){ ldOut(350); });
-    video.load();
-  } else {
-    video.removeAttribute('preload'); video.style.display = 'none';
-  }
-
-  function progress(){
-    var r = track.getBoundingClientRect();
-    var span = track.offsetHeight - window.innerHeight;
-    return span > 0 ? clamp(-r.top / span) : 0;
-  }
-  function setStep(i){
-    if(i === active) return; active = i;
-    steps.forEach(function(s, k){ s.classList.toggle('on', k === i); });
-  }
-  function paint(p){
-    var h = ease(clamp(p / .38));
-    copy.style.transform = 'translateY(' + (-34 * h) + 'vh) rotateX(' + (62 * h) + 'deg) scale(' + (1 - .12 * h) + ')';
-    var o = 1 - clamp((p - .10) / .14);
-    copy.style.opacity = o;
-    copy.style.visibility = o <= 0.02 ? 'hidden' : 'visible';
-    cue.style.opacity = 1 - clamp((p - .04) / .08);
-    cueLine.style.transform = 'scaleX(' + (1 - clamp(p / .10)) + ')';
-    var t = clamp((p - .08) / .16);
-    stepsEl.style.opacity = t;
-    stepsEl.style.transform = 'translateY(' + (40 * (1 - t)) + 'px)';
-    stepsEl.style.visibility = t <= 0.01 ? 'hidden' : 'visible';
-    setStep(p < .4 ? 0 : p < .62 ? 1 : p < .82 ? 2 : 3);
-  }
-  function navTone(){ navwrap.classList.toggle('on-dark', track.getBoundingClientRect().bottom > navwrap.offsetHeight + 8); }
-  var lastP = -1;
-  function frame(){
-    var p = progress();
-    if(p !== lastP){ paint(p); lastP = p; }
-    navTone();
-    if(ready){
-      var target = p * (dur - 1/48);
-      cur = Math.abs(target - cur) < 1/240 ? target : cur + (target - cur) * .2;
-      if(!video.seeking && Math.abs(video.currentTime - cur) > 1/60){
-        try { video.currentTime = cur; } catch(e){}
-      }
-    }
-    raf = requestAnimationFrame(frame);
-  }
-  var raf = null, running = false;
-  function start(){ if(!running){ running = true; raf = requestAnimationFrame(frame); } }
-  function stop(){ if(running){ running = false; cancelAnimationFrame(raf); } }
-  if(reduced){
-    var onS = function(){ paint(progress()); };
-    onS = function(){ paint(progress()); navTone(); };
-    window.addEventListener('scroll', onS, {passive: true}); window.addEventListener('resize', onS); onS();
-  } else if('IntersectionObserver' in window){
-    new IntersectionObserver(function(es){
-      es.forEach(function(e){ if(e.isIntersecting) start(); else { stop(); paint(progress()); } });
-    }).observe(track);
-    paint(progress());
-  } else { start(); }
-
-  /* nav hide on scroll down, show on scroll up (below the hero only) */
-  var lastY = 0;
-  window.addEventListener('scroll', function(){
-    var y = window.scrollY, below = track.getBoundingClientRect().bottom < 0;
-    navwrap.classList.toggle('scrolled', y > 24 && below);
-    navwrap.classList.toggle('hide', below && y > lastY && y > 160);
-    if(!below) navwrap.classList.remove('hide');
-    if(!running) navTone();
+  /* ---- nav: dark over the hero, hides on scroll down below it ---- */
+  var hero = document.getElementById('top'), navwrap = document.getElementById('navwrap'), lastY = 0;
+  function navTone(){
+    var y = window.scrollY, overHero = hero.getBoundingClientRect().bottom > navwrap.offsetHeight + 8;
+    navwrap.classList.toggle('on-dark', overHero);
+    navwrap.classList.toggle('scrolled', !overHero && y > 24);
+    navwrap.classList.toggle('hide', !overHero && y > lastY && y > 160);
     lastY = y;
-  }, {passive: true});
+  }
+  window.addEventListener('scroll', navTone, {passive: true});
+  window.addEventListener('resize', navTone);
   navTone();
 
   /* ---- live counts + newest strip ---- */
@@ -869,7 +743,7 @@ main{background:var(--white)}
   }).catch(function(){});
 })();
 </script>
-<noscript><style>.ld{display:none}.hx{height:auto}.hx-scene{position:relative;height:auto;min-height:100vh;padding-bottom:40px}.hx-stage{position:relative}.hx-steps,.hx-cue{display:none}</style></noscript>
+
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
 </body>
