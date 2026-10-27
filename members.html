@@ -30,7 +30,7 @@
   --olive:#2A2B2E;--olive-deep:#1F2023;--olive-light:#36383B;--olive-accent:#5B5C5E;
   --gold:#4894C4;--gold-dark:#2F7AB0;
   --stone:#F5F7F9;--stone-2:#EDF0F3;--border:#DEE3E8;--border-2:#C9D0D7;--white:#FFFFFF;
-  --text:#232427;--text-light:#55575B;--text-faint:#808387;
+  --text:#232427;--text-light:#55575B;--text-faint:#6B6E72;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
   --display:'Poppins',sans-serif;
   --body:'Poppins',-apple-system,sans-serif;
@@ -481,31 +481,30 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .mbar svg{flex:none}
 </style>
 <link rel="stylesheet" href="directory.css">
+<style id="sheet-vis-fix">.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="navwrap" id="navwrap">
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-left">
-      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img"></a>
+      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img" width="50" height="36"></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
-        <a href="members.html" class="active">Find a Tradie</a>
-        <a href="services.html">Services</a>
-        <a href="booking.html">Book</a>
+        <a href="members.html" class="active" aria-current="page">Find a Tradie</a>
+        <a href="join.html" class="nav-join">Join Free</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="join.html" class="nav-join">Join Free</a>
       </div>
     </div>
     <div class="nav-right">
       <a class="nav-note" href="tel:+61432910369" style="text-decoration:none">Call 0432 910 369</a>
-      <a href="booking.html" class="pillbtn pillbtn-dark">
-        <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
+      <a href="join.html" class="pillbtn pillbtn-dark">
+        <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
         <span class="circ"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </a>
     </div>
-    <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </div>
 
@@ -513,29 +512,25 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="sheet-backdrop" id="sheetBackdrop"></div>
   <div class="sheet" role="dialog" aria-label="Menu">
     <div class="sheet-top">
-      <button class="menu-btn" id="menuClose" style="display:inline-flex" aria-label="Close menu">Close <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button class="menu-btn" id="menuClose" style="display:inline-flex" aria-label="Close menu">Close <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <div class="sheet-links">
       <a href="index.html">Home</a>
-      <a href="members.html">Find a Tradie</a>
-      <a href="services.html">Services</a>
-        <a href="hire.html">Hire</a>
+      <a href="members.html" aria-current="page">Find a Tradie</a>
+      <a href="join.html" class="nav-join">Join Free</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="join.html" class="nav-join">Join Free</a>
     </div>
-    <a href="booking.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
-      <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
+    <a href="join.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
+      <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
     <a href="tel:+61432910369" class="pillbtn pillbtn-dark">
-      <span class="roll"><i><b>Call &mdash; 0432 910 369</b><b>Call &mdash; 0432 910 369</b></i></span>
+      <span class="roll"><i><b>Call 0432 910 369</b><b aria-hidden="true">Call 0432 910 369</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
   </div>
 </div>
-
-
 
 <main id="main">
 
@@ -553,20 +548,37 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 
 <div class="dir-bar" id="dirBar">
   <div class="wrap px dir-bar-inner">
-    <div class="dir-search">
-      <label for="q" class="vh">Search by name, business or suburb</label>
-      <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-      <input type="search" id="q" placeholder="Search name, business or suburb" autocomplete="off" enterkeyhint="search">
-    </div>
+    <form class="dir-tools" id="dirForm" role="search" aria-label="Search the directory">
+      <div class="dir-search">
+        <label for="q" class="vh">Search by suburb, name or business</label>
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
+        <input type="search" id="q" name="q" placeholder="Suburb, name or business" autocomplete="off" enterkeyhint="search" maxlength="60">
+      </div>
+      <div class="dir-sort">
+        <label for="sort">Sort</label>
+        <select id="sort" name="sort">
+          <option value="new">Newest</option>
+          <option value="az">A to Z</option>
+        </select>
+      </div>
+    </form>
     <div class="chips" id="chips" role="group" aria-label="Filter by trade"></div>
   </div>
 </div>
 
 <section class="dir-sec" aria-labelledby="dirMeta">
   <div class="wrap px">
-    <p class="dir-meta" id="dirMeta" aria-live="polite">Loading the directory...</p>
-    <div class="dir-grid" id="grid">
-      <div class="skel"></div><div class="skel"></div><div class="skel"></div>
+    <div class="dir-metarow">
+      <p class="dir-meta" id="dirMeta" aria-live="polite">Loading the directory...</p>
+      <button type="button" class="dir-clear" id="dirClear" hidden>Clear filters</button>
+    </div>
+    <div class="dir-grid" id="grid" aria-busy="true">
+      <div class="skel" aria-hidden="true"><i class="sk-ph"></i><i class="sk-l w40"></i><i class="sk-l w70"></i><i class="sk-l w55"></i><i class="sk-b"></i></div>
+      <div class="skel" aria-hidden="true"><i class="sk-ph"></i><i class="sk-l w40"></i><i class="sk-l w70"></i><i class="sk-l w55"></i><i class="sk-b"></i></div>
+      <div class="skel" aria-hidden="true"><i class="sk-ph"></i><i class="sk-l w40"></i><i class="sk-l w70"></i><i class="sk-l w55"></i><i class="sk-b"></i></div>
+      <div class="skel" aria-hidden="true"><i class="sk-ph"></i><i class="sk-l w40"></i><i class="sk-l w70"></i><i class="sk-l w55"></i><i class="sk-b"></i></div>
+      <div class="skel" aria-hidden="true"><i class="sk-ph"></i><i class="sk-l w40"></i><i class="sk-l w70"></i><i class="sk-l w55"></i><i class="sk-b"></i></div>
+      <div class="skel" aria-hidden="true"><i class="sk-ph"></i><i class="sk-l w40"></i><i class="sk-l w70"></i><i class="sk-l w55"></i><i class="sk-b"></i></div>
     </div>
   </div>
 </section>
@@ -593,48 +605,50 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
-      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img">
-      <p>The new evolution of labour hire. Qualified tradies, work-ready apprentices and reliable labourers &mdash; same-day or booked ahead, across wider Sydney.</p>
-      <!-- Update hrefs when Instagram / Google Business Profile / Facebook links are live -->
+      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img" width="83" height="60" loading="lazy">
+      <p>A free directory of tradies, builders and labourers across wider Sydney. Find someone local and call them direct. On the tools? List your trade free and get hired.</p>
       <div class="f-socials">
-        <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></a>
       </div>
     </div>
     <div class="f-col">
-      <h4>Services</h4>
+      <h4>Directory</h4>
       <ul>
-        <li><a href="services.html#carpentry">Carpentry</a></li>
-        <li><a href="services.html#electrical">Electrical</a></li>
-        <li><a href="services.html#plumbing">Plumbing</a></li>
-        <li><a href="services.html#tiling">Tiling</a></li>
-        <li><a href="services.html#concreting">Concreting</a></li>
-        <li><a href="services.html#roofing">Roofing</a></li>
-        <li><a href="services.html#traffic-control">Traffic Control</a></li>
-        <li><a href="services.html#forklift">Forklift Driving</a></li>
-        <li><a href="hire.html">Gear &amp; Equipment</a></li>
-        <li><a href="services.html#general-labour">General Labour</a></li>
+        <li><a href="members.html">Find a Tradie</a></li>
+        <li><a href="members.html?trade=Builders">Builders</a></li>
+        <li><a href="members.html?trade=Electricians">Electricians</a></li>
+        <li><a href="members.html?trade=Plumbers">Plumbers</a></li>
+        <li><a href="members.html?trade=Carpenters">Carpenters</a></li>
+        <li><a href="members.html?trade=Labourers">Labourers</a></li>
+        <li><a href="join.html">Join Free</a></li>
       </ul>
     </div>
     <div class="f-col">
       <h4>Company</h4>
       <ul>
         <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="tel:+61432910369">Call Sam</a></li>
+      </ul>
+      <h4 style="margin-top:36px">Labour hire</h4>
+      <ul>
         <li><a href="services.html">Services</a></li>
-        <li><a href="hire.html">Hire</a></li>
-        <li><a href="contact.html">Request a Quote</a></li>
-        <li><a href="tel:+61432910369">Call Now</a></li>
+        <li><a href="hire.html">Gear hire</a></li>
+        <li><a href="booking.html">Book labour</a></li>
+        <li><a href="work.html">Work with us</a></li>
       </ul>
     </div>
     <div class="f-col f-contact">
       <h4>Contact</h4>
       <a href="tel:+61432910369" class="f-phone">0432 910 369</a>
-      <p class="f-note">Same-day &amp; booked ahead</p>
+      <p class="f-note">Same day. Wider Sydney. No lock-in.</p>
       <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" class="f-email">@tradie_hire</a>
       <p class="f-area">3/22 Searl Rd, Cronulla Beach NSW<br>Servicing wider Sydney</p>
     </div>
   </div>
   <div class="footer-bar">
-    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | Built by <span class="f-latitude">Latitude Marketing</span></p>
+    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
 </footer>
 <script>
@@ -666,42 +680,73 @@ function photoEl(m, cls){
 }
 function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:' + t : null; }
 
+var REPORT_EMAIL = 'info@tradiehire.net';
+var ICON_SHARE = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12v8a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-8"/><polyline points="16 6 12 2 8 6"/><line x1="12" y1="2" x2="12" y2="15"/></svg>';
+function listedDate(iso){
+  var d = iso ? new Date(iso) : null;
+  if(!d || isNaN(d)) return '';
+  return d.toLocaleDateString('en-AU', {month: 'long', year: 'numeric'});
+}
+function findTrade(v){
+  v = String(v || '').trim().toLowerCase();
+  if(!v) return '';
+  for(var i = 0; i < TRADES.length; i++){
+    if(TRADES[i].toLowerCase() === v || (SINGULAR[TRADES[i]] || '').toLowerCase() === v) return TRADES[i];
+  }
+  return '';
+}
+
 (function(){
   var API = window.MEMBERS_API || '/api/members';
   var grid = document.getElementById('grid'), meta = document.getElementById('dirMeta');
-  var chipsEl = document.getElementById('chips'), q = document.getElementById('q');
+  var chipsEl = document.getElementById('chips'), q = document.getElementById('q'), sortEl = document.getElementById('sort');
+  var clearBtn = document.getElementById('dirClear');
   var dlg = document.getElementById('profile'), pdContent = document.getElementById('pdContent');
   var params = new URLSearchParams(location.search);
-  var state = { all: [], trade: TRADES.indexOf(params.get('trade')) >= 0 ? params.get('trade') : '', q: '' };
+  var state = {
+    all: [], loaded: false,
+    trade: findTrade(params.get('trade')),
+    q: String(params.get('q') || '').trim().slice(0, 60),
+    sort: params.get('sort') === 'az' ? 'az' : 'new',
+    open: null
+  };
+  q.value = state.q; sortEl.value = state.sort;
   var lastFocus = null;
 
   function syncUrl(){
-    var p = new URLSearchParams(location.search);
-    if(state.trade) p.set('trade', state.trade); else p.delete('trade');
-    var s = p.toString();
-    history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
+    var p = new URLSearchParams();
+    if(state.trade) p.set('trade', state.trade);
+    if(state.q) p.set('q', state.q);
+    if(state.sort !== 'new') p.set('sort', state.sort);
+    if(state.open) p.set('id', state.open);
+    var str = p.toString();
+    history.replaceState(null, '', location.pathname + (str ? '?' + str : ''));
   }
+  function profileUrl(m){ return location.origin + location.pathname + '?id=' + encodeURIComponent(m.id); }
 
   function renderChips(){
     var counts = {}; state.all.forEach(function(m){ counts[m.trade] = (counts[m.trade] || 0) + 1; });
     chipsEl.textContent = '';
-    var list = [''].concat(TRADES);
-    list.forEach(function(t){
+    [''].concat(TRADES).forEach(function(t){
       var n = t ? (counts[t] || 0) : state.all.length;
-      var b = el('button', {type: 'button', class: 'chip', 'aria-pressed': String(state.trade === t), onclick: function(){
+      chipsEl.appendChild(el('button', {type: 'button', class: 'chip', 'aria-pressed': String(state.trade === t), onclick: function(){
         state.trade = t; syncUrl(); renderChips(); renderGrid();
-      }}, [t || 'All trades', el('span', {class: 'n', text: String(n)})]);
-      chipsEl.appendChild(b);
+      }}, [t === 'Other' ? 'Other trades' : (t || 'All trades'), state.loaded ? el('span', {class: 'n', text: String(n)}) : null]));
     });
     var on = chipsEl.querySelector('[aria-pressed="true"]');
-    if(on && on.scrollIntoView && state.trade) on.scrollIntoView({block: 'nearest', inline: 'center'});
+    if(on && state.trade && on.scrollIntoView) on.scrollIntoView({block: 'nearest', inline: 'center'});
   }
 
   function matches(m){
     if(state.trade && m.trade !== state.trade) return false;
     if(!state.q) return true;
-    var hay = (m.name + ' ' + (m.business || '') + ' ' + m.area + ' ' + m.trade + ' ' + (SINGULAR[m.trade] || '')).toLowerCase();
-    return state.q.split(/\s+/).every(function(w){ return hay.indexOf(w) >= 0; });
+    var hay = [m.name, m.business, m.area, m.trade, SINGULAR[m.trade], m.bio].join(' ').toLowerCase();
+    return state.q.toLowerCase().split(/\s+/).every(function(w){ return hay.indexOf(w) >= 0; });
+  }
+  function sorted(list){
+    return list.slice().sort(state.sort === 'az'
+      ? function(a, b){ return String(a.name).localeCompare(String(b.name), 'en-AU', {sensitivity: 'base'}); }
+      : function(a, b){ return String(b.joined || '').localeCompare(String(a.joined || '')); });
   }
 
   function callBtn(m){
@@ -713,6 +758,7 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
 
   function card(m){
     var open = function(){ openProfile(m); };
+    var listed = listedDate(m.joined);
     return el('article', {class: 'mcard'}, [
       el('button', {type: 'button', class: 'mc-open', onclick: open, 'aria-label': 'View profile: ' + m.name + ', ' + (SINGULAR[m.trade] || m.trade)}, [
         photoEl(m, 'mc-photo'),
@@ -724,24 +770,36 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
         ])
       ]),
       m.bio ? el('p', {class: 'mc-bio', text: m.bio}) : null,
-      m.bio && m.bio.length > 140 ? el('button', {type: 'button', class: 'mc-more', onclick: open, text: 'Read more'}) : null,
+      el('div', {class: 'mc-foot'}, [
+        listed ? el('span', {class: 'mc-listed', text: 'Listed ' + listed}) : el('span'),
+        el('button', {type: 'button', class: 'mc-more', onclick: open, text: 'View profile'})
+      ]),
       callBtn(m)
     ]);
   }
 
+  function hasFilters(){ return !!(state.trade || state.q); }
+
   function renderGrid(){
-    var list = state.all.filter(matches);
+    var list = sorted(state.all.filter(matches));
     grid.textContent = '';
-    var label = state.trade ? state.trade : 'all trades';
+    grid.removeAttribute('aria-busy');
     meta.textContent = '';
     meta.appendChild(el('b', {text: list.length + (list.length === 1 ? ' tradie' : ' tradies')}));
-    meta.appendChild(document.createTextNode(' listed' + (state.trade ? ' under ' + label : '') + (state.q ? ' matching "' + q.value.trim() + '"' : '')));
+    var bits = [];
+    if(state.trade) bits.push('under ' + (state.trade === 'Other' ? 'other trades' : state.trade));
+    if(state.q) bits.push('matching "' + state.q + '"');
+    meta.appendChild(document.createTextNode(' listed' + (bits.length ? ' ' + bits.join(', ') : '')));
+    clearBtn.hidden = !hasFilters();
     if(!list.length){
-      var title = state.q ? 'No one matches that search.' : (state.trade ? 'No ' + state.trade.toLowerCase() + ' listed yet.' : 'No one listed yet.');
+      var title = state.q ? 'No one matches that yet.' : (state.trade ? 'No ' + (state.trade === 'Other' ? 'other trades' : state.trade.toLowerCase()) + ' listed yet.' : 'No one listed yet.');
       grid.appendChild(el('div', {class: 'dir-empty', style: 'grid-column:1/-1'}, [
         el('h3', {text: title}),
-        el('p', {text: state.q ? 'Try a different name or suburb, or clear the search.' : 'Know someone good? Send them to the join page. It is free and their profile goes live straight away.'}),
-        state.q ? el('button', {type: 'button', class: 'chip', onclick: function(){ q.value = ''; state.q = ''; renderGrid(); }, text: 'Clear search'}) : el('a', {href: 'join.html', class: 'chip', text: 'Join free'})
+        el('p', {text: (state.q ? 'Try a nearby suburb, a different trade, or clear the filters. ' : '') + 'On the tools yourself, or know someone good? Listing is free and the profile goes live straight away.'}),
+        el('div', {class: 'de-actions'}, [
+          el('a', {href: 'join.html', class: 'pillbtn pillbtn-gold'}, [el('span', {class: 'roll'}, [el('i', null, [el('b', {text: 'Join free'}), el('b', {text: 'Join free', 'aria-hidden': 'true'})])])]),
+          hasFilters() ? el('button', {type: 'button', class: 'chip', onclick: clearAll, text: 'Clear filters'}) : null
+        ])
       ]));
       return;
     }
@@ -750,15 +808,44 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
     grid.appendChild(frag);
   }
 
+  function clearAll(){
+    state.trade = ''; state.q = ''; q.value = '';
+    syncUrl(); renderChips(); renderGrid(); q.focus();
+  }
+  clearBtn.addEventListener('click', clearAll);
+
+  function shareProfile(m, btn){
+    var url = profileUrl(m);
+    var label = btn.querySelector('.lbl');
+    function flash(t){ label.textContent = t; setTimeout(function(){ label.textContent = 'Share profile'; }, 2200); }
+    var data = {title: m.name + ' | Ready Now Tradie Hire', text: m.name + ', ' + (SINGULAR[m.trade] || m.trade) + ' in ' + m.area + ', on Ready Now Tradie Hire', url: url};
+    if(navigator.share){
+      navigator.share(data).catch(function(){});
+    } else if(navigator.clipboard && navigator.clipboard.writeText){
+      navigator.clipboard.writeText(url).then(function(){ flash('Link copied'); }, function(){ window.prompt('Copy this link:', url); });
+    } else {
+      window.prompt('Copy this link:', url);
+    }
+  }
+  function reportHref(m){
+    var subject = 'Report profile: ' + m.name + ' (' + m.id + ')';
+    var body = 'Profile: ' + profileUrl(m) + '\n\nWhat is wrong with this profile?\n\n';
+    return 'mailto:' + REPORT_EMAIL + '?subject=' + encodeURIComponent(subject) + '&body=' + encodeURIComponent(body);
+  }
+
   function openProfile(m){
     lastFocus = document.activeElement;
     pdContent.textContent = '';
+    var listed = listedDate(m.joined);
     var facts = el('ul', {class: 'pd-facts'}, [
       el('li', null, [el('b', {text: 'Area'}), m.area]),
       m.business ? el('li', null, [el('b', {text: 'Business'}), m.business]) : null,
       m.abn ? el('li', null, [el('b', {text: 'ABN'}), m.abn]) : null,
-      el('li', null, [el('b', {text: 'Phone'}), m.phone])
+      el('li', null, [el('b', {text: 'Phone'}), m.phone]),
+      listed ? el('li', null, [el('b', {text: 'Listed'}), listed]) : null
     ]);
+    var shareBtn = el('button', {type: 'button', class: 'pd-share'}, [svg(ICON_SHARE), el('span', {class: 'lbl', text: 'Share profile'})]);
+    shareBtn.addEventListener('click', function(){ shareProfile(m, shareBtn); });
     pdContent.appendChild(photoEl(m, 'pd-photo'));
     pdContent.appendChild(el('div', {class: 'pd-body'}, [
       el('span', {class: 'mc-trade', text: SINGULAR[m.trade] || m.trade}),
@@ -766,10 +853,13 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
       facts,
       m.bio ? el('p', {class: 'pd-bio', text: m.bio}) : null,
       callBtn(m),
-      el('p', {class: 'pd-note', text: 'Listed on Ready Now. Check licences and insurance for your job before work starts.'})
+      el('div', {class: 'pd-acts'}, [shareBtn]),
+      el('p', {class: 'pd-note'}, [
+        'Profiles are listed by the tradies themselves. Check licences and insurance for your job before work starts. ',
+        el('a', {class: 'pd-report', href: reportHref(m), text: 'Report this profile'})
+      ])
     ]));
-    var p = new URLSearchParams(location.search); p.set('id', m.id);
-    history.replaceState(null, '', location.pathname + '?' + p.toString());
+    state.open = m.id; syncUrl();
     if(typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', '');
     document.getElementById('pdClose').focus();
   }
@@ -777,18 +867,30 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
     if(dlg.open){ if(typeof dlg.close === 'function') dlg.close(); else dlg.removeAttribute('open'); }
   }
   dlg.addEventListener('close', function(){
-    var p = new URLSearchParams(location.search); p.delete('id');
-    var s = p.toString(); history.replaceState(null, '', location.pathname + (s ? '?' + s : ''));
+    state.open = null; syncUrl();
     if(lastFocus && lastFocus.focus) lastFocus.focus();
   });
   document.getElementById('pdClose').addEventListener('click', closeProfile);
   dlg.addEventListener('click', function(e){ if(e.target === dlg) closeProfile(); });
 
   var t;
-  q.addEventListener('input', function(){ clearTimeout(t); t = setTimeout(function(){ state.q = q.value.trim().toLowerCase(); renderGrid(); }, 120); });
+  q.addEventListener('input', function(){
+    clearTimeout(t);
+    t = setTimeout(function(){ state.q = q.value.trim().slice(0, 60); syncUrl(); if(state.loaded) renderGrid(); }, 150);
+  });
+  document.getElementById('dirForm').addEventListener('submit', function(e){
+    e.preventDefault(); clearTimeout(t); state.q = q.value.trim().slice(0, 60); syncUrl(); if(state.loaded) renderGrid(); q.blur();
+  });
+  sortEl.addEventListener('change', function(){ state.sort = sortEl.value === 'az' ? 'az' : 'new'; syncUrl(); if(state.loaded) renderGrid(); });
+
+  /* keep the sticky filter bar under the floating nav when the nav is showing */
+  var bar = document.getElementById('dirBar'), navwrap = document.getElementById('navwrap');
+  function placeBar(){ bar.style.top = navwrap.classList.contains('hide') ? '0px' : (navwrap.offsetHeight - 4) + 'px'; }
+  if(window.MutationObserver){ new MutationObserver(placeBar).observe(navwrap, {attributes: true, attributeFilter: ['class']}); }
+  window.addEventListener('resize', placeBar); placeBar();
 
   function fail(msg){
-    grid.textContent = '';
+    grid.textContent = ''; grid.removeAttribute('aria-busy');
     meta.textContent = '';
     grid.appendChild(el('div', {class: 'dir-note', style: 'grid-column:1/-1'}, [
       el('h3', {text: msg}),
@@ -797,7 +899,7 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
     ]));
   }
 
-  renderChips();
+  renderChips(); syncUrl();
   fetch(API, {headers: {'Accept': 'application/json'}}).then(function(r){
     return r.json().catch(function(){ return {}; }).then(function(d){ return {ok: r.ok, status: r.status, d: d}; });
   }).then(function(res){
@@ -806,9 +908,14 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
       return;
     }
     state.all = (res.d.members || []).filter(function(m){ return m && m.id && m.name; });
+    state.loaded = true;
     renderChips(); renderGrid();
     var id = params.get('id');
-    if(id){ var m = state.all.filter(function(x){ return x.id === id; })[0]; if(m) openProfile(m); }
+    if(id){
+      var m = state.all.filter(function(x){ return x.id === id; })[0];
+      if(m) openProfile(m);
+      else meta.insertBefore(el('span', {class: 'dir-gone', text: 'That profile is not listed any more. '}), meta.firstChild);
+    }
   }).catch(function(){ fail('The directory did not load. Check your connection and refresh.'); });
 })();
 </script>

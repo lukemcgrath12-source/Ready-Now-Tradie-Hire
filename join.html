@@ -30,7 +30,7 @@
   --olive:#2A2B2E;--olive-deep:#1F2023;--olive-light:#36383B;--olive-accent:#5B5C5E;
   --gold:#4894C4;--gold-dark:#2F7AB0;
   --stone:#F5F7F9;--stone-2:#EDF0F3;--border:#DEE3E8;--border-2:#C9D0D7;--white:#FFFFFF;
-  --text:#232427;--text-light:#55575B;--text-faint:#808387;
+  --text:#232427;--text-light:#55575B;--text-faint:#6B6E72;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
   --display:'Poppins',sans-serif;
   --body:'Poppins',-apple-system,sans-serif;
@@ -481,31 +481,30 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .mbar svg{flex:none}
 </style>
 <link rel="stylesheet" href="directory.css">
+<style id="sheet-vis-fix">.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="navwrap" id="navwrap">
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-left">
-      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img"></a>
+      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img" width="50" height="36"></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="members.html">Find a Tradie</a>
-        <a href="services.html">Services</a>
-        <a href="booking.html">Book</a>
+        <a href="join.html" class="nav-join active" aria-current="page">Join Free</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="join.html" class="nav-join">Join Free</a>
       </div>
     </div>
     <div class="nav-right">
       <a class="nav-note" href="tel:+61432910369" style="text-decoration:none">Call 0432 910 369</a>
-      <a href="booking.html" class="pillbtn pillbtn-dark">
-        <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
+      <a href="join.html" class="pillbtn pillbtn-dark">
+        <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
         <span class="circ"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </a>
     </div>
-    <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </div>
 
@@ -513,29 +512,25 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="sheet-backdrop" id="sheetBackdrop"></div>
   <div class="sheet" role="dialog" aria-label="Menu">
     <div class="sheet-top">
-      <button class="menu-btn" id="menuClose" style="display:inline-flex" aria-label="Close menu">Close <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button class="menu-btn" id="menuClose" style="display:inline-flex" aria-label="Close menu">Close <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <div class="sheet-links">
       <a href="index.html">Home</a>
       <a href="members.html">Find a Tradie</a>
-      <a href="services.html">Services</a>
-        <a href="hire.html">Hire</a>
+      <a href="join.html" class="nav-join" aria-current="page">Join Free</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="join.html" class="nav-join">Join Free</a>
     </div>
-    <a href="booking.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
-      <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
+    <a href="join.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
+      <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
     <a href="tel:+61432910369" class="pillbtn pillbtn-dark">
-      <span class="roll"><i><b>Call &mdash; 0432 910 369</b><b>Call &mdash; 0432 910 369</b></i></span>
+      <span class="roll"><i><b>Call 0432 910 369</b><b aria-hidden="true">Call 0432 910 369</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
   </div>
 </div>
-
-
 
 <main id="main">
 
@@ -632,6 +627,23 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
             </div>
           </div>
 
+          <div class="lp-wrap lp-mobile" aria-hidden="true">
+          <div class="lp-head"><span>Live preview</span><span>How builders see you</span></div>
+          <article class="mcard lp-card" data-lp>
+            <div class="mc-open">
+              <div class="mc-photo ini" data-lp-photo>?</div>
+              <div class="mc-id">
+                <span class="mc-trade ph" data-lp-trade>Your trade</span>
+                <span class="mc-name ph" data-lp-name>Your name</span>
+                <span class="mc-biz" data-lp-biz hidden></span>
+                <span class="mc-area ph" data-lp-area>Suburb or area</span>
+              </div>
+            </div>
+            <p class="mc-bio ph" data-lp-bio>A couple of lines about the work you do.</p>
+            <span class="call-btn ph" data-lp-call>Call <span class="num" data-lp-phone>04__ ___ ___</span></span>
+          </article>
+        </div>
+
           <label class="consent" id="fld-consent">
             <input type="checkbox" id="consent" required>
             <span>I'm happy for my name, trade, area, phone number, photo and bio to show publicly on this site. I've read the <a href="privacy.html" style="color:var(--gold-dark)">privacy policy</a>.</span>
@@ -640,17 +652,33 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
           <div class="form-err" id="formErr" role="alert"></div>
 
           <div class="form-foot">
-            <p class="form-note" id="formNote">Free for now. Need to change something later? Message Sam on <a href="tel:+61432910369">0432 910 369</a>.</p>
+            <p class="form-note" id="formNote">Free for now, no lock-in. Need to change something later? Message Sam on <a href="tel:+61432910369">0432 910 369</a>.</p>
             <button type="submit" class="pillbtn pillbtn-gold join-submit" id="joinBtn"><span class="roll"><i><b class="lbl">Join free</b><b class="lbl">Join free</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
           </div>
         </form>
       </div>
 
       <aside>
+        <div class="lp-wrap lp-desktop" aria-hidden="true">
+          <div class="lp-head"><span>Live preview</span><span>How builders see you</span></div>
+          <article class="mcard lp-card" data-lp>
+            <div class="mc-open">
+              <div class="mc-photo ini" data-lp-photo>?</div>
+              <div class="mc-id">
+                <span class="mc-trade ph" data-lp-trade>Your trade</span>
+                <span class="mc-name ph" data-lp-name>Your name</span>
+                <span class="mc-biz" data-lp-biz hidden></span>
+                <span class="mc-area ph" data-lp-area>Suburb or area</span>
+              </div>
+            </div>
+            <p class="mc-bio ph" data-lp-bio>A couple of lines about the work you do.</p>
+            <span class="call-btn ph" data-lp-call>Call <span class="num" data-lp-phone>04__ ___ ___</span></span>
+          </article>
+        </div>
         <div class="aside-card">
           <h3>How it works</h3>
           <ol class="steps">
-            <li><b>Fill this in</b>Your name, trade, area, number, a photo and a few lines about your work.</li>
+            <li><b>Fill this in</b>Takes about two minutes. Your name, trade, area, number, a photo and a few lines about your work.</li>
             <li><b>Your profile goes live</b>It shows straight away under your trade on the Find a Tradie page.</li>
             <li><b>People call you direct</b>No middleman. They see your profile and ring your number.</li>
           </ol>
@@ -668,48 +696,50 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
-      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img">
-      <p>The new evolution of labour hire. Qualified tradies, work-ready apprentices and reliable labourers &mdash; same-day or booked ahead, across wider Sydney.</p>
-      <!-- Update hrefs when Instagram / Google Business Profile / Facebook links are live -->
+      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img" width="83" height="60" loading="lazy">
+      <p>A free directory of tradies, builders and labourers across wider Sydney. Find someone local and call them direct. On the tools? List your trade free and get hired.</p>
       <div class="f-socials">
-        <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></a>
       </div>
     </div>
     <div class="f-col">
-      <h4>Services</h4>
+      <h4>Directory</h4>
       <ul>
-        <li><a href="services.html#carpentry">Carpentry</a></li>
-        <li><a href="services.html#electrical">Electrical</a></li>
-        <li><a href="services.html#plumbing">Plumbing</a></li>
-        <li><a href="services.html#tiling">Tiling</a></li>
-        <li><a href="services.html#concreting">Concreting</a></li>
-        <li><a href="services.html#roofing">Roofing</a></li>
-        <li><a href="services.html#traffic-control">Traffic Control</a></li>
-        <li><a href="services.html#forklift">Forklift Driving</a></li>
-        <li><a href="hire.html">Gear &amp; Equipment</a></li>
-        <li><a href="services.html#general-labour">General Labour</a></li>
+        <li><a href="members.html">Find a Tradie</a></li>
+        <li><a href="members.html?trade=Builders">Builders</a></li>
+        <li><a href="members.html?trade=Electricians">Electricians</a></li>
+        <li><a href="members.html?trade=Plumbers">Plumbers</a></li>
+        <li><a href="members.html?trade=Carpenters">Carpenters</a></li>
+        <li><a href="members.html?trade=Labourers">Labourers</a></li>
+        <li><a href="join.html">Join Free</a></li>
       </ul>
     </div>
     <div class="f-col">
       <h4>Company</h4>
       <ul>
         <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="tel:+61432910369">Call Sam</a></li>
+      </ul>
+      <h4 style="margin-top:36px">Labour hire</h4>
+      <ul>
         <li><a href="services.html">Services</a></li>
-        <li><a href="hire.html">Hire</a></li>
-        <li><a href="contact.html">Request a Quote</a></li>
-        <li><a href="tel:+61432910369">Call Now</a></li>
+        <li><a href="hire.html">Gear hire</a></li>
+        <li><a href="booking.html">Book labour</a></li>
+        <li><a href="work.html">Work with us</a></li>
       </ul>
     </div>
     <div class="f-col f-contact">
       <h4>Contact</h4>
       <a href="tel:+61432910369" class="f-phone">0432 910 369</a>
-      <p class="f-note">Same-day &amp; booked ahead</p>
+      <p class="f-note">Same day. Wider Sydney. No lock-in.</p>
       <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" class="f-email">@tradie_hire</a>
       <p class="f-area">3/22 Searl Rd, Cronulla Beach NSW<br>Servicing wider Sydney</p>
     </div>
   </div>
   <div class="footer-bar">
-    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | Built by <span class="f-latitude">Latitude Marketing</span></p>
+    <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
 </footer>
 <script>
@@ -765,6 +795,92 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
 
   bio.addEventListener('input', function(){ bioCount.textContent = bio.value.length + ' / 400'; });
 
+  // ---- live preview ----
+  var photoUrl = '';
+  function val(id){ return document.getElementById(id).value.trim(); }
+  function renderPreview(){
+    var name = val('name'), trade = val('trade'), area = val('area'), b = val('bio'), biz = val('business'), ph = val('phone');
+    document.querySelectorAll('[data-lp]').forEach(function(c){
+      function set(key, text, fallback){
+        var n = c.querySelector('[data-lp-' + key + ']');
+        n.textContent = text || fallback;
+        n.classList.toggle('ph', !text);
+      }
+      set('name', name, 'Your name');
+      set('trade', trade ? (SINGULAR[trade] || trade) : '', 'Your trade');
+      set('area', area, 'Suburb or area');
+      set('bio', b, 'A couple of lines about the work you do.');
+      var bz = c.querySelector('[data-lp-biz]'); bz.textContent = biz; bz.hidden = !biz;
+      var call = c.querySelector('[data-lp-call]');
+      call.textContent = '';
+      call.appendChild(svg(ICON_PHONE));
+      call.appendChild(document.createTextNode('Call ' + (name ? name.split(/\s+/)[0] : '')));
+      call.appendChild(el('span', {class: 'num', text: ph || '04__ ___ ___'}));
+      call.classList.toggle('ph', !phoneOk(ph));
+      var slot = c.querySelector('[data-lp-photo]');
+      var fresh;
+      if(photoUrl){ fresh = el('img', {class: 'mc-photo', src: photoUrl, alt: '', width: 76, height: 76, 'data-lp-photo': ''}); }
+      else { fresh = el('div', {class: 'mc-photo ini', 'data-lp-photo': '', text: name ? initials(name) : '?'}); }
+      slot.replaceWith(fresh);
+    });
+  }
+  ['name','trade','area','bio','business','phone'].forEach(function(id){
+    var n = document.getElementById(id);
+    n.addEventListener(n.tagName === 'SELECT' ? 'change' : 'input', renderPreview);
+  });
+  renderPreview();
+
+  // ---- phone auto-format (AU) ----
+  function fmtPhone(raw){
+    var plus = /^\s*\+/.test(raw), d = raw.replace(/\D/g, '');
+    if(plus || /^61/.test(d)){ if(/^61/.test(d)) d = '0' + d.slice(2); }
+    d = d.slice(0, 10);
+    if(/^0[45]/.test(d)) return [d.slice(0,4), d.slice(4,7), d.slice(7)].filter(Boolean).join(' ');
+    if(/^0[2378]/.test(d)) return d.length <= 2 ? d : '(' + d.slice(0,2) + ') ' + [d.slice(2,6), d.slice(6)].filter(Boolean).join(' ');
+    if(/^1[38]00/.test(d)) return [d.slice(0,4), d.slice(4,7), d.slice(7)].filter(Boolean).join(' ');
+    if(/^13/.test(d)) return [d.slice(0,2), d.slice(2,4), d.slice(4,6)].filter(Boolean).join(' ');
+    return raw;
+  }
+  var phoneIn = document.getElementById('phone');
+  phoneIn.addEventListener('input', function(e){
+    if(e.inputType && /^delete/.test(e.inputType)) return;
+    if(phoneIn.selectionStart !== phoneIn.value.length) return;
+    var f = fmtPhone(phoneIn.value);
+    if(f !== phoneIn.value){ phoneIn.value = f; renderPreview(); }
+  });
+  phoneIn.addEventListener('blur', function(){ var f = fmtPhone(phoneIn.value); if(f !== phoneIn.value){ phoneIn.value = f; renderPreview(); } });
+  var abnIn = document.getElementById('abn');
+  abnIn.addEventListener('blur', function(){
+    var d = abnIn.value.replace(/\s/g, '');
+    if(/^\d{11}$/.test(d)) abnIn.value = d.slice(0,2) + ' ' + d.slice(2,5) + ' ' + d.slice(5,8) + ' ' + d.slice(8);
+  });
+
+  // ---- inline validation: on blur, then live once a field has been touched ----
+  var RULES = {
+    name: function(v){ return v.length < 2 ? 'Add your name.' : ''; },
+    trade: function(v){ return v ? '' : 'Pick your trade.'; },
+    area: function(v){ return v.length < 2 ? 'Add the suburb or area you work in.' : ''; },
+    phone: function(v){ return phoneOk(v) ? '' : 'Use an Australian number, like 0412 345 678.'; },
+    bio: function(v){ return v.length < 20 ? 'Write a couple of lines about your work (20 characters or more, ' + v.length + ' so far).' : ''; },
+    abn: function(v){ v = v.replace(/\s/g, ''); return v && !/^\d{11}$/.test(v) ? 'An ABN is 11 digits. Leave it blank if you do not have one handy.' : ''; },
+    email: function(v){ return /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/.test(v) ? '' : 'Add an email so we can reach you about your profile.'; }
+  };
+  var touched = {};
+  function checkOne(id){
+    var v = val(id), msg = RULES[id](v);
+    setErr(id, msg);
+    var box = document.getElementById('fld-' + id);
+    if(box) box.classList.toggle('good', !msg && !!v);
+    return !msg;
+  }
+  Object.keys(RULES).forEach(function(id){
+    var n = document.getElementById(id);
+    n.setAttribute('aria-describedby', 'err-' + id);
+    n.addEventListener('blur', function(){ if(val(id) || touched[id]){ touched[id] = true; checkOne(id); } });
+    n.addEventListener(n.tagName === 'SELECT' ? 'change' : 'input', function(){ if(touched[id]) checkOne(id); });
+  });
+  document.getElementById('consent').addEventListener('change', function(){ if(this.checked) document.getElementById('fld-consent').classList.remove('bad'); });
+
   // ---- photo: resize to max 800px JPEG in the browser ----
   function loadImage(file){
     if(window.createImageBitmap){
@@ -795,8 +911,10 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
       if(!b) throw new Error('resize failed');
       resized = b;
       preview.textContent = '';
-      preview.appendChild(el('img', {src: URL.createObjectURL(b), alt: ''}));
+      photoUrl = URL.createObjectURL(b);
+      preview.appendChild(el('img', {src: photoUrl, alt: '', width: 96, height: 96}));
       ppBtn.textContent = 'Change photo';
+      renderPreview();
     }).catch(function(){
       ppBtn.textContent = 'Add a photo';
       setErr('photo', 'Could not read that photo. Try a different one, or take a screenshot of it and use that.');
@@ -806,8 +924,10 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
   // ---- validation ----
   function setErr(field, msg){
     var box = document.getElementById('fld-' + field), out = document.getElementById('err-' + field);
-    if(box) box.classList.toggle('bad', !!msg);
+    if(box){ box.classList.toggle('bad', !!msg); if(msg) box.classList.remove('good'); }
     if(out) out.textContent = msg || '';
+    var input = document.getElementById(field);
+    if(input && field !== 'photo') input.setAttribute('aria-invalid', msg ? 'true' : 'false');
   }
   function phoneOk(v){
     var d = v.replace(/[\s().-]/g, '');
@@ -830,6 +950,7 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
     var consent = document.getElementById('consent').checked;
     document.getElementById('fld-consent').classList.toggle('bad', !consent);
     if(!consent && !first) first = 'consent';
+    Object.keys(RULES).forEach(function(k){ touched[k] = true; });
     if(first){
       var target = first === 'photo' ? ppBtn : (document.getElementById(first) || document.getElementById('consent'));
       var box = document.getElementById('fld-' + first) || target;
@@ -873,6 +994,10 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
           return;
         }
         var id = res.d.id;
+        try {
+          var keep = {id: id, name: fd.get('name'), trade: fd.get('trade'), area: fd.get('area'), phone: fd.get('phone'), business: fd.get('business'), bio: fd.get('bio')};
+          sessionStorage.setItem('rn-joined', JSON.stringify(keep));
+        } catch(e){}
         return notifySam(fd, id).then(function(){
           if(res.d.checkoutUrl && /^https:\/\/checkout\.stripe\.com\//.test(res.d.checkoutUrl)) location.href = res.d.checkoutUrl;
           else location.href = 'joined.html' + (id ? '?id=' + encodeURIComponent(id) : '');

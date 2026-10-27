@@ -30,7 +30,7 @@
   --olive:#2A2B2E;--olive-deep:#1F2023;--olive-light:#36383B;--olive-accent:#5B5C5E;
   --gold:#4894C4;--gold-dark:#2F7AB0;
   --stone:#F5F7F9;--stone-2:#EDF0F3;--border:#DEE3E8;--border-2:#C9D0D7;--white:#FFFFFF;
-  --text:#232427;--text-light:#55575B;--text-faint:#808387;
+  --text:#232427;--text-light:#55575B;--text-faint:#6B6E72;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
   --display:'Poppins',sans-serif;
   --body:'Poppins',-apple-system,sans-serif;
@@ -533,7 +533,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     <p class="adm-sub">Edit profiles when members message in, hide anyone who should not be showing, or delete them. Changes show on the public page within about a minute.</p>
     <div class="adm-tools">
       <label for="aq" class="vh">Search members</label>
-      <input type="search" id="aq" placeholder="Search name, phone, email, suburb">
+      <input type="search" id="aq" placeholder="Search name, phone, email, suburb, trade, ABN">
       <label for="af" class="vh">Show</label>
       <select id="af">
         <option value="">Everyone</option>
@@ -542,6 +542,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <option value="pending">Pending payment / lapsed</option>
       </select>
       <button type="button" class="abtn" id="aReload">Refresh</button>
+      <button type="button" class="abtn primary" id="aCsv">Export CSV</button>
     </div>
     <p class="adm-stats" id="aStats" aria-live="polite">Loading...</p>
     <div class="adm-list" id="aList"></div>
@@ -702,21 +703,49 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
     return wrap;
   }
 
-  function render(){
+  function shownList(){
     var q = aq.value.trim().toLowerCase(), f = af.value;
-    var shown = all.filter(function(m){
+    return all.filter(function(m){
       if(f === 'live' && (m.hidden || m.status !== 'active')) return false;
       if(f === 'hidden' && !m.hidden) return false;
       if(f === 'pending' && m.status === 'active') return false;
       if(!q) return true;
-      return [m.name, m.phone, m.email, m.area, m.trade, m.business].join(' ').toLowerCase().indexOf(q) >= 0;
+      var hay = [m.id, m.name, m.phone, m.tel, m.email, m.area, m.trade, m.business, m.abn, m.bio].join(' ').toLowerCase();
+      var digits = q.replace(/\D/g, '');
+      return q.split(/\s+/).every(function(w){ return hay.indexOf(w) >= 0; }) || (digits.length >= 4 && hay.replace(/\D/g, '').indexOf(digits) >= 0);
     });
+  }
+  function render(){
+    var shown = shownList();
     var live = all.filter(function(m){ return m.status === 'active' && !m.hidden; }).length;
     stats.textContent = all.length + ' members, ' + live + ' live on the site. Showing ' + shown.length + '.';
     list.textContent = '';
     shown.forEach(function(m){ list.appendChild(row(m)); });
   }
   aq.addEventListener('input', render); af.addEventListener('change', render);
+
+  // ---- CSV export: everything currently loaded, or just the filtered rows if a search/filter is on ----
+  function csvCell(v){
+    var t = v == null ? '' : String(v);
+    if(/^[=+\-@\t\r]/.test(t)) t = "'" + t; // stop spreadsheet formula injection
+    return '"' + t.replace(/"/g, '""') + '"';
+  }
+  document.getElementById('aCsv').addEventListener('click', function(){
+    var rows = shownList();
+    if(!rows.length){ stats.textContent = 'Nothing to export.'; return; }
+    var cols = [['id','ID'],['name','Name'],['trade','Trade'],['area','Area'],['phone','Phone'],['email','Email'],['business','Business'],['abn','ABN'],['bio','Bio'],['status','Status'],['hidden','Hidden'],['plan','Plan'],['createdAt','Joined'],['updatedAt','Updated']];
+    var lines = [cols.map(function(c){ return csvCell(c[1]); }).concat(csvCell('Profile link')).join(',')];
+    rows.forEach(function(m){
+      lines.push(cols.map(function(c){ var v = m[c[0]]; if(c[0] === 'hidden') v = m.hidden ? 'yes' : 'no'; return csvCell(v); })
+        .concat(csvCell(location.origin + '/members?id=' + encodeURIComponent(m.id))).join(','));
+    });
+    var blob = new Blob(['\ufeff' + lines.join('\r\n')], {type: 'text/csv;charset=utf-8'});
+    var a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = 'ready-now-members-' + new Date().toISOString().slice(0, 10) + '.csv';
+    document.body.appendChild(a); a.click(); a.remove();
+    setTimeout(function(){ URL.revokeObjectURL(a.href); }, 2000);
+  });
   document.getElementById('aReload').addEventListener('click', load);
   load();
 })();

@@ -36,7 +36,7 @@
   --olive:#2A2B2E;--olive-deep:#1F2023;--olive-light:#36383B;--olive-accent:#5B5C5E;
   --gold:#4894C4;--gold-dark:#2F7AB0;
   --stone:#F5F7F9;--stone-2:#EDF0F3;--border:#DEE3E8;--border-2:#C9D0D7;--white:#FFFFFF;
-  --text:#232427;--text-light:#55575B;--text-faint:#808387;
+  --text:#232427;--text-light:#55575B;--text-faint:#6B6E72;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
   --display:'Poppins',sans-serif;
   --body:'Poppins',-apple-system,sans-serif;
@@ -576,32 +576,32 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .mbar svg{flex:none}
 .footer-bar .f-privacy{color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}
 .footer-bar .f-privacy:hover{color:var(--gold)}
+.footer-bar .f-privacy{color:rgba(255,255,255,.6);text-decoration:none}.footer-bar .f-privacy:hover{color:var(--gold)}.f-col a:focus-visible,.f-socials a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
+<style id="sheet-vis-fix">.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
 <div class="navwrap" id="navwrap">
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-left">
-      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img"></a>
+      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img" width="50" height="36"></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
         <a href="members.html">Find a Tradie</a>
-        <a href="services.html" class="active">Services</a>
-        <a href="hire.html">Hire</a>
+        <a href="join.html" class="nav-join">Join Free</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="join.html" class="nav-join">Join Free</a>
       </div>
     </div>
     <div class="nav-right">
       <a class="nav-note" href="tel:+61432910369" style="text-decoration:none">Call 0432 910 369</a>
-      <a href="booking.html" class="pillbtn pillbtn-dark">
-        <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
+      <a href="join.html" class="pillbtn pillbtn-dark">
+        <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
         <span class="circ"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </a>
     </div>
-    <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </div>
 
@@ -609,28 +609,25 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="sheet-backdrop" id="sheetBackdrop"></div>
   <div class="sheet" role="dialog" aria-label="Menu">
     <div class="sheet-top">
-      <button class="menu-btn" id="menuClose" style="display:inline-flex" aria-label="Close menu">Close <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button class="menu-btn" id="menuClose" style="display:inline-flex" aria-label="Close menu">Close <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <div class="sheet-links">
       <a href="index.html">Home</a>
       <a href="members.html">Find a Tradie</a>
-      <a href="services.html">Services</a>
-        <a href="booking.html">Book</a>
+      <a href="join.html" class="nav-join">Join Free</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="join.html" class="nav-join">Join Free</a>
     </div>
-    <a href="booking.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
-      <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
+    <a href="join.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
+      <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
     <a href="tel:+61432910369" class="pillbtn pillbtn-dark">
-      <span class="roll"><i><b>Call &mdash; 0432 910 369</b><b>Call &mdash; 0432 910 369</b></i></span>
+      <span class="roll"><i><b>Call 0432 910 369</b><b aria-hidden="true">Call 0432 910 369</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
   </div>
 </div>
-
 
 <main id="main">
 
@@ -944,42 +941,44 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
-      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img">
-      <p>The new evolution of labour hire. Qualified tradies, work-ready apprentices and reliable labourers &mdash; same-day or booked ahead, across wider Sydney.</p>
-      <!-- Update hrefs when Instagram / Google Business Profile / Facebook links are live -->
+      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img" width="83" height="60" loading="lazy">
+      <p>A free directory of tradies, builders and labourers across wider Sydney. Find someone local and call them direct. On the tools? List your trade free and get hired.</p>
       <div class="f-socials">
-        <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></a>
       </div>
     </div>
     <div class="f-col">
-      <h4>Services</h4>
+      <h4>Directory</h4>
       <ul>
-        <li><a href="services.html#carpentry">Carpentry</a></li>
-        <li><a href="services.html#electrical">Electrical</a></li>
-        <li><a href="services.html#plumbing">Plumbing</a></li>
-        <li><a href="services.html#tiling">Tiling</a></li>
-        <li><a href="services.html#concreting">Concreting</a></li>
-        <li><a href="services.html#general-labour">General Labour</a></li>
-        <li><a href="services.html#roofing">Roofing</a></li>
-        <li><a href="services.html#traffic-control">Traffic Control</a></li>
-        <li><a href="services.html#forklift">Forklift Driving</a></li>
-        <li><a href="hire.html">Gear &amp; Equipment</a></li>
+        <li><a href="members.html">Find a Tradie</a></li>
+        <li><a href="members.html?trade=Builders">Builders</a></li>
+        <li><a href="members.html?trade=Electricians">Electricians</a></li>
+        <li><a href="members.html?trade=Plumbers">Plumbers</a></li>
+        <li><a href="members.html?trade=Carpenters">Carpenters</a></li>
+        <li><a href="members.html?trade=Labourers">Labourers</a></li>
+        <li><a href="join.html">Join Free</a></li>
       </ul>
     </div>
     <div class="f-col">
       <h4>Company</h4>
       <ul>
         <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="tel:+61432910369">Call Sam</a></li>
+      </ul>
+      <h4 style="margin-top:36px">Labour hire</h4>
+      <ul>
         <li><a href="services.html">Services</a></li>
-        <li><a href="hire.html">Hire</a></li>
-        <li><a href="contact.html">Request a Quote</a></li>
-        <li><a href="tel:+61432910369">Call Now</a></li>
+        <li><a href="hire.html">Gear hire</a></li>
+        <li><a href="booking.html">Book labour</a></li>
+        <li><a href="work.html">Work with us</a></li>
       </ul>
     </div>
     <div class="f-col f-contact">
       <h4>Contact</h4>
       <a href="tel:+61432910369" class="f-phone">0432 910 369</a>
-      <p class="f-note">Same-day &amp; booked ahead</p>
+      <p class="f-note">Same day. Wider Sydney. No lock-in.</p>
       <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" class="f-email">@tradie_hire</a>
       <p class="f-area">3/22 Searl Rd, Cronulla Beach NSW<br>Servicing wider Sydney</p>
     </div>

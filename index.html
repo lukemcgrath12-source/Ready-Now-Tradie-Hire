@@ -29,14 +29,14 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ready Now Tradie Hire","description":"On-demand labour hire across wider Sydney. Qualified tradies, work-ready apprentices and reliable labourers.","telephone":"+61432910369","address":{"@type":"PostalAddress","streetAddress":"3/22 Searl Rd","addressLocality":"Cronulla Beach","addressRegion":"NSW","addressCountry":"AU"},"areaServed":{"@type":"City","name":"Sydney"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"LocalBusiness","name":"Ready Now Tradie Hire","description":"Free directory of tradies, builders and labourers across wider Sydney. Find someone local and call them direct.","telephone":"+61432910369","address":{"@type":"PostalAddress","streetAddress":"3/22 Searl Rd","addressLocality":"Cronulla Beach","addressRegion":"NSW","addressCountry":"AU"},"areaServed":{"@type":"City","name":"Sydney"}}</script>
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
   --olive:#2A2B2E;--olive-deep:#1F2023;--olive-light:#36383B;--olive-accent:#5B5C5E;
   --gold:#4894C4;--gold-dark:#2F7AB0;
   --stone:#F5F7F9;--stone-2:#EDF0F3;--border:#DEE3E8;--border-2:#C9D0D7;--white:#FFFFFF;
-  --text:#232427;--text-light:#55575B;--text-faint:#808387;
+  --text:#232427;--text-light:#55575B;--text-faint:#6B6E72;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
   --display:'Poppins',sans-serif;
   --body:'Poppins',-apple-system,sans-serif;
@@ -164,6 +164,24 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .hero.on h1{animation:rise .9s var(--ease) .28s forwards}
 .hero.on .hero-cta{animation:rise .9s var(--ease) .48s forwards}
 @keyframes rise{to{opacity:1;transform:translateY(0)}}
+
+.hero-search{margin-top:28px;display:grid;grid-template-columns:1fr;gap:8px;background:var(--white);border-radius:20px;padding:8px;max-width:760px;box-shadow:0 10px 40px rgba(31,32,35,.28);opacity:0;transform:translateY(18px)}
+@media(min-width:720px){.hero-search{grid-template-columns:1.05fr 1.2fr auto;border-radius:999px;margin-top:40px;gap:0;padding:6px}}
+.hs-fld{position:relative;display:flex;flex-direction:column;justify-content:center;padding:8px 16px;border-radius:14px;background:var(--stone)}
+@media(min-width:720px){.hs-fld{background:transparent;border-radius:999px;padding:6px 22px}.hs-fld+.hs-fld{border-left:1px solid var(--border)}}
+.hs-fld label{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-light)}
+.hs-fld select,.hs-fld input{font-family:var(--body);font-size:16px;color:var(--text);background:transparent;border:0;padding:3px 0 2px;width:100%;min-height:28px;appearance:none;-webkit-appearance:none}
+.hs-fld select{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2355575B' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center;padding-right:22px;cursor:pointer}
+.hs-fld input::placeholder{color:var(--text-faint)}
+.hs-fld:focus-within{box-shadow:0 0 0 2px var(--gold-dark)}
+.hs-fld select:focus,.hs-fld input:focus{outline:none}
+.hs-go{display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border:0;border-radius:14px;background:var(--gold-dark);color:var(--white);font-family:var(--body);font-size:15px;font-weight:600;padding:0 26px;cursor:pointer;transition:background .25s,transform .2s}
+@media(min-width:720px){.hs-go{border-radius:999px}}
+.hs-go:hover{background:#246595}.hs-go:active{transform:scale(.98)}
+.hs-go:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.hero.on .hero-search{animation:rise .9s var(--ease) .4s forwards}
+.hero .hero-cta{margin-top:22px}
+@media(min-width:640px){.hero .hero-cta{margin-top:28px}}
 
 /* ============ LEDGER ============ */
 .ledger{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--white)}
@@ -445,7 +463,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   html{scroll-behavior:auto}
   .hold{display:none}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
-  .hero-label,.hero h1,.hero-cta{opacity:1;transform:none}
+  .hero-label,.hero h1,.hero-cta,.hero-search{opacity:1;transform:none}
 }
 .f-word{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--cream,#F3F5F7);display:inline-block;margin-bottom:14px}
 .f-word em{font-style:normal;color:var(--gold)}
@@ -454,7 +472,9 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .hold-logo-img{height:80px;width:auto;display:block}
 .nav-logo-img{height:36px;width:auto;display:block}
 .footer-logo-img{height:60px;width:auto;display:block;margin-bottom:18px}
+.footer-bar .f-privacy{color:rgba(255,255,255,.6);text-decoration:none}.footer-bar .f-privacy:hover{color:var(--gold)}.f-col a:focus-visible,.f-socials a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
 </style>
+<style id="sheet-vis-fix">.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -462,7 +482,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <div class="hold" id="holdPage">
   <svg class="hold-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 900" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".4"><path d="M-100 720 C 200 640, 420 780, 700 700 S 1200 560, 1560 660"/><path d="M-100 780 C 220 700, 440 840, 720 760 S 1220 620, 1560 720"/><path d="M-100 160 C 260 100, 520 240, 820 150 S 1280 40, 1560 130"/><path d="M-100 100 C 240 40, 500 180, 800 90 S 1260 -10, 1560 70"/></g></svg>
   <span class="hold-corner tl">Ready Now &middot; Sydney</span>
-  <span class="hold-corner br">Same-Day &middot; Booked Ahead</span>
+  <span class="hold-corner br">Same Day &middot; No Lock-in</span>
   <div class="hold-stack">
     <div class="hold-logo-mask"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="hold-logo-img"></div>
     <div class="hold-rule-track"><div class="hold-rule-fill"></div></div>
@@ -473,25 +493,23 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <div class="navwrap" id="navwrap">
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-left">
-      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img"></a>
+      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img" width="50" height="36"></a>
       <div class="nav-links">
-        <a href="index.html" class="active">Home</a>
+        <a href="index.html" class="active" aria-current="page">Home</a>
         <a href="members.html">Find a Tradie</a>
-        <a href="services.html">Services</a>
-        <a href="hire.html">Hire</a>
+        <a href="join.html" class="nav-join">Join Free</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
-        <a href="join.html" class="nav-join">Join Free</a>
       </div>
     </div>
     <div class="nav-right">
       <a class="nav-note" href="tel:+61432910369" style="text-decoration:none">Call 0432 910 369</a>
-      <a href="contact.html" class="pillbtn pillbtn-dark">
-        <span class="roll"><i><b>Request Now</b><b>Request Now</b></i></span>
+      <a href="join.html" class="pillbtn pillbtn-dark">
+        <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
         <span class="circ"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
       </a>
     </div>
-    <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
+    <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </div>
 
@@ -499,23 +517,21 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="sheet-backdrop" id="sheetBackdrop"></div>
   <div class="sheet" role="dialog" aria-label="Menu">
     <div class="sheet-top">
-      <button class="menu-btn" id="menuClose" style="display:inline-flex" aria-label="Close menu">Close <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
+      <button class="menu-btn" id="menuClose" style="display:inline-flex" aria-label="Close menu">Close <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg></button>
     </div>
     <div class="sheet-links">
-      <a href="index.html">Home</a>
+      <a href="index.html" aria-current="page">Home</a>
       <a href="members.html">Find a Tradie</a>
-      <a href="services.html">Services</a>
-      <a href="hire.html">Hire</a>
+      <a href="join.html" class="nav-join">Join Free</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
-      <a href="join.html" class="nav-join">Join Free</a>
     </div>
-    <a href="contact.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
-      <span class="roll"><i><b>Request Now</b><b>Request Now</b></i></span>
+    <a href="join.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
+      <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
     <a href="tel:+61432910369" class="pillbtn pillbtn-dark">
-      <span class="roll"><i><b>Call &mdash; 0432 910 369</b><b>Call &mdash; 0432 910 369</b></i></span>
+      <span class="roll"><i><b>Call 0432 910 369</b><b aria-hidden="true">Call 0432 910 369</b></i></span>
       <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
     </a>
   </div>
@@ -539,6 +555,33 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       across Sydney, one call away.<span class="sp"> </span><span class="br"></span>
       <em>Ready now.</em>
     </h1>
+    <form class="hero-search" action="members.html" method="get" role="search" aria-label="Find a tradie">
+      <div class="hs-fld">
+        <label for="hsTrade">Trade</label>
+        <select id="hsTrade" name="trade">
+            <option value="">All trades</option>
+            <option value="Builders">Builders</option>
+            <option value="Carpenters">Carpenters</option>
+            <option value="Electricians">Electricians</option>
+            <option value="Plumbers">Plumbers</option>
+            <option value="Roofers">Roofers</option>
+            <option value="Concreters">Concreters</option>
+            <option value="Tilers">Tilers</option>
+            <option value="Painters">Painters</option>
+            <option value="Plasterers">Plasterers</option>
+            <option value="Bricklayers">Bricklayers</option>
+            <option value="Landscapers">Landscapers</option>
+            <option value="Labourers">Labourers</option>
+            <option value="Traffic Control">Traffic Control</option>
+            <option value="Other">Other trades</option>
+        </select>
+      </div>
+      <div class="hs-fld">
+        <label for="hsQ">Suburb or area</label>
+        <input id="hsQ" name="q" type="search" placeholder="e.g. Cronulla, Inner West" autocomplete="address-level2" enterkeyhint="search" maxlength="60">
+      </div>
+      <button type="submit" class="hs-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button>
+    </form>
     <div class="hero-cta">
       <div class="hero-btns">
         <a href="members.html" class="pillbtn pillbtn-gold">
@@ -562,10 +605,10 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <!-- ============ LEDGER ============ -->
 <div class="ledger" role="region" aria-label="Key facts">
   <div class="ledger-inner wrap px">
-    <div class="ledger-cell"><span class="ledger-num">ALL</span><span class="ledger-label">Trades covered</span></div>
-    <div class="ledger-cell"><span class="ledger-num">2</span><span class="ledger-label">Ways to book &mdash; today or ahead</span></div>
-    <div class="ledger-cell"><span class="ledger-num">1</span><span class="ledger-label">Call to get it sorted</span></div>
-    <div class="ledger-cell"><span class="ledger-num">SYD</span><span class="ledger-label">Servicing wider Sydney</span></div>
+    <div class="ledger-cell"><span class="ledger-num">FREE</span><span class="ledger-label">To list your trade</span></div>
+    <div class="ledger-cell"><span class="ledger-num">DIRECT</span><span class="ledger-label">Call them yourself, no middleman</span></div>
+    <div class="ledger-cell"><span class="ledger-num">LIVE</span><span class="ledger-label">Profiles go up on sign-up</span></div>
+    <div class="ledger-cell"><span class="ledger-num">SYD</span><span class="ledger-label">Wider Sydney</span></div>
   </div>
 </div>
 
@@ -574,32 +617,32 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="wrap">
     <div class="px badge-row reveal">
       <span class="badge-num">1</span>
-      <span class="badge-label">Introducing Ready Now</span>
+      <span class="badge-label">What Ready Now is</span>
     </div>
     <div class="px reveal">
       <h2 class="sec-h2">
-        The new evolution of labour hire &mdash;<span class="sp"> </span><span class="br"></span>
-        skilled help, exactly when you need it.
+        A free directory for the people on the tools.<span class="sp"> </span><span class="br"></span>
+        Find them, ring them, get it done.
       </h2>
     </div>
 
     <!-- MOBILE / TABLET -->
     <div class="about-mobile px">
-      <p class="about-p reveal">Every Ready Now worker turns up with their own tools, real site experience and a work ethic we vouch for. One call fills the gap in your crew &mdash; today or booked ahead.</p>
+      <p class="about-p reveal">Tradies, builders and labourers list themselves free. You search by trade and area, look at their profile and call them direct. No agency in the middle and no lock-in.</p>
       <div class="reveal">
-        <a href="about.html" class="pillbtn pillbtn-gold about-btn">
-          <span class="roll"><i><b>How Ready Now Works</b><b>How Ready Now Works</b></i></span>
+        <a href="members.html" class="pillbtn pillbtn-gold about-btn">
+          <span class="roll"><i><b>Find a Tradie</b><b aria-hidden="true">Find a Tradie</b></i></span>
           <span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
       </div>
       <div class="about-imgs reveal">
         <!-- Swap panel content for lifestyle photo (tradie on the tools): <img src="about-1.jpg" alt="..."> inside .img-slot -->
         <div class="img-slot slot-a">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Ready Now tradie on the tools — Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
+          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Tradie on the tools on a Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
           <div class="slot-inner">
             <span class="slot-tag">Trade Index</span>
             <div>
-              <div class="slot-big">Any trade.<br><em>One call.</em></div>
+              <div class="slot-big">Any trade.<br><em>Call direct.</em></div>
               <div class="slot-codes" style="margin-top:14px"><span>CA</span><span>EL</span><span>PL</span><span>TI</span><span>CO</span><span>GL</span><span>RO</span><span>TC</span><span>FL</span></div>
             </div>
           </div>
@@ -618,11 +661,11 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     <!-- DESKTOP -->
     <div class="about-desktop px">
       <div class="img-slot slot-a">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Ready Now tradie on the tools — Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Tradie on the tools on a Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
         <div class="slot-inner">
           <span class="slot-tag">Trade Index</span>
           <div>
-            <div class="slot-big">Any trade.<br><em>One call.</em></div>
+            <div class="slot-big">Any trade.<br><em>Call direct.</em></div>
             <div class="slot-codes" style="margin-top:14px"><span>CA</span><span>EL</span><span>PL</span><span>TI</span><span>CO</span><span>GL</span><span>RO</span><span>TC</span><span>FL</span></div>
           </div>
         </div>
@@ -630,10 +673,10 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <div class="cell-c">
         <div>
           <p class="about-p">
-            Every Ready Now worker turns up with their own tools, real site experience and a work ethic we vouch for. One call fills the gap in your crew &mdash; today or booked ahead.
+            Tradies, builders and labourers list themselves free. You search by trade and area, look at their profile and call them direct. No agency in the middle and no lock-in.
           </p>
-          <a href="about.html" class="pillbtn pillbtn-gold about-btn">
-            <span class="roll"><i><b>How Ready Now Works</b><b>How Ready Now Works</b></i></span>
+          <a href="members.html" class="pillbtn pillbtn-gold about-btn">
+            <span class="roll"><i><b>Find a Tradie</b><b aria-hidden="true">Find a Tradie</b></i></span>
             <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
           </a>
         </div>
@@ -654,28 +697,28 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="wrap">
     <div class="px badge-row reveal">
       <span class="badge-num">2</span>
-      <span class="badge-label">The Ready Now standard</span>
+      <span class="badge-label">What's on a profile</span>
     </div>
     <div class="px reveal">
       <h2 class="sec-h2">
-        What every worker turns up with.<span class="sp"> </span><span class="br"></span>
-        Checked before they're on our books.
+        Everything you need to make the call.<span class="sp"> </span><span class="br"></span>
+        Listed by the tradies themselves.
       </h2>
     </div>
     <div class="px reveal">
-      <div class="register" role="table" aria-label="The Ready Now worker standard">
-        <div class="register-head">
-          <span>Standard: <b>Every worker</b></span>
-          <span>Coverage: <b>Wider Sydney</b></span>
+      <div class="register" role="table" aria-label="What shows on a Ready Now profile">
+        <div class="register-head" role="row">
+          <span role="columnheader">Every profile: <b>Self-listed</b></span>
+          <span role="columnheader">Coverage: <b>Wider Sydney</b></span>
         </div>
-        <div class="reg-row"><span class="reg-idx">01</span><span class="reg-name">White Card &mdash; general construction induction, sighted and current</span><span class="reg-code">RN&mdash;WC</span><span class="reg-status">Standard</span></div>
-        <div class="reg-row"><span class="reg-idx">02</span><span class="reg-name">Own tools &mdash; arrives equipped and ready to work from the first hour</span><span class="reg-code">RN&mdash;TL</span><span class="reg-status">Standard</span></div>
-        <div class="reg-row"><span class="reg-idx">03</span><span class="reg-name">Real site experience &mdash; not their first day on the tools</span><span class="reg-code">RN&mdash;XP</span><span class="reg-status">Standard</span></div>
-        <div class="reg-row"><span class="reg-idx">04</span><span class="reg-name">Trade qualifications verified for licensed trades</span><span class="reg-code">RN&mdash;QL</span><span class="reg-status">Standard</span></div>
-        <div class="reg-row"><span class="reg-idx">05</span><span class="reg-name">PPE supplied &mdash; hi-vis, boots and site-appropriate gear</span><span class="reg-code">RN&mdash;PP</span><span class="reg-status">Standard</span></div>
-        <div class="reg-row"><span class="reg-idx">06</span><span class="reg-name">Punctual &mdash; on site at the agreed start, every time</span><span class="reg-code">RN&mdash;PT</span><span class="reg-status">Standard</span></div>
+        <div class="reg-row" role="row"><span class="reg-idx" role="cell">01</span><span class="reg-name" role="cell">Name and photo, so you know who you're ringing</span><span class="reg-code" role="cell">PR/01</span><span class="reg-status" role="cell">Every profile</span></div>
+        <div class="reg-row" role="row"><span class="reg-idx" role="cell">02</span><span class="reg-name" role="cell">Trade, so you can filter straight to the work you need</span><span class="reg-code" role="cell">PR/02</span><span class="reg-status" role="cell">Every profile</span></div>
+        <div class="reg-row" role="row"><span class="reg-idx" role="cell">03</span><span class="reg-name" role="cell">Suburb or area they work</span><span class="reg-code" role="cell">PR/03</span><span class="reg-status" role="cell">Every profile</span></div>
+        <div class="reg-row" role="row"><span class="reg-idx" role="cell">04</span><span class="reg-name" role="cell">Phone number, one tap to call</span><span class="reg-code" role="cell">PR/04</span><span class="reg-status" role="cell">Every profile</span></div>
+        <div class="reg-row" role="row"><span class="reg-idx" role="cell">05</span><span class="reg-name" role="cell">A short bio on the work they take on</span><span class="reg-code" role="cell">PR/05</span><span class="reg-status" role="cell">Every profile</span></div>
+        <div class="reg-row" role="row"><span class="reg-idx" role="cell">06</span><span class="reg-name" role="cell">Business name and ABN, if they've added them</span><span class="reg-code" role="cell">PR/06</span><span class="reg-status" role="cell">If supplied</span></div>
       </div>
-      <p class="register-note">// Every worker on our books is held to this standard before they step onto your site. Documentation available on request.</p>
+      <p class="register-note">// Profiles are self-submitted and not checked by Ready Now. Before work starts, ask for their licence and insurance and check them yourself.</p>
     </div>
   </div>
 </section>
@@ -685,119 +728,119 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="wrap">
     <div class="px badge-row reveal">
       <span class="badge-num">3</span>
-      <span class="badge-label">What we cover</span>
+      <span class="badge-label">Browse by trade</span>
     </div>
     <div class="px reveal">
-      <h2 class="sec-h2">Our trades</h2>
+      <h2 class="sec-h2">Find a tradie by trade</h2>
     </div>
     <div class="px cards">
-      <a href="services.html#carpentry" class="sp-card reveal">
+      <a href="members.html?trade=Carpenters" class="sp-card reveal">
         <div class="sp-panel">
           <img src="carpentry.jpg" alt="Carpenter fixing out a frame on a Sydney site" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;01</span><span class="sp-sci">Qualified</span></div>
+            <div class="sp-top"><span class="sp-code">TR/01</span><span class="sp-sci">Directory</span></div>
             <div class="sp-big">Carpentry</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">Formwork, framing, fix-out and finishing carpenters &mdash; for a day, a week or the whole job.</p>
+        <p class="sp-desc">Carpenters for framing, formwork, fix-out and finishing.</p>
         <h3 class="sp-title">Carpentry</h3>
       </a>
-      <a href="services.html#electrical" class="sp-card reveal">
+      <a href="members.html?trade=Electricians" class="sp-card reveal">
         <div class="sp-panel">
           <img src="electrical.jpg" alt="Electrician wiring a switchboard" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;02</span><span class="sp-sci">Licensed</span></div>
+            <div class="sp-top"><span class="sp-code">TR/02</span><span class="sp-sci">Directory</span></div>
             <div class="sp-big">Electrical</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">Licensed sparkies for rough-ins, fit-offs and everything in between. Qualifications verified.</p>
+        <p class="sp-desc">Sparkies for rough-ins, fit-offs and everything in between.</p>
         <h3 class="sp-title">Electrical</h3>
       </a>
-      <a href="services.html#plumbing" class="sp-card reveal">
+      <a href="members.html?trade=Plumbers" class="sp-card reveal">
         <div class="sp-panel">
           <img src="plumbing.jpg" alt="Plumber working on a rough-in" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;03</span><span class="sp-sci">Licensed</span></div>
+            <div class="sp-top"><span class="sp-code">TR/03</span><span class="sp-sci">Directory</span></div>
             <div class="sp-big">Plumbing</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">Qualified plumbers for rough-ins, fit-offs, drainage and maintenance calls across Sydney.</p>
+        <p class="sp-desc">Plumbers for rough-ins, fit-offs, drainage and maintenance.</p>
         <h3 class="sp-title">Plumbing</h3>
       </a>
-      <a href="services.html#tiling" class="sp-card reveal">
+      <a href="members.html?trade=Tilers" class="sp-card reveal">
         <div class="sp-panel">
           <img src="tiling.jpg" alt="Tiler laying large-format floor tiles" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;04</span><span class="sp-sci">Qualified</span></div>
+            <div class="sp-top"><span class="sp-code">TR/04</span><span class="sp-sci">Directory</span></div>
             <div class="sp-big">Tiling</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">Wall and floor tilers who cut clean and lay straight &mdash; bathrooms through to big formats.</p>
+        <p class="sp-desc">Wall and floor tilers, from bathrooms to big formats.</p>
         <h3 class="sp-title">Tiling</h3>
       </a>
-      <a href="services.html#concreting" class="sp-card reveal">
+      <a href="members.html?trade=Concreters" class="sp-card reveal">
         <div class="sp-panel">
           <img src="concreting.jpg" alt="Concreter screeding a fresh slab pour" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;05</span><span class="sp-sci">Experienced</span></div>
+            <div class="sp-top"><span class="sp-code">TR/05</span><span class="sp-sci">Directory</span></div>
             <div class="sp-big">Concreting</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">Concreters for pours, finishing and formwork. Crews sized to the slab, on site when the truck is.</p>
+        <p class="sp-desc">Concreters for pours, finishing and formwork.</p>
         <h3 class="sp-title">Concreting</h3>
       </a>
-      <a href="services.html#general-labour" class="sp-card reveal">
+      <a href="members.html?trade=Labourers" class="sp-card reveal">
         <div class="sp-panel">
           <img src="labour.jpg" alt="Labourer carrying materials across a job site" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;06</span><span class="sp-sci">Site Ready</span></div>
+            <div class="sp-top"><span class="sp-code">TR/06</span><span class="sp-sci">Directory</span></div>
             <div class="sp-big">General<br>Labour</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">Reliable labourers who know a site, follow direction and pull their weight from the first hour.</p>
+        <p class="sp-desc">Labourers for site clean-ups, materials and an extra set of hands.</p>
         <h3 class="sp-title">General Labour</h3>
       </a>
-      <a href="services.html#roofing" class="sp-card reveal">
+      <a href="members.html?trade=Roofers" class="sp-card reveal">
         <div class="sp-panel">
           <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="roofing.jpg" alt="Roofer working on a Sydney re-roof" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;07</span><span class="sp-sci">Licensed</span></div>
+            <div class="sp-top"><span class="sp-code">TR/07</span><span class="sp-sci">Directory</span></div>
             <div class="sp-big">Roofing</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">Metal and tile roofers, re-roofs and repairs. Heights tickets current, own harness.</p>
+        <p class="sp-desc">Metal and tile roofers for re-roofs and repairs.</p>
         <h3 class="sp-title">Roofing</h3>
       </a>
-      <a href="services.html#traffic-control" class="sp-card reveal">
+      <a href="members.html?trade=Traffic+Control" class="sp-card reveal">
         <div class="sp-panel">
           <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="traffic-control.jpg" alt="Traffic controller managing a site access point" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;08</span><span class="sp-sci">Ticketed</span></div>
+            <div class="sp-top"><span class="sp-code">TR/08</span><span class="sp-sci">Directory</span></div>
             <div class="sp-big">Traffic<br>Control</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">Ticketed traffic controllers for site access, road works and delivery windows.</p>
+        <p class="sp-desc">Traffic controllers for site access, road works and deliveries.</p>
         <h3 class="sp-title">Traffic Control</h3>
       </a>
-      <a href="services.html#forklift" class="sp-card reveal">
+      <a href="members.html?trade=Other" class="sp-card reveal">
         <div class="sp-panel">
           <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="forklift.jpg" alt="Forklift operator moving materials on a Sydney site" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR&mdash;09</span><span class="sp-sci">Ticketed</span></div>
-            <div class="sp-big">Forklift<br>Driving</div>
+            <div class="sp-top"><span class="sp-code">TR/09</span><span class="sp-sci">Directory</span></div>
+            <div class="sp-big">Other<br>Trades</div>
           </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>View service</span></div>
+          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
         </div>
-        <p class="sp-desc">LF-ticketed operators for materials handling, deliveries and yard work.</p>
-        <h3 class="sp-title">Forklift Driving</h3>
+        <p class="sp-desc">Forklift drivers, scaffolders and every other trade that doesn't fit a box.</p>
+        <h3 class="sp-title">Other Trades</h3>
       </a>
     </div>
   </div>
@@ -809,31 +852,28 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="wrap">
     <div class="px badge-row reveal">
       <span class="badge-num">4</span>
-      <span class="badge-label">Labour &amp; gear</span>
+      <span class="badge-label">Equipment hire</span>
     </div>
     <div class="px reveal">
       <div class="bundle">
         <div class="bundle-body">
-          <div class="bundle-eyebrow">One call &middot; One invoice</div>
-          <h3>Book the bloke and the gear he needs.</h3>
-          <p>Most jobs need more than a set of hands. Add a skip or a tipper to the same booking
-          and it comes back quoted together &mdash; not three phone calls and three invoices to chase.</p>
+          <div class="bundle-eyebrow">Coming soon</div>
+          <h3>Hire out yours or use someone else's.</h3>
+          <p>Equipment hire is on the way. Soon you'll be able to list gear you're not using, or find a skip, tipper or tool someone nearby is hiring out. It's not live yet. Got gear sitting idle? Let us know and we'll be in touch when it opens.</p>
           <div class="bundle-row">
-            <span class="bundle-chip on">Worker</span>
-            <span class="bundle-chip on">Skip bin</span>
-            <span class="bundle-chip on">Tipper &amp; operator</span>
-            <span class="bundle-chip">Gear on request</span>
+            <span class="bundle-chip on">Coming soon</span>
+            <span class="bundle-chip">List your gear</span>
+            <span class="bundle-chip">Hire gear nearby</span>
           </div>
-          <div class="hero-cta" style="margin:0">
-            <a href="booking.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book labour &amp; gear</b><b>Book labour &amp; gear</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-            <a href="hire.html" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">See what we cover</a>
+          <div class="hero-cta" style="margin:0;opacity:1;transform:none">
+            <a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Register interest</b><b aria-hidden="true">Register interest</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
           </div>
         </div>
         <div class="bundle-media">
           <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg>
-          <img src="gear.jpg" alt="Site gear and labour supplied together &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.remove()">
+          <img src="gear.jpg" alt="Site gear and equipment" loading="lazy" onerror="this.remove()">
           <div class="bundle-media-in">
-            <div class="bundle-big">Labour<br>&amp; Gear</div>
+            <div class="bundle-big">Equipment<br>Coming soon</div>
           </div>
         </div>
       </div>
@@ -850,157 +890,15 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
     <div class="px reveal">
       <h2 class="sec-h2">
-        Simple and direct. Tell us the job &mdash;<span class="sp"> </span><span class="br"></span>
-        we put the right person on it.
+        Simple and direct. Find the tradie,<span class="sp"> </span><span class="br"></span>
+        then sort the job between you.
       </h2>
     </div>
     <div class="px proc-grid reveal">
-      <div class="proc"><span class="proc-num">STEP / 01</span><h3>Tell us the job</h3><p>Trade, suburb, start time. Two minutes on the phone or through the request form &mdash; whichever's faster for you.</p></div>
-      <div class="proc"><span class="proc-num">STEP / 02</span><h3>We match the worker</h3><p>Someone with the right ticket, their own tools and real experience on jobs like yours. Not just whoever's free.</p></div>
-      <div class="proc"><span class="proc-num">STEP / 03</span><h3>They show up ready</h3><p>On site at the agreed start, working from the first hour. Same-day where we can, or locked in ahead with a deposit.</p></div>
-      <div class="proc"><span class="proc-num">STEP / 04</span><h3>Straight communication</h3><p>You know who's coming, when they'll be there and what it costs. No chasing, no surprises, no wasted mornings.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5 &middot; WHO TURNS UP ============ -->
-<section class="team-sec">
-  <div class="wrap">
-    <div class="px badge-row reveal">
-      <span class="badge-num">6</span>
-      <span class="badge-label">Who turns up</span>
-    </div>
-    <div class="px reveal">
-      <h2 class="sec-h2">This is who shows up.</h2>
-      <p class="team-lead">A few of the crew. Real people, real tickets, their own tools &mdash; not a name texted to you the morning of.</p>
-    </div>
-    <div class="px team-grid">
-      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-1" aria-label="Lewis Slatter, Plumber &mdash; show details">
-        <div class="tm-panel">
-          <span class="tm-code">TH&mdash;01</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          <img src="lewis-slatter.jpg" alt="Lewis Slatter &mdash; plumber, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
-        </div>
-        <div class="tm-body"><div class="tm-name">Lewis Slatter</div><div class="tm-trade">Plumber</div></div>
-        <div class="tm-detail" id="tmd-1">
-          <div class="tm-detail-in">
-            <dl class="tm-dl">
-              <div><dt>Trade</dt><dd>Plumber</dd></div>
-              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
-              <div><dt>Tickets</dt><dd>Licensed plumber, drainer &amp; gasfitter</dd></div>
-              <div><dt>On the tools</dt><dd>10+ years</dd></div>
-            </dl>
-            <a class="tm-book" href="booking.html?worker=Lewis%20Slatter&amp;trade=Plumbing"><span>Book Lewis</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-2" aria-label="Jake Littlewood, Tiler &mdash; show details">
-        <div class="tm-panel">
-          <span class="tm-code">TH&mdash;02</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          <img src="jake-littlewood.jpg" alt="Jake Littlewood &mdash; tiler, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
-        </div>
-        <div class="tm-body"><div class="tm-name">Jake Littlewood</div><div class="tm-trade">Tiler</div></div>
-        <div class="tm-detail" id="tmd-2">
-          <div class="tm-detail-in">
-            <dl class="tm-dl">
-              <div><dt>Trade</dt><dd>Tiler</dd></div>
-              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
-              <div><dt>Tickets</dt><dd>Tiling certificate &mdash; waterproofing included</dd></div>
-              <div><dt>On the tools</dt><dd>10+ years</dd></div>
-            </dl>
-            <a class="tm-book" href="booking.html?worker=Jake%20Littlewood&amp;trade=Tiling"><span>Book Jake</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-3" aria-label="Macca Needham, Roofer &mdash; show details">
-        <div class="tm-panel">
-          <span class="tm-code">TH&mdash;03</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          <img src="macca-needham.jpg" alt="Macca Needham &mdash; roofer, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
-        </div>
-        <div class="tm-body"><div class="tm-name">Macca Needham</div><div class="tm-trade">Roofer</div></div>
-        <div class="tm-detail" id="tmd-3">
-          <div class="tm-detail-in">
-            <dl class="tm-dl">
-              <div><dt>Trade</dt><dd>Roofer</dd></div>
-              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
-              <div><dt>Tickets</dt><dd>Roofing licence + working at heights</dd></div>
-              <div><dt>On the tools</dt><dd>5 years</dd></div>
-            </dl>
-            <a class="tm-book" href="booking.html?worker=Macca%20Needham&amp;trade=Roofing"><span>Book Macca</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-4" aria-label="Teika Kakahi, Apprentice Roofer &mdash; show details">
-        <div class="tm-panel">
-          <span class="tm-code">TH&mdash;04</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          <img src="teika-kakahi.jpg" alt="Teika Kakahi &mdash; apprentice roofer, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
-        </div>
-        <div class="tm-body"><div class="tm-name">Teika Kakahi</div><div class="tm-trade">Apprentice Roofer</div></div>
-        <div class="tm-detail" id="tmd-4">
-          <div class="tm-detail-in">
-            <dl class="tm-dl">
-              <div><dt>Trade</dt><dd>Apprentice Roofer</dd></div>
-              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
-              <div><dt>Apprenticeship</dt><dd>First year</dd></div>
-              <div><dt>Working at heights</dt><dd>Ticket in progress</dd></div>
-            </dl>
-            <a class="tm-book" href="booking.html?worker=Teika%20Kakahi&amp;trade=Roofing"><span>Book Teika</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-5" aria-label="Anfal Mehdaoui, Traffic Control &mdash; show details">
-        <div class="tm-panel">
-          <span class="tm-code">TH&mdash;05</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          <img src="anfal-mehdaoui.jpg" alt="Anfal Mehdaoui &mdash; traffic controller, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
-        </div>
-        <div class="tm-body"><div class="tm-name">Anfal Mehdaoui</div><div class="tm-trade">Traffic Control</div></div>
-        <div class="tm-detail" id="tmd-5">
-          <div class="tm-detail-in">
-            <dl class="tm-dl">
-              <div><dt>Trade</dt><dd>Traffic Control</dd></div>
-              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
-              <div><dt>Tickets</dt><dd>White card, blue card &amp; yellow card</dd></div>
-              <div><dt>Availability</dt><dd>Ready now</dd></div>
-            </dl>
-            <a class="tm-book" href="booking.html?worker=Anfal%20Mehdaoui&amp;trade=Traffic%20Control"><span>Book Anfal</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-6" aria-label="Laurence Warnimont, General Labourer &mdash; show details">
-        <div class="tm-panel">
-          <span class="tm-code">TH&mdash;06</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          <img src="laurence-warnimont.jpg" alt="Laurence Warnimont &mdash; general labourer, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
-        </div>
-        <div class="tm-body"><div class="tm-name">Laurence Warnimont</div><div class="tm-trade">General Labour &middot; Forklift</div></div>
-        <div class="tm-detail" id="tmd-6">
-          <div class="tm-detail-in">
-            <dl class="tm-dl">
-              <div><dt>Trade</dt><dd>General Labourer &amp; forklift operator</dd></div>
-              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
-              <div><dt>Tickets</dt><dd>White card, first aid, forklift (LF) &amp; driver's licence</dd></div>
-              <div><dt>On the tools</dt><dd>2+ years</dd></div>
-            </dl>
-            <a class="tm-book" href="booking.html?worker=Laurence%20Warnimont&amp;trade=General%20Labour"><span>Book Laurence</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          </div>
-        </div>
-      </div>
-      <div class="tm-card reveal" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-7" aria-label="Hayden Budd, Electrician &mdash; show details">
-        <div class="tm-panel">
-          <span class="tm-code">TH&mdash;07</span><span class="tm-cue" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span>
-          <img src="hayden-budd.jpg" alt="Hayden Budd &mdash; electrician, Ready Now Tradie Hire" width="800" height="800" loading="lazy">
-        </div>
-        <div class="tm-body"><div class="tm-name">Hayden Budd</div><div class="tm-trade">Electrician</div></div>
-        <div class="tm-detail" id="tmd-7">
-          <div class="tm-detail-in">
-            <dl class="tm-dl">
-              <div><dt>Trade</dt><dd>Electrician</dd></div>
-              <div><dt>Covers</dt><dd>Sydney metro</dd></div>
-              <div><dt>Tickets</dt><dd>Licensed electrician + white card</dd></div>
-              <div><dt>On the tools</dt><dd>7 years</dd></div>
-            </dl>
-            <a class="tm-book" href="booking.html?worker=Hayden%20Budd&amp;trade=Electrical"><span>Book Hayden</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-          </div>
-        </div>
-      </div>
+      <div class="proc"><span class="proc-num">STEP / 01</span><h3>Search</h3><p>Pick a trade and put in your suburb or area. Every profile shows where that tradie works.</p></div>
+      <div class="proc"><span class="proc-num">STEP / 02</span><h3>Check the profile</h3><p>Name, photo, trade, area and a few lines on the work they take on. Business name and ABN if they've added them.</p></div>
+      <div class="proc"><span class="proc-num">STEP / 03</span><h3>Call them direct</h3><p>One tap rings their phone. No forms, no middleman, no waiting on someone to get back to you.</p></div>
+      <div class="proc"><span class="proc-num">STEP / 04</span><h3>Sort the job yourselves</h3><p>Price, timing and payment are between you and the tradie. Ask for their licence and insurance before work starts.</p></div>
     </div>
   </div>
 </section>
@@ -1009,20 +907,20 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <section class="clients-sec">
   <div class="wrap">
     <div class="px badge-row reveal">
-      <span class="badge-num">7</span>
-      <span class="badge-label">Who we work with</span>
+      <span class="badge-num">6</span>
+      <span class="badge-label">Who it's for</span>
     </div>
     <div class="px reveal">
       <h2 class="sec-h2">
         Whoever runs the site,<span class="sp"> </span><span class="br"></span>
-        we keep it moving.
+        there's someone to ring.
       </h2>
     </div>
     <div class="px client-grid reveal">
-      <div class="client"><span class="c-tag">CL&mdash;01</span><h3>Builders &amp; Foremen</h3><p>Someone's called in sick, the program's slipping, or the pour is tomorrow. We fill the gap in your crew fast &mdash; with workers who don't need babysitting.</p></div>
-      <div class="client"><span class="c-tag">CL&mdash;02</span><h3>Trade Business Owners</h3><p>Extra hands for the busy stretch without the overhead of hiring. Scale your crew up for the job, back down when it's done.</p></div>
-      <div class="client"><span class="c-tag">CL&mdash;03</span><h3>Site &amp; Project Managers</h3><p>Planned labour locked in ahead of known busy periods. Book the trades you'll need, secured with a deposit, sorted before the crunch.</p></div>
-      <div class="client"><span class="c-tag">CL&mdash;04</span><h3>Owner-Builders &amp; Renovators</h3><p>Qualified trades and reliable labour for your own project &mdash; without ringing ten numbers hoping one shows up.</p></div>
+      <div class="client"><span class="c-tag">FOR/01</span><h3>Builders &amp; Foremen</h3><p>Someone's called in sick or the pour is tomorrow. Search the trade you're short on, find someone in the area and ring them.</p></div>
+      <div class="client"><span class="c-tag">FOR/02</span><h3>Owner-Builders &amp; Locals</h3><p>Doing your own reno or need a job done at home? See who works near you and call them direct.</p></div>
+      <div class="client"><span class="c-tag">FOR/03</span><h3>Tradies &amp; Labourers</h3><p>Want more work? List your trade free in a couple of minutes and let builders and locals find you.</p></div>
+      <div class="client"><span class="c-tag">FOR/04</span><h3>Trade Business Owners</h3><p>Put your business in front of people searching your trade, or find subbies for the busy stretch.</p></div>
     </div>
   </div>
 </section>
@@ -1032,18 +930,18 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="cta-band reveal">
     <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
     <div class="cta-inner">
-      <span class="cta-eyebrow">Direct Line</span>
-      <h2>Don't lose another day on site.</h2>
-      <p>A short crew costs you money every hour. Call now for same-day help, or lock in labour ahead of the busy stretch &mdash; straight answers either way.</p>
-      <a href="tel:+61432910369" class="cta-number">0432 910 369</a>
-      <span class="cta-label">Ready Now Tradie Hire &middot; Wider Sydney &middot; Same-Day &amp; Booked Ahead</span>
-      <div class="cta-btns">
-        <a href="tel:+61432910369" class="pillbtn pillbtn-gold">
-          <span class="roll"><i><b>Call Now</b><b>Call Now</b></i></span>
+      <span class="cta-eyebrow">Tradies</span>
+      <h2>Want more work? Get listed free.</h2>
+      <p>Name, trade, area, phone and a photo. Your profile goes live straight away and people call you direct.</p>
+      <div class="cta-btns" style="margin-bottom:40px">
+        <a href="join.html" class="pillbtn pillbtn-gold">
+          <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
           <span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
         </a>
-        <a href="contact.html" class="btn-ghost">Request a Quote</a>
+        <a href="members.html" class="btn-ghost">Find a Tradie</a>
       </div>
+      <span class="cta-label">Questions? Call Sam</span>
+      <a href="tel:+61432910369" class="cta-number" style="font-size:clamp(30px,5vw,56px)">0432 910 369</a>
     </div>
   </div>
 </div>
@@ -1053,42 +951,44 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
-      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img">
-      <p>The new evolution of labour hire. Qualified tradies, work-ready apprentices and reliable labourers &mdash; same-day or booked ahead, across wider Sydney.</p>
-      <!-- Update hrefs when Instagram / Google Business Profile / Facebook links are live -->
+      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img" width="83" height="60" loading="lazy">
+      <p>A free directory of tradies, builders and labourers across wider Sydney. Find someone local and call them direct. On the tools? List your trade free and get hired.</p>
       <div class="f-socials">
-        <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></a>
+        <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="0.6" fill="currentColor" stroke="none"/></svg></a>
       </div>
     </div>
     <div class="f-col">
-      <h4>Services</h4>
+      <h4>Directory</h4>
       <ul>
-        <li><a href="services.html#carpentry">Carpentry</a></li>
-        <li><a href="services.html#electrical">Electrical</a></li>
-        <li><a href="services.html#plumbing">Plumbing</a></li>
-        <li><a href="services.html#tiling">Tiling</a></li>
-        <li><a href="services.html#concreting">Concreting</a></li>
-        <li><a href="services.html#roofing">Roofing</a></li>
-        <li><a href="services.html#traffic-control">Traffic Control</a></li>
-        <li><a href="services.html#forklift">Forklift Driving</a></li>
-        <li><a href="hire.html">Gear &amp; Equipment</a></li>
-        <li><a href="services.html#general-labour">General Labour</a></li>
+        <li><a href="members.html">Find a Tradie</a></li>
+        <li><a href="members.html?trade=Builders">Builders</a></li>
+        <li><a href="members.html?trade=Electricians">Electricians</a></li>
+        <li><a href="members.html?trade=Plumbers">Plumbers</a></li>
+        <li><a href="members.html?trade=Carpenters">Carpenters</a></li>
+        <li><a href="members.html?trade=Labourers">Labourers</a></li>
+        <li><a href="join.html">Join Free</a></li>
       </ul>
     </div>
     <div class="f-col">
       <h4>Company</h4>
       <ul>
         <li><a href="about.html">About</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="privacy.html">Privacy Policy</a></li>
+        <li><a href="tel:+61432910369">Call Sam</a></li>
+      </ul>
+      <h4 style="margin-top:36px">Labour hire</h4>
+      <ul>
         <li><a href="services.html">Services</a></li>
-        <li><a href="hire.html">Hire</a></li>
-        <li><a href="contact.html">Request a Quote</a></li>
-        <li><a href="tel:+61432910369">Call Now</a></li>
+        <li><a href="hire.html">Gear hire</a></li>
+        <li><a href="booking.html">Book labour</a></li>
+        <li><a href="work.html">Work with us</a></li>
       </ul>
     </div>
     <div class="f-col f-contact">
       <h4>Contact</h4>
       <a href="tel:+61432910369" class="f-phone">0432 910 369</a>
-      <p class="f-note">Same-day &amp; booked ahead</p>
+      <p class="f-note">Same day. Wider Sydney. No lock-in.</p>
       <a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener" class="f-email">@tradie_hire</a>
       <p class="f-area">3/22 Searl Rd, Cronulla Beach NSW<br>Servicing wider Sydney</p>
     </div>
@@ -1161,19 +1061,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   }
 })();
 </script>
-<noscript><style>.hold{display:none}.reveal{opacity:1;transform:none}.hero-label,.hero h1,.hero-cta{opacity:1;transform:none}</style></noscript>
-<script>
-(function(){
-  var cards=[].slice.call(document.querySelectorAll('.tm-card'));
-  function setOpen(c,v){c.classList.toggle('open',v);c.setAttribute('aria-expanded',v?'true':'false');}
-  cards.forEach(function(c){
-    function toggle(e){if(e.target.closest('a,button'))return;e.preventDefault();var v=!c.classList.contains('open');cards.forEach(function(o){if(o!==c)setOpen(o,false);});setOpen(c,v);}
-    c.addEventListener('click',toggle);
-    c.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' ')toggle(e);});
-  });
-  document.addEventListener('click',function(e){if(!e.target.closest('.tm-card'))cards.forEach(function(o){setOpen(o,false);});});
-})();
-</script>
+<noscript><style>.hold{display:none}.reveal{opacity:1;transform:none}.hero-label,.hero h1,.hero-cta,.hero-search{opacity:1;transform:none}</style></noscript>
   <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
   <script defer src="/_vercel/insights/script.js"></script>
 </body>
