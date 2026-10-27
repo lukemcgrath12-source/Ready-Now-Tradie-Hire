@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#1F2023">
+<meta name="theme-color" content="#16181B">
 <link rel="canonical" href="https://readynowtradiehire.com.au/members">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ready Now Tradie Hire">
@@ -27,10 +27,12 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --olive:#2A2B2E;--olive-deep:#1F2023;--olive-light:#36383B;--olive-accent:#5B5C5E;
-  --gold:#4894C4;--gold-dark:#2F7AB0;
-  --stone:#F5F7F9;--stone-2:#EDF0F3;--border:#DEE3E8;--border-2:#C9D0D7;--white:#FFFFFF;
-  --text:#232427;--text-light:#55575B;--text-faint:#6B6E72;
+  --ink:#16181B;--charcoal:#4A4D52;--truck:#5B5C5E;--steel:#8A9099;--line:#E3E7EC;--fog:#F6F7F9;--mist:#EEF2F6;--blue-700:#175A8A;--blue-600:#1F6FA8;--blue-500:#4894C4;--blue-100:#E3EFF8;--blue-50:#F2F7FC;--shadow-1:0 1px 2px rgba(22,24,27,.06),0 2px 8px rgba(23,90,138,.06);--shadow-2:0 2px 6px rgba(22,24,27,.06),0 12px 32px rgba(23,90,138,.10);--shadow-3:0 4px 12px rgba(22,24,27,.08),0 24px 60px rgba(23,90,138,.16);
+
+  --olive:#16181B;--olive-deep:#16181B;--olive-light:#4A4D52;--olive-accent:#5B5C5E;
+  --gold:#4894C4;--gold-dark:#1F6FA8;
+  --stone:#F6F7F9;--stone-2:#EEF2F6;--border:#E3E7EC;--border-2:#C9D0D7;--white:#FFFFFF;
+  --text:#16181B;--text-light:#4A4D52;--text-faint:#5B5C5E;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
   --display:'Poppins',sans-serif;
   --body:'Poppins',-apple-system,sans-serif;
@@ -78,7 +80,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 @media(min-width:640px){.pillbtn .circ{width:32px;height:32px}}
 .pillbtn:hover .circ{transform:rotate(-45deg)}
 .pillbtn-gold{background:var(--gold-dark);color:var(--white)}
-.pillbtn-gold:hover{background:#246595}
+.pillbtn-gold:hover{background:#175A8A}
 .pillbtn-gold .circ svg{stroke:var(--gold-dark)}
 .pillbtn-dark{background:var(--olive);color:var(--white)}
 .pillbtn-dark:hover{background:var(--olive-deep)}
@@ -90,7 +92,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .navwrap.hide{transform:translateY(-110%)}
 @media(min-width:640px){.navwrap{padding:12px}}
 .navbar{max-width:1416px;margin:0 auto;background:var(--white);border-radius:999px;padding:5px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
-.navwrap.scrolled .navbar{box-shadow:0 4px 24px rgba(31,32,35,.12)}
+.navwrap.scrolled .navbar{box-shadow:0 4px 24px rgba(22,24,27,.12)}
 .nav-left{display:flex;align-items:center;gap:24px}
 .nav-logochip{background:var(--olive);border-radius:999px;padding:9px 18px;display:flex;align-items:center}
 .nav-logochip img{height:22px}
@@ -101,7 +103,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .nav-links a:hover{color:var(--text-faint)}
 .nav-links a.active{font-weight:600}
 .nav-links a.nav-join,.sheet-links a.nav-join{color:var(--gold-dark);font-weight:600}
-.nav-links a.nav-join:hover{color:#246595}
+.nav-links a.nav-join:hover{color:#175A8A}
 .nav-links a{white-space:nowrap}
 @media(min-width:768px) and (max-width:1023px){.nav-left{gap:14px}.nav-links{gap:14px}.nav-links a{font-size:13px}}
 .nav-right{display:none;align-items:center;gap:16px;padding-right:2px}
@@ -126,7 +128,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 /* ============ HERO ============ */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--olive-deep);overflow:hidden}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(31,32,35,.38) 0%,rgba(31,32,35,.18) 42%,rgba(31,32,35,.78) 100%)}
+.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(22,24,27,.38) 0%,rgba(22,24,27,.18) 42%,rgba(22,24,27,.78) 100%)}
 .fx-grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero-spacer{flex:1}
 .hero-content{position:relative;z-index:20;padding-bottom:56px}
@@ -134,7 +136,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 @media(min-width:1024px){.hero-content{padding-bottom:80px}}
 .hero-label{font-size:13px;color:var(--gold);letter-spacing:.06em;margin-bottom:20px;opacity:0;transform:translateY(14px)}
 @media(min-width:640px){.hero-label{font-size:14px;margin-bottom:32px}}
-.hero h1{font-size:clamp(1.75rem,7vw,4.2rem);font-weight:500;line-height:1.08;letter-spacing:-.03em;color:var(--stone);text-shadow:0 2px 24px rgba(31,32,35,.35);opacity:0;transform:translateY(22px)}
+.hero h1{font-size:clamp(1.75rem,7vw,4.2rem);font-weight:500;line-height:1.08;letter-spacing:-.03em;color:var(--stone);text-shadow:0 2px 24px rgba(22,24,27,.35);opacity:0;transform:translateY(22px)}
 .hero h1 em{font-style:normal;color:var(--gold)}
 @media(min-width:640px){.hero h1{font-size:clamp(2.5rem,5vw,4.2rem)}}
 .hero h1 .br{display:none}
@@ -209,7 +211,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .about-desktop .slot-a{order:2;aspect-ratio:auto;height:100%;min-height:340px;width:100%}
 .about-desktop .slot-b{order:3;aspect-ratio:3/2;width:100%}
 .img-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.img-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,32,35,.45) 0%,rgba(31,32,35,.1) 45%,rgba(31,32,35,.7) 100%)}
+.img-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,24,27,.45) 0%,rgba(22,24,27,.1) 45%,rgba(22,24,27,.7) 100%)}
 .slot-contours{position:absolute;inset:0;opacity:.5}
 .slot-inner{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
 .slot-tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4)}
@@ -254,12 +256,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .sp-panel{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--olive-deep);cursor:pointer}
 .sp-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .sp-card:hover .sp-panel>img{transform:scale(1.04)}
-.sp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,32,35,.73) 0%,rgba(31,32,35,0) 36%,rgba(31,32,35,0) 50%,rgba(31,32,35,.88) 100%)}
+.sp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(22,24,27,.73) 0%,rgba(22,24,27,0) 36%,rgba(22,24,27,0) 50%,rgba(22,24,27,.88) 100%)}
 .sp-panel .slot-contours{opacity:.45}
 .sp-panel-inner{position:absolute;inset:0;padding:24px 24px 76px;display:flex;flex-direction:column;justify-content:space-between}
 .sp-top{display:flex;justify-content:space-between;align-items:flex-start}
 .sp-code{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.78);text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.5)}
-.sp-sci{font-family:var(--mono);font-style:italic;font-size:11px;color:var(--gold);background:rgba(31,32,35,.65);border-radius:999px;padding:3px 10px;backdrop-filter:blur(2px)}
+.sp-sci{font-family:var(--mono);font-style:italic;font-size:11px;color:var(--gold);background:rgba(22,24,27,.65);border-radius:999px;padding:3px 10px;backdrop-filter:blur(2px)}
 .sp-big{font-family:var(--display);font-size:clamp(22px,2.4vw,34px);font-weight:600;text-transform:uppercase;line-height:1.05;color:var(--white);transition:transform .4s var(--ease)}
 .sp-card:hover .sp-big{transform:translateY(-4px)}
 .card-pill{position:absolute;bottom:16px;left:16px;height:36px;width:36px;background:var(--white);border-radius:999px;display:flex;align-items:center;gap:8px;padding-left:11px;overflow:hidden;transition:width .3s ease-in-out;white-space:nowrap}
@@ -341,7 +343,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .f-col a:hover{color:var(--gold)}
 .f-contact .f-phone{display:block;color:var(--white);font-size:16px;font-weight:500;text-decoration:none;transition:color .25s}
 .f-contact .f-phone:hover{color:var(--gold)}
-.f-contact .f-note{font-size:13px;color:rgba(255,255,255,.45);margin:6px 0 24px}
+.f-contact .f-note{font-size:13px;color:rgba(255,255,255,.66);margin:6px 0 24px}
 .f-contact .f-email{display:block;color:rgba(255,255,255,.85);font-size:15px;text-decoration:none;margin-bottom:24px;transition:color .25s;word-break:break-all}
 .f-contact .f-email:hover{color:var(--gold)}
 .f-contact .f-area{font-size:14px;color:rgba(255,255,255,.6);line-height:1.7;margin-bottom:24px}
@@ -359,7 +361,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
   .hero-label,.hero h1,.hero-cta{opacity:1;transform:none}
 }
-.f-word{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--cream,#F3F5F7);display:inline-block;margin-bottom:14px}
+.f-word{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--cream,#F6F7F9);display:inline-block;margin-bottom:14px}
 .f-word em{font-style:normal;color:var(--gold)}
 
 /* Logo images */
@@ -431,7 +433,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .callbox p{font-size:14px;color:rgba(255,255,255,.55);line-height:1.75;margin-bottom:22px;max-width:420px}
 .cb-number{font-family:var(--display);font-size:clamp(32px,7vw,54px);font-weight:800;color:var(--gold);text-decoration:none;display:inline-block;line-height:1;letter-spacing:.01em;transition:opacity .25s}
 .cb-number:hover{opacity:.84}
-.cb-hours{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.35);display:block;margin-top:16px}
+.cb-hours{font-family:var(--mono);font-size:10.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.66);display:block;margin-top:16px}
 
 .formcard{background:var(--stone);border:1px solid var(--border);border-radius:20px;padding:28px 22px}
 @media(min-width:640px){.formcard{padding:36px 32px}}
@@ -468,7 +470,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 
 /* ---------- sticky mobile action bar ---------- */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;
-  background:rgba(31,32,35,.97);backdrop-filter:blur(12px);
+  background:rgba(22,24,27,.97);backdrop-filter:blur(12px);
   border-top:1px solid rgba(255,255,255,.1);padding:10px 12px calc(10px + env(safe-area-inset-bottom));
   gap:9px;transform:translateY(110%);transition:transform .35s var(--ease)}
 .mbar.up{transform:translateY(0)}
@@ -481,7 +483,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .mbar svg{flex:none}
 </style>
 <link rel="stylesheet" href="directory.css">
-<style id="sheet-vis-fix">.cta-label{color:rgba(255,255,255,.62)!important}.nav-logochip{padding:8px 16px!important}.nav-logo-img{height:32px!important;width:auto!important}@media(min-width:640px){.nav-logo-img{height:38px!important}}.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
+<style id="sheet-vis-fix">/*nav5*/.navbar{box-shadow:var(--shadow-2)!important;padding:6px!important}.nav-left{gap:28px!important}.nav-links a{font-weight:500;color:var(--ink)!important}.nav-links a:hover{color:var(--blue-600)!important}.nav-links a.active{color:var(--blue-600)!important;font-weight:600}.nav-links a:focus-visible,.nav-sec:focus-visible,.nav-cta:focus-visible,.nav-logochip:focus-visible{outline:2px solid var(--blue-600);outline-offset:3px}.nav-right{gap:8px!important}.nav-sec{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .25s cubic-bezier(.34,1.56,.64,1),transform .25s cubic-bezier(.34,1.56,.64,1)}.nav-sec:hover{border-color:var(--blue-600)}.nav-sec:active{transform:scale(.97)}.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;background:var(--blue-600);color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:0 1px 2px rgba(23,90,138,.25),0 6px 16px rgba(31,111,168,.25);transition:background .2s,transform .25s cubic-bezier(.34,1.56,.64,1)}.nav-cta svg{stroke:#fff}.nav-cta:hover{background:var(--blue-700)}.nav-cta:active{transform:scale(.97)}.nav-cta-lg,.nav-sec-lg{display:flex;width:100%;min-height:52px;font-size:16px;margin-bottom:10px}.menu-btn{background:var(--ink)!important}@media(min-width:768px) and (max-width:1023px){.nav-sec{display:none}}.cta-label{color:rgba(255,255,255,.62)!important}.nav-logochip{padding:8px 16px!important}.nav-logo-img{height:32px!important;width:auto!important}@media(min-width:640px){.nav-logo-img{height:38px!important}}.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -490,19 +492,15 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     <div class="nav-left">
       <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-wordmark.png" alt="Ready Now Tradie Hire" class="nav-logo-img" width="147" height="40"></a>
       <div class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="members.html" class="active" aria-current="page">Find a Tradie</a>
-        <a href="join.html" class="nav-join">Join Free</a>
+        <a href="members.html" aria-current="page" class="active">Find a Tradie</a>
+        <a href="index.html#how">How it works</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
       </div>
     </div>
     <div class="nav-right">
-      <a class="nav-note" href="tel:+61432910369" style="text-decoration:none">Call 0432 910 369</a>
-      <a href="join.html" class="pillbtn pillbtn-dark">
-        <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
-        <span class="circ"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </a>
+      <a href="join.html" class="nav-sec">For tradies</a>
+      <a href="join.html" class="nav-cta">Join Free<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
     <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
@@ -516,19 +514,13 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
     <div class="sheet-links">
       <a href="index.html">Home</a>
-      <a href="members.html" aria-current="page">Find a Tradie</a>
-      <a href="join.html" class="nav-join">Join Free</a>
+      <a href="members.html">Find a Tradie</a>
+      <a href="index.html#how">How it works</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
     </div>
-    <a href="join.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
-      <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
-      <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-    </a>
-    <a href="tel:+61432910369" class="pillbtn pillbtn-dark">
-      <span class="roll"><i><b>Call 0432 910 369</b><b aria-hidden="true">Call 0432 910 369</b></i></span>
-      <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-    </a>
+    <a href="join.html" class="nav-cta nav-cta-lg">Join Free<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+    <a href="tel:+61432910369" class="nav-sec nav-sec-lg">Call 0432 910 369</a>
   </div>
 </div>
 
