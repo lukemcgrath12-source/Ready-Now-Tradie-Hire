@@ -1,4 +1,6 @@
 User-agent: *
 Allow: /
+Disallow: /members-admin
+Disallow: /api/
 
 Sitemap: https://readynowtradiehire.com.au/sitemap.xml

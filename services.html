@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#171310">
+<meta name="theme-color" content="#1F2023">
 <link rel="canonical" href="https://readynowtradiehire.com.au/services">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ready Now Tradie Hire">
@@ -33,10 +33,10 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --olive:#241E18;--olive-deep:#171310;--olive-light:#2F2820;--olive-accent:#6B4A2E;
-  --gold:#E4711E;--gold-dark:#C95F14;
-  --stone:#F7F5EF;--stone-2:#F2F0E9;--border:#E5E2D8;--border-2:#D8D4C6;--white:#FFFFFF;
-  --text:#2B2B26;--text-light:#5C5C52;--text-faint:#8A8A7E;
+  --olive:#2A2B2E;--olive-deep:#1F2023;--olive-light:#36383B;--olive-accent:#5B5C5E;
+  --gold:#4894C4;--gold-dark:#2F7AB0;
+  --stone:#F5F7F9;--stone-2:#EDF0F3;--border:#DEE3E8;--border-2:#C9D0D7;--white:#FFFFFF;
+  --text:#232427;--text-light:#55575B;--text-faint:#808387;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
   --display:'Poppins',sans-serif;
   --body:'Poppins',-apple-system,sans-serif;
@@ -83,9 +83,9 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .pillbtn .circ{width:28px;height:28px;border-radius:999px;background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .5s var(--ease)}
 @media(min-width:640px){.pillbtn .circ{width:32px;height:32px}}
 .pillbtn:hover .circ{transform:rotate(-45deg)}
-.pillbtn-gold{background:var(--gold);color:var(--white)}
-.pillbtn-gold:hover{background:var(--gold-dark)}
-.pillbtn-gold .circ svg{stroke:var(--gold)}
+.pillbtn-gold{background:var(--gold-dark);color:var(--white)}
+.pillbtn-gold:hover{background:#246595}
+.pillbtn-gold .circ svg{stroke:var(--gold-dark)}
 .pillbtn-dark{background:var(--olive);color:var(--white)}
 .pillbtn-dark:hover{background:var(--olive-deep)}
 .pillbtn-dark .circ{width:24px;height:24px}
@@ -96,7 +96,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .navwrap.hide{transform:translateY(-110%)}
 @media(min-width:640px){.navwrap{padding:12px}}
 .navbar{max-width:1416px;margin:0 auto;background:var(--white);border-radius:999px;padding:5px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
-.navwrap.scrolled .navbar{box-shadow:0 4px 24px rgba(31,42,30,.12)}
+.navwrap.scrolled .navbar{box-shadow:0 4px 24px rgba(31,32,35,.12)}
 .nav-left{display:flex;align-items:center;gap:24px}
 .nav-logochip{background:var(--olive);border-radius:999px;padding:9px 18px;display:flex;align-items:center}
 .nav-logochip img{height:22px}
@@ -106,6 +106,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .nav-links a{font-size:14px;color:var(--olive);text-decoration:none;transition:color .3s}
 .nav-links a:hover{color:var(--text-faint)}
 .nav-links a.active{font-weight:600}
+.nav-links a.nav-join,.sheet-links a.nav-join{color:var(--gold-dark);font-weight:600}
+.nav-links a.nav-join:hover{color:#246595}
+.nav-links a{white-space:nowrap}
+@media(min-width:768px) and (max-width:1023px){.nav-left{gap:14px}.nav-links{gap:14px}.nav-links a{font-size:13px}}
 .nav-right{display:none;align-items:center;gap:16px;padding-right:2px}
 @media(min-width:768px){.nav-right{display:flex}}
 .nav-note{display:none;font-size:13px;color:var(--text-light)}
@@ -128,7 +132,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 /* ============ HERO ============ */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--olive-deep);overflow:hidden}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(21,29,19,.38) 0%,rgba(21,29,19,.18) 42%,rgba(21,29,19,.78) 100%)}
+.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(31,32,35,.38) 0%,rgba(31,32,35,.18) 42%,rgba(31,32,35,.78) 100%)}
 .fx-grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero-spacer{flex:1}
 .hero-content{position:relative;z-index:20;padding-bottom:56px}
@@ -136,7 +140,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 @media(min-width:1024px){.hero-content{padding-bottom:80px}}
 .hero-label{font-size:13px;color:var(--gold);letter-spacing:.06em;margin-bottom:20px;opacity:0;transform:translateY(14px)}
 @media(min-width:640px){.hero-label{font-size:14px;margin-bottom:32px}}
-.hero h1{font-size:clamp(1.75rem,7vw,4.2rem);font-weight:500;line-height:1.08;letter-spacing:-.03em;color:var(--stone);text-shadow:0 2px 24px rgba(21,29,19,.35);opacity:0;transform:translateY(22px)}
+.hero h1{font-size:clamp(1.75rem,7vw,4.2rem);font-weight:500;line-height:1.08;letter-spacing:-.03em;color:var(--stone);text-shadow:0 2px 24px rgba(31,32,35,.35);opacity:0;transform:translateY(22px)}
 .hero h1 em{font-style:normal;color:var(--gold)}
 @media(min-width:640px){.hero h1{font-size:clamp(2.5rem,5vw,4.2rem)}}
 .hero h1 .br{display:none}
@@ -211,14 +215,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .about-desktop .slot-a{order:2;aspect-ratio:auto;height:100%;min-height:340px;width:100%}
 .about-desktop .slot-b{order:3;aspect-ratio:3/2;width:100%}
 .img-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.img-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,29,19,.45) 0%,rgba(21,29,19,.1) 45%,rgba(21,29,19,.7) 100%)}
+.img-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,32,35,.45) 0%,rgba(31,32,35,.1) 45%,rgba(31,32,35,.7) 100%)}
 .slot-contours{position:absolute;inset:0;opacity:.5}
 .slot-inner{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
 .slot-tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.4)}
 .slot-big{font-family:var(--display);font-size:clamp(22px,2.4vw,34px);font-weight:600;text-transform:uppercase;line-height:1.05;color:var(--white)}
 .slot-big em{font-style:normal;color:var(--gold)}
 .slot-codes{display:flex;flex-wrap:wrap;gap:8px}
-.slot-codes span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(200,168,107,.35);border-radius:999px;padding:4px 10px}
+.slot-codes span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(72,148,196,.35);border-radius:999px;padding:4px 10px}
 
 /* ============ REGISTER ============ */
 .register-sec{background:var(--stone-2);padding-top:64px;padding-bottom:64px}
@@ -256,12 +260,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .sp-panel{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--olive-deep);cursor:pointer}
 .sp-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .sp-card:hover .sp-panel>img{transform:scale(1.04)}
-.sp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,29,19,.73) 0%,rgba(21,29,19,0) 36%,rgba(21,29,19,0) 50%,rgba(21,29,19,.88) 100%)}
+.sp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,32,35,.73) 0%,rgba(31,32,35,0) 36%,rgba(31,32,35,0) 50%,rgba(31,32,35,.88) 100%)}
 .sp-panel .slot-contours{opacity:.45}
 .sp-panel-inner{position:absolute;inset:0;padding:24px 24px 76px;display:flex;flex-direction:column;justify-content:space-between}
 .sp-top{display:flex;justify-content:space-between;align-items:flex-start}
 .sp-code{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.78);text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.5)}
-.sp-sci{font-family:var(--mono);font-style:italic;font-size:11px;color:var(--gold);background:rgba(21,29,19,.65);border-radius:999px;padding:3px 10px;backdrop-filter:blur(2px)}
+.sp-sci{font-family:var(--mono);font-style:italic;font-size:11px;color:var(--gold);background:rgba(31,32,35,.65);border-radius:999px;padding:3px 10px;backdrop-filter:blur(2px)}
 .sp-big{font-family:var(--display);font-size:clamp(22px,2.4vw,34px);font-weight:600;text-transform:uppercase;line-height:1.05;color:var(--white);transition:transform .4s var(--ease)}
 .sp-card:hover .sp-big{transform:translateY(-4px)}
 .card-pill{position:absolute;bottom:16px;left:16px;height:36px;width:36px;background:var(--white);border-radius:999px;display:flex;align-items:center;gap:8px;padding-left:11px;overflow:hidden;transition:width .3s ease-in-out;white-space:nowrap}
@@ -322,7 +326,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .cta-label{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.22em;margin-bottom:40px;display:block}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn-ghost{display:inline-flex;align-items:center;background:transparent;color:var(--white);padding:12px 28px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;transition:border-color .25s,background .25s}
-.btn-ghost:hover{border-color:var(--gold);background:rgba(200,168,107,.08)}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(72,148,196,.08)}
 
 /* ============ FOOTER (SAL structure) ============ */
 footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
@@ -334,7 +338,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .f-brand p{font-size:14.5px;color:rgba(255,255,255,.75);line-height:1.85;max-width:360px;margin-bottom:28px}
 .f-socials{display:flex;gap:12px}
 .f-socials a{width:46px;height:46px;border:1px solid rgba(255,255,255,.16);border-radius:12px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);text-decoration:none;transition:border-color .25s,color .25s,background .25s}
-.f-socials a:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,168,107,.06)}
+.f-socials a:hover{border-color:var(--gold);color:var(--gold);background:rgba(72,148,196,.06)}
 .f-socials svg{width:20px;height:20px}
 .f-col h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
 .f-col ul{list-style:none}
@@ -361,7 +365,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
   .hero-label,.hero h1,.hero-cta{opacity:1;transform:none}
 }
-.f-word{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--cream,#F5EFE6);display:inline-block;margin-bottom:14px}
+.f-word{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--cream,#F3F5F7);display:inline-block;margin-bottom:14px}
 .f-word em{font-style:normal;color:var(--gold)}
 
 /* Logo images */
@@ -387,7 +391,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .jump-inner{display:flex;gap:8px;overflow-x:auto;padding:14px 0;scrollbar-width:none}
 .jump-inner::-webkit-scrollbar{display:none}
 .jump a{flex-shrink:0;font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--text-light);text-decoration:none;border:1px solid var(--border);border-radius:999px;padding:8px 15px;transition:border-color .25s,color .25s,background .25s}
-.jump a:hover{border-color:var(--gold);color:var(--gold-dark);background:rgba(228,113,30,.05)}
+.jump a:hover{border-color:var(--gold);color:var(--gold-dark);background:rgba(72,148,196,.05)}
 
 /* ============ SERVICE ROWS ============ */
 .svc{padding:56px 0;background:var(--white);scroll-margin-top:72px}
@@ -412,12 +416,12 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .svc-media{position:relative;aspect-ratio:4/3;border-radius:18px;overflow:hidden;background:var(--olive-deep)}
 .svc-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .svc-media .slot-contours{opacity:.45}
-.svc-media::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(23,19,16,.73) 0%,rgba(23,19,16,0) 36%,rgba(23,19,16,0) 50%,rgba(23,19,16,.88) 100%)}
+.svc-media::after{content:'';position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,rgba(31,32,35,.73) 0%,rgba(31,32,35,0) 36%,rgba(31,32,35,0) 50%,rgba(31,32,35,.88) 100%)}
 .svc-media-inner{position:absolute;inset:0;z-index:2;padding:26px;display:flex;flex-direction:column;justify-content:space-between}
 .svc-code{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.78);text-shadow:0 1px 3px rgba(0,0,0,.5)}
 .svc-media-big{font-family:var(--display);font-size:clamp(24px,3vw,38px);font-weight:800;text-transform:uppercase;line-height:1.05;color:var(--white);letter-spacing:-.01em;text-shadow:0 2px 10px rgba(0,0,0,.45)}
 .svc-media-big em{font-style:normal;color:var(--gold)}
-.svc-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--gold);background:rgba(23,19,16,.42);border:1px solid rgba(228,113,30,.55);border-radius:999px;padding:4px 11px;align-self:flex-start;backdrop-filter:blur(2px)}
+.svc-tag{font-family:var(--mono);font-size:10px;letter-spacing:.14em;color:var(--gold);background:rgba(31,32,35,.42);border:1px solid rgba(72,148,196,.55);border-radius:999px;padding:4px 11px;align-self:flex-start;backdrop-filter:blur(2px)}
 
 /* ============ CONTACT PAGE ============ */
 .contact-sec{background:var(--white);padding:56px 0 64px}
@@ -449,7 +453,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .fld input,.fld select,.fld textarea{font-family:var(--body);font-size:15px;color:var(--text);background:var(--white);border:1px solid var(--border-2);border-radius:10px;padding:13px 14px;width:100%;transition:border-color .25s,box-shadow .25s}
 .fld textarea{resize:vertical;min-height:118px;line-height:1.6}
 .fld select{appearance:none;background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%235C5C52' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 14px center;padding-right:40px}
-.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(228,113,30,.12)}
+.fld input:focus,.fld select:focus,.fld textarea:focus{outline:none;border-color:var(--gold);box-shadow:0 0 0 3px rgba(72,148,196,.12)}
 .fld input::placeholder,.fld textarea::placeholder{color:var(--text-faint)}
 .form-foot{margin-top:26px;display:flex;flex-direction:column;gap:16px;align-items:flex-start}
 @media(min-width:640px){.form-foot{flex-direction:row;align-items:center;justify-content:space-between}}
@@ -482,7 +486,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .gear-pic.noimg .gear-tag{top:50%;transform:translateY(-50%)}
 .gear-pic>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .gear-tag{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--mono);font-size:9px;
-  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92);background:rgba(21,29,19,.6);
+  letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.92);background:rgba(31,32,35,.6);
   border-radius:999px;padding:4px 10px;backdrop-filter:blur(2px)}
 .gear-in{padding:15px 16px 17px;display:flex;flex-direction:column;flex:1}
 .gear-name{font-family:var(--display);font-size:19px;font-weight:600;letter-spacing:-.01em;
@@ -495,7 +499,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .gear-book{margin-top:auto;display:inline-flex;align-items:center;justify-content:space-between;gap:10px;
   padding:10px 16px;border-radius:999px;background:var(--gold);color:var(--olive-deep);
   font-size:13.5px;font-weight:700;text-decoration:none;transition:background .25s,transform .25s}
-.gear-book:hover{background:#F0832F;transform:translateY(-1px)}
+.gear-book:hover{background:#5AA3D0;transform:translateY(-1px)}
 .gear-book:focus-visible{outline:2px solid var(--olive);outline-offset:2px}
 .gear-note{margin-top:20px;padding:14px 16px;border:1px solid var(--border);
   border-left:3px solid var(--gold);border-radius:10px;background:var(--stone)}
@@ -513,8 +517,8 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .tm-panel{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--olive-deep)}
 .tm-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .tm-card:hover .tm-panel>img{transform:scale(1.04)}
-.tm-code{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9);background:rgba(21,29,19,.6);border-radius:999px;padding:3px 9px;backdrop-filter:blur(2px);text-shadow:0 1px 3px rgba(0,0,0,.5)}
-.tm-cue{position:absolute;top:10px;right:10px;z-index:2;width:24px;height:24px;border-radius:999px;background:rgba(21,29,19,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .3s,color .3s,transform .35s var(--ease)}
+.tm-code{position:absolute;top:10px;left:10px;z-index:2;font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9);background:rgba(31,32,35,.6);border-radius:999px;padding:3px 9px;backdrop-filter:blur(2px);text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.tm-cue{position:absolute;top:10px;right:10px;z-index:2;width:24px;height:24px;border-radius:999px;background:rgba(31,32,35,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .3s,color .3s,transform .35s var(--ease)}
 .tm-card.open .tm-cue{background:var(--gold);color:var(--olive-deep);transform:rotate(45deg)}
 .tm-body{padding:13px 13px 16px}
 .tm-name{font-size:14.5px;font-weight:600;letter-spacing:-.01em;color:var(--olive);line-height:1.2;margin-bottom:5px}
@@ -528,11 +532,11 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .tm-book{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 14px 15px;
   padding:9px 14px;border-radius:999px;background:var(--gold);color:var(--olive-deep);
   font-size:12.5px;font-weight:700;letter-spacing:-.01em;text-decoration:none;transition:background .25s,transform .25s}
-.tm-book:hover{background:#F0832F;transform:translateY(-1px)}
+.tm-book:hover{background:#5AA3D0;transform:translateY(-1px)}
 .tm-book:focus-visible{outline:2px solid #fff;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.tm-detail,.tm-panel>img,.tm-book{transition:none}}
 @media(hover:hover) and (min-width:1024px){
-  .tm-detail{position:absolute;top:0;left:0;width:100%;aspect-ratio:1/1;z-index:3;display:flex;align-items:center;grid-template-rows:none;background:rgba(23,19,16,.95);transform:translateY(-101%);transition:transform .45s var(--ease)}
+  .tm-detail{position:absolute;top:0;left:0;width:100%;aspect-ratio:1/1;z-index:3;display:flex;align-items:center;grid-template-rows:none;background:rgba(31,32,35,.95);transform:translateY(-101%);transition:transform .45s var(--ease)}
   .tm-detail-in{overflow:visible;width:100%}
   .tm-dl{padding:0 16px;gap:9px}
   .tm-book{margin:14px 16px 0}
@@ -547,7 +551,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   border:1px solid var(--border);border-radius:999px;padding:6px 16px 6px 6px;
   text-decoration:none;transition:border-color .22s,transform .22s,box-shadow .22s}
 .crew:hover{border-color:var(--gold);transform:translateY(-1px);
-  box-shadow:0 4px 14px rgba(36,30,24,.07)}
+  box-shadow:0 4px 14px rgba(42,43,46,.07)}
 .crew img{width:38px;height:38px;border-radius:999px;object-fit:cover;flex:none;
   background:var(--stone-2)}
 .crew .cn{display:block;font-size:13.5px;font-weight:600;color:var(--olive);
@@ -559,7 +563,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 
 /* ---------- sticky mobile action bar ---------- */
 .mbar{position:fixed;left:0;right:0;bottom:0;z-index:150;display:none;
-  background:rgba(23,19,16,.97);backdrop-filter:blur(12px);
+  background:rgba(31,32,35,.97);backdrop-filter:blur(12px);
   border-top:1px solid rgba(255,255,255,.1);padding:10px 12px calc(10px + env(safe-area-inset-bottom));
   gap:9px;transform:translateY(110%);transition:transform .35s var(--ease)}
 .mbar.up{transform:translateY(0)}
@@ -568,7 +572,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   border-radius:999px;padding:13px 10px;font-family:var(--body);font-size:14px;
   font-weight:600;text-decoration:none;letter-spacing:-.01em}
 .mbar .call{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.3)}
-.mbar .book{background:var(--gold);color:#fff}
+.mbar .book{background:var(--gold-dark);color:#fff}
 .mbar svg{flex:none}
 .footer-bar .f-privacy{color:rgba(255,255,255,.5);text-decoration:none;transition:color .3s}
 .footer-bar .f-privacy:hover{color:var(--gold)}
@@ -579,13 +583,15 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <div class="navwrap" id="navwrap">
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-left">
-      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo.png" alt="Tradie Hire Ready Now" class="nav-logo-img"></a>
+      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img"></a>
       <div class="nav-links">
         <a href="index.html">Home</a>
+        <a href="members.html">Find a Tradie</a>
         <a href="services.html" class="active">Services</a>
         <a href="hire.html">Hire</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="join.html" class="nav-join">Join Free</a>
       </div>
     </div>
     <div class="nav-right">
@@ -607,10 +613,12 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
     <div class="sheet-links">
       <a href="index.html">Home</a>
+      <a href="members.html">Find a Tradie</a>
       <a href="services.html">Services</a>
         <a href="booking.html">Book</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="join.html" class="nav-join">Join Free</a>
     </div>
     <a href="booking.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
       <span class="roll"><i><b>Book Now</b><b>Book Now</b></i></span>
@@ -627,7 +635,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <main id="main">
 
 <section class="page-hero">
-  <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
+  <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
   <div class="wrap px ph-inner">
     <span class="ph-eyebrow">Our Trades &middot; Wider Sydney</span>
     <h1>Any trade. <em>One call.</em></h1>
@@ -655,7 +663,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="svc-btn"><a href="booking.html?trade=Carpentry" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Carpentry</b><b>Book Carpentry</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="carpentry.jpg" alt="Carpentry — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="carpentry.jpg" alt="Carpentry — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR—01</span><span class="svc-tag">Qualified</span>
@@ -678,7 +686,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s8" aria-label="Hayden Budd, Electrician &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;07</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="hayden-budd.jpg" alt="Hayden Budd &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Hayden Budd</div><div class="tm-trade">Electrician</div></div><div class="tm-detail" id="tmd-s8"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Electrician</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>Licensed electrician + white card</dd></div><div><dt>On the tools</dt><dd>7 years</dd></div></dl><a class="tm-book" href="booking.html?worker=Hayden%20Budd&amp;trade=Electrical"><span>Book Hayden</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="electrical.jpg" alt="Electrical — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="electrical.jpg" alt="Electrical — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR—02</span><span class="svc-tag">Licensed</span>
@@ -702,7 +710,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s1" aria-label="Lewis Slatter, Plumber &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;01</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="lewis-slatter.jpg" alt="Lewis Slatter &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Lewis Slatter</div><div class="tm-trade">Plumber</div></div><div class="tm-detail" id="tmd-s1"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Plumber</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>Licensed plumber, drainer &amp; gasfitter</dd></div><div><dt>On the tools</dt><dd>10+ years</dd></div></dl><a class="tm-book" href="booking.html?worker=Lewis%20Slatter&amp;trade=Plumbing"><span>Book Lewis</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="plumbing.jpg" alt="Plumbing — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="plumbing.jpg" alt="Plumbing — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR—03</span><span class="svc-tag">Licensed</span>
@@ -726,7 +734,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s2" aria-label="Jake Littlewood, Tiler &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;02</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="jake-littlewood.jpg" alt="Jake Littlewood &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Jake Littlewood</div><div class="tm-trade">Tiler</div></div><div class="tm-detail" id="tmd-s2"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Tiler</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>Tiling certificate &mdash; waterproofing included</dd></div><div><dt>On the tools</dt><dd>10+ years</dd></div></dl><a class="tm-book" href="booking.html?worker=Jake%20Littlewood&amp;trade=Tiling"><span>Book Jake</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="tiling.jpg" alt="Tiling — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="tiling.jpg" alt="Tiling — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR—04</span><span class="svc-tag">Skilled</span>
@@ -748,7 +756,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="svc-btn"><a href="booking.html?trade=Concreting" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Book Concreting</b><b>Book Concreting</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="concreting.jpg" alt="Concreting — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="concreting.jpg" alt="Concreting — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR—05</span><span class="svc-tag">Experienced</span>
@@ -772,7 +780,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s3" aria-label="Laurence Warnimont, General Labour and Forklift &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;06</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="laurence-warnimont.jpg" alt="Laurence Warnimont &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Laurence Warnimont</div><div class="tm-trade">General Labour &middot; Forklift</div></div><div class="tm-detail" id="tmd-s3"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>General Labourer &amp; forklift operator</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>White card, first aid, forklift (LF) &amp; driver's licence</dd></div><div><dt>On the tools</dt><dd>2+ years</dd></div></dl><a class="tm-book" href="booking.html?worker=Laurence%20Warnimont&amp;trade=General%20Labour"><span>Book Laurence</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="labour.jpg" alt="General Labour — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="labour.jpg" alt="General Labour — Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR—06</span><span class="svc-tag">Site Ready</span>
@@ -796,7 +804,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s4" aria-label="Macca Needham, Roofer &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;03</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="macca-needham.jpg" alt="Macca Needham &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Macca Needham</div><div class="tm-trade">Roofer</div></div><div class="tm-detail" id="tmd-s4"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Roofer</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>Roofing licence + working at heights</dd></div><div><dt>On the tools</dt><dd>5 years</dd></div></dl><a class="tm-book" href="booking.html?worker=Macca%20Needham&amp;trade=Roofing"><span>Book Macca</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s5" aria-label="Teika Kakahi, Apprentice Roofer &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;04</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="teika-kakahi.jpg" alt="Teika Kakahi &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Teika Kakahi</div><div class="tm-trade">Apprentice Roofer</div></div><div class="tm-detail" id="tmd-s5"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Apprentice Roofer</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Apprenticeship</dt><dd>First year</dd></div><div><dt>Working at heights</dt><dd>Ticket in progress</dd></div></dl><a class="tm-book" href="booking.html?worker=Teika%20Kakahi&amp;trade=Roofing"><span>Book Teika</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="roofing.jpg" alt="Roofing &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="roofing.jpg" alt="Roofing &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR&mdash;07</span><span class="svc-tag">Ticketed</span>
@@ -819,7 +827,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s6" aria-label="Anfal Mehdaoui, Traffic Control &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;05</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="anfal-mehdaoui.jpg" alt="Anfal Mehdaoui &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Anfal Mehdaoui</div><div class="tm-trade">Traffic Control</div></div><div class="tm-detail" id="tmd-s6"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Traffic Control</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>White card, blue card &amp; yellow card</dd></div><div><dt>Availability</dt><dd>Ready now</dd></div></dl><a class="tm-book" href="booking.html?worker=Anfal%20Mehdaoui&amp;trade=Traffic%20Control"><span>Book Anfal</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="traffic-control.jpg" alt="Traffic Control &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="traffic-control.jpg" alt="Traffic Control &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR&mdash;08</span><span class="svc-tag">Ticketed</span>
@@ -842,7 +850,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <div class="svc-crew"><span class="svc-crew-lbl">On the books for this trade</span><div class="svc-crew-grid"><div class="tm-card" role="button" tabindex="0" aria-expanded="false" aria-controls="tmd-s9" aria-label="Laurence Warnimont, Forklift and General Labour &mdash; show details"><div class="tm-panel"><span class="tm-code">TH&mdash;06</span><span class="tm-cue" aria-hidden="true"><svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg></span><img src="laurence-warnimont.jpg" alt="Laurence Warnimont &mdash; Ready Now Tradie Hire" width="800" height="800" loading="lazy" onerror="this.remove()"></div><div class="tm-body"><div class="tm-name">Laurence Warnimont</div><div class="tm-trade">Forklift &middot; General Labour</div></div><div class="tm-detail" id="tmd-s9"><div class="tm-detail-in"><dl class="tm-dl"><div><dt>Trade</dt><dd>Forklift operator &amp; general labourer</dd></div><div><dt>Covers</dt><dd>Sydney metro</dd></div><div><dt>Tickets</dt><dd>Forklift (LF), white card, first aid &amp; driver's licence</dd></div><div><dt>On the tools</dt><dd>2+ years</dd></div></dl><a class="tm-book" href="booking.html?worker=Laurence%20Warnimont&amp;trade=Forklift%20Driving"><span>Book Laurence</span><svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div></div></div></div></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="forklift.jpg" alt="Forklift operator moving materials &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="forklift.jpg" alt="Forklift operator moving materials &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR&mdash;09</span><span class="svc-tag">Ticketed</span>
@@ -862,7 +870,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         one invoice, one bloke accountable for both.</p>
         <div class="gear-grid">
           <div class="gear-item">
-            <div class="gear-pic"><span class="gear-tag">Delivered</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="skip-bin.jpg" alt="Skip Bins &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.closest('.gear-pic').classList.add('noimg');this.remove()"></div>
+            <div class="gear-pic"><span class="gear-tag">Delivered</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="skip-bin.jpg" alt="Skip Bins &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.closest('.gear-pic').classList.add('noimg');this.remove()"></div>
             <div class="gear-in">
               <div class="gear-name">Skip Bins</div>
               <p class="gear-desc">Site clean-ups, strip-outs and demo waste. Dropped where you want it and collected when you're done.</p>
@@ -871,7 +879,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
             </div>
           </div>
           <div class="gear-item">
-            <div class="gear-pic"><span class="gear-tag">With operator</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="tipper.jpg" alt="Tipper Truck &amp; Operator &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.closest('.gear-pic').classList.add('noimg');this.remove()"></div>
+            <div class="gear-pic"><span class="gear-tag">With operator</span><svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="tipper.jpg" alt="Tipper Truck &amp; Operator &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.closest('.gear-pic').classList.add('noimg');this.remove()"></div>
             <div class="gear-in">
               <div class="gear-name">Tipper Truck &amp; Operator</div>
               <p class="gear-desc">Truck and driver together, not dry hire. Spoil removal, material runs and site clean-outs.</p>
@@ -889,7 +897,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="svc-btn" style="margin-top:22px"><a href="hire.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>See all gear</b><b>See all gear</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a><a href="tel:+61432910369" class="btn-ghost" style="color:var(--olive);border-color:var(--border-2)">Call 0432 910 369</a></div>
       </div>
       <div class="svc-media reveal">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="gear.jpg" alt="Site gear and equipment &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="gear.jpg" alt="Site gear and equipment &mdash; Ready Now Tradie Hire, Sydney" loading="lazy" onerror="this.remove()">
         <div class="svc-media-inner">
           <div style="display:flex;justify-content:space-between;align-items:flex-start">
             <span class="svc-code">TR&mdash;10</span><span class="svc-tag">Arranged</span>
@@ -913,7 +921,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 
 <div class="cta-sec">
   <div class="cta-band reveal">
-    <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
+    <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
     <div class="cta-inner">
       <span class="cta-eyebrow">Direct Line</span>
       <h2>Short a pair of hands today?</h2>
@@ -936,7 +944,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
-      <img src="logo.png" alt="Tradie Hire Ready Now" class="footer-logo-img">
+      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img">
       <p>The new evolution of labour hire. Qualified tradies, work-ready apprentices and reliable labourers &mdash; same-day or booked ahead, across wider Sydney.</p>
       <!-- Update hrefs when Instagram / Google Business Profile / Facebook links are live -->
       <div class="f-socials">

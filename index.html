@@ -10,7 +10,7 @@
 <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
 <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
 <link rel="manifest" href="/site.webmanifest">
-<meta name="theme-color" content="#171310">
+<meta name="theme-color" content="#1F2023">
 <link rel="canonical" href="https://readynowtradiehire.com.au/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Ready Now Tradie Hire">
@@ -33,10 +33,10 @@
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
 :root{
-  --olive:#241E18;--olive-deep:#171310;--olive-light:#2F2820;--olive-accent:#6B4A2E;
-  --gold:#E4711E;--gold-dark:#C95F14;
-  --stone:#F7F5EF;--stone-2:#F2F0E9;--border:#E5E2D8;--border-2:#D8D4C6;--white:#FFFFFF;
-  --text:#2B2B26;--text-light:#5C5C52;--text-faint:#8A8A7E;
+  --olive:#2A2B2E;--olive-deep:#1F2023;--olive-light:#36383B;--olive-accent:#5B5C5E;
+  --gold:#4894C4;--gold-dark:#2F7AB0;
+  --stone:#F5F7F9;--stone-2:#EDF0F3;--border:#DEE3E8;--border-2:#C9D0D7;--white:#FFFFFF;
+  --text:#232427;--text-light:#55575B;--text-faint:#808387;
   --mono:'IBM Plex Mono',ui-monospace,'SF Mono',monospace;
   --display:'Poppins',sans-serif;
   --body:'Poppins',-apple-system,sans-serif;
@@ -83,9 +83,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .pillbtn .circ{width:28px;height:28px;border-radius:999px;background:var(--white);display:flex;align-items:center;justify-content:center;flex-shrink:0;transition:transform .5s var(--ease)}
 @media(min-width:640px){.pillbtn .circ{width:32px;height:32px}}
 .pillbtn:hover .circ{transform:rotate(-45deg)}
-.pillbtn-gold{background:var(--gold);color:var(--white)}
-.pillbtn-gold:hover{background:var(--gold-dark)}
-.pillbtn-gold .circ svg{stroke:var(--gold)}
+.pillbtn-gold{background:var(--gold-dark);color:var(--white)}
+.pillbtn-gold:hover{background:#246595}
+.pillbtn-gold .circ svg{stroke:var(--gold-dark)}
+.pillbtn-light{background:var(--white);color:var(--olive)}
+.pillbtn-light:hover{background:var(--stone-2)}
+.pillbtn-light .circ{background:var(--olive)}
+.pillbtn-light .circ svg{stroke:var(--white)}
+.hero-btns{display:flex;flex-wrap:wrap;gap:10px}
 .pillbtn-dark{background:var(--olive);color:var(--white)}
 .pillbtn-dark:hover{background:var(--olive-deep)}
 .pillbtn-dark .circ{width:24px;height:24px}
@@ -96,7 +101,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .navwrap.hide{transform:translateY(-110%)}
 @media(min-width:640px){.navwrap{padding:12px}}
 .navbar{max-width:1416px;margin:0 auto;background:var(--white);border-radius:999px;padding:5px;display:flex;align-items:center;justify-content:space-between;transition:box-shadow .3s}
-.navwrap.scrolled .navbar{box-shadow:0 4px 24px rgba(31,42,30,.12)}
+.navwrap.scrolled .navbar{box-shadow:0 4px 24px rgba(31,32,35,.12)}
 .nav-left{display:flex;align-items:center;gap:24px}
 .nav-logochip{background:var(--olive);border-radius:999px;padding:9px 18px;display:flex;align-items:center}
 .nav-logochip img{height:22px}
@@ -106,6 +111,10 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .nav-links a{font-size:14px;color:var(--olive);text-decoration:none;transition:color .3s}
 .nav-links a:hover{color:var(--text-faint)}
 .nav-links a.active{font-weight:600}
+.nav-links a.nav-join,.sheet-links a.nav-join{color:var(--gold-dark);font-weight:600}
+.nav-links a.nav-join:hover{color:#246595}
+.nav-links a{white-space:nowrap}
+@media(min-width:768px) and (max-width:1023px){.nav-left{gap:14px}.nav-links{gap:14px}.nav-links a{font-size:13px}}
 .nav-right{display:none;align-items:center;gap:16px;padding-right:2px}
 @media(min-width:768px){.nav-right{display:flex}}
 .nav-note{display:none;font-size:13px;color:var(--text-light)}
@@ -128,7 +137,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 /* ============ HERO ============ */
 .hero{position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--olive-deep);overflow:hidden}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(21,29,19,.38) 0%,rgba(21,29,19,.18) 42%,rgba(21,29,19,.78) 100%)}
+.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(31,32,35,.38) 0%,rgba(31,32,35,.18) 42%,rgba(31,32,35,.78) 100%)}
 .fx-grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 .hero-spacer{flex:1}
 .hero-content{position:relative;z-index:20;padding-bottom:56px}
@@ -136,7 +145,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 @media(min-width:1024px){.hero-content{padding-bottom:80px}}
 .hero-label{font-size:13px;color:var(--gold);letter-spacing:.06em;margin-bottom:20px;opacity:0;transform:translateY(14px)}
 @media(min-width:640px){.hero-label{font-size:14px;margin-bottom:32px}}
-.hero h1{font-size:clamp(1.75rem,7vw,4.2rem);font-weight:500;line-height:1.08;letter-spacing:-.03em;color:var(--stone);text-shadow:0 2px 24px rgba(21,29,19,.35);opacity:0;transform:translateY(22px)}
+.hero h1{font-size:clamp(1.75rem,7vw,4.2rem);font-weight:500;line-height:1.08;letter-spacing:-.03em;color:var(--stone);text-shadow:0 2px 24px rgba(31,32,35,.35);opacity:0;transform:translateY(22px)}
 .hero h1 em{font-style:normal;color:var(--gold)}
 @media(min-width:640px){.hero h1{font-size:clamp(2.5rem,5vw,4.2rem)}}
 .hero h1 .br{display:none}
@@ -198,7 +207,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 @media(min-width:900px){.bundle-media{min-height:100%}}
 .bundle-media>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
 .bundle-media-in{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;
-  padding:22px;background:linear-gradient(to top,rgba(21,29,19,.88) 0%,rgba(21,29,19,.25) 55%,transparent 100%)}
+  padding:22px;background:linear-gradient(to top,rgba(31,32,35,.88) 0%,rgba(31,32,35,.25) 55%,transparent 100%)}
 .bundle-big{font-family:var(--display);font-size:clamp(1.5rem,3.6vw,2.1rem);font-weight:700;
   line-height:1.05;color:#fff;text-transform:uppercase;letter-spacing:-.01em}
 
@@ -236,14 +245,14 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .about-desktop .slot-a{order:2;aspect-ratio:auto;height:100%;min-height:340px;width:100%}
 .about-desktop .slot-b{order:3;aspect-ratio:3/2;width:100%}
 .img-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.img-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,29,19,.62) 0%,rgba(21,29,19,.04) 40%,rgba(21,29,19,.86) 100%)}
+.img-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,32,35,.62) 0%,rgba(31,32,35,.04) 40%,rgba(31,32,35,.86) 100%)}
 .slot-contours{position:absolute;inset:0;opacity:.5}
 .slot-inner{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
-.slot-tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(21,29,19,.65);border-radius:999px;padding:4px 11px;text-shadow:0 1px 3px rgba(0,0,0,.5);backdrop-filter:blur(2px)}
+.slot-tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(31,32,35,.65);border-radius:999px;padding:4px 11px;text-shadow:0 1px 3px rgba(0,0,0,.5);backdrop-filter:blur(2px)}
 .slot-big{font-family:var(--display);font-size:clamp(22px,2.4vw,34px);font-weight:600;text-transform:uppercase;line-height:1.05;color:var(--white);text-shadow:0 2px 10px rgba(0,0,0,.45)}
 .slot-big em{font-style:normal;color:var(--gold)}
 .slot-codes{display:flex;flex-wrap:wrap;gap:8px}
-.slot-codes span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(200,168,107,.35);border-radius:999px;padding:4px 10px}
+.slot-codes span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(72,148,196,.35);border-radius:999px;padding:4px 10px}
 
 /* ============ REGISTER ============ */
 .register-sec{background:var(--stone-2);padding-top:64px;padding-bottom:64px}
@@ -281,12 +290,12 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .sp-panel{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--olive-deep);cursor:pointer}
 .sp-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .sp-card:hover .sp-panel>img{transform:scale(1.04)}
-.sp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(21,29,19,.73) 0%,rgba(21,29,19,0) 36%,rgba(21,29,19,0) 50%,rgba(21,29,19,.88) 100%)}
+.sp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,32,35,.73) 0%,rgba(31,32,35,0) 36%,rgba(31,32,35,0) 50%,rgba(31,32,35,.88) 100%)}
 .sp-panel .slot-contours{opacity:.45}
 .sp-panel-inner{position:absolute;inset:0;padding:24px 24px 76px;display:flex;flex-direction:column;justify-content:space-between}
 .sp-top{display:flex;justify-content:space-between;align-items:flex-start}
 .sp-code{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.78);text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.5)}
-.sp-sci{font-family:var(--mono);font-style:italic;font-size:11px;color:var(--gold);background:rgba(21,29,19,.65);border-radius:999px;padding:3px 10px;backdrop-filter:blur(2px)}
+.sp-sci{font-family:var(--mono);font-style:italic;font-size:11px;color:var(--gold);background:rgba(31,32,35,.65);border-radius:999px;padding:3px 10px;backdrop-filter:blur(2px)}
 .sp-big{font-family:var(--display);font-size:clamp(22px,2.4vw,34px);font-weight:600;text-transform:uppercase;line-height:1.05;color:var(--white);transition:transform .4s var(--ease)}
 .sp-card:hover .sp-big{transform:translateY(-4px)}
 .card-pill{position:absolute;bottom:16px;left:16px;height:36px;width:36px;background:var(--white);border-radius:999px;display:flex;align-items:center;gap:8px;padding-left:11px;overflow:hidden;transition:width .3s ease-in-out;white-space:nowrap}
@@ -333,7 +342,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .tm-panel{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--olive-deep)}
 .tm-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
 .tm-card:hover .tm-panel>img{transform:scale(1.04)}
-.tm-code{position:absolute;top:12px;left:12px;z-index:2;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9);background:rgba(21,29,19,.6);border-radius:999px;padding:4px 10px;backdrop-filter:blur(2px);text-shadow:0 1px 3px rgba(0,0,0,.5)}
+.tm-code{position:absolute;top:12px;left:12px;z-index:2;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9);background:rgba(31,32,35,.6);border-radius:999px;padding:4px 10px;backdrop-filter:blur(2px);text-shadow:0 1px 3px rgba(0,0,0,.5)}
 .tm-body{padding:15px 15px 19px}
 @media(min-width:1024px){.tm-body{padding:20px 20px 24px}}
 .tm-name{font-size:15.5px;font-weight:600;letter-spacing:-.01em;color:var(--olive);line-height:1.2;margin-bottom:6px}
@@ -341,7 +350,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .tm-trade{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark)}
 .tm-card{position:relative;cursor:pointer}
 .tm-card:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px}
-.tm-cue{position:absolute;top:12px;right:12px;z-index:2;width:26px;height:26px;border-radius:999px;background:rgba(21,29,19,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .3s,color .3s,transform .35s var(--ease)}
+.tm-cue{position:absolute;top:12px;right:12px;z-index:2;width:26px;height:26px;border-radius:999px;background:rgba(31,32,35,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .3s,color .3s,transform .35s var(--ease)}
 .tm-card.open .tm-cue{background:var(--gold);color:var(--olive-deep);transform:rotate(45deg)}
 /* mobile + tablet: accordion, expands the card downward */
 .tm-detail{display:grid;grid-template-rows:0fr;background:var(--olive-deep);transition:grid-template-rows .42s var(--ease)}
@@ -352,13 +361,13 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .tm-dl dd{margin:0;font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.92)}
 .tm-dl{padding-bottom:4px}
 .tm-book{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 15px 16px;padding:10px 15px;border-radius:999px;background:var(--gold);color:var(--olive-deep);font-size:13px;font-weight:700;letter-spacing:-.01em;text-decoration:none;transition:background .25s,transform .25s}
-.tm-book:hover{background:#F0832F;transform:translateY(-1px)}
+.tm-book:hover{background:#5AA3D0;transform:translateY(-1px)}
 .tm-book:focus-visible{outline:2px solid #fff;outline-offset:2px}
 @media(prefers-reduced-motion:reduce){.tm-book{transition:none}}
 @media(prefers-reduced-motion:reduce){.tm-detail{transition:none}}
 /* desktop with a real pointer: drops down over the photo, no reflow */
 @media(min-width:1024px) and (hover:hover) and (pointer:fine){
-  .tm-detail{position:absolute;top:0;left:0;width:100%;aspect-ratio:1/1;z-index:3;display:flex;align-items:center;grid-template-rows:none;background:rgba(23,19,16,.95);transform:translateY(-101%);transition:transform .45s var(--ease)}
+  .tm-detail{position:absolute;top:0;left:0;width:100%;aspect-ratio:1/1;z-index:3;display:flex;align-items:center;grid-template-rows:none;background:rgba(31,32,35,.95);transform:translateY(-101%);transition:transform .45s var(--ease)}
   .tm-detail-in{overflow:visible;width:100%}
   .tm-dl{padding:0 20px;gap:12px}
   .tm-book{margin:14px 20px 0}
@@ -397,7 +406,7 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .cta-label{font-family:var(--mono);font-size:11px;color:rgba(255,255,255,.35);text-transform:uppercase;letter-spacing:.22em;margin-bottom:40px;display:block}
 .cta-btns{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
 .btn-ghost{display:inline-flex;align-items:center;background:transparent;color:var(--white);padding:12px 28px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-size:13px;font-weight:500;text-decoration:none;transition:border-color .25s,background .25s}
-.btn-ghost:hover{border-color:var(--gold);background:rgba(200,168,107,.08)}
+.btn-ghost:hover{border-color:var(--gold);background:rgba(72,148,196,.08)}
 
 /* ============ FOOTER (SAL structure) ============ */
 footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
@@ -409,7 +418,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .f-brand p{font-size:14.5px;color:rgba(255,255,255,.75);line-height:1.85;max-width:360px;margin-bottom:28px}
 .f-socials{display:flex;gap:12px}
 .f-socials a{width:46px;height:46px;border:1px solid rgba(255,255,255,.16);border-radius:12px;display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,.85);text-decoration:none;transition:border-color .25s,color .25s,background .25s}
-.f-socials a:hover{border-color:var(--gold);color:var(--gold);background:rgba(200,168,107,.06)}
+.f-socials a:hover{border-color:var(--gold);color:var(--gold);background:rgba(72,148,196,.06)}
 .f-socials svg{width:20px;height:20px}
 .f-col h4{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:28px}
 .f-col ul{list-style:none}
@@ -438,7 +447,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   *,*::before,*::after{animation-duration:.01ms!important;animation-delay:0ms!important;transition-duration:.01ms!important}
   .hero-label,.hero h1,.hero-cta{opacity:1;transform:none}
 }
-.f-word{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--cream,#F5EFE6);display:inline-block;margin-bottom:14px}
+.f-word{font-family:var(--display);font-weight:800;font-size:17px;letter-spacing:.08em;color:var(--cream,#F3F5F7);display:inline-block;margin-bottom:14px}
 .f-word em{font-style:normal;color:var(--gold)}
 
 /* Logo images */
@@ -451,11 +460,11 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <a class="skip-link" href="#main">Skip to content</a>
 
 <div class="hold" id="holdPage">
-  <svg class="hold-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 900" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".4"><path d="M-100 720 C 200 640, 420 780, 700 700 S 1200 560, 1560 660"/><path d="M-100 780 C 220 700, 440 840, 720 760 S 1220 620, 1560 720"/><path d="M-100 160 C 260 100, 520 240, 820 150 S 1280 40, 1560 130"/><path d="M-100 100 C 240 40, 500 180, 800 90 S 1260 -10, 1560 70"/></g></svg>
+  <svg class="hold-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 900" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".4"><path d="M-100 720 C 200 640, 420 780, 700 700 S 1200 560, 1560 660"/><path d="M-100 780 C 220 700, 440 840, 720 760 S 1220 620, 1560 720"/><path d="M-100 160 C 260 100, 520 240, 820 150 S 1280 40, 1560 130"/><path d="M-100 100 C 240 40, 500 180, 800 90 S 1260 -10, 1560 70"/></g></svg>
   <span class="hold-corner tl">Ready Now &middot; Sydney</span>
   <span class="hold-corner br">Same-Day &middot; Booked Ahead</span>
   <div class="hold-stack">
-    <div class="hold-logo-mask"><img src="logo.png" alt="Tradie Hire Ready Now" class="hold-logo-img"></div>
+    <div class="hold-logo-mask"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="hold-logo-img"></div>
     <div class="hold-rule-track"><div class="hold-rule-fill"></div></div>
     <div class="hold-status">Wider Sydney &middot; On Call</div>
   </div>
@@ -464,13 +473,15 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <div class="navwrap" id="navwrap">
   <nav class="navbar" aria-label="Main navigation">
     <div class="nav-left">
-      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo.png" alt="Tradie Hire Ready Now" class="nav-logo-img"></a>
+      <a href="index.html" class="nav-logochip" aria-label="Ready Now Tradie Hire home"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="nav-logo-img"></a>
       <div class="nav-links">
         <a href="index.html" class="active">Home</a>
+        <a href="members.html">Find a Tradie</a>
         <a href="services.html">Services</a>
         <a href="hire.html">Hire</a>
         <a href="about.html">About</a>
         <a href="contact.html">Contact</a>
+        <a href="join.html" class="nav-join">Join Free</a>
       </div>
     </div>
     <div class="nav-right">
@@ -492,10 +503,12 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     </div>
     <div class="sheet-links">
       <a href="index.html">Home</a>
+      <a href="members.html">Find a Tradie</a>
       <a href="services.html">Services</a>
       <a href="hire.html">Hire</a>
       <a href="about.html">About</a>
       <a href="contact.html">Contact</a>
+      <a href="join.html" class="nav-join">Join Free</a>
     </div>
     <a href="contact.html" class="pillbtn pillbtn-gold" style="margin-bottom:10px">
       <span class="roll"><i><b>Request Now</b><b>Request Now</b></i></span>
@@ -527,12 +540,18 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <em>ready now.</em>
     </h1>
     <div class="hero-cta">
-      <a href="tel:+61432910369" class="pillbtn pillbtn-gold">
-        <span class="roll"><i><b>Call &mdash; 0432 910 369</b><b>Call &mdash; 0432 910 369</b></i></span>
-        <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-      </a>
+      <div class="hero-btns">
+        <a href="members.html" class="pillbtn pillbtn-gold">
+          <span class="roll"><i><b>Find a Tradie</b><b>Find a Tradie</b></i></span>
+          <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+        <a href="join.html" class="pillbtn pillbtn-light">
+          <span class="roll"><i><b>Join Free</b><b>Join Free</b></i></span>
+          <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+        </a>
+      </div>
       <div class="badge-pill">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#E4711E" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:none"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
+        <svg viewBox="0 0 24 24" fill="none" stroke="#4894C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:none"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
         <span class="bp-text">Own Tools &middot; Site Ready</span>
         <span class="bp-chip">SYD</span>
       </div>
@@ -576,7 +595,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <div class="about-imgs reveal">
         <!-- Swap panel content for lifestyle photo (tradie on the tools): <img src="about-1.jpg" alt="..."> inside .img-slot -->
         <div class="img-slot slot-a">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Ready Now tradie on the tools — Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
+          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Ready Now tradie on the tools — Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
           <div class="slot-inner">
             <span class="slot-tag">Trade Index</span>
             <div>
@@ -587,7 +606,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         </div>
         <!-- Swap panel content for lifestyle photo (crew / ute / site): <img src="about-2.jpg" alt="..."> inside .img-slot -->
         <div class="img-slot slot-b">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="about-2.jpg" alt="Sydney job site at first light" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
+          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="about-2.jpg" alt="Sydney job site at first light" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
           <div class="slot-inner">
             <span class="slot-tag">Coverage</span>
             <div class="slot-big">Sydney.<br><em>Wide.</em></div>
@@ -599,7 +618,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     <!-- DESKTOP -->
     <div class="about-desktop px">
       <div class="img-slot slot-a">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Ready Now tradie on the tools — Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Ready Now tradie on the tools — Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
         <div class="slot-inner">
           <span class="slot-tag">Trade Index</span>
           <div>
@@ -620,7 +639,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         </div>
       </div>
       <div class="img-slot slot-b">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="about-2.jpg" alt="Sydney job site at first light" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="about-2.jpg" alt="Sydney job site at first light" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
         <div class="slot-inner">
           <span class="slot-tag">Coverage</span>
           <div class="slot-big">Sydney.<br><em>Wide.</em></div>
@@ -746,7 +765,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       </a>
       <a href="services.html#roofing" class="sp-card reveal">
         <div class="sp-panel">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="roofing.jpg" alt="Roofer working on a Sydney re-roof" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
+          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="roofing.jpg" alt="Roofer working on a Sydney re-roof" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
             <div class="sp-top"><span class="sp-code">TR&mdash;07</span><span class="sp-sci">Licensed</span></div>
             <div class="sp-big">Roofing</div>
@@ -758,7 +777,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       </a>
       <a href="services.html#traffic-control" class="sp-card reveal">
         <div class="sp-panel">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="traffic-control.jpg" alt="Traffic controller managing a site access point" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
+          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="traffic-control.jpg" alt="Traffic controller managing a site access point" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
             <div class="sp-top"><span class="sp-code">TR&mdash;08</span><span class="sp-sci">Ticketed</span></div>
             <div class="sp-big">Traffic<br>Control</div>
@@ -770,7 +789,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       </a>
       <a href="services.html#forklift" class="sp-card reveal">
         <div class="sp-panel">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="forklift.jpg" alt="Forklift operator moving materials on a Sydney site" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
+          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="forklift.jpg" alt="Forklift operator moving materials on a Sydney site" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
           <div class="sp-panel-inner">
             <div class="sp-top"><span class="sp-code">TR&mdash;09</span><span class="sp-sci">Ticketed</span></div>
             <div class="sp-big">Forklift<br>Driving</div>
@@ -811,7 +830,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
           </div>
         </div>
         <div class="bundle-media">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg>
+          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg>
           <img src="gear.jpg" alt="Site gear and labour supplied together &mdash; Ready Now Tradie Hire" loading="lazy" onerror="this.remove()">
           <div class="bundle-media-in">
             <div class="bundle-big">Labour<br>&amp; Gear</div>
@@ -1011,7 +1030,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <!-- ============ CTA BAND ============ -->
 <div class="cta-sec">
   <div class="cta-band reveal">
-    <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#8A5A32" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
+    <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
     <div class="cta-inner">
       <span class="cta-eyebrow">Direct Line</span>
       <h2>Don't lose another day on site.</h2>
@@ -1034,7 +1053,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <footer>
   <div class="footer-grid">
     <div class="f-brand">
-      <img src="logo.png" alt="Tradie Hire Ready Now" class="footer-logo-img">
+      <img src="logo-v2.png" alt="Tradie Hire Ready Now" class="footer-logo-img">
       <p>The new evolution of labour hire. Qualified tradies, work-ready apprentices and reliable labourers &mdash; same-day or booked ahead, across wider Sydney.</p>
       <!-- Update hrefs when Instagram / Google Business Profile / Facebook links are live -->
       <div class="f-socials">

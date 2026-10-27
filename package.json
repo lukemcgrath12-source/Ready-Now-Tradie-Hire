@@ -1,0 +1,11 @@
+{
+  "name": "ready-now-tradie-hire",
+  "private": true,
+  "version": "1.1.0",
+  "description": "Ready Now Tradie Hire website and member directory",
+  "engines": { "node": ">=20" },
+  "dependencies": {
+    "@vercel/blob": "^2.8.2",
+    "stripe": "^23.0.1"
+  }
+}
