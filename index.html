@@ -26,6 +26,7 @@
 <meta name="twitter:title" content="Find a Tradie in Sydney | Ready Now Tradie Hire">
 <meta name="twitter:description" content="Find tradies, builders and labourers across wider Sydney and call them direct. On the tools? List your trade free and get hired.">
 <meta name="twitter:image" content="https://readynowtradiehire.com.au/og-image.jpg">
+<link rel="preconnect" href="https://d2ol7oe51mr4n9.cloudfront.net" crossorigin>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -54,24 +55,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .px{padding-left:20px;padding-right:20px}
 @media(min-width:640px){.px{padding-left:32px;padding-right:32px}}
 @media(min-width:1024px){.px{padding-left:48px;padding-right:48px}}
-
-/* ============ HOLD SCREEN ============ */
-.hold{position:fixed;inset:0;background:var(--olive-deep);z-index:9999;display:flex;align-items:center;justify-content:center;overflow:hidden;transition:transform .75s cubic-bezier(.76,0,.24,1),visibility .75s}
-.hold.exit{transform:translateY(-100%);visibility:hidden;pointer-events:none}
-.hold-contours{position:absolute;inset:0;opacity:0;animation:holdFade 1.2s ease .1s forwards}
-.hold-stack{position:relative;display:flex;flex-direction:column;align-items:center;gap:26px}
-.hold-logo-mask{overflow:hidden;padding:6px 0}
-.hold-word{display:block;font-family:var(--display);font-weight:800;font-size:26px;letter-spacing:.08em;color:var(--stone);transform:translateY(115%);animation:holdLogoRise .8s cubic-bezier(.22,1,.36,1) .2s forwards}.hold-word em{font-style:normal;color:var(--gold)}
-.hold-rule-track{width:220px;height:1px;background:rgba(255,255,255,.12);position:relative;overflow:hidden}
-.hold-rule-fill{position:absolute;inset:0 auto 0 0;width:0;background:var(--gold);animation:holdRuleFill .8s cubic-bezier(.22,1,.36,1) .55s forwards}
-.hold-status{font-family:var(--mono);font-size:10px;letter-spacing:.55em;text-transform:uppercase;color:rgba(255,255,255,.32);opacity:0;animation:holdTrack .9s cubic-bezier(.22,1,.36,1) .6s forwards}
-.hold-corner{position:absolute;font-family:var(--mono);font-size:9px;letter-spacing:.3em;text-transform:uppercase;color:rgba(255,255,255,.22);opacity:0;animation:holdFade .8s ease .7s forwards}
-.hold-corner.tl{top:24px;left:28px}
-.hold-corner.br{bottom:24px;right:28px;color:var(--gold);opacity:0}
-@keyframes holdLogoRise{to{transform:translateY(0)}}
-@keyframes holdRuleFill{to{width:100%}}
-@keyframes holdTrack{from{letter-spacing:.55em;opacity:0}to{letter-spacing:.3em;opacity:1}}
-@keyframes holdFade{to{opacity:1}}
 
 /* ============ TEXT-ROLL BUTTON SYSTEM ============ */
 .pillbtn{display:inline-flex;align-items:center;gap:10px;border:none;cursor:pointer;text-decoration:none;border-radius:999px;padding:8px 8px 8px 22px;font-family:var(--body);font-size:13px;font-weight:500;transition:background .5s var(--ease)}
@@ -134,67 +117,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 .sheet-links a{font-size:28px;line-height:32px;font-weight:500;color:var(--olive);text-decoration:none;letter-spacing:-.02em}
 .sheet .pillbtn{width:100%;justify-content:space-between}
 
-/* ============ HERO ============ */
-.hero{position:relative;min-height:100svh;display:flex;flex-direction:column;background:var(--olive-deep);overflow:hidden}
-.hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:1}
-.hero-shade{position:absolute;inset:0;z-index:2;background:linear-gradient(180deg,rgba(31,32,35,.38) 0%,rgba(31,32,35,.18) 42%,rgba(31,32,35,.78) 100%)}
-.fx-grain{position:absolute;inset:0;z-index:3;pointer-events:none;opacity:.06;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='300' height='300'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
-.hero-spacer{flex:1}
-.hero-content{position:relative;z-index:20;padding-bottom:56px}
-@media(min-width:640px){.hero-content{padding-bottom:64px}}
-@media(min-width:1024px){.hero-content{padding-bottom:80px}}
-.hero-label{font-size:13px;color:var(--gold);letter-spacing:.06em;margin-bottom:20px;opacity:0;transform:translateY(14px)}
-@media(min-width:640px){.hero-label{font-size:14px;margin-bottom:32px}}
-.hero h1{font-size:clamp(1.75rem,7vw,4.2rem);font-weight:500;line-height:1.08;letter-spacing:-.03em;color:var(--stone);text-shadow:0 2px 24px rgba(31,32,35,.35);opacity:0;transform:translateY(22px)}
-.hero h1 em{font-style:normal;color:var(--gold)}
-@media(min-width:640px){.hero h1{font-size:clamp(2.5rem,5vw,4.2rem)}}
-.hero h1 .br{display:none}
-@media(min-width:640px){.hero h1 .br{display:block}.hero h1 .sp{display:none}}
-.hero-cta{margin-top:32px;display:flex;flex-direction:column;align-items:flex-start;gap:16px;opacity:0;transform:translateY(18px)}
-@media(min-width:640px){.hero-cta{margin-top:48px;flex-direction:row;align-items:center;gap:20px}}
-.badge-pill{display:inline-flex;align-items:center;gap:10px;background:var(--white);border-radius:4px;padding:9px 14px;box-shadow:0 2px 8px rgba(0,0,0,.08);transition:box-shadow .3s}
-.badge-pill:hover{box-shadow:0 4px 16px rgba(0,0,0,.12)}
-.badge-pill svg{width:20px;height:20px;fill:var(--gold);flex-shrink:0}
-@media(min-width:640px){.badge-pill svg{width:24px;height:24px}}
-.badge-pill .bp-text{font-size:13px;font-weight:500;color:var(--olive)}
-@media(min-width:640px){.badge-pill .bp-text{font-size:14px}}
-.badge-pill .bp-chip{font-size:10px;background:var(--olive);color:var(--white);padding:2px 8px;border-radius:4px;letter-spacing:.04em}
-@media(min-width:640px){.badge-pill .bp-chip{font-size:11px}}
-.hero.on .hero-label{animation:rise .8s var(--ease) .15s forwards}
-.hero.on h1{animation:rise .9s var(--ease) .28s forwards}
-.hero.on .hero-cta{animation:rise .9s var(--ease) .48s forwards}
-@keyframes rise{to{opacity:1;transform:translateY(0)}}
-
-.hero-search{margin-top:28px;display:grid;grid-template-columns:1fr;gap:8px;background:var(--white);border-radius:20px;padding:8px;max-width:760px;box-shadow:0 10px 40px rgba(31,32,35,.28);opacity:0;transform:translateY(18px)}
-@media(min-width:720px){.hero-search{grid-template-columns:1.05fr 1.2fr auto;border-radius:999px;margin-top:40px;gap:0;padding:6px}}
-.hs-fld{position:relative;display:flex;flex-direction:column;justify-content:center;padding:8px 16px;border-radius:14px;background:var(--stone)}
-@media(min-width:720px){.hs-fld{background:transparent;border-radius:999px;padding:6px 22px}.hs-fld+.hs-fld{border-left:1px solid var(--border)}}
-.hs-fld label{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--text-light)}
-.hs-fld select,.hs-fld input{font-family:var(--body);font-size:16px;color:var(--text);background:transparent;border:0;padding:3px 0 2px;width:100%;min-height:28px;appearance:none;-webkit-appearance:none}
-.hs-fld select{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2355575B' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center;padding-right:22px;cursor:pointer}
-.hs-fld input::placeholder{color:var(--text-faint)}
-.hs-fld:focus-within{box-shadow:0 0 0 2px var(--gold-dark)}
-.hs-fld select:focus,.hs-fld input:focus{outline:none}
-.hs-go{display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border:0;border-radius:14px;background:var(--gold-dark);color:var(--white);font-family:var(--body);font-size:15px;font-weight:600;padding:0 26px;cursor:pointer;transition:background .25s,transform .2s}
-@media(min-width:720px){.hs-go{border-radius:999px}}
-.hs-go:hover{background:#246595}.hs-go:active{transform:scale(.98)}
-.hs-go:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
-.hero.on .hero-search{animation:rise .9s var(--ease) .4s forwards}
-.hero .hero-cta{margin-top:22px}
-@media(min-width:640px){.hero .hero-cta{margin-top:28px}}
-
-/* ============ LEDGER ============ */
-.ledger{border-top:1px solid var(--border);border-bottom:1px solid var(--border);background:var(--white)}
-.ledger-inner{display:grid;grid-template-columns:1fr 1fr}
-@media(min-width:768px){.ledger-inner{grid-template-columns:repeat(4,1fr)}}
-.ledger-cell{padding:26px 18px 26px 0;border-right:1px solid var(--border);display:flex;flex-direction:column;gap:5px}
-.ledger-cell+.ledger-cell{padding-left:20px}
-.ledger-cell:nth-child(2){border-right:none}
-.ledger-cell:nth-child(3),.ledger-cell:nth-child(4){border-top:1px solid var(--border)}
-@media(min-width:768px){.ledger-cell:nth-child(2){border-right:1px solid var(--border)}.ledger-cell:nth-child(3),.ledger-cell:nth-child(4){border-top:none}.ledger-cell:last-child{border-right:none}}
-.ledger-num{font-family:var(--display);font-size:34px;font-weight:600;color:var(--olive);line-height:1}
-.ledger-label{font-family:var(--mono);font-size:10px;color:var(--text-faint);text-transform:uppercase;letter-spacing:.16em}
-
 /* ============ SECTION SYSTEM ============ */
 .badge-row{display:flex;align-items:center;gap:12px;margin-bottom:24px}
 @media(min-width:640px){.badge-row{margin-bottom:32px}}
@@ -232,183 +154,6 @@ a:focus-visible,button:focus-visible{outline:2px solid var(--gold-dark);outline-
 @media(min-width:640px){.sec-h2 .br{display:block}.sec-h2 .sp{display:none}}
 .reveal{opacity:0;transform:translateY(26px);transition:opacity .85s var(--ease),transform .85s var(--ease)}
 .reveal.in{opacity:1;transform:none}
-
-/* ============ ABOUT ============ */
-.about{background:var(--white);padding-top:64px;padding-bottom:48px;overflow:hidden}
-@media(min-width:640px){.about{padding-top:80px;padding-bottom:64px}}
-@media(min-width:1024px){.about{padding-top:128px;padding-bottom:96px}}
-.about .sec-h2{margin-bottom:48px}
-@media(min-width:640px){.about .sec-h2{margin-bottom:64px}}
-@media(min-width:1024px){.about .sec-h2{margin-bottom:72px}}
-.about-mobile{display:block}
-@media(min-width:1024px){.about-mobile{display:none}}
-.about-desktop{display:none}
-@media(min-width:1024px){.about-desktop{display:grid;grid-template-columns:minmax(320px,1fr) 25% 44%;align-items:stretch;gap:24px}}
-@media(min-width:1280px){.about-desktop{gap:32px}}
-.about-p{font-size:15px;line-height:1.6;font-weight:500;color:var(--olive);max-width:440px}
-@media(min-width:640px){.about-p{font-size:17px}}
-.about-desktop .about-p{font-size:16px;line-height:1.75;max-width:400px}
-@media(min-width:1280px){.about-desktop .about-p{font-size:17px}}
-.about-desktop .cell-c{order:1;align-self:center;display:flex;justify-content:flex-start}
-.about-btn{margin-top:24px}
-@media(min-width:1024px){.about-btn{margin-top:32px}}
-.about-imgs{margin-top:40px;display:flex;flex-direction:column;gap:16px}
-@media(min-width:640px){.about-imgs{flex-direction:row;gap:20px}}
-.img-slot{border-radius:12px;overflow:hidden;background:var(--olive-deep);position:relative;color:var(--white)}
-@media(min-width:640px){.img-slot{border-radius:16px}}
-.slot-a{aspect-ratio:438/346}
-@media(min-width:640px){.about-imgs .slot-a{width:45%}}
-.slot-b{aspect-ratio:900/600}
-@media(min-width:640px){.about-imgs .slot-b{width:55%}}
-.about-desktop .slot-a{order:2;aspect-ratio:auto;height:100%;min-height:340px;width:100%}
-.about-desktop .slot-b{order:3;aspect-ratio:3/2;width:100%}
-.img-slot img{width:100%;height:100%;object-fit:cover;position:absolute;inset:0}
-.img-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,32,35,.62) 0%,rgba(31,32,35,.04) 40%,rgba(31,32,35,.86) 100%)}
-.slot-contours{position:absolute;inset:0;opacity:.5}
-.slot-inner{position:absolute;inset:0;padding:22px;display:flex;flex-direction:column;justify-content:space-between}
-.slot-tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:rgba(255,255,255,.85);background:rgba(31,32,35,.65);border-radius:999px;padding:4px 11px;text-shadow:0 1px 3px rgba(0,0,0,.5);backdrop-filter:blur(2px)}
-.slot-big{font-family:var(--display);font-size:clamp(22px,2.4vw,34px);font-weight:600;text-transform:uppercase;line-height:1.05;color:var(--white);text-shadow:0 2px 10px rgba(0,0,0,.45)}
-.slot-big em{font-style:normal;color:var(--gold)}
-.slot-codes{display:flex;flex-wrap:wrap;gap:8px}
-.slot-codes span{font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--gold);border:1px solid rgba(72,148,196,.35);border-radius:999px;padding:4px 10px}
-
-/* ============ REGISTER ============ */
-.register-sec{background:var(--stone-2);padding-top:64px;padding-bottom:64px}
-@media(min-width:640px){.register-sec{padding-top:80px;padding-bottom:80px}}
-@media(min-width:1024px){.register-sec{padding-top:112px;padding-bottom:112px}}
-.register-sec .sec-h2{margin-bottom:40px}
-@media(min-width:1024px){.register-sec .sec-h2{margin-bottom:64px}}
-.register{background:var(--white);border:1px solid var(--border);border-radius:20px;overflow:hidden}
-.register-head{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:16px 24px;border-bottom:1px solid var(--border);background:var(--stone)}
-.register-head span{font-family:var(--mono);font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--text-faint)}
-.register-head b{color:var(--olive);font-weight:500}
-.reg-row{display:grid;grid-template-columns:1fr auto;grid-template-areas:"idx status" "name name" "code code";row-gap:5px;align-items:center;padding:18px 24px;border-bottom:1px solid var(--border);transition:background .3s}
-@media(min-width:960px){.reg-row{grid-template-columns:56px 1fr auto auto;grid-template-areas:none;column-gap:clamp(14px,3vw,36px);row-gap:0}}
-.reg-row:last-child{border-bottom:none}
-.reg-row:hover{background:var(--stone)}
-.reg-idx{grid-area:idx;font-family:var(--mono);font-size:11px;color:var(--text-faint)}
-.reg-name{grid-area:name;font-size:14.5px;font-weight:500;color:var(--olive);line-height:1.5}
-.reg-code{grid-area:code;font-family:var(--mono);font-size:12px;color:var(--gold-dark);letter-spacing:.04em;white-space:nowrap}
-.reg-status{grid-area:status;justify-self:end;font-family:var(--mono);font-size:10px;letter-spacing:.2em;color:var(--gold);background:var(--olive);padding:4px 10px;border-radius:999px;text-transform:uppercase;white-space:nowrap}
-@media(min-width:960px){.reg-idx,.reg-name,.reg-code,.reg-status{grid-area:auto}}
-.register-note{font-family:var(--mono);font-size:11.5px;color:var(--text-faint);margin-top:20px;letter-spacing:.03em;line-height:1.9}
-
-/* ============ SPECIES CARDS ============ */
-.species-sec{background:var(--white);padding-top:64px;padding-bottom:64px}
-@media(min-width:640px){.species-sec{padding-top:80px;padding-bottom:80px}}
-@media(min-width:1024px){.species-sec{padding-top:112px;padding-bottom:112px}}
-.species-sec .sec-h2{font-size:clamp(1.75rem,7vw,4.2rem);line-height:1.08;letter-spacing:-.03em;margin-bottom:40px}
-@media(min-width:640px){.species-sec .sec-h2{font-size:clamp(2.5rem,5vw,4.2rem);margin-bottom:56px}}
-@media(min-width:1024px){.species-sec .sec-h2{margin-bottom:64px}}
-.cards{display:grid;grid-template-columns:1fr;gap:20px}
-@media(min-width:640px){.cards{gap:24px}}
-@media(min-width:768px){.cards{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){.cards{gap:28px}}
-.sp-card{display:block;text-decoration:none;color:inherit}
-.sp-panel{position:relative;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--olive-deep);cursor:pointer}
-.sp-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.sp-card:hover .sp-panel>img{transform:scale(1.04)}
-.sp-shade{position:absolute;inset:0;background:linear-gradient(180deg,rgba(31,32,35,.73) 0%,rgba(31,32,35,0) 36%,rgba(31,32,35,0) 50%,rgba(31,32,35,.88) 100%)}
-.sp-panel .slot-contours{opacity:.45}
-.sp-panel-inner{position:absolute;inset:0;padding:24px 24px 76px;display:flex;flex-direction:column;justify-content:space-between}
-.sp-top{display:flex;justify-content:space-between;align-items:flex-start}
-.sp-code{font-family:var(--mono);font-size:10px;letter-spacing:.22em;color:rgba(255,255,255,.78);text-transform:uppercase;text-shadow:0 1px 3px rgba(0,0,0,.5)}
-.sp-sci{font-family:var(--mono);font-style:italic;font-size:11px;color:var(--gold);background:rgba(31,32,35,.65);border-radius:999px;padding:3px 10px;backdrop-filter:blur(2px)}
-.sp-big{font-family:var(--display);font-size:clamp(22px,2.4vw,34px);font-weight:600;text-transform:uppercase;line-height:1.05;color:var(--white);transition:transform .4s var(--ease)}
-.sp-card:hover .sp-big{transform:translateY(-4px)}
-.card-pill{position:absolute;bottom:16px;left:16px;height:36px;width:36px;background:var(--white);border-radius:999px;display:flex;align-items:center;gap:8px;padding-left:11px;overflow:hidden;transition:width .3s ease-in-out;white-space:nowrap}
-.sp-card:hover .card-pill{width:148px}
-.card-pill svg{flex-shrink:0;stroke:var(--olive);transform:rotate(-45deg);transition:transform .3s ease-in-out}
-.sp-card:hover .card-pill svg{transform:rotate(0deg)}
-.card-pill span{font-size:13px;font-weight:500;color:var(--olive);opacity:0;transition:opacity .3s ease-in-out .1s}
-.sp-card:hover .card-pill span{opacity:1}
-.sp-desc{font-size:13px;color:var(--text-light);margin-top:16px;line-height:1.6}
-@media(min-width:640px){.sp-desc{font-size:14px}}
-.sp-title{font-size:14px;font-weight:600;color:var(--olive);margin-top:4px}
-@media(min-width:640px){.sp-title{font-size:15px}}
-.cta-card{border-radius:16px;background:var(--stone);border:1px solid var(--border);padding:32px;display:flex;flex-direction:column;justify-content:center;align-items:flex-start;gap:18px}
-.cta-card h3{font-size:20px;font-weight:600;letter-spacing:-.02em;color:var(--olive);line-height:1.25}
-.cta-card p{font-size:14px;color:var(--text-light);line-height:1.7;max-width:380px}
-
-/* ============ PROCESS ============ */
-.process-sec{background:var(--stone-2);padding-top:64px;padding-bottom:64px}
-@media(min-width:640px){.process-sec{padding-top:80px;padding-bottom:80px}}
-@media(min-width:1024px){.process-sec{padding-top:112px;padding-bottom:112px}}
-.process-sec .sec-h2{margin-bottom:40px}
-@media(min-width:1024px){.process-sec .sec-h2{margin-bottom:64px}}
-.proc-grid{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:640px){.proc-grid{grid-template-columns:1fr 1fr}}
-@media(min-width:1024px){.proc-grid{grid-template-columns:repeat(4,1fr);gap:20px}}
-.proc{background:var(--white);border:1px solid var(--border);border-radius:16px;padding:28px 24px}
-.proc-num{font-family:var(--mono);font-size:11px;color:var(--gold-dark);letter-spacing:.2em;display:block;margin-bottom:18px}
-.proc-num::after{content:'';display:block;width:24px;height:2px;background:var(--gold);margin-top:10px;border-radius:2px}
-.proc h3{font-size:16px;font-weight:600;letter-spacing:-.01em;margin-bottom:10px;color:var(--olive)}
-.proc p{font-size:13.5px;color:var(--text-light);line-height:1.75}
-
-/* ============ TEAM / WHO TURNS UP ============ */
-.team-sec{background:var(--white);padding-top:64px;padding-bottom:64px;border-bottom:1px solid var(--border)}
-@media(min-width:640px){.team-sec{padding-top:80px;padding-bottom:80px}}
-@media(min-width:1024px){.team-sec{padding-top:112px;padding-bottom:112px}}
-.team-sec .sec-h2{margin-bottom:14px}
-.team-lead{font-size:15px;color:var(--text-light);line-height:1.75;max-width:520px;margin-bottom:36px}
-@media(min-width:1024px){.team-lead{font-size:15.5px;margin-bottom:56px}}
-.team-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;align-items:start}
-@media(min-width:640px){.team-grid{gap:20px}}
-@media(min-width:1024px){.team-grid{grid-template-columns:repeat(3,1fr);gap:24px}}
-.tm-card{background:var(--stone);border:1px solid var(--border);border-radius:16px;overflow:hidden;transition:background .3s,border-color .3s}
-.tm-card:hover{background:var(--stone-2);border-color:var(--border-2)}
-.tm-panel{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--olive-deep)}
-.tm-panel>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform .7s var(--ease)}
-.tm-card:hover .tm-panel>img{transform:scale(1.04)}
-.tm-code{position:absolute;top:12px;left:12px;z-index:2;font-family:var(--mono);font-size:9.5px;letter-spacing:.2em;text-transform:uppercase;color:rgba(255,255,255,.9);background:rgba(31,32,35,.6);border-radius:999px;padding:4px 10px;backdrop-filter:blur(2px);text-shadow:0 1px 3px rgba(0,0,0,.5)}
-.tm-body{padding:15px 15px 19px}
-@media(min-width:1024px){.tm-body{padding:20px 20px 24px}}
-.tm-name{font-size:15.5px;font-weight:600;letter-spacing:-.01em;color:var(--olive);line-height:1.2;margin-bottom:6px}
-@media(min-width:1024px){.tm-name{font-size:17px}}
-.tm-trade{font-family:var(--mono);font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--gold-dark)}
-.tm-card{position:relative;cursor:pointer}
-.tm-card:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px}
-.tm-cue{position:absolute;top:12px;right:12px;z-index:2;width:26px;height:26px;border-radius:999px;background:rgba(31,32,35,.6);backdrop-filter:blur(2px);display:flex;align-items:center;justify-content:center;color:#fff;transition:background .3s,color .3s,transform .35s var(--ease)}
-.tm-card.open .tm-cue{background:var(--gold);color:var(--olive-deep);transform:rotate(45deg)}
-/* mobile + tablet: accordion, expands the card downward */
-.tm-detail{display:grid;grid-template-rows:0fr;background:var(--olive-deep);transition:grid-template-rows .42s var(--ease)}
-.tm-detail-in{overflow:hidden}
-.tm-card.open .tm-detail{grid-template-rows:1fr}
-.tm-dl{display:grid;gap:11px;margin:0;padding:16px 15px 18px}
-.tm-dl dt{font-family:var(--mono);font-size:9px;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:3px}
-.tm-dl dd{margin:0;font-size:12.5px;line-height:1.45;color:rgba(255,255,255,.92)}
-.tm-dl{padding-bottom:4px}
-.tm-book{display:flex;align-items:center;justify-content:space-between;gap:8px;margin:12px 15px 16px;padding:10px 15px;border-radius:999px;background:var(--gold);color:var(--olive-deep);font-size:13px;font-weight:700;letter-spacing:-.01em;text-decoration:none;transition:background .25s,transform .25s}
-.tm-book:hover{background:#5AA3D0;transform:translateY(-1px)}
-.tm-book:focus-visible{outline:2px solid #fff;outline-offset:2px}
-@media(prefers-reduced-motion:reduce){.tm-book{transition:none}}
-@media(prefers-reduced-motion:reduce){.tm-detail{transition:none}}
-/* desktop with a real pointer: drops down over the photo, no reflow */
-@media(min-width:1024px) and (hover:hover) and (pointer:fine){
-  .tm-detail{position:absolute;top:0;left:0;width:100%;aspect-ratio:1/1;z-index:3;display:flex;align-items:center;grid-template-rows:none;background:rgba(31,32,35,.95);transform:translateY(-101%);transition:transform .45s var(--ease)}
-  .tm-detail-in{overflow:visible;width:100%}
-  .tm-dl{padding:0 20px;gap:12px}
-  .tm-book{margin:14px 20px 0}
-  .tm-dl dd{font-size:13px}
-  .tm-card:hover .tm-detail,.tm-card.open .tm-detail{transform:none}
-  .tm-card:hover .tm-cue{background:var(--gold);color:var(--olive-deep);transform:rotate(45deg)}
-  @media(prefers-reduced-motion:reduce){.tm-detail{transition:none}}
-}
-
-/* ============ CLIENTS ============ */
-.clients-sec{background:var(--white);padding-top:64px;padding-bottom:64px}
-@media(min-width:640px){.clients-sec{padding-top:80px;padding-bottom:80px}}
-@media(min-width:1024px){.clients-sec{padding-top:112px;padding-bottom:112px}}
-.clients-sec .sec-h2{margin-bottom:40px}
-@media(min-width:1024px){.clients-sec .sec-h2{margin-bottom:64px}}
-.client-grid{display:grid;grid-template-columns:1fr;gap:16px}
-@media(min-width:768px){.client-grid{grid-template-columns:1fr 1fr;gap:20px}}
-.client{background:var(--stone);border:1px solid var(--border);border-radius:16px;padding:28px;transition:background .3s,border-color .3s}
-.client:hover{background:var(--stone-2);border-color:var(--border-2)}
-@media(min-width:1024px){.client{padding:36px}}
-.c-tag{font-family:var(--mono);font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dark);display:block;margin-bottom:14px}
-.client h3{font-size:19px;font-weight:600;letter-spacing:-.01em;color:var(--olive);margin-bottom:10px;line-height:1.2}
-.client p{font-size:13.5px;color:var(--text-light);line-height:1.75}
 
 /* ============ CTA BAND ============ */
 .cta-sec{background:var(--stone-2);padding:64px 20px 80px}
@@ -473,21 +218,196 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 .nav-logo-img{height:36px;width:auto;display:block}
 .footer-logo-img{height:60px;width:auto;display:block;margin-bottom:18px}
 .footer-bar .f-privacy{color:rgba(255,255,255,.6);text-decoration:none}.footer-bar .f-privacy:hover{color:var(--gold)}.f-col a:focus-visible,.f-socials a:focus-visible{outline:2px solid var(--gold);outline-offset:3px}
+
+/* ============ HOME v3: scroll video hero ============ */
+.slot-contours{position:absolute;inset:0;opacity:.5}
+.vh{position:absolute!important;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+body.home{background:var(--olive-deep)}
+main{background:var(--white)}
+.ld{position:fixed;inset:0;z-index:9999;background:#14171C;display:flex;align-items:center;justify-content:center;transition:opacity .35s var(--ease),visibility .35s}
+.ld.out{opacity:0;visibility:hidden;pointer-events:none}
+.ld img{height:72px;width:auto}
+.ld-bar{position:absolute;left:50%;bottom:22%;width:160px;height:1px;margin-left:-80px;background:rgba(255,255,255,.14);overflow:hidden}
+.ld-bar i{position:absolute;inset:0;background:var(--gold);transform-origin:0 50%;animation:ldfill 3.2s cubic-bezier(.22,1,.36,1) forwards}
+@keyframes ldfill{from{transform:scaleX(0)}to{transform:scaleX(1)}}
+
+/* nav on the dark scene */
+.navwrap.on-dark .navbar{background:rgba(20,23,28,.55);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);box-shadow:none}
+.navwrap.on-dark .nav-links a{color:rgba(255,255,255,.88)}
+.navwrap.on-dark .nav-links a:hover{color:#fff}
+.navwrap.on-dark .nav-links a.nav-join{color:#8CC3E6}
+.navwrap.on-dark .nav-note{color:rgba(255,255,255,.72)}
+.navwrap.on-dark .pillbtn-dark{background:var(--gold-dark)}
+.navwrap.on-dark .pillbtn-dark:hover{background:#246595}
+.navwrap.on-dark .pillbtn-dark .circ svg{stroke:var(--gold-dark)}
+.navwrap.on-dark .menu-btn{background:var(--gold-dark)}
+.navwrap.on-dark .nav-logochip{background:rgba(255,255,255,.08)}
+.navbar{transition:background .35s var(--ease),box-shadow .3s}
+
+.hx{position:relative;height:420vh;background:#14171C}
+@media(max-width:760px){.hx{height:220vh}}
+.hx-scene{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#14171C url(https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/33150b94-09f7-47da-a7c9-3ae76c2dd7eb.jpg) center/cover no-repeat}
+.hx-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block}
+.hx-shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(to bottom,rgba(18,24,34,.55) 0%,rgba(18,24,34,0) 34%),linear-gradient(to top,rgba(18,24,34,.5) 0%,rgba(18,24,34,0) 30%)}
+.hx-stage{position:absolute;left:0;right:0;top:92px;perspective:900px;display:flex;justify-content:center;padding:0 24px;pointer-events:none}
+.hx-copy{width:100%;max-width:920px;text-align:center;transform-origin:50% 100%;will-change:transform,opacity;pointer-events:auto}
+.hx-label{font-family:var(--mono);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:#8CC3E6;margin-bottom:18px}
+.hx h1{font-size:clamp(2.4rem,4.6vw,4.2rem);font-weight:600;line-height:1.05;letter-spacing:-.03em;color:#fff;text-shadow:0 2px 30px rgba(10,14,20,.45)}
+.hx h1 em{font-style:normal;color:var(--gold)}
+.hx-sub{font-size:17px;line-height:1.6;color:rgba(255,255,255,.72);max-width:46ch;margin:16px auto 0;text-shadow:0 1px 14px rgba(10,14,20,.5)}
+.hx .sx{margin:28px auto 0}
+.hx-alt{margin-top:14px;font-size:14px;color:rgba(255,255,255,.72)}
+.hx-alt a{color:#fff;font-weight:600;text-underline-offset:3px}
+.hx-alt a:hover{color:#8CC3E6}
+.hx-alt a:focus-visible{outline:2px solid var(--gold);outline-offset:3px;border-radius:3px}
+.hx-cue{position:absolute;left:50%;bottom:36px;transform:translateX(-50%);font-family:var(--mono);font-size:10.5px;letter-spacing:.24em;color:rgba(255,255,255,.8);white-space:nowrap;pointer-events:none}
+.hx-cue i{display:block;height:1px;margin-top:9px;background:rgba(255,255,255,.75);transform-origin:0 50%}
+.hx-steps{position:absolute;left:28px;bottom:36px;width:430px;max-width:calc(100% - 56px);list-style:none;display:grid;gap:4px;opacity:0;will-change:transform,opacity}
+.hx-step{display:grid;grid-template-columns:36px 1fr;align-items:start;gap:10px;padding:6px 0}
+.hx-num{width:30px;height:30px;border-radius:8px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11.5px;color:rgba(255,255,255,.72);transition:background .35s var(--ease),color .35s var(--ease)}
+.hx-title{display:block;font-size:12.5px;font-weight:500;color:rgba(255,255,255,.72);line-height:30px;transition:font-size .35s var(--ease),color .35s var(--ease)}
+.hx-p{display:grid;grid-template-rows:0fr;transition:grid-template-rows .45s var(--ease)}
+.hx-p>div{overflow:hidden}
+.hx-p p{font-size:14px;line-height:1.6;color:rgba(255,255,255,.78);border-left:1px solid rgba(255,255,255,.3);padding:2px 0 4px 14px;margin:4px 0 6px}
+.hx-step.on .hx-num{background:#fff;color:var(--olive-deep);font-weight:600}
+.hx-step.on .hx-title{font-size:18px;color:#fff;font-weight:600}
+.hx-step.on .hx-p{grid-template-rows:1fr}
+.hx-steps-panel{background:rgba(18,22,28,.42);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);border:1px solid rgba(255,255,255,.08);border-radius:18px;padding:14px 16px}
+@media(max-width:760px){
+  .hx-stage{top:96px;padding:0 18px}
+  .hx h1{font-size:clamp(38px,11vw,48px)}
+  .hx-sub{font-size:15px;max-width:34ch}
+  .hx-steps{left:18px;right:18px;width:auto;max-width:none;bottom:22px}
+  .hx-cue{bottom:28px}
+  .hx .sx{margin-top:22px}
+}
+@media(max-width:760px) and (max-height:700px){.hx-sub{display:none}}
+.reduced .hx-p,.reduced .hx-num,.reduced .hx-title,.reduced .navbar{transition:none}
+
+/* search */
+.sx{display:grid;grid-template-columns:1fr 1fr;gap:6px;background:#fff;border-radius:18px;padding:6px;max-width:780px;box-shadow:0 18px 50px rgba(10,14,20,.35);text-align:left}
+.sx-go{grid-column:1/-1}
+@media(min-width:720px){.sx{grid-template-columns:1.1fr 1.2fr auto;border-radius:999px;gap:0}.sx-go{grid-column:auto}}
+.sx-fld{position:relative;display:flex;flex-direction:column;justify-content:center;padding:8px 14px;border-radius:12px;background:var(--stone);min-width:0}
+@media(min-width:720px){.sx-fld{background:transparent;border-radius:999px;padding:6px 22px}.sx-fld+.sx-fld{border-left:1px solid var(--border)}}
+@media(max-width:719px){.sx-long{display:none}}
+.sx-fld label{font-size:11.5px;font-weight:600;color:var(--olive);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.sx-fld select,.sx-fld input{font-family:var(--body);font-size:16px;color:var(--text);background:transparent;border:0;padding:2px 0;width:100%;min-height:28px;appearance:none;-webkit-appearance:none;border-radius:0}
+.sx-fld select{background-image:url("data:image/svg+xml;charset=utf-8,%3Csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' viewBox='0 0 24 24' fill='none' stroke='%2355575B' stroke-width='2' stroke-linecap='round'%3E%3Cpolyline points='6 9 12 15 18 9'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 0 center;padding-right:20px;cursor:pointer;text-overflow:ellipsis}
+.sx-fld input::placeholder{color:var(--text-faint)}
+.sx-fld:focus-within{box-shadow:inset 0 0 0 2px var(--gold-dark)}
+.sx-fld select:focus,.sx-fld input:focus{outline:none}
+.sx-go{display:flex;align-items:center;justify-content:center;gap:9px;min-height:52px;border:0;border-radius:12px;background:var(--gold-dark);color:#fff;font-family:var(--body);font-size:15.5px;font-weight:600;padding:0 28px;cursor:pointer;transition:background .25s var(--ease),transform .2s var(--ease)}
+@media(min-width:720px){.sx-go{border-radius:999px;min-height:56px}}
+.sx-go:hover{background:#246595}.sx-go:active{transform:scale(.98)}
+.sx-go:focus-visible{outline:2px solid var(--olive);outline-offset:3px}
+.sx.on-light{box-shadow:0 1px 0 var(--border),0 12px 34px rgba(31,32,35,.08);border:1px solid var(--border)}
+
+/* sections */
+.sec{padding:64px 0}
+@media(min-width:1024px){.sec{padding:104px 0}}
+.sec-head{display:flex;flex-direction:column;gap:12px;margin-bottom:32px}
+@media(min-width:900px){.sec-head{flex-direction:row;align-items:flex-end;justify-content:space-between;margin-bottom:44px}}
+.sec-lead{font-size:15px;color:var(--text-light);line-height:1.75;max-width:520px}
+.eyebrow{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold-dark);display:block;margin-bottom:14px}
+.textlink{font-size:14px;font-weight:600;color:var(--gold-dark);text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.textlink:hover{color:#246595}
+.textlink:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px;border-radius:3px}
+
+/* find + trades */
+.find{background:var(--stone)}
+.find .sx{margin:0 0 48px;max-width:none}
+@media(min-width:1024px){.find .sx{max-width:860px}}
+.tt-grid{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+@media(min-width:640px){.tt-grid{grid-template-columns:repeat(4,1fr);gap:14px}}
+@media(min-width:1200px){.tt-grid{grid-template-columns:repeat(7,1fr)}}
+.tt{display:flex;flex-direction:column;align-items:flex-start;gap:6px;background:#fff;border:1px solid var(--border);border-radius:16px;padding:16px 16px 14px;text-decoration:none;color:var(--olive);transition:border-color .25s var(--ease),transform .3s var(--ease),box-shadow .3s var(--ease)}
+.tt:hover{border-color:var(--gold);transform:translateY(-2px);box-shadow:0 10px 24px rgba(47,122,176,.10)}
+.tt:active{transform:translateY(0)}
+.tt:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px}
+.tt-ico{width:46px;height:46px;border-radius:12px;background:rgba(72,148,196,.12);color:var(--gold-dark);display:flex;align-items:center;justify-content:center;margin-bottom:6px;transition:background .25s,color .25s}
+.tt:hover .tt-ico{background:var(--gold-dark);color:#fff}
+.tt-name{font-size:15px;font-weight:600;letter-spacing:-.01em;line-height:1.25}
+.tt-n{font-family:var(--mono);font-size:11px;letter-spacing:.06em;color:var(--text-light);min-height:16px}
+
+/* how it works */
+.how-grid{display:grid;grid-template-columns:1fr;gap:16px}
+@media(min-width:900px){.how-grid{grid-template-columns:1fr 1fr;gap:22px}}
+.how{border-radius:22px;padding:30px 24px;display:flex;flex-direction:column;gap:22px;position:relative;overflow:hidden}
+@media(min-width:640px){.how{padding:40px 38px}}
+.how.dark{background:var(--olive-deep);color:#fff}
+.how.light{background:var(--stone);border:1px solid var(--border)}
+.how h3{font-size:clamp(1.5rem,3vw,2.1rem);font-weight:600;letter-spacing:-.02em;line-height:1.1}
+.how.dark h3{color:#fff}.how.light h3{color:var(--olive)}
+.how ol{list-style:none;display:grid;gap:18px;counter-reset:h}
+.how li{counter-increment:h;display:grid;grid-template-columns:40px 1fr;gap:14px;align-items:start}
+.how li::before{content:"0" counter(h);font-family:var(--mono);font-size:12px;width:36px;height:36px;border-radius:10px;display:flex;align-items:center;justify-content:center}
+.how.dark li::before{background:rgba(255,255,255,.1);color:#8CC3E6}
+.how.light li::before{background:#fff;border:1px solid var(--border);color:var(--gold-dark)}
+.how li b{display:block;font-size:16px;font-weight:600;margin-bottom:3px}
+.how li span{font-size:14px;line-height:1.65}
+.how.dark li span{color:rgba(255,255,255,.7)}
+.how.light li span{color:var(--text-light)}
+.how.light li b{color:var(--olive)}
+.how .pillbtn{align-self:flex-start;margin-top:auto}
+.how .slot-contours{opacity:.25;pointer-events:none}
+
+/* newest */
+.newest{background:var(--stone);border-top:1px solid var(--border)}
+.nw-row{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(240px,78%);gap:12px;overflow-x:auto;scroll-snap-type:x mandatory;padding-bottom:8px;margin:0 -20px;padding-left:20px;padding-right:20px;scrollbar-width:thin}
+@media(min-width:640px){.nw-row{grid-auto-columns:minmax(240px,42%);margin:0 -32px;padding-left:32px;padding-right:32px}}
+@media(min-width:1100px){.nw-row{grid-auto-flow:row;grid-template-columns:repeat(3,1fr);overflow:visible;margin:0;padding:0}}
+.nw{scroll-snap-align:start;display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--border);border-radius:18px;padding:14px;text-decoration:none;color:inherit;transition:border-color .25s var(--ease),transform .3s var(--ease)}
+.nw:hover{border-color:var(--gold);transform:translateY(-2px)}
+.nw:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px}
+.nw-ph{width:64px;height:64px;border-radius:14px;object-fit:cover;flex-shrink:0;background:var(--stone-2)}
+.nw-ph.ini{display:flex;align-items:center;justify-content:center;font-weight:700;font-size:20px;color:#fff;background:var(--olive-accent)}
+.nw-id{min-width:0;display:flex;flex-direction:column;gap:2px}
+.nw-trade{font-family:var(--mono);font-size:10.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--gold-dark)}
+.nw-name{font-size:16.5px;font-weight:600;color:var(--olive);line-height:1.2;overflow-wrap:anywhere}
+.nw-area{font-size:13px;color:var(--text-light);overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.nw-date{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--text-faint);margin-top:2px}
+
+/* get more work band */
+.work-band{background:var(--olive-deep);position:relative;overflow:hidden}
+.work-in{position:relative;display:grid;grid-template-columns:1fr;gap:28px;align-items:center}
+@media(min-width:960px){.work-in{grid-template-columns:1.2fr 1fr;gap:56px}}
+.work-band h2{font-size:clamp(1.9rem,5vw,3.6rem);font-weight:600;letter-spacing:-.03em;line-height:1.04;color:#fff}
+.work-band h2 em{font-style:normal;color:var(--gold)}
+.work-band p{font-size:16px;line-height:1.75;color:rgba(255,255,255,.7);margin-top:16px;max-width:46ch}
+.work-list{list-style:none;display:grid;gap:12px;margin-bottom:26px}
+.work-list li{display:flex;gap:12px;align-items:flex-start;font-size:15px;color:rgba(255,255,255,.88);line-height:1.5}
+.work-list svg{flex-shrink:0;margin-top:2px;color:var(--gold)}
+.work-card{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);border-radius:22px;padding:28px 24px}
+@media(min-width:640px){.work-card{padding:34px 32px}}
+.work-card .pillbtn{border:0}
+
+/* FAQ */
+.faq-list{display:grid;gap:10px;max-width:880px}
+.faq{background:#fff;border:1px solid var(--border);border-radius:16px}
+.faq summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:16px;padding:18px 20px;font-size:16px;font-weight:600;color:var(--olive);border-radius:16px}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{color:var(--gold-dark)}
+.faq summary:focus-visible{outline:2px solid var(--gold-dark);outline-offset:2px}
+.faq summary i{width:28px;height:28px;border-radius:999px;border:1px solid var(--border-2);flex-shrink:0;position:relative;transition:transform .35s var(--ease),background .25s}
+.faq summary i::before,.faq summary i::after{content:"";position:absolute;left:50%;top:50%;width:11px;height:1.6px;background:var(--olive);transform:translate(-50%,-50%)}
+.faq summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+.faq[open] summary i{transform:rotate(45deg);background:var(--stone)}
+.faq-a{padding:0 20px 20px;font-size:15px;line-height:1.75;color:var(--text-light);max-width:70ch}
+.faq-a a{color:var(--gold-dark);font-weight:600}
+.faq-sec{background:var(--stone-2)}
+.bundle-sec{background:var(--white)}
+.bundle-sec .bundle{margin-top:0}
+@media(prefers-reduced-motion:reduce){.ld-bar i{animation:none;transform:none}.tt,.nw,.faq summary i{transition:none}}
 </style>
 <style id="sheet-vis-fix">.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
-<body>
+<body class="home">
 <a class="skip-link" href="#main">Skip to content</a>
 
-<div class="hold" id="holdPage">
-  <svg class="hold-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 900" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".4"><path d="M-100 720 C 200 640, 420 780, 700 700 S 1200 560, 1560 660"/><path d="M-100 780 C 220 700, 440 840, 720 760 S 1220 620, 1560 720"/><path d="M-100 160 C 260 100, 520 240, 820 150 S 1280 40, 1560 130"/><path d="M-100 100 C 240 40, 500 180, 800 90 S 1260 -10, 1560 70"/></g></svg>
-  <span class="hold-corner tl">Ready Now &middot; Sydney</span>
-  <span class="hold-corner br">Same Day &middot; No Lock-in</span>
-  <div class="hold-stack">
-    <div class="hold-logo-mask"><img src="logo-v2.png" alt="Tradie Hire Ready Now" class="hold-logo-img"></div>
-    <div class="hold-rule-track"><div class="hold-rule-fill"></div></div>
-    <div class="hold-status">Wider Sydney &middot; On Call</div>
-  </div>
+<div class="ld" id="ld" aria-hidden="true">
+  <img src="logo-v2.png" alt="" width="100" height="72">
+  <div class="ld-bar"><i></i></div>
 </div>
 
 <div class="navwrap" id="navwrap">
@@ -539,26 +459,20 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 
 <main id="main">
 
-<!-- ============ HERO ============ -->
-<section class="hero" id="hero">
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="" aria-hidden="true">
-    <!-- Swap in job-site footage when shot: hero.mp4 (lifestyle, on the tools) -->
-    <source src="hero.mp4" type="video/mp4">
-  </video>
-  <div class="hero-shade" aria-hidden="true"></div>
-  <div class="fx-grain" aria-hidden="true"></div>
-  <div class="hero-spacer"></div>
-  <div class="hero-content wrap px" style="width:100%">
-    <p class="hero-label">Ready Now Tradie Hire &middot; Wider Sydney</p>
-    <h1>
-      Tradies, builders and labourers<span class="sp"> </span><span class="br"></span>
-      across Sydney, one call away.<span class="sp"> </span><span class="br"></span>
-      <em>Ready now.</em>
-    </h1>
-    <form class="hero-search" action="members.html" method="get" role="search" aria-label="Find a tradie">
-      <div class="hs-fld">
-        <label for="hsTrade">Trade</label>
-        <select id="hsTrade" name="trade">
+<!-- ============ HERO: scroll-driven video ============ -->
+<section class="hx" id="hx" aria-label="Ready Now Tradie Hire">
+  <div class="hx-scene" id="hxScene">
+    <video class="hx-video" id="hxVideo" muted playsinline preload="auto" poster="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/33150b94-09f7-47da-a7c9-3ae76c2dd7eb.jpg" aria-hidden="true" data-desktop="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/65fdef53-5686-4659-8761-52d61bf1a4f7.mp4" data-mobile="https://d2ol7oe51mr4n9.cloudfront.net/user_38xzZboKViGWJOttwIXH07lWA1P/9a30e5e9-9f03-4755-9bc1-7bcf1510aab3.mp4" data-fallback="hero.mp4"></video>
+    <div class="hx-shade" aria-hidden="true"></div>
+    <div class="hx-stage">
+      <div class="hx-copy" id="hxCopy">
+        <p class="hx-label">Ready Now Tradie Hire &middot; Wider Sydney</p>
+        <h1>Tradies, builders and labourers across Sydney, one call away. <em>Ready now.</em></h1>
+        <p class="hx-sub">Search by trade and area, check the profile and call them direct. Free to list, no lock-in.</p>
+        <form class="sx " action="members.html" method="get" role="search" aria-label="Find a tradie">
+        <div class="sx-fld">
+          <label for="hxTrade">What trade<span class="sx-long"> do you need</span>?</label>
+          <select id="hxTrade" name="trade">
             <option value="">All trades</option>
             <option value="Builders">Builders</option>
             <option value="Carpenters">Carpenters</option>
@@ -574,377 +488,189 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
             <option value="Labourers">Labourers</option>
             <option value="Traffic Control">Traffic Control</option>
             <option value="Other">Other trades</option>
-        </select>
+          </select>
+        </div>
+        <div class="sx-fld">
+          <label for="hxQ">Suburb or area</label>
+          <input id="hxQ" name="q" type="search" placeholder="e.g. Cronulla" autocomplete="address-level2" enterkeyhint="search" maxlength="60">
+        </div>
+        <button type="submit" class="sx-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button>
+      </form>
+        <p class="hx-alt">On the tools? <a href="join.html">List your trade free</a></p>
       </div>
-      <div class="hs-fld">
-        <label for="hsQ">Suburb or area</label>
-        <input id="hsQ" name="q" type="search" placeholder="e.g. Cronulla, Inner West" autocomplete="address-level2" enterkeyhint="search" maxlength="60">
+    </div>
+    <div class="hx-cue" id="hxCue" aria-hidden="true">SCROLL TO SEE HOW IT WORKS<i id="hxCueLine"></i></div>
+    <ol class="hx-steps hx-steps-panel" id="hxSteps" aria-label="How Ready Now works">
+      <li class="hx-step on" data-step="0"><span class="hx-num">01</span><div class="hx-txt"><span class="hx-title">Pick your trade</span><div class="hx-p"><div><p>Search by trade and the suburb or area you need them in.</p></div></div></div></li>
+      <li class="hx-step" data-step="1"><span class="hx-num">02</span><div class="hx-txt"><span class="hx-title">Check the profile</span><div class="hx-p"><div><p>Photo, area and a few lines on what they do. Business name and ABN if they have added them.</p></div></div></div></li>
+      <li class="hx-step" data-step="2"><span class="hx-num">03</span><div class="hx-txt"><span class="hx-title">Call them direct</span><div class="hx-p"><div><p>One tap rings their phone. No middleman and no booking fees.</p></div></div></div></li>
+      <li class="hx-step" data-step="3"><span class="hx-num">04</span><div class="hx-txt"><span class="hx-title">On the tools? List free</span><div class="hx-p"><div><p>Put your trade on Ready Now and get found by builders and locals.</p></div></div></div></li>
+    </ol>
+  </div>
+</section>
+
+<!-- ============ FIND + POPULAR TRADES ============ -->
+<section class="sec find" id="find" aria-labelledby="findH">
+  <div class="wrap px">
+    <span class="eyebrow">Find a tradie</span>
+    <h2 class="sec-h2" id="findH" style="margin-bottom:24px">Who do you need?</h2>
+    <form class="sx on-light" action="members.html" method="get" role="search" aria-label="Find a tradie">
+        <div class="sx-fld">
+          <label for="fdTrade">What trade<span class="sx-long"> do you need</span>?</label>
+          <select id="fdTrade" name="trade">
+            <option value="">All trades</option>
+            <option value="Builders">Builders</option>
+            <option value="Carpenters">Carpenters</option>
+            <option value="Electricians">Electricians</option>
+            <option value="Plumbers">Plumbers</option>
+            <option value="Roofers">Roofers</option>
+            <option value="Concreters">Concreters</option>
+            <option value="Tilers">Tilers</option>
+            <option value="Painters">Painters</option>
+            <option value="Plasterers">Plasterers</option>
+            <option value="Bricklayers">Bricklayers</option>
+            <option value="Landscapers">Landscapers</option>
+            <option value="Labourers">Labourers</option>
+            <option value="Traffic Control">Traffic Control</option>
+            <option value="Other">Other trades</option>
+          </select>
+        </div>
+        <div class="sx-fld">
+          <label for="fdQ">Suburb or area</label>
+          <input id="fdQ" name="q" type="search" placeholder="e.g. Cronulla" autocomplete="address-level2" enterkeyhint="search" maxlength="60">
+        </div>
+        <button type="submit" class="sx-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button>
+      </form>
+    <div class="sec-head" style="margin-bottom:22px">
+      <h3 class="tt-h" style="font-size:20px;font-weight:600;color:var(--olive);letter-spacing:-.01em">Popular trades</h3>
+      <a href="members.html" class="textlink">See everyone listed</a>
+    </div>
+    <div class="tt-grid" id="ttGrid">
+      <a class="tt" href="members.html?trade=Builders" data-trade="Builders"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M10 20v-6h4v6"/></svg></span><span class="tt-name">Builders</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Carpenters" data-trade="Carpenters"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14 4l6 6-9.5 9.5a2.1 2.1 0 0 1-3 0l-3-3a2.1 2.1 0 0 1 0-3z"/><path d="M8 12l2 2M11 9l2 2M14 6l2 2"/></svg></span><span class="tt-name">Carpenters</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Electricians" data-trade="Electricians"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M13 2L4 14h7l-1 8 9-12h-7z"/></svg></span><span class="tt-name">Electricians</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Plumbers" data-trade="Plumbers"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 8h9a4 4 0 0 1 4 4v1"/><path d="M3 12h8"/><path d="M3 6v8"/><path d="M8 8V4h5"/><path d="M16 21a2 2 0 0 1-2-2c0-1.4 2-3.5 2-3.5s2 2.1 2 3.5a2 2 0 0 1-2 2z"/></svg></span><span class="tt-name">Plumbers</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Roofers" data-trade="Roofers"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 13L12 5l10 8"/><path d="M5 11v9h14v-9"/><path d="M16 7.5V3h3v7"/></svg></span><span class="tt-name">Roofers</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Concreters" data-trade="Concreters"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 11l9-4 9 4-9 4z"/><path d="M3 15l9 4 9-4"/><path d="M3 11v4M21 11v4"/></svg></span><span class="tt-name">Concreters</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Tilers" data-trade="Tilers"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><span class="tt-name">Tilers</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Painters" data-trade="Painters"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="3" width="15" height="6" rx="1.5"/><path d="M18 6h3v5h-9v4"/><rect x="10" y="15" width="4" height="7" rx="1"/></svg></span><span class="tt-name">Painters</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Plasterers" data-trade="Plasterers"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 17h13l4-4H7z"/><path d="M12 13V9"/><rect x="10" y="4" width="4" height="5" rx="1"/></svg></span><span class="tt-name">Plasterers</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Bricklayers" data-trade="Bricklayers"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="1"/><path d="M3 9.7h18M3 14.3h18M9 5v4.7M15 5v4.7M6 9.7v4.6M12 9.7v4.6M18 9.7v4.6M9 14.3V19M15 14.3V19"/></svg></span><span class="tt-name">Bricklayers</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Landscapers" data-trade="Landscapers"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 22V11"/><path d="M12 13C8 13 5 10 5 5c4 0 7 3 7 8z"/><path d="M12 16c3.5 0 6.5-2.5 6.5-7-3.5 0-6.5 2.5-6.5 7z"/></svg></span><span class="tt-name">Landscapers</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Labourers" data-trade="Labourers"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 18h20"/><path d="M5 18v-3a7 7 0 0 1 14 0v3"/><path d="M10 8.5V6h4v2.5"/></svg></span><span class="tt-name">Labourers</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Traffic+Control" data-trade="Traffic Control"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9.5 4h5L19 19H5z"/><path d="M7.7 10h8.6M6.5 14h11"/><path d="M3 20h18"/></svg></span><span class="tt-name">Traffic Control</span><span class="tt-n" data-count></span></a>
+      <a class="tt" href="members.html?trade=Other" data-trade="Other"><span class="tt-ico"><svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.5-2.5z"/></svg></span><span class="tt-name">Other trades</span><span class="tt-n" data-count></span></a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ HOW IT WORKS ============ -->
+<section class="sec" id="how" aria-labelledby="howH">
+  <div class="wrap px">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">How it works</span>
+        <h2 class="sec-h2" id="howH">No middleman. Just the number.</h2>
       </div>
-      <button type="submit" class="hs-go"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>Search</button>
-    </form>
-    <div class="hero-cta">
-      <div class="hero-btns">
-        <a href="members.html" class="pillbtn pillbtn-gold">
-          <span class="roll"><i><b>Find a Tradie</b><b>Find a Tradie</b></i></span>
-          <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </a>
-        <a href="join.html" class="pillbtn pillbtn-light">
-          <span class="roll"><i><b>Join Free</b><b>Join Free</b></i></span>
-          <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </a>
+      <p class="sec-lead">Ready Now is a directory. Tradies list themselves, you find them and ring them. The job is between the two of you.</p>
+    </div>
+    <div class="how-grid">
+      <div class="how dark">
+        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/></g></svg>
+        <h3>Need a tradie?</h3>
+        <ol>
+          <li><div><b>Search your trade and area</b><span>Pick the trade and put in your suburb. Every profile shows where they work.</span></div></li>
+          <li><div><b>Check their profile</b><span>Photo, area and a few lines on the jobs they take on.</span></div></li>
+          <li><div><b>Call them direct</b><span>One tap rings their phone. Sort price and timing between you.</span></div></li>
+        </ol>
+        <a href="members.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Find a Tradie</b><b aria-hidden="true">Find a Tradie</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
       </div>
-      <div class="badge-pill">
-        <svg viewBox="0 0 24 24" fill="none" stroke="#4894C4" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="fill:none"><circle cx="12" cy="12" r="10"/><path d="M8 12.5l2.5 2.5L16 9.5"/></svg>
-        <span class="bp-text">Free to Join &middot; No Lock-in</span>
-        <span class="bp-chip">SYD</span>
+      <div class="how light">
+        <h3>On the tools?</h3>
+        <ol>
+          <li><div><b>List free in 2 minutes</b><span>Name, trade, area, phone, a photo and a few lines about your work.</span></div></li>
+          <li><div><b>Get found by builders and locals</b><span>Your profile goes live straight away under your trade.</span></div></li>
+          <li><div><b>Take the calls</b><span>People ring your number direct. No leads to buy and no lock-in.</span></div></li>
+        </ol>
+        <a href="join.html" class="pillbtn pillbtn-dark"><span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ LEDGER ============ -->
-<div class="ledger" role="region" aria-label="Key facts">
-  <div class="ledger-inner wrap px">
-    <div class="ledger-cell"><span class="ledger-num">FREE</span><span class="ledger-label">To list your trade</span></div>
-    <div class="ledger-cell"><span class="ledger-num">DIRECT</span><span class="ledger-label">Call them yourself, no middleman</span></div>
-    <div class="ledger-cell"><span class="ledger-num">LIVE</span><span class="ledger-label">Profiles go up on sign-up</span></div>
-    <div class="ledger-cell"><span class="ledger-num">SYD</span><span class="ledger-label">Wider Sydney</span></div>
+<!-- ============ NEWEST ============ -->
+<section class="sec newest" id="newest" aria-labelledby="newH" hidden>
+  <div class="wrap px">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow">Just listed</span>
+        <h2 class="sec-h2" id="newH">Newest on Ready Now</h2>
+      </div>
+      <a href="members.html" class="textlink">See the full directory</a>
+    </div>
+    <div class="nw-row" id="nwRow"></div>
   </div>
-</div>
+</section>
 
-<!-- ============ 1 · ABOUT ============ -->
-<section class="about">
-  <div class="wrap">
-    <div class="px badge-row reveal">
-      <span class="badge-num">1</span>
-      <span class="badge-label">What Ready Now is</span>
+<!-- ============ GET MORE WORK ============ -->
+<section class="sec work-band" id="more-work" aria-labelledby="workH">
+  <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0;opacity:.35"><g fill="none" stroke="#4894C4" stroke-width="1"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/></g></svg>
+  <div class="wrap px work-in">
+    <div>
+      <span class="eyebrow" style="color:#8CC3E6">For tradies</span>
+      <h2 id="workH">Want more work? <em>List your trade free.</em></h2>
+      <p>Builders and locals across wider Sydney search Ready Now for your trade. Put your name and number in front of them.</p>
     </div>
-    <div class="px reveal">
-      <h2 class="sec-h2">
-        A free directory for the people on the tools.<span class="sp"> </span><span class="br"></span>
-        Find them, ring them, get it done.
-      </h2>
+    <div class="work-card">
+      <ul class="work-list">
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Free for now. No card, no lock-in.</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>Your profile goes live straight away.</li>
+        <li><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="20 6 9 17 4 12"/></svg>People call you direct. No middleman.</li>
+      </ul>
+      <a href="join.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
     </div>
+  </div>
+</section>
 
-    <!-- MOBILE / TABLET -->
-    <div class="about-mobile px">
-      <p class="about-p reveal">Tradies, builders and labourers list themselves free. You search by trade and area, look at their profile and call them direct. No agency in the middle and no lock-in.</p>
-      <div class="reveal">
-        <a href="members.html" class="pillbtn pillbtn-gold about-btn">
-          <span class="roll"><i><b>Find a Tradie</b><b aria-hidden="true">Find a Tradie</b></i></span>
-          <span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </a>
+<!-- ============ EQUIPMENT (coming soon) ============ -->
+<section class="sec bundle-sec" id="equipment" aria-labelledby="eqH">
+  <div class="wrap px">
+    <div class="bundle">
+      <div class="bundle-body">
+        <div class="bundle-eyebrow">Equipment hire &middot; Coming soon</div>
+        <h3 id="eqH">Hire out yours or use someone else's.</h3>
+        <p>Equipment hire is on the way. Soon you'll be able to list gear you're not using, or find a skip, tipper or tool someone nearby is hiring out. It's not live yet. Got gear sitting idle? Let us know and we'll be in touch when it opens.</p>
+        <div class="bundle-row">
+          <span class="bundle-chip on">Coming soon</span>
+          <span class="bundle-chip">List your gear</span>
+          <span class="bundle-chip">Hire gear nearby</span>
+        </div>
+        <div><a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Register interest</b><b aria-hidden="true">Register interest</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a></div>
       </div>
-      <div class="about-imgs reveal">
-        <!-- Swap panel content for lifestyle photo (tradie on the tools): <img src="about-1.jpg" alt="..."> inside .img-slot -->
-        <div class="img-slot slot-a">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Tradie on the tools on a Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
-          <div class="slot-inner">
-            <span class="slot-tag">Trade Index</span>
-            <div>
-              <div class="slot-big">Any trade.<br><em>Call direct.</em></div>
-              <div class="slot-codes" style="margin-top:14px"><span>CA</span><span>EL</span><span>PL</span><span>TI</span><span>CO</span><span>GL</span><span>RO</span><span>TC</span><span>FL</span></div>
-            </div>
-          </div>
-        </div>
-        <!-- Swap panel content for lifestyle photo (crew / ute / site): <img src="about-2.jpg" alt="..."> inside .img-slot -->
-        <div class="img-slot slot-b">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="about-2.jpg" alt="Sydney job site at first light" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
-          <div class="slot-inner">
-            <span class="slot-tag">Coverage</span>
-            <div class="slot-big">Sydney.<br><em>Wide.</em></div>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- DESKTOP -->
-    <div class="about-desktop px">
-      <div class="img-slot slot-a">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 440 350" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-20 280 C 90 240, 180 310, 280 270 S 420 210, 470 250"/><path d="M-20 310 C 100 270, 190 340, 290 300 S 430 240, 470 280"/><path d="M-20 60 C 90 30, 200 90, 300 50 S 430 0, 470 40"/></g></svg><img src="about-1.jpg" alt="Tradie on the tools on a Sydney job site" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
-        <div class="slot-inner">
-          <span class="slot-tag">Trade Index</span>
-          <div>
-            <div class="slot-big">Any trade.<br><em>Call direct.</em></div>
-            <div class="slot-codes" style="margin-top:14px"><span>CA</span><span>EL</span><span>PL</span><span>TI</span><span>CO</span><span>GL</span><span>RO</span><span>TC</span><span>FL</span></div>
-          </div>
-        </div>
-      </div>
-      <div class="cell-c">
-        <div>
-          <p class="about-p">
-            Tradies, builders and labourers list themselves free. You search by trade and area, look at their profile and call them direct. No agency in the middle and no lock-in.
-          </p>
-          <a href="members.html" class="pillbtn pillbtn-gold about-btn">
-            <span class="roll"><i><b>Find a Tradie</b><b aria-hidden="true">Find a Tradie</b></i></span>
-            <span class="circ"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-          </a>
-        </div>
-      </div>
-      <div class="img-slot slot-b">
-        <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="about-2.jpg" alt="Sydney job site at first light" loading="lazy" onerror="this.nextElementSibling.remove();this.remove()"><div class="img-shade" aria-hidden="true"></div>
-        <div class="slot-inner">
-          <span class="slot-tag">Coverage</span>
-          <div class="slot-big">Sydney.<br><em>Wide.</em></div>
-        </div>
+      <div class="bundle-media">
+        <img src="gear.jpg" alt="Site gear and equipment" loading="lazy" width="900" height="600">
+        <div class="bundle-media-in"><div class="bundle-big">Equipment<br>Coming soon</div></div>
       </div>
     </div>
   </div>
 </section>
 
-<!-- ============ 2 · THE REGISTER ============ -->
-<section class="register-sec">
-  <div class="wrap">
-    <div class="px badge-row reveal">
-      <span class="badge-num">2</span>
-      <span class="badge-label">What's on a profile</span>
-    </div>
-    <div class="px reveal">
-      <h2 class="sec-h2">
-        Everything you need to make the call.<span class="sp"> </span><span class="br"></span>
-        Listed by the tradies themselves.
-      </h2>
-    </div>
-    <div class="px reveal">
-      <div class="register" role="table" aria-label="What shows on a Ready Now profile">
-        <div class="register-head" role="row">
-          <span role="columnheader">Every profile: <b>Self-listed</b></span>
-          <span role="columnheader">Coverage: <b>Wider Sydney</b></span>
-        </div>
-        <div class="reg-row" role="row"><span class="reg-idx" role="cell">01</span><span class="reg-name" role="cell">Name and photo, so you know who you're ringing</span><span class="reg-code" role="cell">PR/01</span><span class="reg-status" role="cell">Every profile</span></div>
-        <div class="reg-row" role="row"><span class="reg-idx" role="cell">02</span><span class="reg-name" role="cell">Trade, so you can filter straight to the work you need</span><span class="reg-code" role="cell">PR/02</span><span class="reg-status" role="cell">Every profile</span></div>
-        <div class="reg-row" role="row"><span class="reg-idx" role="cell">03</span><span class="reg-name" role="cell">Suburb or area they work</span><span class="reg-code" role="cell">PR/03</span><span class="reg-status" role="cell">Every profile</span></div>
-        <div class="reg-row" role="row"><span class="reg-idx" role="cell">04</span><span class="reg-name" role="cell">Phone number, one tap to call</span><span class="reg-code" role="cell">PR/04</span><span class="reg-status" role="cell">Every profile</span></div>
-        <div class="reg-row" role="row"><span class="reg-idx" role="cell">05</span><span class="reg-name" role="cell">A short bio on the work they take on</span><span class="reg-code" role="cell">PR/05</span><span class="reg-status" role="cell">Every profile</span></div>
-        <div class="reg-row" role="row"><span class="reg-idx" role="cell">06</span><span class="reg-name" role="cell">Business name and ABN, if they've added them</span><span class="reg-code" role="cell">PR/06</span><span class="reg-status" role="cell">If supplied</span></div>
-      </div>
-      <p class="register-note">// Profiles are self-submitted and not checked by Ready Now. Before work starts, ask for their licence and insurance and check them yourself.</p>
+<!-- ============ FAQ ============ -->
+<section class="sec faq-sec" id="faq" aria-labelledby="faqH">
+  <div class="wrap px">
+    <span class="eyebrow">Questions</span>
+    <h2 class="sec-h2" id="faqH" style="margin-bottom:32px">Straight answers</h2>
+    <div class="faq-list">
+      <details class="faq"><summary>Is it free?<i aria-hidden="true"></i></summary><div class="faq-a">Yes, for now. Listing your trade costs nothing and there's no card and no lock-in. Searching the directory and calling a tradie costs nothing either.</div></details>
+      <details class="faq"><summary>Are the tradies vetted?<i aria-hidden="true"></i></summary><div class="faq-a">No. Profiles are listed by the tradies themselves and Ready Now doesn't check licences, insurance or work history. Before work starts, ask for their licence and insurance and check them yourself. In NSW you can look up a licence on the NSW Fair Trading licence check.</div></details>
+      <details class="faq"><summary>How do I change or remove my profile?<i aria-hidden="true"></i></summary><div class="faq-a">There are no logins. Message Sam on <a href="tel:+61432910369">0432 910 369</a> and he'll update your photo, number or bio, or take you off the list.</div></details>
+      <details class="faq"><summary>Who do I pay?<i aria-hidden="true"></i></summary><div class="faq-a">You deal with the tradie direct. Price, timing and payment are between you and them. Ready Now isn't part of the job and doesn't handle payments.</div></details>
+      <details class="faq"><summary>What areas do you cover?<i aria-hidden="true"></i></summary><div class="faq-a">Wider Sydney. Each profile shows the suburb or area that tradie works, so search by your suburb to find someone close.</div></details>
+      <details class="faq"><summary>Something wrong with a profile?<i aria-hidden="true"></i></summary><div class="faq-a">Use the "Report this profile" link on the profile, or call Sam on <a href="tel:+61432910369">0432 910 369</a>.</div></details>
+      <details class="faq"><summary>Can I hire equipment?<i aria-hidden="true"></i></summary><div class="faq-a">Not yet. Equipment hire is coming soon. <a href="contact.html">Get in touch</a> if you've got gear you'd like to list.</div></details>
     </div>
   </div>
 </section>
-
-<!-- ============ 3 · WHAT WE CONTROL ============ -->
-<section class="species-sec">
-  <div class="wrap">
-    <div class="px badge-row reveal">
-      <span class="badge-num">3</span>
-      <span class="badge-label">Browse by trade</span>
-    </div>
-    <div class="px reveal">
-      <h2 class="sec-h2">Find a tradie by trade</h2>
-    </div>
-    <div class="px cards">
-      <a href="members.html?trade=Carpenters" class="sp-card reveal">
-        <div class="sp-panel">
-          <img src="carpentry.jpg" alt="Carpenter fixing out a frame on a Sydney site" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/01</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">Carpentry</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Carpenters for framing, formwork, fix-out and finishing.</p>
-        <h3 class="sp-title">Carpentry</h3>
-      </a>
-      <a href="members.html?trade=Electricians" class="sp-card reveal">
-        <div class="sp-panel">
-          <img src="electrical.jpg" alt="Electrician wiring a switchboard" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/02</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">Electrical</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Sparkies for rough-ins, fit-offs and everything in between.</p>
-        <h3 class="sp-title">Electrical</h3>
-      </a>
-      <a href="members.html?trade=Plumbers" class="sp-card reveal">
-        <div class="sp-panel">
-          <img src="plumbing.jpg" alt="Plumber working on a rough-in" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/03</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">Plumbing</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Plumbers for rough-ins, fit-offs, drainage and maintenance.</p>
-        <h3 class="sp-title">Plumbing</h3>
-      </a>
-      <a href="members.html?trade=Tilers" class="sp-card reveal">
-        <div class="sp-panel">
-          <img src="tiling.jpg" alt="Tiler laying large-format floor tiles" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/04</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">Tiling</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Wall and floor tilers, from bathrooms to big formats.</p>
-        <h3 class="sp-title">Tiling</h3>
-      </a>
-      <a href="members.html?trade=Concreters" class="sp-card reveal">
-        <div class="sp-panel">
-          <img src="concreting.jpg" alt="Concreter screeding a fresh slab pour" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/05</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">Concreting</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Concreters for pours, finishing and formwork.</p>
-        <h3 class="sp-title">Concreting</h3>
-      </a>
-      <a href="members.html?trade=Labourers" class="sp-card reveal">
-        <div class="sp-panel">
-          <img src="labour.jpg" alt="Labourer carrying materials across a job site" loading="lazy"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/06</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">General<br>Labour</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Labourers for site clean-ups, materials and an extra set of hands.</p>
-        <h3 class="sp-title">General Labour</h3>
-      </a>
-      <a href="members.html?trade=Roofers" class="sp-card reveal">
-        <div class="sp-panel">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="roofing.jpg" alt="Roofer working on a Sydney re-roof" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/07</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">Roofing</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Metal and tile roofers for re-roofs and repairs.</p>
-        <h3 class="sp-title">Roofing</h3>
-      </a>
-      <a href="members.html?trade=Traffic+Control" class="sp-card reveal">
-        <div class="sp-panel">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="traffic-control.jpg" alt="Traffic controller managing a site access point" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/08</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">Traffic<br>Control</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Traffic controllers for site access, road works and deliveries.</p>
-        <h3 class="sp-title">Traffic Control</h3>
-      </a>
-      <a href="members.html?trade=Other" class="sp-card reveal">
-        <div class="sp-panel">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg><img src="forklift.jpg" alt="Forklift operator moving materials on a Sydney site" loading="lazy" onerror="this.remove()"><div class="sp-shade" aria-hidden="true"></div>
-          <div class="sp-panel-inner">
-            <div class="sp-top"><span class="sp-code">TR/09</span><span class="sp-sci">Directory</span></div>
-            <div class="sp-big">Other<br>Trades</div>
-          </div>
-          <div class="card-pill"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg><span>Find one</span></div>
-        </div>
-        <p class="sp-desc">Forklift drivers, scaffolders and every other trade that doesn't fit a box.</p>
-        <h3 class="sp-title">Other Trades</h3>
-      </a>
-    </div>
-  </div>
-</section>
-
-
-<!-- ============ 4 &middot; LABOUR + GEAR ============ -->
-<section class="bundle-sec">
-  <div class="wrap">
-    <div class="px badge-row reveal">
-      <span class="badge-num">4</span>
-      <span class="badge-label">Equipment hire</span>
-    </div>
-    <div class="px reveal">
-      <div class="bundle">
-        <div class="bundle-body">
-          <div class="bundle-eyebrow">Coming soon</div>
-          <h3>Hire out yours or use someone else's.</h3>
-          <p>Equipment hire is on the way. Soon you'll be able to list gear you're not using, or find a skip, tipper or tool someone nearby is hiring out. It's not live yet. Got gear sitting idle? Let us know and we'll be in touch when it opens.</p>
-          <div class="bundle-row">
-            <span class="bundle-chip on">Coming soon</span>
-            <span class="bundle-chip">List your gear</span>
-            <span class="bundle-chip">Hire gear nearby</span>
-          </div>
-          <div class="hero-cta" style="margin:0;opacity:1;transform:none">
-            <a href="contact.html" class="pillbtn pillbtn-gold"><span class="roll"><i><b>Register interest</b><b aria-hidden="true">Register interest</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></a>
-          </div>
-        </div>
-        <div class="bundle-media">
-          <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 900 600" aria-hidden="true"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".6"><path d="M-40 480 C 180 400, 380 520, 580 440 S 880 340, 960 420"/><path d="M-40 530 C 200 450, 400 570, 600 490 S 900 390, 960 470"/><path d="M-40 100 C 180 40, 400 140, 620 60 S 900 -20, 960 50"/></g></svg>
-          <img src="gear.jpg" alt="Site gear and equipment" loading="lazy" onerror="this.remove()">
-          <div class="bundle-media-in">
-            <div class="bundle-big">Equipment<br>Coming soon</div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 5 · HOW IT WORKS ============ -->
-<section class="process-sec">
-  <div class="wrap">
-    <div class="px badge-row reveal">
-      <span class="badge-num">5</span>
-      <span class="badge-label">How it works</span>
-    </div>
-    <div class="px reveal">
-      <h2 class="sec-h2">
-        Simple and direct. Find the tradie,<span class="sp"> </span><span class="br"></span>
-        then sort the job between you.
-      </h2>
-    </div>
-    <div class="px proc-grid reveal">
-      <div class="proc"><span class="proc-num">STEP / 01</span><h3>Search</h3><p>Pick a trade and put in your suburb or area. Every profile shows where that tradie works.</p></div>
-      <div class="proc"><span class="proc-num">STEP / 02</span><h3>Check the profile</h3><p>Name, photo, trade, area and a few lines on the work they take on. Business name and ABN if they've added them.</p></div>
-      <div class="proc"><span class="proc-num">STEP / 03</span><h3>Call them direct</h3><p>One tap rings their phone. No forms, no middleman, no waiting on someone to get back to you.</p></div>
-      <div class="proc"><span class="proc-num">STEP / 04</span><h3>Sort the job yourselves</h3><p>Price, timing and payment are between you and the tradie. Ask for their licence and insurance before work starts.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ 6 &middot; WHO WE WORK WITH ============ -->
-<section class="clients-sec">
-  <div class="wrap">
-    <div class="px badge-row reveal">
-      <span class="badge-num">6</span>
-      <span class="badge-label">Who it's for</span>
-    </div>
-    <div class="px reveal">
-      <h2 class="sec-h2">
-        Whoever runs the site,<span class="sp"> </span><span class="br"></span>
-        there's someone to ring.
-      </h2>
-    </div>
-    <div class="px client-grid reveal">
-      <div class="client"><span class="c-tag">FOR/01</span><h3>Builders &amp; Foremen</h3><p>Someone's called in sick or the pour is tomorrow. Search the trade you're short on, find someone in the area and ring them.</p></div>
-      <div class="client"><span class="c-tag">FOR/02</span><h3>Owner-Builders &amp; Locals</h3><p>Doing your own reno or need a job done at home? See who works near you and call them direct.</p></div>
-      <div class="client"><span class="c-tag">FOR/03</span><h3>Tradies &amp; Labourers</h3><p>Want more work? List your trade free in a couple of minutes and let builders and locals find you.</p></div>
-      <div class="client"><span class="c-tag">FOR/04</span><h3>Trade Business Owners</h3><p>Put your business in front of people searching your trade, or find subbies for the busy stretch.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ============ CTA BAND ============ -->
-<div class="cta-sec">
-  <div class="cta-band reveal">
-    <svg class="slot-contours" width="100%" height="100%" preserveAspectRatio="xMidYMid slice" viewBox="0 0 1440 700" aria-hidden="true" style="position:absolute;inset:0"><g fill="none" stroke="#4894C4" stroke-width="1" opacity=".5"><path d="M-100 600 C 260 520, 520 660, 820 570 S 1280 460, 1560 550"/><path d="M-100 650 C 280 570, 540 710, 840 620 S 1300 510, 1560 600"/><path d="M-100 80 C 240 20, 500 160, 800 70 S 1260 -30, 1560 50"/><path d="M-100 130 C 260 70, 520 210, 820 120 S 1280 20, 1560 100"/></g></svg>
-    <div class="cta-inner">
-      <span class="cta-eyebrow">Tradies</span>
-      <h2>Want more work? Get listed free.</h2>
-      <p>Name, trade, area, phone and a photo. Your profile goes live straight away and people call you direct.</p>
-      <div class="cta-btns" style="margin-bottom:40px">
-        <a href="join.html" class="pillbtn pillbtn-gold">
-          <span class="roll"><i><b>Join Free</b><b aria-hidden="true">Join Free</b></i></span>
-          <span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
-        </a>
-        <a href="members.html" class="btn-ghost">Find a Tradie</a>
-      </div>
-      <span class="cta-label">Questions? Call Sam</span>
-      <a href="tel:+61432910369" class="cta-number" style="font-size:clamp(30px,5vw,56px)">0432 910 369</a>
-    </div>
-  </div>
-</div>
 
 </main>
 
@@ -997,72 +723,154 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     <p>&copy; 2026 Ready Now Tradie Hire. All rights reserved. | <a href="privacy.html" class="f-privacy">Privacy Policy</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
 </footer>
-
 <script>
 (function(){
   var reduced = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if(reduced) document.documentElement.classList.add('reduced');
 
-  /* Hold screen — wipe exit triggers the hero entrance */
-  var hold = document.getElementById('holdPage');
-  var hero = document.getElementById('hero');
-  var released = false;
-  function releaseHold(){
-    if(released) return; released = true;
-    if(hold){ hold.classList.add('exit'); setTimeout(function(){ hold.style.display='none'; }, 800); }
-    if(hero){ setTimeout(function(){ hero.classList.add('on'); }, 250); }
-  }
-  if(reduced){ if(hero) hero.classList.add('on'); releaseHold(); }
-  else{
-    window.addEventListener('load', function(){ setTimeout(releaseHold, 1500); });
-    setTimeout(releaseHold, 3200);
-  }
+  /* ---- loader: out 350ms after the first frame, or 3.5s max ---- */
+  var ld = document.getElementById('ld'), ldDone = false;
+  function ldOut(delay){ if(ldDone) return; ldDone = true; setTimeout(function(){ ld.classList.add('out'); }, delay); }
+  if(reduced) ldOut(0); else setTimeout(function(){ ldOut(0); }, 3500);
 
-
-  /* Mobile sheet */
+  /* ---- mobile sheet ---- */
   var layer = document.getElementById('sheetLayer');
-  function setSheet(open){
-    layer.classList.toggle('open', open);
-    layer.setAttribute('aria-hidden', !open);
-    document.body.style.overflow = open ? 'hidden' : '';
-  }
+  function setSheet(open){ layer.classList.toggle('open', open); layer.setAttribute('aria-hidden', !open); document.body.style.overflow = open ? 'hidden' : ''; }
   document.getElementById('menuOpen').addEventListener('click', function(){ setSheet(true); });
   document.getElementById('menuClose').addEventListener('click', function(){ setSheet(false); });
   document.getElementById('sheetBackdrop').addEventListener('click', function(){ setSheet(false); });
   layer.querySelectorAll('.sheet-links a').forEach(function(a){ a.addEventListener('click', function(){ setSheet(false); }); });
+  document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && layer.classList.contains('open')) setSheet(false); });
 
-  /* Nav: shadow + hide on scroll down, reveal on scroll up */
+  /* ---- hero ---- */
+  var track = document.getElementById('hx'), video = document.getElementById('hxVideo');
+  var copy = document.getElementById('hxCopy'), cue = document.getElementById('hxCue'), cueLine = document.getElementById('hxCueLine');
+  var stepsEl = document.getElementById('hxSteps'), steps = [].slice.call(stepsEl.querySelectorAll('.hx-step'));
   var navwrap = document.getElementById('navwrap');
-  var lastY = 0;
-  var onScroll = function(){
-    var y = window.scrollY;
-    navwrap.classList.toggle('scrolled', y > 24);
-    if(y > lastY && y > 160){ navwrap.classList.add('hide'); }
-    else { navwrap.classList.remove('hide'); }
-    lastY = y;
-  };
-  window.addEventListener('scroll', onScroll, {passive:true});
-  onScroll();
+  var clamp = function(v){ return v < 0 ? 0 : v > 1 ? 1 : v; };
+  var ease = function(t){ return t < .5 ? 2*t*t : 1 - Math.pow(-2*t + 2, 2) / 2; };
+  var dur = 0, cur = 0, ready = false, active = -1;
 
-  /* Scroll reveals */
-  var revealEls = document.querySelectorAll('.reveal');
-  if(reduced || !('IntersectionObserver' in window)){
-    revealEls.forEach(function(el){ el.classList.add('in'); });
+  if(!reduced){
+    var small = window.matchMedia('(max-width: 900px)').matches;
+    var triedFallback = false;
+    video.src = small ? video.dataset.mobile : video.dataset.desktop;
+    video.addEventListener('error', function(){
+      if(triedFallback){ ldOut(0); return; }
+      triedFallback = true; video.src = video.dataset.fallback; video.load();
+    });
+    video.addEventListener('loadedmetadata', function(){
+      dur = video.duration || 0; ready = dur > 0;
+      // iOS needs a play/pause before seeking works
+      var pr = video.play(); if(pr && pr.then) pr.then(function(){ video.pause(); }).catch(function(){});
+    });
+    video.addEventListener('loadeddata', function(){ ldOut(350); });
+    video.load();
   } else {
-    var io = new IntersectionObserver(function(entries){
-      entries.forEach(function(entry, i){
-        if(entry.isIntersecting){
-          entry.target.style.transitionDelay = Math.min(i * 70, 280) + 'ms';
-          entry.target.classList.add('in');
-          io.unobserve(entry.target);
-        }
-      });
-    }, {threshold:0.12, rootMargin:'0px 0px -40px 0px'});
-    revealEls.forEach(function(el){ io.observe(el); });
+    video.removeAttribute('preload'); video.style.display = 'none';
   }
+
+  function progress(){
+    var r = track.getBoundingClientRect();
+    var span = track.offsetHeight - window.innerHeight;
+    return span > 0 ? clamp(-r.top / span) : 0;
+  }
+  function setStep(i){
+    if(i === active) return; active = i;
+    steps.forEach(function(s, k){ s.classList.toggle('on', k === i); });
+  }
+  function paint(p){
+    var h = ease(clamp(p / .38));
+    copy.style.transform = 'translateY(' + (-34 * h) + 'vh) rotateX(' + (62 * h) + 'deg) scale(' + (1 - .12 * h) + ')';
+    var o = 1 - clamp((p - .10) / .14);
+    copy.style.opacity = o;
+    copy.style.visibility = o <= 0.02 ? 'hidden' : 'visible';
+    cue.style.opacity = 1 - clamp((p - .04) / .08);
+    cueLine.style.transform = 'scaleX(' + (1 - clamp(p / .10)) + ')';
+    var t = clamp((p - .08) / .16);
+    stepsEl.style.opacity = t;
+    stepsEl.style.transform = 'translateY(' + (40 * (1 - t)) + 'px)';
+    stepsEl.style.visibility = t <= 0.01 ? 'hidden' : 'visible';
+    setStep(p < .4 ? 0 : p < .62 ? 1 : p < .82 ? 2 : 3);
+  }
+  function navTone(){ navwrap.classList.toggle('on-dark', track.getBoundingClientRect().bottom > navwrap.offsetHeight + 8); }
+  var lastP = -1;
+  function frame(){
+    var p = progress();
+    if(p !== lastP){ paint(p); lastP = p; }
+    navTone();
+    if(ready){
+      var target = p * (dur - 1/48);
+      cur = Math.abs(target - cur) < 1/240 ? target : cur + (target - cur) * .2;
+      if(!video.seeking && Math.abs(video.currentTime - cur) > 1/60){
+        try { video.currentTime = cur; } catch(e){}
+      }
+    }
+    raf = requestAnimationFrame(frame);
+  }
+  var raf = null, running = false;
+  function start(){ if(!running){ running = true; raf = requestAnimationFrame(frame); } }
+  function stop(){ if(running){ running = false; cancelAnimationFrame(raf); } }
+  if(reduced){
+    var onS = function(){ paint(progress()); };
+    onS = function(){ paint(progress()); navTone(); };
+    window.addEventListener('scroll', onS, {passive: true}); window.addEventListener('resize', onS); onS();
+  } else if('IntersectionObserver' in window){
+    new IntersectionObserver(function(es){
+      es.forEach(function(e){ if(e.isIntersecting) start(); else { stop(); paint(progress()); } });
+    }).observe(track);
+    paint(progress());
+  } else { start(); }
+
+  /* nav hide on scroll down, show on scroll up (below the hero only) */
+  var lastY = 0;
+  window.addEventListener('scroll', function(){
+    var y = window.scrollY, below = track.getBoundingClientRect().bottom < 0;
+    navwrap.classList.toggle('scrolled', y > 24 && below);
+    navwrap.classList.toggle('hide', below && y > lastY && y > 160);
+    if(!below) navwrap.classList.remove('hide');
+    if(!running) navTone();
+    lastY = y;
+  }, {passive: true});
+  navTone();
+
+  /* ---- live counts + newest strip ---- */
+  var SINGULAR = {"Builders":"Builder","Carpenters":"Carpenter","Electricians":"Electrician","Plumbers":"Plumber","Roofers":"Roofer","Concreters":"Concreter","Tilers":"Tiler","Painters":"Painter","Plasterers":"Plasterer","Bricklayers":"Bricklayer","Landscapers":"Landscaper","Labourers":"Labourer","Traffic Control":"Traffic Control","Other":"Other trade"};
+  function el(tag, cls, text){ var n = document.createElement(tag); if(cls) n.className = cls; if(text != null) n.textContent = text; return n; }
+  function initials(n){ return String(n || '?').trim().split(/\s+/).slice(0,2).map(function(w){ return w.charAt(0).toUpperCase(); }).join(''); }
+  function listed(iso){ var d = iso ? new Date(iso) : null; return d && !isNaN(d) ? d.toLocaleDateString('en-AU', {month: 'long', year: 'numeric'}) : ''; }
+  fetch('/api/members', {headers: {'Accept': 'application/json'}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
+    if(!d || !Array.isArray(d.members)) return;
+    var all = d.members.filter(function(m){ return m && m.id && m.name; });
+    var counts = {}; all.forEach(function(m){ counts[m.trade] = (counts[m.trade] || 0) + 1; });
+    document.querySelectorAll('#ttGrid .tt').forEach(function(a){
+      var n = counts[a.getAttribute('data-trade')] || 0;
+      a.querySelector('[data-count]').textContent = n ? n + ' listed' : 'Be the first';
+    });
+    var newest = all.slice().sort(function(a, b){ return String(b.joined || '').localeCompare(String(a.joined || '')); }).slice(0, 6);
+    if(!newest.length) return;
+    var row = document.getElementById('nwRow');
+    newest.forEach(function(m){
+      var a = el('a', 'nw'); a.href = 'members.html?id=' + encodeURIComponent(m.id);
+      a.setAttribute('aria-label', m.name + ', ' + (SINGULAR[m.trade] || m.trade) + ', ' + (m.area || ''));
+      var ph;
+      if(m.photo && /^(https:\/\/|\/)/.test(m.photo)){
+        ph = el('img', 'nw-ph'); ph.src = m.photo; ph.alt = ''; ph.width = 64; ph.height = 64; ph.loading = 'lazy'; ph.decoding = 'async';
+        ph.addEventListener('error', function(){ var i = el('div', 'nw-ph ini', initials(m.name)); ph.replaceWith(i); });
+      } else ph = el('div', 'nw-ph ini', initials(m.name));
+      var id = el('div', 'nw-id');
+      id.appendChild(el('span', 'nw-trade', SINGULAR[m.trade] || m.trade || ''));
+      id.appendChild(el('span', 'nw-name', m.name));
+      id.appendChild(el('span', 'nw-area', m.area || ''));
+      var ls = listed(m.joined); if(ls) id.appendChild(el('span', 'nw-date', 'Listed ' + ls));
+      a.appendChild(ph); a.appendChild(id); row.appendChild(a);
+    });
+    document.getElementById('newest').hidden = false;
+  }).catch(function(){});
 })();
 </script>
-<noscript><style>.hold{display:none}.reveal{opacity:1;transform:none}.hero-label,.hero h1,.hero-cta,.hero-search{opacity:1;transform:none}</style></noscript>
-  <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
-  <script defer src="/_vercel/insights/script.js"></script>
+<noscript><style>.ld{display:none}.hx{height:auto}.hx-scene{position:relative;height:auto;min-height:100vh;padding-bottom:40px}.hx-stage{position:relative}.hx-steps,.hx-cue{display:none}</style></noscript>
+<script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
+<script defer src="/_vercel/insights/script.js"></script>
 </body>
 </html>
