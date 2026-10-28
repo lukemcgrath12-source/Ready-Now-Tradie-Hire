@@ -686,6 +686,10 @@ function findTrade(v){
   for(var i = 0; i < TRADES.length; i++){
     if(TRADES[i].toLowerCase() === v || (SINGULAR[TRADES[i]] || '').toLowerCase() === v) return TRADES[i];
   }
+  for(var j = 0; j < TRADES.length; j++){
+    var s = (SINGULAR[TRADES[j]] || TRADES[j]).toLowerCase();
+    if(v.indexOf(s) !== -1 || v.indexOf(TRADES[j].toLowerCase()) !== -1) return TRADES[j];
+  }
   return '';
 }
 
