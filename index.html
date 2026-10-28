@@ -444,7 +444,7 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 .gc-b:focus-visible{outline:2px solid #fff;outline-offset:-6px}
 .gc-b:active{opacity:.75}
 .gc-b[aria-pressed="true"]{font-weight:700;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
-.v3s{margin-top:26px}.v3s .v3s-q{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.v3s{margin-top:26px}
 @media(max-width:719px){
   .v3h{min-height:auto;padding:118px 0 64px}
   .gc{height:auto;margin-top:24px}
@@ -513,17 +513,6 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
   <div class="w5 v3h-in">
     <h1 id="heroH">Find local tradies, ready now</h1>
     <p class="v3h-sub">Real local tradies across wider Sydney. See who they are, then call them direct.</p>
-    <div class="gc" id="gc" role="group" aria-label="Choose a trade">
-      <div class="gc-track" aria-hidden="true"></div>
-      <div class="gc-cap" aria-hidden="true"></div>
-      <div class="gc-cells">
-        <div class="gc-lab" aria-hidden="true">What do you need &rarr;</div>
-        <button type="button" class="gc-b" data-trade="Electricians" aria-pressed="false">Electrical</button>
-        <button type="button" class="gc-b" data-trade="Plumbers" aria-pressed="false">Plumbing</button>
-        <button type="button" class="gc-b" data-trade="Roofers" aria-pressed="false">Roofing</button>
-        <button type="button" class="gc-b" data-trade="Tilers" aria-pressed="false">Tiling</button>
-      </div>
-    </div>
     <form class="v3s" action="members.html" method="get" role="search" aria-label="Find a tradie">
       <label class="v3s-q" for="srTrade">What trade do you need?</label>
       <div class="v3s-row">
@@ -608,25 +597,5 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 </script>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
-<script id="v3hero-js">
-(function(){var gc=document.getElementById('gc');if(!gc)return;
-var cells=gc.querySelector('.gc-cells'),bs=[].slice.call(gc.querySelectorAll('.gc-b')),lab=gc.querySelector('.gc-lab'),ph=[].slice.call(document.querySelectorAll('.v3h-ph')),inp=document.getElementById('srTrade'),sel=null;
-function cap(el){var r=gc.getBoundingClientRect(),e=el.getBoundingClientRect();gc.style.setProperty('--cap-left',(e.left-r.left-5)+'px');gc.style.setProperty('--cap-width',(e.width+10)+'px')}
-function rest(){if(sel)cap(sel);else{gc.style.removeProperty('--cap-left');gc.style.setProperty('--cap-width','calc(25.23% + 5px)')}gc.classList.toggle('hl',!!sel)}
-function show(k){ph.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-k')===k)})}
-bs.forEach(function(b){
- b.addEventListener('mouseenter',function(){cap(b);gc.classList.add('hl')});
- b.addEventListener('focus',function(){cap(b);gc.classList.add('hl')});
- b.addEventListener('blur',rest);
- b.addEventListener('click',function(){var on=sel!==b;bs.forEach(function(x){x.setAttribute('aria-pressed','false')});
-  if(on){sel=b;b.setAttribute('aria-pressed','true');show(b.getAttribute('data-trade'));if(inp)inp.value=b.getAttribute('data-trade')}
-  else{sel=null;show('all');if(inp)inp.value=''}
-  rest()});
-});
-cells.addEventListener('mouseleave',rest);
-gc.addEventListener('pointermove',function(e){var r=gc.getBoundingClientRect();gc.style.setProperty('--glass-x',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');gc.style.setProperty('--glass-y',((e.clientY-r.top)/r.height*100).toFixed(1)+'%')});
-window.addEventListener('resize',rest);
-})();
-</script>
 </body>
 </html>
