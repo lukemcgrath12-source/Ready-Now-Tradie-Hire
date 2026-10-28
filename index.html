@@ -416,6 +416,49 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 .v3f nav{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:10px}
 @media(prefers-reduced-motion:reduce){.v3-tiles .tl-box,.v3s-go,.v3-btn{transition:none}}
 </style>
+<style id="v3hero">
+.v3h{min-height:92svh;display:flex;align-items:center;padding:130px 0 90px}
+@media(min-width:1024px){.v3h{padding:150px 0 110px}}
+.v3h-bg{background:#16181b}
+.v3h-ph{position:absolute;inset:-2%;background-size:cover;background-position:center 40%;opacity:0;transform:scale(1.06);transition:opacity .9s cubic-bezier(.22,1,.36,1),transform 7s cubic-bezier(.22,1,.36,1)}
+.v3h-ph.on{opacity:1;transform:scale(1)}
+.v3h-bg::after{content:"";position:absolute;inset:0;background:radial-gradient(90% 70% at 50% 45%,rgba(16,18,21,.42),rgba(16,18,21,.18) 70%),linear-gradient(180deg,rgba(16,18,21,.5) 0%,rgba(16,18,21,.12) 38%,rgba(16,18,21,.62) 100%)}
+.v3h-in{width:100%}
+.v3h h1{text-shadow:0 2px 14px rgba(0,0,0,.22)}
+.v3h-sub{margin:14px auto 0;max-width:46ch;font-size:16px;line-height:1.6;opacity:.9;text-shadow:0 1px 8px rgba(0,0,0,.2)}
+/* glass controller */
+.gc{--ease:cubic-bezier(.22,1,.36,1);--glass-x:24%;--glass-y:8%;position:relative;width:min(760px,100%);height:72px;margin:30px auto 0}
+.gc-track,.gc-cap{position:absolute;border-radius:999px;pointer-events:none}
+.gc-track{top:4px;left:0;width:100%;height:64px;background:rgb(24 55 82 / .31);border:1px solid rgb(255 255 255 / .2);-webkit-backdrop-filter:blur(9px) saturate(126%) contrast(108%) brightness(103%);backdrop-filter:blur(9px) saturate(126%) contrast(108%) brightness(103%);box-shadow:0 14px 38px rgb(4 24 43 / .16),0 2px 7px rgb(4 24 43 / .1),inset 1px 1px 0 rgb(255 255 255 / .48),inset -1px -1px 0 rgb(21 49 73 / .14),inset 0 0 0 .5px rgb(255 255 255 / .16)}
+.gc-cap{top:-1px;height:72px;left:var(--cap-left,-5px);width:var(--cap-width,calc(25.23% + 5px));background:rgb(246 251 255 / .24);border:1px solid rgb(255 255 255 / .28);-webkit-backdrop-filter:blur(13px) saturate(128%) contrast(107%) brightness(105%);backdrop-filter:blur(13px) saturate(128%) contrast(107%) brightness(105%);box-shadow:0 11px 28px rgb(4 24 43 / .17),0 2px 6px rgb(4 24 43 / .1),inset 1px 1px 0 rgb(255 255 255 / .62),inset -1px -1px 0 rgb(20 49 73 / .18),inset 0 0 12px rgb(255 255 255 / .055);transition:left .62s var(--ease),width .62s var(--ease),opacity .3s}
+.gc-track::before,.gc-cap::before,.gc-track::after,.gc-cap::after{content:"";position:absolute;inset:0;border-radius:inherit;pointer-events:none}
+.gc-track::before,.gc-cap::before{background:radial-gradient(120% 150% at var(--glass-x) var(--glass-y),rgb(255 255 255 / .25),rgb(255 255 255 / 0) 53%),linear-gradient(115deg,rgb(255 255 255 / .1),rgb(255 255 255 / 0) 42%)}
+.gc-track::after,.gc-cap::after{inset:-1px;padding:1px;background:conic-gradient(from 225deg,#7fe3ff,rgb(255 255 255 / .35),#fff,#ffd7e6,rgb(255 255 255 / .35),#7fe3ff);-webkit-mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);mask:linear-gradient(#000 0 0) content-box,linear-gradient(#000 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:.27}
+.gc-cap::after{opacity:.3}
+.gc-cells{position:relative;display:grid;grid-template-columns:1.35fr repeat(4,1fr);height:100%}
+.gc-lab{padding-left:8px}
+.gc-lab,.gc-b{display:flex;align-items:center;justify-content:center;font-family:var(--body);font-size:clamp(15px,1.9vw,18px);color:#fff;text-shadow:0 1px 6px rgb(0 0 0 / .18);white-space:nowrap}
+.gc-lab{font-weight:600;transition:opacity .3s}
+.gc.hl .gc-lab{opacity:.5}
+.gc-b{background:transparent;border:0;border-radius:999px;cursor:pointer;font-weight:500;transition:opacity .3s}
+.gc-b:focus-visible{outline:2px solid #fff;outline-offset:-6px}
+.gc-b:active{opacity:.75}
+.gc-b[aria-pressed="true"]{font-weight:700;text-decoration:underline;text-underline-offset:5px;text-decoration-thickness:1px}
+.v3s{margin-top:26px}.v3s .v3s-q{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@media(max-width:719px){
+  .v3h{min-height:auto;padding:118px 0 64px}
+  .gc{height:auto;margin-top:24px}
+  .gc-track{top:0;height:100%;border-radius:24px}
+  .gc-cap{opacity:0}
+  .gc-cells{grid-template-columns:1fr 1fr;grid-auto-rows:52px}
+  .gc-lab{grid-column:1/-1;height:44px;border-bottom:1px solid rgb(255 255 255 / .12)}
+  .gc-b{border-radius:0}
+  .gc-b:nth-of-type(odd){border-right:1px solid rgb(255 255 255 / .12)}
+  .gc-b:nth-of-type(1),.gc-b:nth-of-type(2){border-bottom:1px solid rgb(255 255 255 / .12)}
+  .gc-b[aria-pressed="true"]{background:rgb(246 251 255 / .18)}
+}
+@media(prefers-reduced-motion:reduce){.v3h-ph,.gc-cap{transition-duration:1ms!important}.v3h-ph{transform:none}}
+</style>
 <style id="sheet-vis-fix">/*nav5*/.navbar{box-shadow:var(--shadow-2)!important;padding:6px!important}.nav-left{gap:28px!important}.nav-links a{font-weight:500;color:var(--ink)!important}.nav-links a:hover{color:var(--blue-600)!important}.nav-links a.active{color:var(--blue-600)!important;font-weight:600}.nav-links a:focus-visible,.nav-sec:focus-visible,.nav-cta:focus-visible,.nav-logochip:focus-visible{outline:2px solid var(--blue-600);outline-offset:3px}.nav-right{gap:8px!important}.nav-sec{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .25s cubic-bezier(.34,1.56,.64,1),transform .25s cubic-bezier(.34,1.56,.64,1)}.nav-sec:hover{border-color:var(--blue-600)}.nav-sec:active{transform:scale(.97)}.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;background:var(--blue-600);color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:0 1px 2px rgba(23,90,138,.25),0 6px 16px rgba(31,111,168,.25);transition:background .2s,transform .25s cubic-bezier(.34,1.56,.64,1)}.nav-cta svg{stroke:#fff}.nav-cta:hover{background:var(--blue-700)}.nav-cta:active{transform:scale(.97)}.nav-cta-lg,.nav-sec-lg{display:flex;width:100%;min-height:52px;font-size:16px;margin-bottom:10px}.menu-btn{background:var(--ink)!important}@media(min-width:768px) and (max-width:1023px){.nav-sec{display:none}}.cta-label{color:rgba(255,255,255,.62)!important}.nav-logochip{padding:8px 16px!important}.nav-logo-img{height:32px!important;width:auto!important}@media(min-width:640px){.nav-logo-img{height:38px!important}}.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
 <body class="home5">
@@ -460,9 +503,27 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 
 <main id="main">
 <section class="v3h" aria-labelledby="heroH">
-  <div class="v3h-bg" aria-hidden="true"></div>
+  <div class="v3h-bg" aria-hidden="true">
+    <div class="v3h-ph on" data-k="all" style="background-image:url(labour.jpg)"></div>
+    <div class="v3h-ph" data-k="Electricians" style="background-image:url(electrical.jpg)"></div>
+    <div class="v3h-ph" data-k="Plumbers" style="background-image:url(plumbing.jpg)"></div>
+    <div class="v3h-ph" data-k="Roofers" style="background-image:url(roofing.jpg)"></div>
+    <div class="v3h-ph" data-k="Tilers" style="background-image:url(tiling.jpg)"></div>
+  </div>
   <div class="w5 v3h-in">
     <h1 id="heroH">Find local tradies, ready now</h1>
+    <p class="v3h-sub">Real local tradies across wider Sydney. See who they are, then call them direct.</p>
+    <div class="gc" id="gc" role="group" aria-label="Choose a trade">
+      <div class="gc-track" aria-hidden="true"></div>
+      <div class="gc-cap" aria-hidden="true"></div>
+      <div class="gc-cells">
+        <div class="gc-lab" aria-hidden="true">What do you need &rarr;</div>
+        <button type="button" class="gc-b" data-trade="Electricians" aria-pressed="false">Electrical</button>
+        <button type="button" class="gc-b" data-trade="Plumbers" aria-pressed="false">Plumbing</button>
+        <button type="button" class="gc-b" data-trade="Roofers" aria-pressed="false">Roofing</button>
+        <button type="button" class="gc-b" data-trade="Tilers" aria-pressed="false">Tiling</button>
+      </div>
+    </div>
     <form class="v3s" action="members.html" method="get" role="search" aria-label="Find a tradie">
       <label class="v3s-q" for="srTrade">What trade do you need?</label>
       <div class="v3s-row">
@@ -547,5 +608,25 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 </script>
 <script>window.va = window.va || function () { (window.vaq = window.vaq || []).push(arguments); };</script>
 <script defer src="/_vercel/insights/script.js"></script>
+<script id="v3hero-js">
+(function(){var gc=document.getElementById('gc');if(!gc)return;
+var cells=gc.querySelector('.gc-cells'),bs=[].slice.call(gc.querySelectorAll('.gc-b')),lab=gc.querySelector('.gc-lab'),ph=[].slice.call(document.querySelectorAll('.v3h-ph')),inp=document.getElementById('srTrade'),sel=null;
+function cap(el){var r=gc.getBoundingClientRect(),e=el.getBoundingClientRect();gc.style.setProperty('--cap-left',(e.left-r.left-5)+'px');gc.style.setProperty('--cap-width',(e.width+10)+'px')}
+function rest(){if(sel)cap(sel);else{gc.style.removeProperty('--cap-left');gc.style.setProperty('--cap-width','calc(25.23% + 5px)')}gc.classList.toggle('hl',!!sel)}
+function show(k){ph.forEach(function(p){p.classList.toggle('on',p.getAttribute('data-k')===k)})}
+bs.forEach(function(b){
+ b.addEventListener('mouseenter',function(){cap(b);gc.classList.add('hl')});
+ b.addEventListener('focus',function(){cap(b);gc.classList.add('hl')});
+ b.addEventListener('blur',rest);
+ b.addEventListener('click',function(){var on=sel!==b;bs.forEach(function(x){x.setAttribute('aria-pressed','false')});
+  if(on){sel=b;b.setAttribute('aria-pressed','true');show(b.getAttribute('data-trade'));if(inp)inp.value=b.getAttribute('data-trade')}
+  else{sel=null;show('all');if(inp)inp.value=''}
+  rest()});
+});
+cells.addEventListener('mouseleave',rest);
+gc.addEventListener('pointermove',function(e){var r=gc.getBoundingClientRect();gc.style.setProperty('--glass-x',((e.clientX-r.left)/r.width*100).toFixed(1)+'%');gc.style.setProperty('--glass-y',((e.clientY-r.top)/r.height*100).toFixed(1)+'%')});
+window.addEventListener('resize',rest);
+})();
+</script>
 </body>
 </html>
