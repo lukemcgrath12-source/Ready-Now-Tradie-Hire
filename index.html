@@ -350,6 +350,90 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 .eq5-t p{font-size:16px;color:var(--charcoal);margin-top:4px}
 @media(prefers-reduced-motion:reduce){.tl-box,.sr-go,.btn5-w,.nav-cta,.nav-sec{transition:none}}
 </style>
+<style id="split">
+@font-face{font-family:'Manrope';font-weight:300;font-display:swap;src:url(fonts/manrope-latin-300-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:400;font-display:swap;src:url(fonts/manrope-latin-400-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:500;font-display:swap;src:url(fonts/manrope-latin-500-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:600;font-display:swap;src:url(fonts/manrope-latin-600-normal.woff2) format('woff2')}
+@font-face{font-family:'Manrope';font-weight:700;font-display:swap;src:url(fonts/manrope-latin-700-normal.woff2) format('woff2')}
+:root{--deep:#0F3554;--deep-2:#14466E;--sky:#CDE6F7;--sky-2:#E6F2FB;--mr:'Manrope',system-ui,sans-serif}
+.home5{font-family:var(--mr)}
+.home5 .sr-f select,.home5 .sr-f input,.home5 .sr-go{font-family:var(--mr)}
+.sx{display:block}
+.sp{background:var(--deep);color:#fff}
+.sp-in{padding:112px 20px 40px}
+.sp-top{display:none}
+.sp h1{font-weight:300;font-size:clamp(2.6rem,9vw,4.4rem);line-height:1.04;letter-spacing:-.035em;max-width:12ch}
+.sp h1 span{color:var(--sky)}
+.sp-sub{font-size:17px;line-height:1.6;color:rgba(255,255,255,.78);margin-top:16px;max-width:40ch}
+.sp-sr{margin:28px 0 0;max-width:none}
+.sp-sr .sr-q{text-align:left;color:#fff;font-size:15px;font-weight:600;margin-bottom:10px}
+.sp-sr .sr-row{grid-template-columns:1fr!important;border-radius:18px!important;background:rgba(255,255,255,.08);box-shadow:none;border:1px solid rgba(255,255,255,.14)}
+.sp-sr .sr-f{background:#fff;border:0;border-radius:12px!important}
+.sp-sr .sr-go{border-radius:12px!important;background:var(--sky);color:var(--deep)}
+.sp-sr .sr-go:hover{background:#fff}
+.sp-label{margin-top:36px;font-size:14px;font-weight:600;color:var(--sky)}
+.sp-offer{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:12px}
+.sp-offer a{display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;text-align:center;min-height:118px;padding:14px 8px;border-radius:12px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.10);color:rgba(255,255,255,.86);font-size:13.5px;font-weight:500;line-height:1.25;text-decoration:none;transition:background .2s ease,transform .3s cubic-bezier(.34,1.56,.64,1)}
+.sp-offer a svg{color:var(--sky)}
+.sp-offer small{display:block;font-size:11.5px;color:rgba(255,255,255,.55);margin-top:3px;font-weight:500}
+.sp-offer a:hover{background:rgba(255,255,255,.13)}.sp-offer a:active{transform:scale(.97)}
+.sp-offer a:focus-visible,.sp-links a:focus-visible,.sp-cta:focus-visible,.sp-logo:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+.sp-links{display:flex;flex-wrap:wrap;gap:8px 18px;margin-top:28px}
+.sp-links a{font-size:13.5px;color:rgba(255,255,255,.75);text-decoration:none;border-radius:4px}
+.sp-links a:hover{color:#fff;text-decoration:underline;text-underline-offset:4px}
+.sx-r{background:#fff}
+.sx-s{padding:56px 20px 0}
+.sx-last{padding-bottom:72px}
+.sx-photo{position:relative;margin:0}
+.sx-photo img{display:block;width:100%;height:auto;border-radius:18px}
+.sx-chip{position:absolute;display:inline-flex;align-items:center;gap:8px;padding:8px 14px 8px 8px;border-radius:999px;background:rgba(15,53,84,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);color:#fff;font-size:13.5px;font-weight:600}
+.sx-chip svg{width:26px;height:26px;padding:5px;border-radius:50%;background:var(--sky);color:var(--deep)}
+.sx-chip.c1{top:6%;right:5%}.sx-chip.c2{top:34%;left:4%}.sx-chip.c3{bottom:8%;left:30%}
+@media(max-width:520px){.sx-chip{font-size:12px;padding:6px 12px 6px 6px}.sx-chip svg{width:22px;height:22px;padding:4px}.sx-chip.c2{top:auto;bottom:24%;left:3%}.sx-chip.c3{bottom:5%;left:auto;right:4%}}
+.sx-cap{text-align:center;font-size:17px;font-weight:500;color:var(--ink);margin-top:28px}
+.sx-strip{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:12px 26px;margin-top:16px}
+.sx-strip li{display:flex;align-items:center;gap:7px;font-size:14px;font-weight:600;color:var(--deep-2)}
+.sx-strip svg{color:var(--blue-600)}
+.sx-h2{font-weight:400;font-size:clamp(1.9rem,4.4vw,2.7rem);letter-spacing:-.03em;line-height:1.1;color:var(--deep);text-align:center}
+.sx-lead{text-align:center;font-size:16px;line-height:1.6;color:var(--charcoal);max-width:46ch;margin:10px auto 0}
+.sx-bento{list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:28px}
+.sx-bento li{background:var(--sky);border-radius:14px;min-height:200px;padding:22px 16px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:14px;color:var(--deep);font-size:14.5px;font-weight:500;line-height:1.35}
+.sx-big{font-weight:300;font-size:clamp(2.8rem,7vw,4.2rem);letter-spacing:-.04em;line-height:1}
+.sx-orb{width:84px;height:84px;border-radius:50%;background:var(--deep);color:var(--sky);display:flex;align-items:center;justify-content:center}
+.sx-orb.ring{box-shadow:0 0 0 12px rgba(15,53,84,.08),0 0 0 26px rgba(15,53,84,.05)}
+.sx-tiles{margin-top:28px;grid-template-columns:repeat(4,1fr)!important}
+.sx-tiles .tl-box{background:var(--deep);color:var(--sky);box-shadow:none;border-radius:14px;max-width:none}
+.sx-tiles .tl:focus-visible .tl-box{box-shadow:0 0 0 3px #fff,0 0 0 5px var(--blue-600)}
+.sx-tiles .tl-name{color:var(--deep)}
+.sx-duo{display:grid;grid-template-columns:1fr;gap:12px;margin-top:28px}
+.sx-card{border-radius:16px;padding:32px 22px;display:flex;flex-direction:column;justify-content:center}
+.sx-card.light{background:var(--sky-2);align-items:center}
+.sx-card.dark{background:var(--deep);color:#fff}
+.sx-card h3{font-weight:400;font-size:clamp(1.5rem,3vw,1.9rem);letter-spacing:-.02em;line-height:1.15}
+.sx-card.dark p{color:rgba(255,255,255,.78);margin:10px 0 22px;font-size:16px;line-height:1.6}
+.sx-btn{align-self:flex-start;display:inline-flex;align-items:center;min-height:52px;padding:0 24px;border-radius:12px;background:var(--sky);color:var(--deep);font-weight:700;font-size:16px;text-decoration:none;transition:background .2s,transform .3s cubic-bezier(.34,1.56,.64,1)}
+.sx-btn:hover{background:#fff}.sx-btn:active{transform:scale(.97)}.sx-btn:focus-visible{outline:2px solid var(--sky);outline-offset:3px}
+.sx-card.dark .sx-note{margin:12px 0 0;font-size:14px;color:rgba(255,255,255,.6)}
+.sx .eq5{background:var(--sky-2);border-color:transparent}
+@media(min-width:640px){.sx-s{padding:72px 32px 0}.sx-last{padding-bottom:88px}.sx-duo{grid-template-columns:1fr 1fr}.sx-bento li{min-height:220px}}
+@media(min-width:1024px){
+  .home5 .navwrap{display:none}
+  .sx{display:grid;grid-template-columns:minmax(380px,40%) 1fr;align-items:start}
+  .sp{position:sticky;top:0;height:100vh;overflow-y:auto}
+  .sp-in{padding:28px 44px 32px;min-height:100%;display:flex;flex-direction:column}
+  .sp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:auto;padding-bottom:40px}
+  .sp-logo img{height:34px;width:auto;display:block}
+  .sp-cta{display:inline-flex;align-items:center;min-height:40px;padding:0 16px;border-radius:10px;background:var(--sky);color:var(--deep);font-size:14px;font-weight:700;text-decoration:none}
+  .sp-cta:hover{background:#fff}
+  .sp-links{margin-top:auto;padding-top:28px}
+  .sx-s{padding:64px 48px 0}
+  .sx-hero{padding-top:28px}
+  .sx-bento{grid-template-columns:1fr 1fr;gap:16px}
+}
+@media(min-width:1440px){.sp-in{padding:32px 64px}.sx-s{padding-left:72px;padding-right:72px}}
+@media(prefers-reduced-motion:reduce){.sp-offer a,.sx-btn{transition:none}}
+</style>
 <style id="sheet-vis-fix">/*nav5*/.navbar{box-shadow:var(--shadow-2)!important;padding:6px!important}.nav-left{gap:28px!important}.nav-links a{font-weight:500;color:var(--ink)!important}.nav-links a:hover{color:var(--blue-600)!important}.nav-links a.active{color:var(--blue-600)!important;font-weight:600}.nav-links a:focus-visible,.nav-sec:focus-visible,.nav-cta:focus-visible,.nav-logochip:focus-visible{outline:2px solid var(--blue-600);outline-offset:3px}.nav-right{gap:8px!important}.nav-sec{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .25s cubic-bezier(.34,1.56,.64,1),transform .25s cubic-bezier(.34,1.56,.64,1)}.nav-sec:hover{border-color:var(--blue-600)}.nav-sec:active{transform:scale(.97)}.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;background:var(--blue-600);color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:0 1px 2px rgba(23,90,138,.25),0 6px 16px rgba(31,111,168,.25);transition:background .2s,transform .25s cubic-bezier(.34,1.56,.64,1)}.nav-cta svg{stroke:#fff}.nav-cta:hover{background:var(--blue-700)}.nav-cta:active{transform:scale(.97)}.nav-cta-lg,.nav-sec-lg{display:flex;width:100%;min-height:52px;font-size:16px;margin-bottom:10px}.menu-btn{background:var(--ink)!important}@media(min-width:768px) and (max-width:1023px){.nav-sec{display:none}}.cta-label{color:rgba(255,255,255,.62)!important}.nav-logochip{padding:8px 16px!important}.nav-logo-img{height:32px!important;width:auto!important}@media(min-width:640px){.nav-logo-img{height:38px!important}}.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 </head>
 <body class="home5">
@@ -392,17 +476,16 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
   </div>
 </div>
 
-<main id="main">
-
-<!-- ============ HERO ============ -->
-<section class="hx5" aria-labelledby="heroH">
-  <div class="hx5-glow" aria-hidden="true"></div>
-  <div class="hx5-grid" aria-hidden="true"></div>
-  <svg class="hx5-motif" viewBox="0 0 720 300" aria-hidden="true" focusable="false"><g fill="none" stroke="rgba(255,255,255,.10)" stroke-width="2"><rect x="1" y="1" width="718" height="298" rx="26"/><line x1="240" y1="40" x2="240" y2="260"/><line x1="480" y1="40" x2="480" y2="260"/></g><g fill="rgba(72,148,196,.30)"><rect x="80" y="124" width="80" height="18" rx="3"/><rect x="320" y="124" width="80" height="18" rx="3"/><rect x="560" y="124" width="80" height="18" rx="3"/></g><g fill="none" stroke="rgba(255,255,255,.12)" stroke-width="2"><circle cx="120" cy="88" r="22"/><circle cx="360" cy="88" r="22"/><circle cx="600" cy="88" r="22"/></g><g fill="rgba(255,255,255,.07)"><rect x="70" y="164" width="100" height="6" rx="3"/><rect x="82" y="178" width="76" height="6" rx="3"/><rect x="310" y="164" width="100" height="6" rx="3"/><rect x="322" y="178" width="76" height="6" rx="3"/><rect x="550" y="164" width="100" height="6" rx="3"/><rect x="562" y="178" width="76" height="6" rx="3"/></g></svg>
-  <svg class="hx5-motif l" viewBox="0 0 720 300" aria-hidden="true" focusable="false"><g fill="none" stroke="rgba(255,255,255,.08)" stroke-width="2"><rect x="1" y="1" width="718" height="298" rx="26"/><line x1="240" y1="40" x2="240" y2="260"/><line x1="480" y1="40" x2="480" y2="260"/></g></svg>
-  <div class="w5 hx5-in">
-    <h1 id="heroH">Find local tradies, <span>ready now</span></h1>
-    <form class="sr" action="members.html" method="get" role="search" aria-label="Find a tradie">
+<main id="main" class="sx">
+<aside class="sp" aria-labelledby="heroH">
+  <div class="sp-in">
+    <div class="sp-top">
+      <a href="index.html" class="sp-logo" aria-label="Ready Now Tradie Hire home"><img src="logo-wordmark.png" alt="Ready Now Tradie Hire" width="152" height="40"></a>
+      <a href="join.html" class="sp-cta">Join free</a>
+    </div>
+    <h1 id="heroH">Local tradies, <span>ready now</span></h1>
+    <p class="sp-sub">Find a tradie near you and call them direct. Free to use across wider Sydney.</p>
+    <form class="sr sp-sr" action="members.html" method="get" role="search" aria-label="Find a tradie">
       <label class="sr-q" for="srTrade">What trade do you need?</label>
       <div class="sr-row">
         <div class="sr-f"><svg width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-search"/></svg>
@@ -428,25 +511,53 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
           <label class="vh" for="srQ">Suburb or area</label>
           <input id="srQ" name="q" type="search" placeholder="Suburb or area" autocomplete="address-level2" enterkeyhint="search" maxlength="60">
         </div>
-        <button type="submit" class="sr-go">Go</button>
+        <button type="submit" class="sr-go">Search</button>
       </div>
     </form>
-    <p class="hx5-tag">Same day<i aria-hidden="true">&middot;</i>Wider Sydney<i aria-hidden="true">&middot;</i>No lock-in</p>
-    <p class="hx5-alt">On the tools? <a href="join.html">List your trade free</a></p>
+    <p class="sp-label">What you can do here</p>
+    <ul class="sp-offer">
+      <li><a href="members.html"><svg width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-search"/></svg><span>Find a tradie</span></a></li>
+      <li><a href="join.html"><svg width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-id"/></svg><span>List your trade</span></a></li>
+      <li><a href="contact.html"><svg width="28" height="28" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-tools"/></svg><span>Equipment hire<small>Coming soon</small></span></a></li>
+    </ul>
+    <nav class="sp-links" aria-label="More">
+      <a href="about.html">About</a><a href="contact.html">Contact</a><a href="https://instagram.com/tradie_hire" target="_blank" rel="noopener">Instagram</a><a href="privacy.html">Privacy</a><a href="tel:+61432910369">0432 910 369</a>
+    </nav>
   </div>
-</section>
+</aside>
 
-<!-- ============ POPULAR TRADES ============ -->
-<section class="s5" aria-labelledby="popH">
-  <div class="w5">
-    <div class="pop-head">
-      <div>
-        <h2 class="h2-5" id="popH">Most popular trades</h2>
-        <p class="lead5">Tap a trade to see who's listed near you on Ready Now Tradie Hire.</p>
-      </div>
-      <a href="members.html" class="link5">See all trades</a>
-    </div>
-    <ul class="tl-list" id="tlList">
+<div class="sx-r">
+  <section class="sx-s sx-hero" aria-label="The Ready Now truck">
+    <figure class="sx-photo">
+      <picture>
+        <source type="image/webp" srcset="truck-wrap-720.webp 720w, truck-wrap-1200.webp 1200w" sizes="(min-width:1024px) 52vw, 92vw">
+        <img src="truck-wrap-1200.jpg" srcset="truck-wrap-720.jpg 720w, truck-wrap-1200.jpg 1200w" sizes="(min-width:1024px) 52vw, 92vw" width="1200" height="876" alt="The Ready Now Tradie Hire truck, wrapped with Tradies, Builders and Equipment panels" fetchpriority="high">
+      </picture>
+      <span class="sx-chip c1"><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Same day</span>
+      <span class="sx-chip c2"><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Wider Sydney</span>
+      <span class="sx-chip c3"><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>No lock-in</span>
+    </figure>
+    <p class="sx-cap">Builders, locals and tradies, all in one place</p>
+    <ul class="sx-strip" aria-label="Some of the trades listed">
+      <li><svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-electric"/></svg>Electricians</li><li><svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-plumb"/></svg>Plumbers</li><li><svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-carp"/></svg>Carpenters</li><li><svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-roof"/></svg>Roofers</li><li><svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-labour"/></svg>Labourers</li>
+    </ul>
+  </section>
+
+  <section class="sx-s" id="how" aria-labelledby="howH">
+    <h2 class="sx-h2" id="howH">How Ready Now works</h2>
+    <p class="sx-lead">No middleman and no booking. You find the tradie and call them yourself.</p>
+    <ul class="sx-bento">
+      <li><b class="sx-big">$0</b><span>Free to search, call or list your trade</span></li>
+      <li><span class="sx-orb"><svg width="34" height="34" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span><span>Pick a trade and put in your suburb</span></li>
+      <li><span class="sx-orb ring"><svg width="34" height="34" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-call"/></svg></span><span>Call them direct, no middleman</span></li>
+      <li><b class="sx-big">1 tap</b><span>Rings their phone straight from the profile</span></li>
+    </ul>
+  </section>
+
+  <section class="sx-s" aria-labelledby="popH">
+    <h2 class="sx-h2" id="popH">Most popular trades</h2>
+    <p class="sx-lead">Tap a trade to see who's listed near you. <a href="members.html" class="link5">See all trades</a></p>
+    <ul class="tl-list sx-tiles" id="tlList">
         <li><a class="tl" href="members.html?trade=Electricians" data-trade="Electricians"><span class="tl-box"><svg class="tl-ico" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-electric"/></svg></span><span class="tl-name">Electricians</span><span class="tl-n" data-count></span></a></li>
         <li><a class="tl" href="members.html?trade=Plumbers" data-trade="Plumbers"><span class="tl-box"><svg class="tl-ico" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-plumb"/></svg></span><span class="tl-name">Plumbers</span><span class="tl-n" data-count></span></a></li>
         <li><a class="tl" href="members.html?trade=Carpenters" data-trade="Carpenters"><span class="tl-box"><svg class="tl-ico" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-carp"/></svg></span><span class="tl-name">Carpenters</span><span class="tl-n" data-count></span></a></li>
@@ -456,81 +567,37 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
         <li><a class="tl" href="members.html?trade=Concreters" data-trade="Concreters"><span class="tl-box"><svg class="tl-ico" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-concrete"/></svg></span><span class="tl-name">Concreters</span><span class="tl-n" data-count></span></a></li>
         <li><a class="tl" href="members.html?trade=Labourers" data-trade="Labourers"><span class="tl-box"><svg class="tl-ico" width="44" height="44" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-labour"/></svg></span><span class="tl-name">Labourers</span><span class="tl-n" data-count></span></a></li>
     </ul>
-  </div>
-</section>
+  </section>
 
-<!-- ============ HOW IT WORKS ============ -->
-<section class="s5 how5" id="how" aria-labelledby="howH">
-  <div class="w5">
-    <span class="ey5">How it works</span>
-    <h2 class="h2-5" id="howH">How Ready Now works</h2>
-    <p class="lead5">No middleman and no booking. You find the tradie and call them yourself.</p>
-    <ol class="steps5">
-      <li class="st5"><span class="st5-ico"><svg width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-search"/></svg></span><h3>Search</h3><p>Pick the trade and put in your suburb. Every profile shows where that tradie works.</p></li>
-      <li class="st5"><span class="st5-ico"><svg width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-id"/></svg></span><h3>Check the profile</h3><p>Name, trade, area and a few lines on the jobs they take on.</p></li>
-      <li class="st5"><span class="st5-ico"><svg width="32" height="32" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-call"/></svg></span><h3>Call direct</h3><p>One tap rings their phone. Price, timing and payment are between you and them.</p></li>
-    </ol>
-  </div>
-</section>
-
-<!-- ============ FOR TRADIES ============ -->
-<section class="s5" aria-labelledby="tradH">
-  <div class="w5">
-    <div class="band5">
-      <div class="band5-l">
-        <span class="ey5">For tradies</span>
-        <h2 id="tradH">On the tools? Get more work.</h2>
-        <p>Put your trade, area and number in front of builders and locals across wider Sydney. Your profile goes live straight away.</p>
-        <a href="join.html" class="btn5-w">List your trade free<svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-arrow"/></svg></a>
-        <p class="band5-note">Free for now. No card, no lock-in.</p>
-      </div>
-      <div class="band5-r">
+  <section class="sx-s" aria-labelledby="tradH">
+    <h2 class="sx-h2" id="tradH">On the tools? Get more work.</h2>
+    <p class="sx-lead">Put your trade, area and number in front of builders and locals across wider Sydney.</p>
+    <div class="sx-duo">
+      <div class="sx-card light">
         <p class="vh">Example of how a profile looks on Ready Now.</p>
         <div class="pc" aria-hidden="true">
-          <div class="pc-top">
-            <span class="pc-av">YN</span>
-            <div>
-              <span class="pc-badge">Electrician</span>
-              <span class="pc-name">Your name</span>
-              <span class="pc-area"><svg width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>Your suburb</span>
-            </div>
-          </div>
+          <div class="pc-top"><span class="pc-av">YN</span><div><span class="pc-badge">Electrician</span><span class="pc-name">Your name</span><span class="pc-area"><svg width="16" height="16" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-pin"/></svg>Your suburb</span></div></div>
           <div class="pc-lines"><i></i><i></i><i></i></div>
           <div class="pc-call"><svg width="20" height="20" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-phone"/></svg>Call 04__ ___ ___</div>
         </div>
-        <span class="chip5 a" aria-hidden="true"><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-check"/></svg>Listed free</span>
-        <span class="chip5 c" aria-hidden="true"><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-lightning"/></svg>Live straight away</span>
-        <span class="chip5 b" aria-hidden="true"><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-call"/></svg>Calls come straight to you</span>
+      </div>
+      <div class="sx-card dark">
+        <h3>Your profile goes live straight away</h3>
+        <p>Calls come straight to your phone. No leads to buy and no card needed.</p>
+        <a href="join.html" class="sx-btn">List your trade free</a>
+        <p class="sx-note">Free for now. No lock-in.</p>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<!-- ============ REASSURANCE ============ -->
-<section class="s5 how5" aria-labelledby="whyH" style="padding-top:64px">
-  <div class="w5">
-    <h2 class="h2-5" id="whyH">Straight up</h2>
-    <ul class="re5">
-      <li><span class="re5-ico"><svg width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-coins"/></svg></span><div><h3>Free to use</h3><p>No fees to search, call or list your trade. Free for now, with no card and no lock-in.</p></div></li>
-      <li><span class="re5-ico"><svg width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-usercheck"/></svg></span><div><h3>Real people, real numbers</h3><p>You call tradies direct on their own number. Profiles are listed by the tradies themselves, so check licences and insurance before work starts.</p></div></li>
-    </ul>
-  </div>
-</section>
-
-<!-- ============ EQUIPMENT ============ -->
-<section class="s5" aria-labelledby="eqH" style="padding-top:48px;padding-bottom:72px">
-  <div class="w5">
+  <section class="sx-s sx-last" aria-labelledby="eqH">
     <div class="eq5">
       <span class="eq5-ico"><svg width="30" height="30" fill="currentColor" aria-hidden="true" focusable="false"><use href="#i-tools"/></svg></span>
-      <div class="eq5-t">
-        <b id="eqH">Equipment hire <span>Coming soon</span></b>
-        <p>Hire out yours or use someone else's. It's not live yet.</p>
-      </div>
+      <div class="eq5-t"><b id="eqH">Equipment hire <span>Coming soon</span></b><p>Hire out yours or use someone else's. It's not live yet.</p></div>
       <a href="contact.html" class="link5">Register interest</a>
     </div>
-  </div>
-</section>
-
+  </section>
+</div>
 </main>
 
 <footer>
