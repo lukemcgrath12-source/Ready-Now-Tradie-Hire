@@ -420,7 +420,7 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 @media(min-width:1024px){
   .home5 .navwrap{display:none}
   .sx{display:grid;grid-template-columns:minmax(380px,40%) 1fr;align-items:start}
-  .sp{position:sticky;top:0;height:100vh;overflow-y:auto}
+  .sp{position:sticky;top:0;min-height:100vh}
   .sp-in{padding:28px 44px 32px;min-height:100%;display:flex;flex-direction:column}
   .sp-top{display:flex;align-items:center;justify-content:space-between;margin-bottom:auto;padding-bottom:40px}
   .sp-logo img{height:34px;width:auto;display:block}
@@ -431,6 +431,7 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
   .sx-hero{padding-top:28px}
   .sx-bento{grid-template-columns:1fr 1fr;gap:16px}
 }
+@media(min-width:1024px) and (max-height:779px){.sp{position:static}}
 @media(min-width:1440px){.sp-in{padding:32px 64px}.sx-s{padding-left:72px;padding-right:72px}}
 @media(prefers-reduced-motion:reduce){.sp-offer a,.sx-btn{transition:none}}
 </style>
