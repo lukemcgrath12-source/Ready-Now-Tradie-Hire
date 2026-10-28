@@ -19,7 +19,6 @@
 <meta property="og:title" content="Members admin | Ready Now">
 <meta property="og:description" content="Admin">
 <meta property="og:image" content="https://readynowtradiehire.com.au/og-image.jpg">
-<meta name="twitter:card" content="summary_large_image">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&family=IBM+Plex+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
@@ -528,7 +527,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <body>
 <main id="main">
 
-<header class="adm-top"><div class="wrap px"><a href="index.html" aria-label="Home"><img width="680" height="489" src="logo-v2.png" alt="Ready Now Tradie Hire"></a><a href="members.html" target="_blank" rel="noopener">View public directory</a></div></header>
+<header class="adm-top"><div class="wrap px"><a href="/" aria-label="Home"><img width="680" height="489" src="logo-v2.png" alt="Ready Now Tradie Hire"></a><a href="/members" target="_blank" rel="noopener">View public directory</a></div></header>
 <section class="adm">
   <div class="wrap px">
     <h1>Members admin</h1>
@@ -698,7 +697,7 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
       el('div', {class: 'ar-actions'}, [
         el('button', {type: 'button', class: 'abtn primary', text: 'Edit', onclick: function(){ wrap.classList.toggle('editing'); }}),
         hideBtn, actBtn, delBtn,
-        m.status === 'active' && !m.hidden ? el('a', {class: 'abtn', href: 'members.html?id=' + encodeURIComponent(m.id), target: '_blank', rel: 'noopener', text: 'View', style: 'text-decoration:none'}) : null
+        m.status === 'active' && !m.hidden ? el('a', {class: 'abtn', href: '/members?id=' + encodeURIComponent(m.id), target: '_blank', rel: 'noopener', text: 'View', style: 'text-decoration:none'}) : null
       ]),
       form, msg
     ]);

@@ -91,15 +91,15 @@
   }
   function results(where){
     state.step = 'done';
-    var url = 'members.html?trade=' + encodeURIComponent(state.trade) + (where ? '&q=' + encodeURIComponent(where) : '');
+    var url = '/members?trade=' + encodeURIComponent(state.trade) + (where ? '&q=' + encodeURIComponent(where) : '');
     bot('Here you go. You can check each tradie\'s profile and call them direct. Ask about licences and insurance before work starts.', [
       {label:'Show ' + state.trade.toLowerCase() + (where ? ' near ' + where : ''), href:url, go:true},
       {label:'Search another trade', fn:askTrade}
     ]);
   }
-  function listTrade(){ bot('Listing is free. You get your own profile with your photo, trade and area, and customers call you direct. No lead fees.', [{label:'List my trade free', href:'join.html', go:true},{label:'Something else', fn:function(){ bot('No worries. What else can I help with?', menu(), null, true); }}]); }
+  function listTrade(){ bot('Listing is free. You get your own profile with your photo, trade and area, and customers call you direct. No lead fees.', [{label:'List my trade free', href:'/join', go:true},{label:'Something else', fn:function(){ bot('No worries. What else can I help with?', menu(), null, true); }}]); }
   function free(){ bot('Yes. Searching, calling a tradie and listing your trade are all free right now. There are no booking fees.', [{label:'Find a tradie', fn:askTrade},{label:'List my trade', fn:listTrade}]); }
-  function contact(){ bot('You can reach Ready Now on <a href="tel:' + TEL + '">' + PHONE + '</a> or <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.', [{label:'Contact page', href:'contact.html'},{label:'Back to start', fn:function(){ bot('What else can I help with?', menu(), null, true); }}]); }
+  function contact(){ bot('You can reach Ready Now on <a href="tel:' + TEL + '">' + PHONE + '</a> or <a href="mailto:' + EMAIL + '">' + EMAIL + '</a>.', [{label:'Contact page', href:'/contact'},{label:'Read the FAQ', href:'/faq'},{label:'Back to start', fn:function(){ bot('What else can I help with?', menu(), null, true); }}]); }
   function check(){ bot('Good question. Each tradie lists their own details, so ask for their licence number and proof of insurance before work starts. You can check NSW licences on the Service NSW website.', [{label:'Find a tradie', fn:askTrade}]); }
 
   function matchTrade(v){
