@@ -459,6 +459,33 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 }
 @media(prefers-reduced-motion:reduce){.v3h-ph,.gc-cap{transition-duration:1ms!important}.v3h-ph{transform:none}}
 </style>
+<style id="v3plus">
+.v3h-live{display:inline-flex;align-items:center;gap:8px;margin:0 0 16px;padding:6px 14px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-size:14px;font-weight:600;-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px)}
+.v3h-live[hidden]{display:none}
+.v3h-live .dot{width:8px;height:8px;border-radius:50%;background:#3ddc84;box-shadow:0 0 0 4px rgba(61,220,132,.25)}
+.v3-feat{padding-bottom:0}
+.v3-feat-h{display:flex;align-items:baseline;justify-content:space-between;gap:16px;max-width:1000px;margin:0 auto}
+.v3-feat .v3-feat-h h2{text-align:left}
+.v3-more{color:var(--blue-600);font-weight:600;font-size:15px;text-decoration:underline;text-underline-offset:4px;white-space:nowrap}
+.v3-more:hover{color:var(--blue-700)}.v3-more:focus-visible{outline:2px solid var(--blue-600);outline-offset:3px;border-radius:4px}
+.v3-feat-g{list-style:none;display:grid;grid-template-columns:repeat(2,1fr);gap:12px;max-width:1000px;margin:24px auto 0}
+@media(min-width:720px){.v3-feat-g{grid-template-columns:repeat(3,1fr);gap:16px}}
+.fc{display:flex;gap:14px;align-items:center;padding:14px;border-radius:16px;background:#fff;border:1px solid var(--line);box-shadow:var(--shadow-1);text-decoration:none;color:inherit;transition:transform .35s cubic-bezier(.34,1.56,.64,1),box-shadow .3s}
+.fc:hover{transform:translateY(-2px);box-shadow:var(--shadow-2)}.fc:active{transform:scale(.98)}.fc:focus-visible{outline:2px solid var(--blue-600);outline-offset:3px}
+.fc-ph{width:56px;height:56px;border-radius:14px;object-fit:cover;flex-shrink:0;background:var(--blue-100)}
+.fc-ini{display:flex;align-items:center;justify-content:center;font-weight:700;color:var(--blue-700)}
+.fc-t{min-width:0}.fc-n{display:block;font-weight:700;color:var(--ink);font-size:15px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fc-tr{display:block;font-size:13px;color:var(--blue-700);font-weight:600}
+.fc-a{display:block;font-size:13px;color:var(--charcoal);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+@media(max-width:719px){.v3-feat-g{grid-template-columns:1fr;gap:10px}.fc{padding:12px}.fc-ph{width:48px;height:48px}.v3-feat-g li:nth-child(n+5){display:none}.v3-feat .v3-feat-h h2{font-size:1.4rem}}
+.v3-ben{list-style:none;margin:16px 0 22px;display:grid;gap:10px}
+.v3-ben li{display:flex;align-items:center;gap:10px;font-size:15px;font-weight:500}
+.v3-ben svg{flex-shrink:0;opacity:.9}
+.v3-sub{padding-top:16px}
+.v3-chips{list-style:none;display:flex;flex-wrap:wrap;justify-content:center;gap:10px;max-width:900px;margin:24px auto 0}
+.v3-chips a{display:inline-block;padding:9px 16px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-size:14px;font-weight:500;text-decoration:none;transition:transform .3s cubic-bezier(.34,1.56,.64,1),border-color .2s,color .2s}
+.v3-chips a:hover{border-color:var(--blue-600);color:var(--blue-700)}.v3-chips a:active{transform:scale(.96)}.v3-chips a:focus-visible{outline:2px solid var(--blue-600);outline-offset:2px}
+</style>
 <style id="sheet-vis-fix">/*nav5*/.navbar{box-shadow:var(--shadow-2)!important;padding:6px!important}.nav-left{gap:28px!important}.nav-links a{font-weight:500;color:var(--ink)!important}.nav-links a:hover{color:var(--blue-600)!important}.nav-links a.active{color:var(--blue-600)!important;font-weight:600}.nav-links a:focus-visible,.nav-sec:focus-visible,.nav-cta:focus-visible,.nav-logochip:focus-visible{outline:2px solid var(--blue-600);outline-offset:3px}.nav-right{gap:8px!important}.nav-sec{display:inline-flex;align-items:center;justify-content:center;min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);color:var(--ink);font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;transition:border-color .25s cubic-bezier(.34,1.56,.64,1),transform .25s cubic-bezier(.34,1.56,.64,1)}.nav-sec:hover{border-color:var(--blue-600)}.nav-sec:active{transform:scale(.97)}.nav-cta{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:44px;padding:0 20px;border-radius:999px;background:var(--blue-600);color:#fff;font-size:14px;font-weight:600;text-decoration:none;white-space:nowrap;box-shadow:0 1px 2px rgba(23,90,138,.25),0 6px 16px rgba(31,111,168,.25);transition:background .2s,transform .25s cubic-bezier(.34,1.56,.64,1)}.nav-cta svg{stroke:#fff}.nav-cta:hover{background:var(--blue-700)}.nav-cta:active{transform:scale(.97)}.nav-cta-lg,.nav-sec-lg{display:flex;width:100%;min-height:52px;font-size:16px;margin-bottom:10px}.menu-btn{background:var(--ink)!important}@media(min-width:768px) and (max-width:1023px){.nav-sec{display:none}}.cta-label{color:rgba(255,255,255,.62)!important}.nav-logochip{padding:8px 16px!important}.nav-logo-img{height:32px!important;width:auto!important}@media(min-width:640px){.nav-logo-img{height:38px!important}}.sheet-layer{visibility:hidden;transition:visibility 0s linear .5s}.sheet-layer.open{visibility:visible;transition:none}</style>
 <style id="ft-fix">footer{padding-top:56px!important}footer .footer-grid{gap:28px;padding-bottom:40px}footer .footer-logo-img{height:64px;margin-bottom:14px}footer .f-brand p{max-width:34ch;font-size:14px;line-height:1.6}footer .f-col h4{margin-bottom:16px}footer .f-col li{margin-bottom:10px}footer .f-col a{font-size:14px}footer .f-area{margin-top:10px}footer .footer-bar{padding:18px 20px}@media(max-width:767px){footer{padding-top:40px!important}footer .footer-grid{display:flex;flex-flow:row wrap;justify-content:center;text-align:center;gap:18px 20px;padding-bottom:28px}footer .f-brand,footer .f-contact{width:100%}footer .footer-logo-img{height:56px;margin:0 auto 12px}footer .f-brand p,footer .f-col h4,footer .f-x,footer .f-hide{display:none!important}footer .f-socials{justify-content:center}footer .f-col ul{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px}footer .f-col li{margin:0}footer .f-contact{display:flex;flex-direction:column;align-items:center;gap:4px}footer .footer-bar p{font-size:12px}}@media(max-width:767px){footer .f-socials a{width:auto!important;height:40px!important;padding:0 16px 0 14px!important;gap:10px;display:inline-flex!important;align-items:center;justify-content:center;border-radius:999px!important;background:rgba(255,255,255,.04)!important;border:1px solid rgba(255,255,255,.16)!important;color:rgba(255,255,255,.88)!important;font-size:14px;font-weight:500;text-decoration:none;box-shadow:none;transition:transform .25s cubic-bezier(.34,1.56,.64,1),opacity .2s}footer .f-socials a:active{transform:scale(.96)}footer .f-socials a svg{width:18px;height:18px}footer .f-soc-t{display:inline!important}}footer .f-soc-t{display:none}</style>
 </head>
@@ -477,9 +504,8 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
       </div>
     </div>
     <div class="nav-right">
-      <a href="join.html" class="nav-cta">Join free<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
-      <a href="join.html" class="nav-sec">For tradies</a>
-    </div>
+      <a href="join.html" class="nav-cta">List your trade<svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+          </div>
     <button class="menu-btn" id="menuOpen" aria-label="Open menu">Menu <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><line x1="4" y1="7" x2="20" y2="7"/><line x1="4" y1="12" x2="20" y2="12"/><line x1="4" y1="17" x2="20" y2="17"/></svg></button>
   </nav>
 </div>
@@ -512,6 +538,7 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
     <div class="v3h-ph" data-k="Tilers" style="background-image:url(tiling.jpg)"></div>
   </div>
   <div class="w5 v3h-in">
+    <p class="v3h-live" id="liveCount" hidden><span class="dot" aria-hidden="true"></span><span id="liveN"></span></p>
     <h1 id="heroH">Find local tradies, ready now</h1>
     <p class="v3h-sub">Real local tradies across wider Sydney. See who they are, then call them direct.</p>
     <form class="v3s" action="members.html" method="get" role="search" aria-label="Find a tradie">
@@ -523,6 +550,13 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
       </div>
       <datalist id="tradeList"><option value="Builders"><option value="Carpenters"><option value="Electricians"><option value="Plumbers"><option value="Roofers"><option value="Concreters"><option value="Tilers"><option value="Painters"><option value="Plasterers"><option value="Bricklayers"><option value="Landscapers"><option value="Labourers"><option value="Traffic Control"></datalist>
     </form>
+  </div>
+</section>
+
+<section class="v3 v3-feat" id="feat" aria-labelledby="featH" hidden>
+  <div class="w5">
+    <div class="v3-feat-h"><h2 id="featH">Ready now near you</h2><a class="v3-more" href="members.html">See all tradies</a></div>
+    <ul class="v3-feat-g" id="featList"></ul>
   </div>
 </section>
 
@@ -549,7 +583,12 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
     <div class="v3-band">
       <div class="v3-band-t">
         <h2 id="tradH">On the tools? Get more work.</h2>
-        <p>List your trade free. Builders and locals across wider Sydney find you and call you direct.</p>
+        <p>List your trade free and let locals across wider Sydney find you.</p>
+        <ul class="v3-ben">
+          <li><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#lv-check"/></svg>Free to list, no lead fees</li>
+          <li><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#lv-check"/></svg>Your own profile with photo, trade and area</li>
+          <li><svg width="18" height="18" fill="currentColor" aria-hidden="true" focusable="false"><use href="#lv-check"/></svg>Customers call you direct</li>
+        </ul>
         <a href="join.html" class="v3-btn">List your trade free</a>
       </div>
       <div class="v3-band-i"><img src="carpentry.jpg" alt="A carpenter in hi-vis fixing timber framing on a building site" width="1600" height="1200" loading="lazy"></div>
@@ -558,6 +597,13 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
       <li><span class="v3-ib s"><svg width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><use href="#lv-check"/></svg></span><div><h3>Free to use</h3><p>No fees to search, call or list your trade.</p></div></li>
       <li><span class="v3-ib s"><svg width="22" height="22" fill="currentColor" aria-hidden="true" focusable="false"><use href="#lv-phone"/></svg></span><div><h3>Real people, real numbers</h3><p>Call the tradie direct. Check licences and insurance before work starts.</p></div></li>
     </ul>
+  </div>
+</section>
+
+<section class="v3 v3-sub" aria-labelledby="subH">
+  <div class="w5">
+    <h2 id="subH">Find tradies across Sydney</h2>
+    <ul class="v3-chips"><li><a href="members.html?q=Sutherland+Shire">Sutherland Shire</a></li><li><a href="members.html?q=Cronulla">Cronulla</a></li><li><a href="members.html?q=Miranda">Miranda</a></li><li><a href="members.html?q=St+George">St George</a></li><li><a href="members.html?q=Hurstville">Hurstville</a></li><li><a href="members.html?q=Inner+West">Inner West</a></li><li><a href="members.html?q=Eastern+Suburbs">Eastern Suburbs</a></li><li><a href="members.html?q=Parramatta">Parramatta</a></li><li><a href="members.html?q=Liverpool">Liverpool</a></li><li><a href="members.html?q=Bankstown">Bankstown</a></li><li><a href="members.html?q=Campbelltown">Campbelltown</a></li><li><a href="members.html?q=North+Shore">North Shore</a></li><li><a href="members.html?q=Northern+Beaches">Northern Beaches</a></li><li><a href="members.html?q=Hills+District">Hills District</a></li></ul>
   </div>
 </section>
 </main>
@@ -626,6 +672,24 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 
   fetch('/api/members', {headers: {'Accept': 'application/json'}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
     if(!d || !Array.isArray(d.members)) return;
+    var ms = d.members.filter(function(m){ return m && m.id && m.name; });
+    if(ms.length >= 5){ document.getElementById('liveN').textContent = ms.length + ' local tradies listed'; document.getElementById('liveCount').hidden = false; }
+    if(ms.length >= 3){
+      var SG = {Electricians:'Electrician',Plumbers:'Plumber',Carpenters:'Carpenter',Roofers:'Roofer',Painters:'Painter',Tilers:'Tiler',Concreters:'Concreter',Labourers:'Labourer',Builders:'Builder',Plasterers:'Plasterer',Bricklayers:'Bricklayer',Landscapers:'Landscaper'};
+      var withPhoto = ms.filter(function(m){ return m.photo; }), rest = ms.filter(function(m){ return !m.photo; });
+      var list = document.getElementById('featList');
+      withPhoto.concat(rest).slice(0, 6).forEach(function(m){
+        var li = document.createElement('li'), a = document.createElement('a');
+        a.className = 'fc'; a.href = 'members.html?id=' + encodeURIComponent(m.id);
+        var ph;
+        if(m.photo){ ph = document.createElement('img'); ph.src = m.photo; ph.alt = ''; ph.loading = 'lazy'; ph.width = 56; ph.height = 56; ph.className = 'fc-ph'; }
+        else { ph = document.createElement('span'); ph.className = 'fc-ph fc-ini'; ph.textContent = String(m.name).split(/\s+/).map(function(w){ return w[0]; }).slice(0,2).join('').toUpperCase(); }
+        var t = document.createElement('span'); t.className = 'fc-t';
+        [['fc-n', m.name], ['fc-tr', SG[m.trade] || m.trade], ['fc-a', m.area]].forEach(function(x){ var e = document.createElement('span'); e.className = x[0]; e.textContent = x[1] || ''; t.appendChild(e); });
+        a.appendChild(ph); a.appendChild(t); li.appendChild(a); list.appendChild(li);
+      });
+      document.getElementById('feat').hidden = false;
+    }
     var counts = {};
     d.members.forEach(function(m){ if(m && m.trade) counts[m.trade] = (counts[m.trade] || 0) + 1; });
     document.querySelectorAll('#tlList .tl').forEach(function(a){
