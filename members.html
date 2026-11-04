@@ -753,7 +753,8 @@ function findTrade(v){
     return el('a', {class: 'call-btn', href: href, 'aria-label': 'Call ' + m.name + ' on ' + m.phone}, [svg(ICON_PHONE), 'Call ' + first, el('span', {class: 'num', text: m.phone})]);
   }
 
-  var REQ_ENDPOINT = 'https://formspree.io/f/xrpzypon';
+  var REQ_ENDPOINT = 'https://formsubmit.co/ajax/info@tradiehire.net';
+  var toJson = function(fd){ var o = {_captcha: 'false', _template: 'table'}; fd.forEach(function(v, k){ if(typeof v === 'string' && k !== '_gotcha') o[k] = v; }); return JSON.stringify(o); };
   function fld(id, label, input, full){
     return el('div', {class: 'rq-f' + (full ? ' full' : '')}, [el('label', {for: id, text: label}), input]);
   }
@@ -775,7 +776,7 @@ function findTrade(v){
       var t = form.querySelector('#rpWhat');
       if(!t.value.trim()){ err.textContent = 'Tell us what is wrong with the profile.'; t.focus(); return; }
       send.disabled = true; send.textContent = 'Sending...';
-      fetch(REQ_ENDPOINT, {method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'}}).then(function(r){
+      fetch(REQ_ENDPOINT, {method: 'POST', body: toJson(new FormData(form)), headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}}).then(function(r){
         if(!r.ok) throw new Error('send');
         pdContent.textContent = '';
         pdContent.appendChild(el('div', {class: 'pd-body rq-done', tabindex: '-1'}, [el('span', {class: 'mc-trade', text: 'Report sent'}), el('h2', {id: 'pdName', text: 'Thanks, we will look into it.'})]));
@@ -816,7 +817,7 @@ function findTrade(v){
       var bad = Array.prototype.filter.call(form.querySelectorAll('[required]'), function(x){ return !x.value.trim(); });
       if(bad.length){ err.textContent = 'Please fill in your name, phone, suburb and the job.'; bad[0].focus(); return; }
       err.textContent = ''; send.disabled = true; send.textContent = 'Sending...';
-      fetch(REQ_ENDPOINT, {method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'}}).then(function(r){
+      fetch(REQ_ENDPOINT, {method: 'POST', body: toJson(new FormData(form)), headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}}).then(function(r){
         if(!r.ok) throw new Error('send');
         pdContent.textContent = '';
         pdContent.appendChild(el('div', {class: 'pd-body rq-done', tabindex: '-1'}, [

@@ -566,7 +566,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         <div class="formcard reveal" id="message">
           <h2>Send a message</h2>
           <p class="form-intro">Tell us what it's about and how to reach you. We&#39;ll get back to you.</p>
-          <form id="rnForm" action="https://formspree.io/f/xrpzypon" method="POST">
+          <form id="rnForm" action="https://formsubmit.co/ajax/info@tradiehire.net" method="POST">
             <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
             <input type="hidden" name="_subject" value="Website message, Ready Now Tradie Hire">
             <div class="fgrid">
@@ -769,10 +769,11 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
     var btn = f.querySelector('[type="submit"]');
     var label = btn ? btn.textContent : '';
     if(btn){ btn.disabled = true; }
+    var toJson = function(fd){ var o = {_captcha: 'false', _template: 'table'}; fd.forEach(function(v, k){ if(typeof v === 'string' && k !== '_gotcha') o[k] = v; }); return JSON.stringify(o); };
     fetch(f.action, {
       method: 'POST',
-      body: new FormData(f),
-      headers: {'Accept': 'application/json'}
+      body: toJson(new FormData(f)),
+      headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}
     }).then(function(r){
       if(!r.ok) throw new Error('bad response');
       [].forEach.call(f.querySelectorAll('.fgrid, .form-foot'), function(n){ n.hidden = true; });

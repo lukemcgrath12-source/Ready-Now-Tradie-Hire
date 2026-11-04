@@ -758,7 +758,8 @@ function photoEl(m, cls){
 function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:' + t : null; }
 
 (function(){
-  var FORMSPREE = 'https://formspree.io/f/xrpzypon';
+  var FORMSPREE = 'https://formsubmit.co/ajax/info@tradiehire.net';
+  var toJson = function(fd){ var o = {_captcha: 'false', _template: 'table'}; fd.forEach(function(v, k){ if(typeof v === 'string' && k !== '_gotcha') o[k] = v; }); return JSON.stringify(o); };
   var form = document.getElementById('joinForm'), btn = document.getElementById('joinBtn');
   var photoIn = document.getElementById('photo'), preview = document.getElementById('ppPreview'), ppBtn = document.getElementById('ppBtn');
   var bio = document.getElementById('bio'), bioCount = document.getElementById('bioCount');
@@ -960,7 +961,7 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
     if(id) s.append('profile', location.origin + '/members?id=' + encodeURIComponent(id));
     s.append('admin', location.origin + '/members-admin');
     var timeout = new Promise(function(res){ setTimeout(res, 4000); });
-    return Promise.race([fetch(FORMSPREE, {method: 'POST', body: s, headers: {'Accept': 'application/json'}}).catch(function(){}), timeout]);
+    return Promise.race([fetch(FORMSPREE, {method: 'POST', body: toJson(s), headers: {'Accept': 'application/json', 'Content-Type': 'application/json'}}).catch(function(){}), timeout]);
   }
 
   form.addEventListener('submit', function(e){
