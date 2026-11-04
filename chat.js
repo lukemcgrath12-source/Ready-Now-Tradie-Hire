@@ -51,6 +51,7 @@
     '<form id="rnc-f" autocomplete="off"><label for="rnc-i" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Type a message</label><input id="rnc-i" type="text" maxlength="120" placeholder="Type a trade, suburb or question"><button id="rnc-s" type="submit" aria-label="Send" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9z"/></svg></button></form><p class="rnc-note">Automated helper. For anything else call 0432 910 369.</p>';
   document.body.appendChild(btn); document.body.appendChild(box);
   var ft = document.querySelector('footer'); if (ft && 'IntersectionObserver' in window) { new IntersectionObserver(function(es){ btn.classList.toggle('rnc-away', es[0].isIntersecting && !box.classList.contains('open')); }, {threshold: 0.05}).observe(ft); }
+  var mini=function(){ btn.classList.toggle('rnc-mini', window.scrollY > 320); }; window.addEventListener('scroll', mini, {passive:true}); mini();
   var log = box.querySelector('#rnc-log'), inp = box.querySelector('#rnc-i'), send = box.querySelector('#rnc-s'), started = false;
   inp.addEventListener('input', function(){ send.disabled = !inp.value.trim(); });
 

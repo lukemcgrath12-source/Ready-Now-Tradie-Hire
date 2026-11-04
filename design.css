@@ -122,3 +122,80 @@
 .fq-side .arw{transition:transform .4s var(--tk-ease)}
 .fq-side:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(23,90,138,.25)}
 .fq-side:hover .arw{transform:translateX(5px)}
+
+/* ================= Pass 6: one system for every inner page ================= */
+
+/* Heading system: heavy, tight, everywhere */
+h1,h2,.sec-h2,.cta-band h2,.ty-card h1{font-weight:700!important;letter-spacing:-.04em!important}
+h3{letter-spacing:-.02em}
+
+/* Inner heroes: big type, then a full-width ruler along the bottom edge */
+.page-hero{padding-bottom:104px!important}
+@media(min-width:1024px){.page-hero{padding-top:200px!important;padding-bottom:132px!important}}
+.page-hero h1{font-size:clamp(2.6rem,7.4vw,6.25rem)!important;line-height:.94!important;letter-spacing:-.055em!important;max-width:11ch!important}
+.page-hero.ph-tight h1{font-size:clamp(2.4rem,6.2vw,5.25rem)!important}
+.page-hero::after{content:"";position:absolute;left:0;right:0;bottom:0;height:34px;z-index:3;pointer-events:none;
+  background:var(--ticks-long-light) 24px 100%/calc(100% - 24px) 30px no-repeat,var(--ticks-light) 24px 100%/calc(100% - 24px) 13px no-repeat,
+             linear-gradient(rgba(255,255,255,.45),rgba(255,255,255,.45)) 0 100%/100% 1px no-repeat;opacity:.55}
+.page-hero .slot-contours{opacity:.18!important}
+
+/* Hero rolling word: a deliberate tape, not specks */
+.rh .tword::after{bottom:-.1em;height:.2em;left:2%;right:2%;
+  background:linear-gradient(var(--tk-blue-l),var(--tk-blue-l)) 0 100%/100% 3px no-repeat,
+             repeating-linear-gradient(90deg,var(--tk-blue-l) 0 3px,transparent 3px 40px) 0 100%/100% 100% no-repeat!important;opacity:1}
+
+/* About: one statement and a then/now tape */
+.story-sec{background:#fff;padding:96px 0 104px!important}
+@media(min-width:1024px){.story-sec{padding:144px 0 152px!important}}
+.story-h{font-size:clamp(2.2rem,6vw,5rem)!important;line-height:.98!important;letter-spacing:-.05em!important;max-width:14ch;margin:20px 0 56px;color:var(--tk-ink)}
+.story-h em{font-style:normal;color:var(--tk-blue)}
+.story-tape{list-style:none;margin:0;padding:64px 0 0;display:grid;gap:40px;position:relative}
+.story-tape::before{content:"";position:absolute;left:0;right:0;top:0;height:40px;border-radius:6px;
+  background:var(--ticks-long-light) 0 0/100% 22px no-repeat,var(--ticks-light) 0 0/100% 11px no-repeat,linear-gradient(180deg,#2a7cb6,var(--tk-blue) 60%,#175A8A);
+  box-shadow:0 18px 40px -18px rgba(23,90,138,.6)}
+@media(min-width:720px){.story-tape{grid-template-columns:1fr 1fr;gap:64px}}
+.story-tape li{position:relative;padding-top:8px}
+
+.st-k{display:block;font-family:var(--mono,"IBM Plex Mono",monospace);font-size:12px;letter-spacing:.2em;text-transform:uppercase;color:var(--tk-blue);margin:6px 0 10px}
+.story-tape h3{font-size:clamp(1.6rem,3vw,2.4rem)!important;font-weight:700!important;letter-spacing:-.035em!important;margin:0 0 12px;color:var(--tk-ink)}
+.story-tape p{font-size:17px;line-height:1.7;color:#4A5058;max-width:42ch;margin:0}
+
+/* 404: the page as a wordmark */
+.nf-sec{background:var(--tk-ink)!important;padding:168px 0 120px!important;min-height:auto!important;position:relative}
+.nf-sec::after{content:"";position:absolute;left:0;right:0;bottom:0;height:30px;background:var(--ticks-long-light) 0 100%/100% 26px no-repeat,var(--ticks-light) 0 100%/100% 12px no-repeat;opacity:.4}
+.nf-eye{color:var(--tk-blue-l)!important}
+.nf-h{font-size:clamp(3rem,10vw,9rem)!important;line-height:.92!important;letter-spacing:-.06em!important;font-weight:800!important;color:#F6F7F9;margin:22px 0 28px;max-width:10ch}
+.nf-h span{color:var(--tk-blue-l)}
+.nf-lead{font-size:18px;line-height:1.7;color:rgba(246,247,249,.7);max-width:46ch;margin:0 0 48px}
+.nf-list{display:block;border-top:1px solid rgba(255,255,255,.14)}
+.nf-list a{display:flex;justify-content:space-between;align-items:center;padding:16px 4px;border-bottom:1px solid rgba(255,255,255,.14);
+  color:#F6F7F9;text-decoration:none;font-weight:700;font-size:clamp(1.5rem,3.6vw,2.6rem);letter-spacing:-.04em;line-height:1.05;transition:transform .45s var(--tk-ease),color .2s}
+.nf-list a::after{content:"\2192";font-weight:400;color:var(--tk-blue-l);transition:transform .45s var(--tk-ease)}
+.nf-list a:hover,.nf-list a:focus-visible{color:var(--tk-blue-l);transform:translateX(10px)}
+.nf-list a:hover::after{transform:translateX(-10px) rotate(-45deg)}
+.nf-list a:active{transform:translateX(4px)}
+.nf-back{margin-top:36px;color:rgba(246,247,249,.62);font-size:15px}
+.nf-back a{color:#F6F7F9;text-underline-offset:4px}
+.nf-back a:hover{color:var(--tk-blue-l)}
+
+/* Members: the card is the link, Call is the only button */
+.mcard{position:relative}
+.mcard .mc-open::after{content:"";position:absolute;inset:0;border-radius:inherit;z-index:1}
+.mcard .call-btn{position:relative;z-index:2}
+.mcard .mc-more{font-family:var(--mono,"IBM Plex Mono",monospace);font-size:11px!important;letter-spacing:.14em;text-transform:uppercase;color:var(--tk-ink)!important;text-decoration:none!important;font-weight:500;transition:transform .35s var(--tk-ease)}
+.mcard .mc-more::after{content:" \2192";color:var(--tk-blue)}
+.mcard:hover .mc-more{transform:translateX(4px)}
+.mcard:hover .mc-name{color:var(--tk-blue)}
+.mc-listed{font-size:11px!important;letter-spacing:.12em!important}
+.chip:hover{background:#EAF3FA!important;border-color:var(--tk-blue-l)!important}
+.chip[aria-pressed="true"]:hover{background:#2A2E33!important}
+.chip:active{transform:scale(.97)}
+
+/* Chat pill folds to an icon once you scroll */
+#rnc-btn.rnc-mini{width:56px;padding:7px;justify-content:center}
+#rnc-btn.rnc-mini .lb{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+
+/* Nav links: 44px tall hit area */
+.nav-links a{display:inline-flex;align-items:center;min-height:44px}
+.story-sec .rey,.nf-eye{font-family:var(--mono,"IBM Plex Mono",monospace);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--tk-blue)}
+.nf-eye{color:var(--tk-blue-l)!important}

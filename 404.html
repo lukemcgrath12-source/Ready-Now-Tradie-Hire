@@ -638,17 +638,15 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 </div>
 
 <main id="main">
-<section class="ty-sec">
-  <div class="ty-wrap">
-    <div class="ty-card" style="text-align:center">
-      <p class="nf-code">Error 404</p>
-      <h1>Nobody's on this job.</h1>
-      <p class="ty-lead">That page has moved or never existed. Pick a trade and we'll show you who's listed.</p>
-      <nav class="nf-trades" aria-label="Popular trades">
-        <a href="/members?trade=Electricians">Electricians</a><a href="/members?trade=Plumbers">Plumbers</a><a href="/members?trade=Carpenters">Carpenters</a><a href="/members?trade=Labourers">Labourers</a><a href="/members">All trades</a>
-      </nav>
-      <p class="ty-back">On the tools? <a href="/join">List your trade free</a> or <a href="/">head back home</a>.</p>
-    </div>
+<section class="ty-sec nf-sec">
+  <div class="wrap px nf-wrap">
+    <p class="rey nf-eye">Error 404</p>
+    <h1 class="nf-h">Nobody&#39;s on <span>this job.</span></h1>
+    <p class="nf-lead">That page has moved or never existed. Pick a trade and we&#39;ll show you who&#39;s listed.</p>
+    <nav class="nf-list" aria-label="Popular trades">
+      <a href="/members?trade=Electricians">Electricians</a><a href="/members?trade=Plumbers">Plumbers</a><a href="/members?trade=Carpenters">Carpenters</a><a href="/members?trade=Labourers">Labourers</a><a href="/members">All trades</a>
+    </nav>
+    <p class="nf-back">On the tools? <a href="/join">List your trade free</a> or <a href="/">head back home</a>.</p>
   </div>
 </section>
 </main>
@@ -798,6 +796,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         return {'<':'&lt;','>':'&gt;','&':'&amp;','"':'&quot;'}[c]; }) + '</dd></div>';
   });
   var el = d.getElementById('tyRecap');
+  if(!el) return;
   if(html){ el.innerHTML = html; } else { el.style.display = 'none'; }
 })();
 </script>

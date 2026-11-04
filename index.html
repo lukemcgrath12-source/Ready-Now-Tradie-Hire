@@ -869,7 +869,6 @@ footer .f-col a{display:inline-block;padding:3px 0}
   fetch('/api/members', {headers: {'Accept': 'application/json'}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
     if(!d || !Array.isArray(d.members)) return;
     var ms = d.members.filter(function(m){ return m && m.id && m.name && m.trade; });
-    if(ms.length >= 5){ document.getElementById('liveN').textContent = ms.length + ' local tradies listed'; }
     if(ms.length >= 3){
       var list = document.getElementById('featList');
       ms.filter(function(m){ return m.photo; }).concat(ms.filter(function(m){ return !m.photo; })).slice(0, 6).forEach(function(m){

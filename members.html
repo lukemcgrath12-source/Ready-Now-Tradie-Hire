@@ -764,7 +764,7 @@ function findTrade(v){
       m.bio ? el('p', {class: 'mc-bio', text: m.bio}) : null,
       el('div', {class: 'mc-foot'}, [
         listed ? el('span', {class: 'mc-listed', text: 'Listed ' + listed}) : el('span'),
-        el('button', {type: 'button', class: 'mc-more', onclick: open, text: 'View profile'})
+        el('span', {class: 'mc-more', 'aria-hidden': 'true', text: 'View profile'})
       ]),
       callBtn(m)
     ]);
