@@ -21,3 +21,27 @@ a[href^="tel:"]:not(.pillbtn):not(.call):not(.book):hover{transform:translateX(4
 .about-desktop .slot-b,.about-imgs .slot-b{background:#16181B url(/about-card-b.webp) center/cover no-repeat}
 .about-desktop .img-slot .slot-contours,.about-imgs .img-slot .slot-contours{display:none}
 .about-desktop .img-slot .img-shade,.about-imgs .img-slot .img-shade{background:linear-gradient(180deg,rgba(22,24,27,.15) 30%,rgba(22,24,27,.85))!important;opacity:1!important}
+/* One header on every page: inset white pill, logo straight on white (matches home) */
+.navwrap .navbar{max-width:1248px}
+.nav-logochip{background:transparent!important;box-shadow:none!important;padding:4px 10px!important;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.nav-logochip:hover{transform:translateY(-1px) scale(1.03)}
+.nav-logochip:active{transform:scale(.98)}
+/* Profile cards answer the pointer */
+.mcard{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1),border-color .35s}
+.mcard:hover{transform:translateY(-4px);box-shadow:0 2px 6px rgba(20,23,26,.06),0 18px 40px rgba(23,90,138,.14);border-color:#4894C4}
+.lp-card:hover{transform:none;box-shadow:none}
+/* Text links: underline draws in, arrow nudges */
+.rh-pop a,.rh-tradie,.faq-cta a,.nf-links a{background:linear-gradient(currentColor,currentColor) 0 100%/0 2px no-repeat;transition:background-size .35s cubic-bezier(.22,1,.36,1),color .3s}
+.rh-pop a:hover,.rh-tradie:hover,.faq-cta a:hover,.nf-links a:hover{background-size:100% 2px}
+.rh-tradie .arw,.rbtn .arw{transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.rh-tradie:hover .arw,.rbtn:hover .arw{transform:translateX(4px)}
+/* Page to page: a short cross-fade instead of a hard cut */
+@view-transition{navigation:auto}
+::view-transition-old(root){animation:.22s cubic-bezier(.22,1,.36,1) both rn-out}
+::view-transition-new(root){animation:.38s cubic-bezier(.22,1,.36,1) both rn-in}
+@keyframes rn-out{to{opacity:0}}
+@keyframes rn-in{from{opacity:0;transform:translateY(10px)}}
+@media (prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}.mcard,.mcard:hover,.nav-logochip:hover{transform:none}}
+.fq-cta a,.nav-cta-lg{transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)}
+.fq-cta a:hover,.nav-cta-lg:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(23,90,138,.2)}
+.fq-cta a:active,.nav-cta-lg:active{transform:translateY(0)}
