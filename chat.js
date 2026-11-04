@@ -138,4 +138,25 @@
   btn.addEventListener('click', open);
   box.querySelector('#rnc-x').addEventListener('click', close);
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('open')) close(); });
+
+  // Home page: a small nudge pops up once the visitor has scrolled a fair way down.
+  (function(){
+    if(location.pathname !== '/' && location.pathname !== '/index.html') return;
+    var seen = false; try { seen = sessionStorage.getItem('rnc-nudge') === '1'; } catch(e){}
+    if(seen) return;
+    var tip = document.createElement('div'); tip.id = 'rnc-tip'; tip.setAttribute('role', 'status');
+    tip.innerHTML = '<button type="button" class="rnc-tip-go">Need a tradie today? <b>Tell me the job and I\u2019ll point you to one.</b></button><button type="button" class="rnc-tip-x" aria-label="Dismiss">\u00d7</button>';
+    document.body.appendChild(tip);
+    function done(){ tip.classList.remove('on'); try { sessionStorage.setItem('rnc-nudge', '1'); } catch(e){} window.removeEventListener('scroll', onScroll); setTimeout(function(){ tip.remove(); }, 400); }
+    tip.querySelector('.rnc-tip-go').addEventListener('click', function(){ done(); open(); });
+    tip.querySelector('.rnc-tip-x').addEventListener('click', done);
+    btn.addEventListener('click', done);
+    var shown = false;
+    function onScroll(){
+      if(shown) return;
+      var h = document.documentElement.scrollHeight - window.innerHeight;
+      if(h > 0 && window.scrollY / h > 0.3){ shown = true; tip.classList.add('on'); setTimeout(function(){ if(tip.classList.contains('on')) done(); }, 15000); }
+    }
+    window.addEventListener('scroll', onScroll, {passive: true});
+  })();
 })();
