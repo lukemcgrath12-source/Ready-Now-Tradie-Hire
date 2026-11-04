@@ -745,7 +745,72 @@ function findTrade(v){
     var href = safeTel(m.tel);
     if(!href) return null;
     var first = String(m.name).split(/\s+/)[0];
-    return el('a', {class: 'call-btn', href: href, 'aria-label': m.crew ? 'Call Ready Now on ' + m.phone + ' to book ' + m.name : 'Call ' + m.name + ' on ' + m.phone}, [svg(ICON_PHONE), (m.crew ? 'Book ' : 'Call ') + first, el('span', {class: 'num', text: m.phone})]);
+    if(m.crew){
+      var b = el('button', {type: 'button', class: 'call-btn req-btn', 'aria-label': 'Request ' + m.name}, ['Request ' + first, el('span', {class: 'num', text: 'Send a request'})]);
+      b.addEventListener('click', function(e){ e.stopPropagation(); openRequest(m); });
+      return b;
+    }
+    return el('a', {class: 'call-btn', href: href, 'aria-label': 'Call ' + m.name + ' on ' + m.phone}, [svg(ICON_PHONE), 'Call ' + first, el('span', {class: 'num', text: m.phone})]);
+  }
+
+  var REQ_ENDPOINT = 'https://formspree.io/f/xrpzypon';
+  function fld(id, label, input, full){
+    return el('div', {class: 'rq-f' + (full ? ' full' : '')}, [el('label', {for: id, text: label}), input]);
+  }
+  function openRequest(m){
+    lastFocus = lastFocus || document.activeElement;
+    pdContent.textContent = '';
+    var first = String(m.name).split(/\s+/)[0];
+    var trade = SINGULAR[m.trade] || m.trade;
+    var form = el('form', {class: 'rq-form', action: REQ_ENDPOINT, method: 'POST', novalidate: 'novalidate'});
+    var when = el('select', {id: 'rqWhen', name: 'when'});
+    ['As soon as possible', 'This week', 'Next week', 'In the next month', 'Flexible'].forEach(function(o){ when.appendChild(el('option', {text: o})); });
+    [
+      el('input', {type: 'hidden', name: '_subject', value: 'Tradie request: ' + m.name + ' (' + trade + ')'}),
+      el('input', {type: 'hidden', name: 'tradie', value: m.name + ' (' + trade + ')'}),
+      el('input', {type: 'text', name: '_gotcha', tabindex: '-1', autocomplete: 'off', 'aria-hidden': 'true', style: 'position:absolute;left:-9999px;width:1px;height:1px;opacity:0'})
+    ].forEach(function(x){ form.appendChild(x); });
+    var grid = el('div', {class: 'rq-grid'}, [
+      fld('rqName', 'Your name *', el('input', {id: 'rqName', name: 'name', type: 'text', required: 'required', autocomplete: 'name'})),
+      fld('rqPhone', 'Phone *', el('input', {id: 'rqPhone', name: 'phone', type: 'tel', required: 'required', autocomplete: 'tel', inputmode: 'tel'})),
+      fld('rqEmail', 'Email', el('input', {id: 'rqEmail', name: 'email', type: 'email', autocomplete: 'email', placeholder: 'Optional'})),
+      fld('rqSuburb', 'Suburb *', el('input', {id: 'rqSuburb', name: 'suburb', type: 'text', required: 'required', autocomplete: 'address-level2'})),
+      fld('rqWhen', 'When do you need them?', when, true),
+      fld('rqJob', 'What is the job? *', el('textarea', {id: 'rqJob', name: 'job', required: 'required', rows: '4', placeholder: 'A few lines on the work, the site and anything we should know.'}), true)
+    ]);
+    var err = el('p', {class: 'rq-err', role: 'alert'});
+    var send = el('button', {type: 'submit', class: 'call-btn rq-send', text: 'Send request'});
+    form.appendChild(grid); form.appendChild(err); form.appendChild(send);
+    form.appendChild(el('p', {class: 'pd-note', text: 'We will be in touch to confirm availability and the details. Your details are only used for this request.'}));
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      if(form.querySelector('[name=_gotcha]').value) return;
+      var bad = Array.prototype.filter.call(form.querySelectorAll('[required]'), function(x){ return !x.value.trim(); });
+      if(bad.length){ err.textContent = 'Please fill in your name, phone, suburb and the job.'; bad[0].focus(); return; }
+      err.textContent = ''; send.disabled = true; send.textContent = 'Sending...';
+      fetch(REQ_ENDPOINT, {method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'}}).then(function(r){
+        if(!r.ok) throw new Error('send');
+        pdContent.textContent = '';
+        pdContent.appendChild(el('div', {class: 'pd-body rq-done', tabindex: '-1'}, [
+          el('span', {class: 'mc-trade', text: 'Request sent'}),
+          el('h2', {id: 'pdName', text: 'Thanks, we have your request for ' + first + '.'}),
+          el('p', {class: 'pd-bio', text: 'We will be in touch soon to confirm. If it is urgent, ring 0432 910 369.'})
+        ]));
+        pdContent.querySelector('.rq-done').focus();
+      }).catch(function(){
+        send.disabled = false; send.textContent = 'Send request';
+        err.textContent = 'That did not send. Please try again or ring 0432 910 369.';
+      });
+    });
+    pdContent.appendChild(el('div', {class: 'pd-body rq-body'}, [
+      el('span', {class: 'mc-trade', text: 'Request a tradie'}),
+      el('h2', {id: 'pdName', text: 'Request ' + m.name}),
+      el('p', {class: 'pd-bio', text: trade + ', ' + m.area + '. Tell us about the job and we will come back to you.'}),
+      form
+    ]));
+    state.open = m.id;
+    if(!dlg.open){ if(typeof dlg.showModal === 'function') dlg.showModal(); else dlg.setAttribute('open', ''); }
+    setTimeout(function(){ var n = document.getElementById('rqName'); if(n) n.focus(); }, 30);
   }
 
   function card(m){
@@ -833,7 +898,7 @@ function findTrade(v){
       el('li', null, [el('b', {text: 'Area'}), m.area]),
       m.business ? el('li', null, [el('b', {text: 'Business'}), m.business]) : null,
       m.abn ? el('li', null, [el('b', {text: 'ABN'}), m.abn]) : null,
-      el('li', null, [el('b', {text: 'Phone'}), m.phone]),
+      m.crew ? null : el('li', null, [el('b', {text: 'Phone'}), m.phone]),
       listed ? el('li', null, [el('b', {text: 'Listed'}), listed]) : null
     ]);
     var shareBtn = el('button', {type: 'button', class: 'pd-share'}, [svg(ICON_SHARE), el('span', {class: 'lbl', text: 'Share profile'})]);

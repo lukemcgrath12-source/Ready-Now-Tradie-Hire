@@ -18,7 +18,7 @@ a[href^="tel:"]:not(.pillbtn):not(.call):not(.book):hover{transform:translateX(4
 .chips{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 64px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 64px),transparent);padding-right:48px}
 /* About: Sam's own photos fill the two story cards */
 .about-desktop .slot-a,.about-imgs .slot-a{background:#16181B url(/about-card-a-b.webp) center/cover no-repeat}
-.about-desktop .slot-b,.about-imgs .slot-b{background:#16181B url(/about-card-b.webp) center/cover no-repeat}
+.about-desktop .slot-b,.about-imgs .slot-b{background:#16181B url(/about-card-b-c.webp) center/cover no-repeat}
 .about-desktop .img-slot .slot-contours,.about-imgs .img-slot .slot-contours{display:none}
 .about-desktop .img-slot .img-shade,.about-imgs .img-slot .img-shade{background:linear-gradient(180deg,rgba(22,24,27,.15) 30%,rgba(22,24,27,.85))!important;opacity:1!important}
 /* One header on every page: inset white pill, logo straight on white (matches home) */

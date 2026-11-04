@@ -412,3 +412,27 @@ footer h2.f-h,.f-col h4,.cb-eyebrow,.slot-tag,.c-tag,.register-head span,.reg-co
   .rh-pin .rh-tape{bottom:18px}
   .rh-pin .rh-stage::after{bottom:84px}
 }
+
+/* ===== Pass 12: spacing fixes and the tradie request form ===== */
+.rb-sec .rw{max-width:none!important;padding-left:0!important;padding-right:0!important}
+.rsec.rf{padding-bottom:72px!important}
+@media(min-width:1024px){.rsec.rf{padding-bottom:112px!important}}
+@media(min-width:1024px){.about .sec-h2{margin-bottom:40px!important}}
+.about .sec-h2{margin-bottom:32px!important}
+
+/* request form inside the profile dialog */
+.req-btn{border:0;cursor:pointer;font:inherit;width:100%;display:flex;align-items:center;justify-content:center;gap:10px}
+.req-btn .num{opacity:.8;font-weight:500}
+.rq-body h2{margin-bottom:6px}
+.rq-form{margin-top:18px}
+.rq-grid{display:grid;grid-template-columns:1fr;gap:14px}
+@media(min-width:560px){.rq-grid{grid-template-columns:1fr 1fr}.rq-f.full{grid-column:1 / -1}}
+.rq-f{display:flex;flex-direction:column;gap:6px}
+.rq-f label{font-size:13px;font-weight:600;color:var(--tk-ink)}
+.rq-f input,.rq-f select,.rq-f textarea{font:inherit;font-size:16px;color:var(--tk-ink);background:#F4F6F8;border:1px solid #E2E6EB;border-radius:12px;padding:12px 14px;min-height:48px;width:100%;box-sizing:border-box}
+.rq-f textarea{min-height:110px;resize:vertical}
+.rq-f input:focus-visible,.rq-f select:focus-visible,.rq-f textarea:focus-visible{outline:2px solid var(--tk-blue);outline-offset:1px;background:#fff}
+.rq-err{color:#B42318;font-size:14px;min-height:1.2em;margin:12px 0 4px}
+.rq-send{border:0;cursor:pointer;font:inherit;font-weight:700;width:100%;margin-top:4px}
+.rq-send[disabled]{opacity:.7;cursor:progress}
+.rq-done h2{margin:6px 0 10px}
