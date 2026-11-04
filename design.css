@@ -313,3 +313,30 @@ footer{overflow-x:clip}
 .rh-static .rh-tape{--b:1}
 @media (prefers-reduced-motion:reduce){.rh-cue i{animation:none}.rh-img img{transform:none}}
 @media(max-width:719px){.rh-nums i:nth-child(n+11){display:none}}
+
+/* ===== Pass 8b: make the scroll moment unmissable on computers and iPads ===== */
+@property --a{syntax:'<number>';inherits:true;initial-value:0}
+@property --t{syntax:'<number>';inherits:true;initial-value:0}
+@property --f{syntax:'<number>';inherits:true;initial-value:0}
+@media(min-width:960px) and (min-height:640px){
+  .rh.rh-pin{height:300vh}
+  .rh-pin .rh-tape{--b:calc(.16 + .84 * var(--t))}
+  .rh-pin .rh-stage{clip-path:inset(calc(var(--f) * 3vh) calc(var(--f) * 2.4vw) round calc(var(--f) * 32px))}
+  .rh-pin .rh-img img{transform:scale(calc(1.14 + .26 * var(--a) - .2 * var(--f)))}
+  .rh-pin .rh-shade{opacity:calc(1 + .6 * var(--a))}
+  .rh-pin .rh-in{translate:none}
+  /* the words split off the sides, the trade word takes the screen */
+  .rh-pin h1 .h-ln:first-child{translate:calc(var(--a) * -60vw) 0;opacity:calc(1 - var(--a) * 1.2)}
+  .rh-pin h1 .h-ln:last-of-type{translate:calc(var(--a) * 60vw) 0;opacity:calc(1 - var(--a) * 1.2)}
+  .rh-pin h1 .tword{scale:calc(1 + 1.7 * var(--a));transform-origin:50% 55%;color:#fff}
+  .rh-pin h1 .tword .tword-w{color:color-mix(in srgb,#7DB8E3 calc((1 - var(--a)) * 100%),#ffffff)}
+  .rh-pin .rh-live{translate:0 calc(var(--a) * -80px);opacity:calc(1 - var(--a) * 2.2)!important}
+  .rh-pin .rh-sub{translate:0 calc(var(--a) * 90px);opacity:calc(1 - var(--a) * 2.2)!important}
+  .rh-pin .rs{translate:0 calc(var(--a) * 160px);opacity:calc(1 - var(--a) * 2)!important;pointer-events:auto}
+  .rh-pin .rh-meta{translate:0 calc(var(--a) * 200px);opacity:calc(1 - var(--a) * 2.4)!important}
+  .rh-pin .rh-cue{opacity:calc(1 - var(--a) * 5)}
+  /* a closing line rides in under the giant word once the tape is out */
+  .rh-pin .rh-stage::after{content:"Search by trade. Call them direct.";position:absolute;left:0;right:0;top:calc(50% + 15vh);text-align:center;z-index:3;
+    font-family:var(--mono,"IBM Plex Mono",monospace);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#fff;
+    opacity:calc(var(--t) * 2 - 1);translate:0 calc((1 - var(--t)) * 30px);pointer-events:none}
+}
