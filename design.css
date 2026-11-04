@@ -539,3 +539,45 @@ footer .f-col a:not(.f-hide){min-height:32px!important}
 @media(max-width:820px){#rnc-tip{right:12px;bottom:calc(76px + env(safe-area-inset-bottom));max-width:min(300px,calc(100vw - 24px))}}
 @media(max-width:820px){body:has(.mbar) #rnc-tip{bottom:calc(150px + env(safe-area-inset-bottom))}}
 @media (prefers-reduced-motion:reduce){#rnc-tip{transition:none}}
+
+/* ===== Pass 16: trade and suburb pages, for tradies ===== */
+.ar-sec{padding:var(--sec-y) 0;background:#fff}
+.ar-sec.ar-alt{background:var(--tk-fog,#F5F6F8)}
+.ar-sec .rey{margin-bottom:10px}
+.ar-h{font-size:clamp(1.7rem,3.4vw,2.6rem)!important;line-height:1.05;letter-spacing:-.04em!important;margin:0 0 28px;color:var(--tk-ink)}
+.ar-list{display:grid;gap:12px}
+@media(min-width:720px){.ar-list{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.ar-list{grid-template-columns:1fr 1fr 1fr}}
+.ar-card{display:flex;align-items:center;gap:14px;padding:14px;border:1px solid #E2E6EB;border-radius:16px;background:#fff;text-decoration:none;color:var(--tk-ink);transition:transform .35s var(--tk-ease),box-shadow .35s var(--tk-ease),border-color .2s}
+.ar-card:hover{transform:translateY(-3px);border-color:#4894C4;box-shadow:0 16px 36px -18px rgba(23,90,138,.4)}
+.ar-ph{width:64px;height:64px;border-radius:12px;object-fit:cover;flex:none}
+.ar-tx{display:flex;flex-direction:column;gap:2px;flex:1;min-width:0}
+.ar-n{font-weight:700;font-size:17px;letter-spacing:-.02em}
+.ar-k{font-size:14px;color:#5B616A}
+.ar-go{font-size:13px;font-weight:700;color:var(--tk-blue);white-space:nowrap}
+.ar-empty{color:#4A5058;font-size:16px;line-height:1.7;max-width:56ch}
+.ar-two{display:grid;gap:48px}
+@media(min-width:900px){.ar-two{grid-template-columns:1fr 1fr;column-gap:72px}}
+.ar-jobs{list-style:none;padding:0;margin:0;display:flex;flex-wrap:wrap;gap:10px}
+.ar-jobs li{padding:10px 16px;border-radius:999px;background:#fff;border:1px solid #E2E6EB;font-weight:600;font-size:15px}
+.ar-check{list-style:none;padding:0;margin:0;display:grid;gap:14px}
+.ar-check li{position:relative;padding-left:30px;line-height:1.6;color:#33383E}
+.ar-check li::before{content:"";position:absolute;left:0;top:.35em;width:18px;height:18px;border-radius:50%;background:var(--tk-blue) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='20 6 9 17 4 12'/%3E%3C/svg%3E") center/12px no-repeat}
+.ar-links{display:flex;flex-wrap:wrap;gap:10px}
+.ar-links a{padding:10px 16px;border-radius:999px;border:1px solid #D5DBE1;color:var(--tk-ink);text-decoration:none;font-size:15px;font-weight:500;transition:transform .3s var(--tk-ease),border-color .2s,background .2s}
+.ar-links a:hover{border-color:var(--tk-blue);background:#EAF3FA;transform:translateY(-2px)}
+.ar-cols{display:grid;gap:36px 32px;grid-template-columns:repeat(auto-fill,minmax(200px,1fr))}
+.ar-col h3{font-size:22px;letter-spacing:-.03em;margin:0 0 10px;padding-bottom:10px;background:var(--ticks-dark) 0 100%/100% 6px no-repeat}
+.ar-col h3 a{color:var(--tk-ink);text-decoration:none}
+.ar-col h3 a:hover{color:var(--tk-blue)}
+.ar-col>a{display:block;padding:5px 0;color:#4A5058;text-decoration:none;font-size:15px}
+.ar-col>a:hover{color:var(--tk-blue)}
+.ft-g{list-style:none;padding:0;margin:0;display:grid;gap:16px}
+@media(min-width:720px){.ft-g{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.ft-g{grid-template-columns:1fr 1fr 1fr}}
+.ft-g li{padding:24px;border-radius:18px;background:var(--tk-fog,#F5F6F8);border:1px solid #E8ECF0}
+.ft-g h3{font-size:20px;letter-spacing:-.025em;margin:0 0 8px;color:var(--tk-ink)}
+.ft-g p{margin:0;color:#4A5058;line-height:1.6}
+.ar-sec .pj-in{display:grid;gap:40px}
+@media(min-width:960px){.ar-sec .pj-in{grid-template-columns:.9fr 1.1fr;column-gap:72px;align-items:start}}
+.rey{text-transform:uppercase}

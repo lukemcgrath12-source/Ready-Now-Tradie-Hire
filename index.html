@@ -799,7 +799,7 @@ footer .f-col a{display:inline-block;padding:3px 0}
     <div class="f-col">
       <h2 class="f-h">Find a tradie</h2>
       <ul>
-        <li><a href="/members">All tradies</a></li>
+        <li><a href="/members">All tradies</a></li><li><a href="/tradies">By suburb</a></li>
         <li class="f-x"><a href="/members?trade=Builders">Builders</a></li>
         <li class="f-x"><a href="/members?trade=Electricians">Electricians</a></li>
         <li class="f-x"><a href="/members?trade=Plumbers">Plumbers</a></li>
@@ -811,7 +811,7 @@ footer .f-col a{display:inline-block;padding:3px 0}
     <div class="f-col">
       <h2 class="f-h">Company</h2>
       <ul>
-        <li><a href="/join">Join free</a></li>
+        <li><a href="/join">Join free</a></li><li><a href="/for-tradies">For tradies</a></li>
         <li><a href="/about">About</a></li>
         <li><a href="/contact">Contact</a></li>
         <li><a href="/faq">FAQ</a></li>
@@ -941,24 +941,7 @@ footer .f-col a{display:inline-block;padding:3px 0}
 <script src="/gsap.min.js" defer></script>
 <script defer src="/roll.js"></script>
 <script defer src="/hero.js"></script>
-<script>
-(function(){
-  var f = document.getElementById('pjForm'); if(!f) return;
-  var err = document.getElementById('pjErr'), btn = document.getElementById('pjSend');
-  f.addEventListener('submit', function(e){
-    e.preventDefault();
-    if(f._gotcha.value) return;
-    var bad = Array.prototype.filter.call(f.querySelectorAll('[required]'), function(x){ return !x.value.trim(); });
-    if(bad.length){ err.textContent = 'Please fill in the trade, suburb, job, your name and phone.'; bad[0].focus(); return; }
-    err.textContent = ''; btn.disabled = true; btn.textContent = 'Posting...';
-    var o = {_captcha: 'false', _template: 'table', _subject: 'Job posted: ' + f.trade.value + ' in ' + f.suburb.value};
-    new FormData(f).forEach(function(v, k){ if(k !== '_gotcha') o[k] = v; });
-    fetch('https://formsubmit.co/ajax/info@tradiehire.net', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(o)})
-      .then(function(r){ if(!r.ok) throw new Error(); Array.prototype.forEach.call(f.querySelectorAll('.rq-grid,.rq-send,.pj-note,.rq-err'), function(n){ n.hidden = true; }); var d = document.getElementById('pjDone'); d.hidden = false; d.focus(); })
-      .catch(function(){ btn.disabled = false; btn.textContent = 'Post my job'; err.textContent = 'That did not send. Please try again or ring 0432 910 369.'; });
-  });
-})();
-</script>
+<script defer src="/pj.js"></script>
 
 </body>
 </html>

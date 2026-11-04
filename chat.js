@@ -91,13 +91,32 @@
     state.trade = t; state.step = 'where';
     bot('Sweet, ' + esc(t.toLowerCase()) + '. Which suburb or area is the job in?', [{label:'Skip, show all', fn:function(){ results(''); }}]);
   }
+  function people(){
+    var crewP = window.RN_CREW ? Promise.resolve(window.RN_CREW) : new Promise(function(res){ var sc = document.createElement('script'); sc.src = '/crew.js'; sc.onload = function(){ res(window.RN_CREW || []); }; sc.onerror = function(){ res([]); }; document.head.appendChild(sc); });
+    var memP = fetch('/api/members').then(function(r){ return r.ok ? r.json() : {members: []}; }).then(function(d){ return d.members || []; }).catch(function(){ return []; });
+    var avP = fetch('/api/available').then(function(r){ return r.ok ? r.json() : {ids: []}; }).then(function(d){ return d.ids || []; }).catch(function(){ return []; });
+    return Promise.all([crewP, memP, avP]).then(function(x){
+      var hide = window.RN_HIDE || [];
+      return {all: x[0].concat(x[1].filter(function(m){ return hide.indexOf(m.id) < 0; })), avail: x[2]};
+    });
+  }
   function results(where){
     state.step = 'done';
     var url = '/members?trade=' + encodeURIComponent(state.trade) + (where ? '&q=' + encodeURIComponent(where) : '');
-    bot('Here you go. You can check each tradie\'s profile and call them direct. Ask about licences and insurance before work starts.', [
-      {label:'Show ' + state.trade.toLowerCase() + (where ? ' near ' + where : ''), href:url, go:true},
-      {label:'Search another trade', fn:askTrade}
-    ]);
+    var more = [{label:'Show all ' + state.trade.toLowerCase() + (where ? ' near ' + where : ''), href:url, go:true}, {label:'Post the job instead', href:'/#post'}, {label:'Search another trade', fn:askTrade}];
+    people().then(function(p){
+      var list = p.all.filter(function(m){ return m.trade === state.trade; });
+      var ready = list.filter(function(m){ return p.avail.indexOf(m.id) > -1; });
+      if(ready.length){
+        var names = ready.slice(0, 3).map(function(m){ return esc(m.name.split(/\s+/)[0]); }).join(', ');
+        bot('Good news: <b>' + names + '</b> ' + (ready.length > 1 ? 'are' : 'is') + ' marked <b>ready now today</b>. Open a profile to send a request.',
+          ready.slice(0, 3).map(function(m){ return {label:'Request ' + m.name.split(/\s+/)[0], href:'/members?id=' + encodeURIComponent(m.id), go:true}; }).concat(more.slice(1)));
+      } else if(list.length){
+        bot('There ' + (list.length > 1 ? 'are ' + list.length + ' ' + esc(state.trade.toLowerCase()) : 'is 1 ' + esc((SING[state.trade] || state.trade).toLowerCase())) + ' listed. Nobody has marked themselves ready now today yet, so open a profile or post the job and we will line someone up.', more, null, true);
+      } else {
+        bot('We do not have ' + esc(state.trade.toLowerCase()) + ' listed yet. Post the job and Ready Now will find someone for you.', [{label:'Post the job', href:'/#post', go:true}, {label:'Search another trade', fn:askTrade}]);
+      }
+    });
   }
   function listTrade(){ bot('Listing is free. You get your own profile with your photo, trade and area, and customers call you direct. No lead fees.', [{label:'List my trade free', href:'/join', go:true},{label:'Something else', fn:function(){ bot('No worries. What else can I help with?', menu(), null, true); }}]); }
   function free(){ bot('Yes. Searching, calling a tradie and listing your trade are all free right now. There are no booking fees.', [{label:'Find a tradie', fn:askTrade},{label:'List my trade', fn:listTrade}]); }
@@ -138,6 +157,38 @@
   btn.addEventListener('click', open);
   box.querySelector('#rnc-x').addEventListener('click', close);
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('open')) close(); });
+
+  // ---------- Tracking: one helper, sent to Google Analytics (when an ID is set) and Vercel Analytics ----------
+  (function(){
+    var GA_ID = window.RN_GA_ID || ''; // paste the GA4 measurement ID (G-XXXXXXX) here or set window.RN_GA_ID
+    if(GA_ID && !window.gtag){
+      var g = document.createElement('script'); g.async = true; g.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID; document.head.appendChild(g);
+      window.dataLayer = window.dataLayer || []; window.gtag = function(){ window.dataLayer.push(arguments); };
+      window.gtag('js', new Date()); window.gtag('config', GA_ID);
+    }
+    window.rnTrack = function(name, data){
+      try { if(window.gtag) window.gtag('event', name, data || {}); } catch(e){}
+      try { if(window.va) window.va('event', {name: name, data: data || {}}); } catch(e){}
+    };
+    document.addEventListener('click', function(e){
+      var a = e.target.closest && e.target.closest('a,button'); if(!a) return;
+      var href = a.getAttribute('href') || '';
+      if(href.indexOf('tel:') === 0) rnTrack('call_click', {page: location.pathname});
+      else if(href.indexOf('mailto:') === 0) rnTrack('email_click', {page: location.pathname});
+      else if(a.classList.contains('req-btn')) rnTrack('request_open', {tradie: (a.getAttribute('aria-label') || '').replace('Request ', '')});
+      else if(href === '/join' || href.indexOf('/join?') === 0) rnTrack('list_trade_click', {page: location.pathname});
+      else if(href.indexOf('#post') > -1) rnTrack('post_job_click', {page: location.pathname});
+    }, true);
+    document.addEventListener('submit', function(e){
+      var f = e.target, id = f.id || f.className || 'form';
+      var map = {pjForm: 'post_job_submit', rnForm: 'contact_submit', heroSearch: 'search', joinForm: 'join_submit'};
+      var name = map[f.id] || (f.classList && f.classList.contains('rq-form') ? 'request_submit' : 'form_submit');
+      var data = {page: location.pathname};
+      if(f.trade && f.trade.value) data.trade = f.trade.value;
+      rnTrack(name, data);
+    }, true);
+    btn.addEventListener('click', function(){ rnTrack('chat_open', {page: location.pathname}); });
+  })();
 
   // Home page: a small nudge pops up once the visitor has scrolled a fair way down.
   (function(){
