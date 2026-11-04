@@ -1,0 +1,124 @@
+/* Design pass 5: the tape measure carries through the site.
+   Ruler ticks = the site's mark. Big trade words = type as image. */
+:root{
+  --tk-ink:#16181B;--tk-blue:#1F6FA8;--tk-blue-l:#4894C4;--tk-fog:#F5F6F8;--tk-line:#E2E6EB;
+  --tk-ease:cubic-bezier(.22,1,.36,1);
+  /* tick strip: a long mark every 10 units, short marks between */
+  --ticks-dark:repeating-linear-gradient(90deg,rgba(22,24,27,.55) 0 1px,transparent 1px 8px);
+  --ticks-light:repeating-linear-gradient(90deg,rgba(255,255,255,.5) 0 1px,transparent 1px 8px);
+  --ticks-long-dark:repeating-linear-gradient(90deg,rgba(22,24,27,.85) 0 2px,transparent 2px 80px);
+  --ticks-long-light:repeating-linear-gradient(90deg,rgba(255,255,255,.9) 0 2px,transparent 2px 80px);
+}
+
+/* Eyebrows get a short run of ruler ticks before the words */
+.rey,.ph-eyebrow,.pv-eyebrow{display:inline-flex!important;align-items:center;gap:12px}
+.rey::before,.ph-eyebrow::before,.pv-eyebrow::before{content:"";width:40px;height:9px;flex:none;
+  background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat,
+             repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 8px) 0 100%/100% 5px no-repeat,
+             repeating-linear-gradient(90deg,currentColor 0 1.5px,transparent 1.5px 32px) 0 100%/100% 9px no-repeat;opacity:.7}
+
+/* Hero: the rolling word sits on a tape, not a plain underline */
+.rh .tword{position:relative}
+.rh .tword::after{content:"";position:absolute;left:4%;right:4%;bottom:-.06em;height:.16em;pointer-events:none;
+  background:linear-gradient(var(--tk-blue-l),var(--tk-blue-l)) 0 100%/100% 2px no-repeat,
+             repeating-linear-gradient(90deg,var(--tk-blue-l) 0 1.5px,transparent 1.5px 9px) 0 100%/100% 45% no-repeat,
+             repeating-linear-gradient(90deg,var(--tk-blue-l) 0 2px,transparent 2px 45px) 0 100%/100% 100% no-repeat;opacity:.95}
+
+/* ---------- Trades: an index of big words on a dark ground ---------- */
+.rsec.rt{background:var(--tk-ink);padding:88px 0 96px!important;margin-top:0}
+@media(min-width:1024px){.rsec.rt{padding:128px 0 136px!important}}
+.rsec.rt .rey{color:var(--tk-blue-l)}
+.rsec.rt h2{color:#F6F7F9!important;font-size:clamp(2rem,4.2vw,3.25rem)!important;letter-spacing:-.035em!important;max-width:14ch}
+.rsec.rt .rmore{color:#F6F7F9}
+.rsec.rt .rmore:hover{color:var(--tk-blue-l)}
+.rsec.rt .rsec-h{margin-bottom:40px;padding-bottom:28px;
+  background:var(--ticks-long-light) 0 100%/100% 14px no-repeat,var(--ticks-light) 0 100%/100% 7px no-repeat,
+             linear-gradient(rgba(255,255,255,.35),rgba(255,255,255,.35)) 0 100%/100% 1px no-repeat}
+.rt-g{display:block!important;counter-reset:tl}
+.rt-g li{border-bottom:1px solid rgba(255,255,255,.12)}
+.rt-g .tl{position:relative;display:flex!important;flex-direction:row!important;align-items:baseline!important;gap:18px!important;
+  padding:18px 4px 16px!important;background:none!important;border:0!important;border-radius:0!important;box-shadow:none!important;
+  color:#F6F7F9!important;overflow:hidden;isolation:isolate}
+.rt-g .tl::before{counter-increment:tl;content:counter(tl,decimal-leading-zero);font-family:var(--mono,"IBM Plex Mono",monospace);
+  font-size:12px;letter-spacing:.14em;color:var(--tk-blue-l);min-width:2.4em;transform:translateY(-.9em)}
+.rt-g .tl::after{content:"";position:absolute;inset:0;z-index:-1;background:var(--tk-blue);transform:scaleY(0);transform-origin:bottom;
+  transition:transform .55s var(--tk-ease)}
+.rt-g .tl-ic{display:none!important}
+.rt-g .tl-tx{flex:1;display:flex!important;flex-direction:row!important;align-items:baseline;justify-content:space-between;gap:16px}
+.rt-g .tl-name{font-size:clamp(2.1rem,6.4vw,5.25rem)!important;font-weight:700!important;letter-spacing:-.045em!important;line-height:.95!important;
+  text-align:left!important;transition:transform .55s var(--tk-ease)}
+.rt-g .tl-n{font-family:var(--mono,"IBM Plex Mono",monospace);font-size:12px!important;letter-spacing:.12em;text-transform:uppercase;
+  color:rgba(246,247,249,.62)!important;margin:0!important;white-space:nowrap}
+.rt-g .tl .arw{width:28px;height:28px;color:var(--tk-blue-l);align-self:center;transition:transform .55s var(--tk-ease)}
+.rt-g .tl:hover::after,.rt-g .tl:focus-visible::after{transform:scaleY(1)}
+.rt-g .tl:hover .tl-name,.rt-g .tl:focus-visible .tl-name{transform:translateX(18px)}
+.rt-g .tl:hover .arw,.rt-g .tl:focus-visible .arw{transform:translateX(6px) rotate(-45deg);color:#fff}
+.rt-g .tl:hover .tl-n,.rt-g .tl:focus-visible .tl-n{color:#fff!important}
+.rt-g .tl:active::after{background:#175A8A}
+@media(max-width:640px){.rt-g .tl{gap:12px!important;padding:14px 2px 12px!important}.rt-g .tl .arw{width:20px;height:20px}.rt-g .tl::before{display:none}}
+
+/* ---------- How it works: three marks on a tape ---------- */
+.rsec.rhw{background:#fff!important;margin-top:0!important}
+.rhw-s{position:relative;padding-top:0}
+@media(min-width:720px){
+  .rhw-s{gap:0!important;padding-top:112px}
+  .rhw-s::before{content:"";position:absolute;left:0;right:0;top:0;height:72px;border-radius:6px;
+    background:
+      var(--ticks-long-light) 0 0/100% 34px no-repeat,
+      var(--ticks-light) 0 0/100% 18px no-repeat,
+      linear-gradient(180deg,#2a7cb6,var(--tk-blue) 60%,#175A8A);
+    box-shadow:0 1px 0 rgba(255,255,255,.3) inset,0 18px 40px -18px rgba(23,90,138,.6)}
+  .rhw-s li{display:block!important;padding:0 28px 0 0!important;position:relative}
+  .rhw-s .rhw-n{position:absolute!important;left:12px;top:-104px;width:auto!important;height:auto!important;border:0!important;border-radius:0!important;
+    background:none!important;color:#fff!important;font-size:44px!important;font-weight:800!important;letter-spacing:-.04em;line-height:1}
+  .rhw-s h3{font-size:22px!important;letter-spacing:-.02em;margin-top:4px}
+}
+@media(min-width:960px){.rhw-in{grid-template-columns:1fr!important;gap:56px!important}
+  .rhw-h{display:grid;grid-template-columns:1.1fr .9fr;grid-template-areas:"ey ." "h p";column-gap:64px;align-items:end}
+  .rhw-h .rey{grid-area:ey}.rhw-h h2{grid-area:h}.rhw-h p:not(.rey){grid-area:p;margin:0 0 6px!important}
+  .rhw-h h2{font-size:clamp(2rem,4.2vw,3.25rem)!important;letter-spacing:-.035em!important;max-width:12ch}}
+.rhw-s li{background:none!important;box-shadow:none!important;border:0!important}
+
+/* ---------- Trust line: one sentence, set big ---------- */
+.rtr-g{border-top:0!important;padding-top:0!important;background:var(--ticks-dark) 0 0/100% 7px no-repeat,var(--ticks-long-dark) 0 0/100% 14px no-repeat;padding-top:44px!important}
+.rtr-g h3{font-size:clamp(1.35rem,2.2vw,1.75rem)!important;letter-spacing:-.03em;font-weight:700!important}
+.rtr-ic{display:none!important}
+
+/* ---------- Footer: the name, measured out ---------- */
+.f-giant{font-family:var(--display,Poppins,sans-serif);font-weight:800;color:#F6F7F9;letter-spacing:-.06em;line-height:.95;
+  font-size:clamp(4.2rem,17.5vw,17rem);white-space:nowrap;overflow:hidden;margin:48px 0 0;padding-bottom:30px;user-select:none;
+  background:var(--ticks-long-light) 0 100%/100% 18px no-repeat,var(--ticks-light) 0 100%/100% 9px no-repeat}
+.f-giant span{color:var(--tk-blue-l)}
+
+@media (prefers-reduced-motion:reduce){.rt-g .tl::after,.rt-g .tl-name,.rt-g .tl .arw{transition:none}}
+
+/* Phone: the tape runs down the left edge */
+@media(max-width:719px){
+  .rhw-s{position:relative;padding-left:68px!important}
+  .rhw-s::before{content:"";position:absolute;left:0;top:0;bottom:0;width:48px;border-radius:6px;
+    background:repeating-linear-gradient(180deg,rgba(255,255,255,.9) 0 2px,transparent 2px 64px) 0 0/22px 100% no-repeat,
+               repeating-linear-gradient(180deg,rgba(255,255,255,.5) 0 1px,transparent 1px 8px) 0 0/12px 100% no-repeat,
+               linear-gradient(90deg,#2a7cb6,var(--tk-blue) 60%,#175A8A)}
+  .rhw-s li{padding-bottom:36px!important}
+  .rhw-s li::before{display:none!important}
+  .rhw-s .rhw-n{position:absolute!important;left:-60px;width:40px!important;height:auto!important;border:0!important;background:none!important;
+    color:#fff!important;font-size:30px!important;font-weight:800!important;justify-content:flex-end!important;padding-right:2px}
+}
+
+/* ---------- FAQ: questions on the right, the page held on the left ---------- */
+@media(min-width:1024px){
+  .pv-sec .pv-wrap{max-width:1248px!important;display:grid;grid-template-columns:minmax(0,.85fr) minmax(0,1.25fr);column-gap:80px;align-items:start}
+  .pv-sec .pv-wrap>.pv-eyebrow,.pv-sec .pv-wrap>h1,.pv-sec .pv-wrap>.pv-intro,.pv-sec .pv-wrap>.fq-side{grid-column:1}
+  .pv-sec .pv-wrap>.fq-list{grid-column:2;grid-row:1 / span 5}
+  .pv-sec .pv-wrap>.fq-cta{grid-column:2;grid-row:6}
+  .pv-sec .pv-wrap>.fq-side{align-self:start}
+  .pv-sec .pv-wrap>h1{font-size:clamp(2.6rem,4.6vw,4.25rem)!important;letter-spacing:-.045em!important;line-height:.98!important;font-weight:700!important}
+}
+.fq-side{display:flex;flex-wrap:wrap;align-items:center;gap:6px 14px;margin-top:28px;padding:22px 24px;border-radius:16px;text-decoration:none;
+  background:var(--tk-ink) var(--ticks-long-light) 0 100%/100% 12px no-repeat;color:#F6F7F9;max-width:420px;
+  transition:transform .4s var(--tk-ease),box-shadow .4s var(--tk-ease)}
+.fq-side-k{flex:1 1 100%;font-family:var(--mono,"IBM Plex Mono",monospace);font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--tk-blue-l)}
+.fq-side-v{font-weight:700;font-size:20px;letter-spacing:-.02em}
+.fq-side .arw{transition:transform .4s var(--tk-ease)}
+.fq-side:hover{transform:translateY(-3px);box-shadow:0 18px 40px rgba(23,90,138,.25)}
+.fq-side:hover .arw{transform:translateX(5px)}
