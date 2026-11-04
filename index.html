@@ -597,6 +597,7 @@ footer .f-col a{display:inline-block;padding:3px 0}
 <link rel="stylesheet" href="/polish.css">
 <link rel="stylesheet" href="/design.css">
 <script src="/crew.js"></script>
+<script src="/rn-tools.js"></script>
 </head>
 <body class="home5">
 <a class="skip-link" href="#main">Skip to content</a>
@@ -666,6 +667,7 @@ footer .f-col a{display:inline-block;padding:3px 0}
     <p class="rs-msg" id="rsMsg" role="status" aria-live="polite"></p>
     <div class="rh-meta">
       <p class="rh-pop"><span>Popular:</span> <a href="/members?trade=Electricians">Electricians</a> <a href="/members?trade=Plumbers">Plumbers</a> <a href="/members?trade=Carpenters">Carpenters</a> <a href="/members?trade=Labourers">Labourers</a></p>
+      <a class="rh-tradie rh-post" href="#post">Not sure who to call? Post a job</a>
       <a class="rh-tradie" href="/join">On the tools? List your trade free<svg class="arw" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
     </div>
   </div>
@@ -678,6 +680,33 @@ footer .f-col a{display:inline-block;padding:3px 0}
   <div class="rw">
     <div class="rsec-h"><div><p class="rey">Local profiles</p><h2 id="featH">Ready now near you</h2></div><a class="rmore" href="/members">See all tradies<svg class="arw" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
     <ul class="rf-g" id="featList"></ul>
+  </div>
+</section>
+
+<section class="rsec pj-sec" id="post" aria-labelledby="pjH">
+  <div class="rw pj-in">
+    <div class="pj-h">
+      <p class="rey">Post a job</p>
+      <h2 id="pjH">Not sure who to call? <em>Post the job.</em></h2>
+      <p class="pj-lead">Tell us what you need, where and when. We will line up a local tradie and get back to you. Free, no obligation.</p>
+      <ol class="pj-steps"><li>Tell us the job</li><li>We match a local tradie</li><li>They get in touch</li></ol>
+    </div>
+    <form class="pj-form" id="pjForm" novalidate>
+      <input type="text" name="_gotcha" tabindex="-1" autocomplete="off" aria-hidden="true" style="position:absolute;left:-9999px;width:1px;height:1px;opacity:0">
+      <div class="rq-grid">
+        <div class="rq-f"><label for="pjTrade">Trade *</label><select id="pjTrade" name="trade" required><option value="">Choose a trade</option><option>Builder</option><option>Carpenter</option><option>Electrician</option><option>Plumber</option><option>Roofer</option><option>Concreter</option><option>Tiler</option><option>Painter</option><option>Plasterer</option><option>Bricklayer</option><option>Landscaper</option><option>Labourer</option><option>Traffic control</option><option>Scaffolder</option><option>Renderer</option><option>Floorer</option><option>Formworker</option><option>Not sure</option></select></div>
+        <div class="rq-f"><label for="pjSuburb">Suburb *</label><input id="pjSuburb" name="suburb" type="text" required autocomplete="address-level2" placeholder="e.g. Cronulla"></div>
+        <div class="rq-f full"><label for="pjWhen">When?</label><select id="pjWhen" name="when"><option>As soon as possible</option><option>This week</option><option>Next week</option><option>In the next month</option><option>Flexible</option></select></div>
+        <div class="rq-f full"><label for="pjJob">What is the job? *</label><textarea id="pjJob" name="job" required rows="4" placeholder="A few lines on the work and the site."></textarea></div>
+        <div class="rq-f"><label for="pjName">Your name *</label><input id="pjName" name="name" type="text" required autocomplete="name"></div>
+        <div class="rq-f"><label for="pjPhone">Phone *</label><input id="pjPhone" name="phone" type="tel" required autocomplete="tel" inputmode="tel"></div>
+        <div class="rq-f full"><label for="pjEmail">Email</label><input id="pjEmail" name="email" type="email" autocomplete="email" placeholder="Optional"></div>
+      </div>
+      <p class="rq-err" id="pjErr" role="alert"></p>
+      <button type="submit" class="call-btn rq-send" id="pjSend">Post my job</button>
+      <p class="pj-note">Your details only go to Ready Now to arrange this job.</p>
+      <div class="pj-done" id="pjDone" hidden tabindex="-1"><h3>Job posted. Thanks.</h3><p>We will be in touch soon. If it is urgent, ring <a href="tel:+61432910369">0432 910 369</a>.</p></div>
+    </form>
   </div>
 </section>
 
@@ -871,6 +900,10 @@ footer .f-col a{display:inline-block;padding:3px 0}
   function mk(tag, cls, txt){ var e = document.createElement(tag); if(cls) e.className = cls; if(txt != null) e.textContent = txt; return e; }
   var PIN = '<svg width="14" height="14" fill="currentColor" aria-hidden="true" focusable="false"><use href="#lv-pin"/></svg>';
   var ARW = '<svg class="arw" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>';
+  if(window.RN) RN.available().then(function(set){
+    var mark = function(){ document.querySelectorAll('#featList [data-id]').forEach(function(a){ if(set.has(a.getAttribute('data-id')) && !a.querySelector('.rn-today')){ var b = document.createElement('span'); b.className = 'rn-today'; b.textContent = 'Ready now today'; var idEl = a.querySelector('.fc-id'); (idEl || a).appendChild(b); } }); };
+    mark(); setTimeout(mark, 1500); setTimeout(mark, 4000);
+  });
   fetch('/api/members', {headers: {'Accept': 'application/json'}}).then(function(r){ return r.ok ? r.json() : null; }).then(function(d){
     var crew = window.RN_CREW || [];
     var ms = crew.concat(((d && Array.isArray(d.members)) ? d.members : []).filter(function(m){ return (window.RN_HIDE || []).indexOf(m && m.id) < 0 && m && m.id && m.name && m.trade; }));
@@ -883,7 +916,7 @@ footer .f-col a{display:inline-block;padding:3px 0}
         var top = mk('div', 'fc-top'), ph;
         if(m.photo){ ph = mk('img', 'fc-ph'); ph.src = m.photo; ph.alt = ''; ph.loading = 'lazy'; ph.decoding = 'async'; ph.width = 64; ph.height = 64; }
         else { ph = mk('span', 'fc-ph fc-ini', String(m.name).split(/\s+/).map(function(w){ return w.charAt(0); }).slice(0, 2).join('').toUpperCase()); ph.setAttribute('aria-hidden', 'true'); }
-        var id = mk('div', 'fc-id'); id.appendChild(mk('span', 'fc-n', m.name)); id.appendChild(mk('span', 'fc-tr', SG[m.trade] || m.trade));
+        var id = mk('div', 'fc-id'); id.appendChild(mk('span', 'fc-n', m.name)); id.appendChild(mk('span', 'fc-tr', SG[m.trade] || m.trade)); a.setAttribute('data-id', m.id);
         top.appendChild(ph); top.appendChild(id); a.appendChild(top);
         a.appendChild(mk('p', 'fc-bio', m.bio ? String(m.bio).slice(0, 180) : (SG[m.trade] || m.trade) + ' working across ' + (m.area || 'wider Sydney') + '.'));
         var ft = mk('div', 'fc-ft'), ar = mk('span', 'fc-a'); ar.innerHTML = PIN; ar.appendChild(document.createTextNode(m.area || 'Wider Sydney'));
@@ -908,5 +941,24 @@ footer .f-col a{display:inline-block;padding:3px 0}
 <script src="/gsap.min.js" defer></script>
 <script defer src="/roll.js"></script>
 <script defer src="/hero.js"></script>
+<script>
+(function(){
+  var f = document.getElementById('pjForm'); if(!f) return;
+  var err = document.getElementById('pjErr'), btn = document.getElementById('pjSend');
+  f.addEventListener('submit', function(e){
+    e.preventDefault();
+    if(f._gotcha.value) return;
+    var bad = Array.prototype.filter.call(f.querySelectorAll('[required]'), function(x){ return !x.value.trim(); });
+    if(bad.length){ err.textContent = 'Please fill in the trade, suburb, job, your name and phone.'; bad[0].focus(); return; }
+    err.textContent = ''; btn.disabled = true; btn.textContent = 'Posting...';
+    var o = {_captcha: 'false', _template: 'table', _subject: 'Job posted: ' + f.trade.value + ' in ' + f.suburb.value};
+    new FormData(f).forEach(function(v, k){ if(k !== '_gotcha') o[k] = v; });
+    fetch('https://formsubmit.co/ajax/info@tradiehire.net', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(o)})
+      .then(function(r){ if(!r.ok) throw new Error(); Array.prototype.forEach.call(f.querySelectorAll('.rq-grid,.rq-send,.pj-note,.rq-err'), function(n){ n.hidden = true; }); var d = document.getElementById('pjDone'); d.hidden = false; d.focus(); })
+      .catch(function(){ btn.disabled = false; btn.textContent = 'Post my job'; err.textContent = 'That did not send. Please try again or ring 0432 910 369.'; });
+  });
+})();
+</script>
+
 </body>
 </html>

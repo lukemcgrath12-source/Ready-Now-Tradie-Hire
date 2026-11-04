@@ -488,6 +488,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <link rel="stylesheet" href="/polish.css">
 <link rel="stylesheet" href="/design.css">
 <script src="/crew.js"></script>
+<script src="/rn-tools.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -700,7 +701,9 @@ function findTrade(v){
     trade: findTrade(params.get('trade')),
     q: String(params.get('q') || '').trim().slice(0, 60),
     sort: params.get('sort') === 'az' ? 'az' : 'new',
-    open: null
+    open: null,
+    today: params.get('today') === '1',
+    avail: new Set()
   };
   q.value = state.q; sortEl.value = state.sort;
   var lastFocus = null;
@@ -711,6 +714,7 @@ function findTrade(v){
     if(state.q) p.set('q', state.q);
     if(state.sort !== 'new') p.set('sort', state.sort);
     if(state.open) p.set('id', state.open);
+    if(state.today) p.set('today', '1');
     var str = p.toString();
     history.replaceState(null, '', location.pathname + (str ? '?' + str : ''));
   }
@@ -725,12 +729,17 @@ function findTrade(v){
         state.trade = t; syncUrl(); renderChips(); renderGrid();
       }}, [t === 'Other' ? 'Other trades' : (t || 'All trades'), state.loaded ? el('span', {class: 'n', text: String(n)}) : null]));
     });
-    var on = chipsEl.querySelector('[aria-pressed="true"]');
+    var nToday = state.all.filter(function(m){ return state.avail.has(m.id); }).length;
+    chipsEl.insertBefore(el('button', {type: 'button', class: 'chip chip-today', 'aria-pressed': String(state.today), onclick: function(){
+      state.today = !state.today; syncUrl(); renderChips(); renderGrid();
+    }}, [el('span', {class: 'dot', 'aria-hidden': 'true'}), 'Ready now today', state.loaded ? el('span', {class: 'n', text: String(nToday)}) : null]), chipsEl.firstChild);
+    var on = chipsEl.querySelector('.chip:not(.chip-today)[aria-pressed="true"]');
     if(on && state.trade && on.scrollIntoView) on.scrollIntoView({block: 'nearest', inline: 'center'});
   }
 
   function matches(m){
     if(state.trade && m.trade !== state.trade) return false;
+    if(state.today && !state.avail.has(m.id)) return false;
     if(!state.q) return true;
     var hay = [m.name, m.business, m.area, m.trade, SINGULAR[m.trade], m.bio].join(' ').toLowerCase();
     return state.q.toLowerCase().split(/\s+/).every(function(w){ return hay.indexOf(w) >= 0; });
@@ -746,7 +755,7 @@ function findTrade(v){
     if(!href) return null;
     var first = String(m.name).split(/\s+/)[0];
     if(m.crew){
-      var b = el('button', {type: 'button', class: 'call-btn req-btn', 'aria-label': 'Request ' + m.name}, ['Request ' + first, el('span', {class: 'num', text: 'Send a request'})]);
+      var b = el('button', {type: 'button', class: 'call-btn req-btn', 'aria-label': 'Request ' + m.name}, ['Request ' + first, el('span', {class: 'num', 'aria-hidden': 'true', text: '\u2192'})]);
       b.addEventListener('click', function(e){ e.stopPropagation(); openRequest(m); });
       return b;
     }
@@ -851,6 +860,7 @@ function findTrade(v){
         el('div', {class: 'mc-id'}, [
           el('span', {class: 'mc-trade', text: SINGULAR[m.trade] || m.trade}),
           el('span', {class: 'mc-name', text: m.name}),
+          state.avail.has(m.id) ? el('span', {class: 'rn-today', text: 'Ready now today'}) : null,
           m.business ? el('span', {class: 'mc-biz', text: m.business}) : null,
           el('span', {class: 'mc-area'}, [svg(ICON_PIN), m.area])
         ])
@@ -864,7 +874,7 @@ function findTrade(v){
     ]);
   }
 
-  function hasFilters(){ return !!(state.trade || state.q); }
+  function hasFilters(){ return !!(state.trade || state.q || state.today); }
 
   function renderGrid(){
     var list = sorted(state.all.filter(matches));
@@ -895,7 +905,7 @@ function findTrade(v){
   }
 
   function clearAll(){
-    state.trade = ''; state.q = ''; q.value = '';
+    state.trade = ''; state.q = ''; state.today = false; q.value = '';
     syncUrl(); renderChips(); renderGrid(); q.focus();
   }
   clearBtn.addEventListener('click', clearAll);
@@ -932,14 +942,27 @@ function findTrade(v){
     ]);
     var shareBtn = el('button', {type: 'button', class: 'pd-share'}, [svg(ICON_SHARE), el('span', {class: 'lbl', text: 'Share profile'})]);
     shareBtn.addEventListener('click', function(){ shareProfile(m, shareBtn); });
+    var qrWrap = el('div', {class: 'pd-qr', hidden: 'hidden'});
+    var qrBtn = el('button', {type: 'button', class: 'pd-share', text: 'QR code'});
+    qrBtn.addEventListener('click', function(){
+      if(!qrWrap.hidden){ qrWrap.hidden = true; return; }
+      qrWrap.textContent = ''; qrWrap.hidden = false;
+      RN.qrCanvas(profileUrl(m), 200).then(function(c){
+        var dl = el('button', {type: 'button', class: 'pd-share', text: 'Download QR'});
+        dl.addEventListener('click', function(){ RN.downloadCanvas(c, 'ready-now-' + m.name.toLowerCase().replace(/[^a-z]+/g, '-') + '.png'); });
+        qrWrap.appendChild(c); qrWrap.appendChild(el('p', {class: 'pd-note', text: 'Scan to open this profile. Great on a ute, a quote or socials.'})); qrWrap.appendChild(dl);
+      }).catch(function(){ qrWrap.textContent = 'QR code did not load.'; });
+    });
     pdContent.appendChild(photoEl(m, 'pd-photo'));
     pdContent.appendChild(el('div', {class: 'pd-body'}, [
       el('span', {class: 'mc-trade', text: SINGULAR[m.trade] || m.trade}),
       el('h2', {id: 'pdName', text: m.name}),
+      state.avail.has(m.id) ? el('span', {class: 'rn-today', text: 'Ready now today'}) : null,
       facts,
       m.bio ? el('p', {class: 'pd-bio', text: m.bio}) : null,
       callBtn(m),
-      el('div', {class: 'pd-acts'}, [shareBtn]),
+      el('div', {class: 'pd-acts'}, [shareBtn, qrBtn]),
+      qrWrap,
       el('p', {class: 'pd-note'}, [
         'Profiles are listed by the tradies themselves. Check licences and insurance for your job before work starts. ',
         el('button', {type: 'button', class: 'pd-report', text: 'Report this profile', onclick: function(){ openReport(m); }})
@@ -997,6 +1020,7 @@ function findTrade(v){
     state.all = crew.concat(((res.ok && res.d.members) || []).filter(function(m){ return (window.RN_HIDE || []).indexOf(m && m.id) < 0 && m && m.id && m.name; }));
     state.loaded = true;
     renderChips(); renderGrid();
+    if(window.RN) RN.available().then(function(set){ state.avail = set; renderChips(); renderGrid(); });
     var id = params.get('id');
     if(id){
       var m = state.all.filter(function(x){ return x.id === id; })[0];

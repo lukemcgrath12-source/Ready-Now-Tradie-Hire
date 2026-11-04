@@ -551,6 +551,15 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   </div>
 </section>
 
+<section class="adm" id="avail">
+  <div class="wrap px">
+    <h2 style="font-size:26px;letter-spacing:-.03em;margin:8px 0 6px">"Ready now today" links</h2>
+    <p class="adm-sub">Send each tradie their own link by text. They tap "I'm available today" and get a green badge on Find a Tradie until midnight. Each link only works for that tradie. Their page also has their QR code.</p>
+    <button type="button" class="abtn primary" id="aAvail">Show links</button>
+    <div id="aAvailList" style="margin-top:16px;display:grid;gap:10px"></div>
+  </div>
+</section>
+
 </main>
 <script>
 var TRADES = ["Builders", "Carpenters", "Electricians", "Plumbers", "Roofers", "Concreters", "Tilers", "Painters", "Plasterers", "Bricklayers", "Landscapers", "Labourers", "Traffic Control", "Scaffolders", "Renderers", "Floorers", "Formworkers", "Other"];
@@ -750,6 +759,34 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
   });
   document.getElementById('aReload').addEventListener('click', load);
   load();
+})();
+</script>
+<script src="/crew.js"></script>
+<script>
+(function(){
+  var btn = document.getElementById('aAvail'), out = document.getElementById('aAvailList');
+  if(!btn) return;
+  btn.addEventListener('click', function(){
+    out.textContent = 'Loading...';
+    fetch('/api/admin/members', {headers: {'Accept': 'application/json'}}).then(function(r){ return r.json(); }).then(function(d){
+      var people = (window.RN_CREW || []).map(function(m){ return {id: m.id, name: m.name + ' (crew)'}; })
+        .concat((d.members || []).map(function(m){ return {id: m.id, name: m.name}; }));
+      return fetch('/api/admin/avail-links?ids=' + encodeURIComponent(people.map(function(p){ return p.id; }).join(',')), {headers: {'Accept': 'application/json'}})
+        .then(function(r){ return r.json(); }).then(function(l){ return {people: people, links: l.links || {}}; });
+    }).then(function(x){
+      out.textContent = '';
+      x.people.forEach(function(p){
+        var link = x.links[p.id]; if(!link) return;
+        var row = document.createElement('div'); row.style.cssText = 'display:flex;gap:10px;align-items:center;flex-wrap:wrap;padding:10px 12px;border:1px solid #E2E6EB;border-radius:12px;background:#fff';
+        var name = document.createElement('b'); name.textContent = p.name; name.style.minWidth = '200px';
+        var copy = document.createElement('button'); copy.type = 'button'; copy.className = 'abtn'; copy.textContent = 'Copy link';
+        copy.addEventListener('click', function(){ (navigator.clipboard ? navigator.clipboard.writeText(link) : Promise.reject()).then(function(){ copy.textContent = 'Copied'; }, function(){ prompt('Copy this link', link); }); });
+        var sms = document.createElement('a'); sms.className = 'abtn'; sms.textContent = 'Text it';
+        sms.href = 'sms:?&body=' + encodeURIComponent('Your Ready Now link. Tap it any day you are free and you will show as "Ready now" on the site: ' + link);
+        row.appendChild(name); row.appendChild(copy); row.appendChild(sms); out.appendChild(row);
+      });
+    }).catch(function(e){ out.textContent = 'Could not load links: ' + (e.message || e); });
+  });
 })();
 </script>
 </body>
