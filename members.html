@@ -900,7 +900,7 @@ function findTrade(v){
       fail(res.status === 503 ? 'The directory is being set up. Check back soon.' : 'The directory did not load.');
       return;
     }
-    state.all = crew.concat(((res.ok && res.d.members) || []).filter(function(m){ return m && m.id && m.name; }));
+    state.all = crew.concat(((res.ok && res.d.members) || []).filter(function(m){ return (window.RN_HIDE || []).indexOf(m && m.id) < 0 && m && m.id && m.name; }));
     state.loaded = true;
     renderChips(); renderGrid();
     var id = params.get('id');

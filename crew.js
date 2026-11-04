@@ -9,3 +9,6 @@ window.RN_CREW = [
   {id:'crew-anfal-mehdaoui', name:'Anfal Mehdaoui', trade:'Traffic Control', area:'Sydney metro', bio:'White card, blue card and yellow card.', photo:'/crew-anfal-mehdaoui-b.webp'},
   {id:'crew-laurence-warnimont', name:'Laurence Warnimont', trade:'Labourers', business:'General labourer and forklift', area:'Sydney metro', bio:"White card, first aid, forklift (LF) and driver's licence. 2+ years on the tools.", photo:'/crew-laurence-warnimont-b.webp'}
 ].map(function (m) { m.crew = true; m.phone = '0432 910 369'; m.tel = '+61432910369'; return m; });
+
+/* Listings hidden from the site (test entries). Remove an id here to show it again. */
+window.RN_HIDE = ['5UUEodt-'];
