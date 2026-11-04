@@ -757,6 +757,34 @@ function findTrade(v){
   function fld(id, label, input, full){
     return el('div', {class: 'rq-f' + (full ? ' full' : '')}, [el('label', {for: id, text: label}), input]);
   }
+  function openReport(m){
+    pdContent.textContent = '';
+    var form = el('form', {class: 'rq-form', action: REQ_ENDPOINT, method: 'POST', novalidate: 'novalidate'});
+    form.appendChild(el('input', {type: 'hidden', name: '_subject', value: 'Profile report: ' + m.name + ' (' + m.id + ')'}));
+    form.appendChild(el('input', {type: 'hidden', name: 'profile', value: profileUrl(m)}));
+    form.appendChild(el('div', {class: 'rq-grid'}, [
+      fld('rpWhat', 'What is wrong with this profile? *', el('textarea', {id: 'rpWhat', name: 'report', required: 'required', rows: '4'}), true),
+      fld('rpName', 'Your name', el('input', {id: 'rpName', name: 'name', type: 'text', autocomplete: 'name', placeholder: 'Optional'})),
+      fld('rpEmail', 'Email', el('input', {id: 'rpEmail', name: 'email', type: 'email', autocomplete: 'email', placeholder: 'Optional'}))
+    ]));
+    var err = el('p', {class: 'rq-err', role: 'alert'});
+    var send = el('button', {type: 'submit', class: 'call-btn rq-send', text: 'Send report'});
+    form.appendChild(err); form.appendChild(send);
+    form.addEventListener('submit', function(e){
+      e.preventDefault();
+      var t = form.querySelector('#rpWhat');
+      if(!t.value.trim()){ err.textContent = 'Tell us what is wrong with the profile.'; t.focus(); return; }
+      send.disabled = true; send.textContent = 'Sending...';
+      fetch(REQ_ENDPOINT, {method: 'POST', body: new FormData(form), headers: {'Accept': 'application/json'}}).then(function(r){
+        if(!r.ok) throw new Error('send');
+        pdContent.textContent = '';
+        pdContent.appendChild(el('div', {class: 'pd-body rq-done', tabindex: '-1'}, [el('span', {class: 'mc-trade', text: 'Report sent'}), el('h2', {id: 'pdName', text: 'Thanks, we will look into it.'})]));
+        pdContent.querySelector('.rq-done').focus();
+      }).catch(function(){ send.disabled = false; send.textContent = 'Send report'; err.textContent = 'That did not send. Please try again or email info@tradiehire.net.'; });
+    });
+    pdContent.appendChild(el('div', {class: 'pd-body rq-body'}, [el('span', {class: 'mc-trade', text: 'Report a profile'}), el('h2', {id: 'pdName', text: 'Report ' + m.name}), form]));
+    setTimeout(function(){ var n = document.getElementById('rpWhat'); if(n) n.focus(); }, 30);
+  }
   function openRequest(m){
     lastFocus = lastFocus || document.activeElement;
     pdContent.textContent = '';
@@ -913,7 +941,7 @@ function findTrade(v){
       el('div', {class: 'pd-acts'}, [shareBtn]),
       el('p', {class: 'pd-note'}, [
         'Profiles are listed by the tradies themselves. Check licences and insurance for your job before work starts. ',
-        el('a', {class: 'pd-report', href: reportHref(m), text: 'Report this profile'})
+        el('button', {type: 'button', class: 'pd-report', text: 'Report this profile', onclick: function(){ openReport(m); }})
       ])
     ]));
     state.open = m.id; syncUrl();
