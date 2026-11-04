@@ -36,16 +36,16 @@
   '.rnc-note{text-align:center;font-size:11.5px;color:#8A9099;padding:0 12px 10px}'+
   '.rnc-t{display:inline-flex;gap:4px;padding:4px 0}.rnc-t i{width:6px;height:6px;border-radius:50%;background:#A3AAB3;animation:rncD 1s infinite}.rnc-t i:nth-child(2){animation-delay:.15s}.rnc-t i:nth-child(3){animation-delay:.3s}'+
   '@keyframes rncIn{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}@keyframes rncD{0%,60%,100%{opacity:.3}30%{opacity:1}}'+
-  '@media(max-width:560px){#rnc-btn{right:12px;bottom:12px;height:52px;padding:0 18px 0 6px}#rnc-btn .ic{width:40px;height:40px}#rnc{right:0;bottom:0;width:100vw;height:100dvh;border-radius:0;border-width:0}}'+
+  '@media(max-width:560px){#rnc-btn{right:12px;bottom:12px;height:52px;width:52px;padding:6px;justify-content:center}#rnc-btn .lb{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}#rnc-btn .ic{width:40px;height:40px}#rnc{right:0;bottom:0;width:100vw;height:100dvh;border-radius:0;border-width:0}}'+
   '@media(prefers-reduced-motion:reduce){#rnc,#rnc-btn,.rnc-row,.rnc-m,.rnc-q,.rnc-l{transition:none;animation:none}}';
   var HAT = '<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 18h18"/><path d="M5 18v-2a7 7 0 0 1 14 0v2"/><path d="M10 9.5V7h4v2.5"/></svg>', CHEV = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polyline points="9 6 15 12 9 18"/></svg>';
   var st = document.createElement('style'); st.id = 'rnc-css'; st.textContent = css; document.head.appendChild(st);
 
   var btn = document.createElement('button');
   btn.id = 'rnc-btn'; btn.type = 'button'; btn.setAttribute('aria-expanded', 'false'); btn.setAttribute('aria-controls', 'rnc');
-  btn.innerHTML = '<span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span>Need a hand?';
+  btn.innerHTML = '<span class="ic"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.6A8 8 0 1 1 21 12z"/></svg></span><span class="lb">Need a hand?</span>';
   var box = document.createElement('section');
-  box.id = 'rnc'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', 'Ready Now helper'); box.setAttribute('aria-hidden', 'true');
+  box.id = 'rnc'; box.setAttribute('role', 'dialog'); box.setAttribute('aria-label', 'Ready Now helper'); box.setAttribute('aria-hidden', 'true'); box.inert = true;
   box.innerHTML = '<header><span class="rnc-av">' + HAT + '</span><div><b>Ready Now helper</b><span><i></i>Here to help you find a tradie</span></div><button id="rnc-x" type="button" aria-label="Close helper"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M6 6l12 12M18 6 6 18"/></svg></button></header>'+
     '<div id="rnc-log" role="log" aria-live="polite"></div>'+
     '<form id="rnc-f" autocomplete="off"><label for="rnc-i" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Type a message</label><input id="rnc-i" type="text" maxlength="120" placeholder="Type a trade, suburb or question"><button id="rnc-s" type="submit" aria-label="Send" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9z"/></svg></button></form><p class="rnc-note">Automated helper. For anything else call 0432 910 369.</p>';
@@ -131,8 +131,8 @@
   });
 
   var lastFocus = null;
-  function open(){ lastFocus = document.activeElement; box.classList.add('open'); box.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true'); if(!started){ started = true; start(); } setTimeout(function(){ inp.focus({preventScroll:true}); }, 60); }
-  function close(){ box.classList.remove('open'); box.setAttribute('aria-hidden', 'true'); btn.setAttribute('aria-expanded', 'false'); (lastFocus && lastFocus.focus ? lastFocus : btn).focus({preventScroll:true}); }
+  function open(){ lastFocus = document.activeElement; box.classList.add('open'); box.inert = false; box.setAttribute('aria-hidden', 'false'); btn.setAttribute('aria-expanded', 'true'); if(!started){ started = true; start(); } setTimeout(function(){ inp.focus({preventScroll:true}); }, 60); }
+  function close(){ box.classList.remove('open'); box.setAttribute('aria-hidden', 'true'); box.inert = true; btn.setAttribute('aria-expanded', 'false'); (lastFocus && lastFocus.focus ? lastFocus : btn).focus({preventScroll:true}); }
   btn.addEventListener('click', open);
   box.querySelector('#rnc-x').addEventListener('click', close);
   document.addEventListener('keydown', function(e){ if(e.key === 'Escape' && box.classList.contains('open')) close(); });

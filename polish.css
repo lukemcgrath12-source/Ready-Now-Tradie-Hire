@@ -1,0 +1,26 @@
+/* Site-wide polish: focus, tap targets, link affordance */
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #1F6FA8!important;outline-offset:3px}
+footer .f-col a{display:inline-block;padding:3px 0;min-height:24px}
+footer .footer-bar a{text-decoration:underline;text-underline-offset:3px;display:inline-block;padding:4px 0}
+.aside-card p a[href^="tel:"],main p a[href^="tel:"],main p a[href^="mailto:"]{text-decoration:underline;text-underline-offset:3px}
+a[href^="tel:"]{display:inline-block;min-height:24px;line-height:24px}
+/* Hover in the motion verb: snap into place (short lift, springy settle) */
+.nav-links a{position:relative}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;border-radius:2px;background:currentColor;scale:0 1;transform-origin:left;transition:scale .35s cubic-bezier(.34,1.56,.64,1)}
+.nav-links a:hover::after,.nav-links a.active::after{scale:1 1}
+.nav-logochip{transition:scale .35s cubic-bezier(.34,1.56,.64,1)}
+.nav-logochip:hover{scale:1.04}
+.nav-sec,.nav-cta{transition:translate .3s cubic-bezier(.34,1.56,.64,1),background .2s,border-color .2s}
+.nav-sec:hover,.nav-cta:hover{translate:0 -2px}
+.chip{transition:translate .3s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s}
+.chip:hover{translate:0 -2px}
+.mcard{transition:translate .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s}
+.mcard:hover{translate:0 -4px;box-shadow:0 14px 30px rgba(22,24,27,.10)}
+.mc-more svg,.mc-open svg{transition:translate .3s cubic-bezier(.34,1.56,.64,1)}
+.mcard:hover .mc-more svg,.mc-more:hover svg{translate:3px 0}
+.call-btn{transition:background .2s,translate .3s cubic-bezier(.34,1.56,.64,1)}
+.call-btn:hover{translate:0 -2px}
+.rh-pop a{transition:translate .3s cubic-bezier(.34,1.56,.64,1),color .2s}
+.rh-pop a:hover{translate:0 -2px}
+main p a:hover,.ty-back a:hover{text-decoration-thickness:2px}
+@media(prefers-reduced-motion:reduce){.nav-links a::after,.nav-logochip,.nav-sec,.nav-cta,.chip,.mcard,.call-btn,.rh-pop a{transition:none}}
