@@ -458,3 +458,26 @@ footer h2.f-h,.f-col h4,.cb-eyebrow,.slot-tag,.c-tag,.register-head span,.reg-co
 @media(max-width:959px){.rh{padding-top:120px!important;padding-bottom:112px!important}.rh .rh-meta{margin-top:20px}}
 .rh .rh-sub{margin-top:20px!important}.rh .rs{margin-top:32px!important}
 .pd-report{background:none;border:0;padding:0;font:inherit;color:inherit;text-decoration:underline;text-underline-offset:3px;cursor:pointer}.pd-report:hover{color:var(--tk-blue)}
+
+/* ===== Pass 14: keyboard focus, page transition, small spacing ===== */
+/* One designed focus ring: rounded, brand blue, everywhere */
+a:focus-visible,button:focus-visible,summary:focus-visible,select:focus-visible,textarea:focus-visible,input:focus-visible,[tabindex]:focus-visible{
+  outline:2px solid #4894C4!important;outline-offset:3px!important;border-radius:10px}
+.pillbtn:focus-visible,.nav-cta:focus-visible,.call-btn:focus-visible,.chip:focus-visible,.rbtn:focus-visible,.rs-go:focus-visible{border-radius:999px}
+.nav-links a:focus-visible{border-radius:8px;outline-offset:2px!important}
+.rsec.rt a:focus-visible,.cr-sec a:focus-visible,footer a:focus-visible,.rb-sec a:focus-visible,.page-hero a:focus-visible{outline-color:#8EC2E8!important}
+.pp-input:focus-visible + .pp-btn{outline:2px solid #4894C4;outline-offset:3px;border-radius:999px}
+/* footer small links: 24px+ targets */
+.footer-bar a{display:inline-block;padding:6px 2px;min-height:24px}
+footer .f-col a:not(.f-hide){min-height:32px!important}
+
+/* Home: less dead space after the hero frame */
+.rh.rh-pin + .rsec,.rh + .rsec.rf{padding-top:calc(var(--sec-y) * .6)!important}
+
+/* Page change: the new page is measured in from the left behind a tape edge */
+@media (prefers-reduced-motion:no-preference){
+  ::view-transition-old(root){animation:vtOld .5s cubic-bezier(.22,1,.36,1) both}
+  ::view-transition-new(root){animation:vtNew .6s cubic-bezier(.22,1,.36,1) both}
+  @keyframes vtOld{to{opacity:.6;transform:translateX(-3%)}}
+  @keyframes vtNew{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+}
