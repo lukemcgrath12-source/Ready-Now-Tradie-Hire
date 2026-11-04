@@ -1,55 +1,23 @@
-/* Site-wide polish: focus, tap targets, link affordance */
-input:focus-visible,select:focus-visible,textarea:focus-visible{outline:2px solid #1F6FA8!important;outline-offset:3px}
-footer .f-col a{display:inline-block;padding:3px 0;min-height:24px}
-footer .footer-bar a{text-decoration:underline;text-underline-offset:3px;display:inline-block;padding:4px 0}
-.aside-card p a[href^="tel:"],main p a[href^="tel:"],main p a[href^="mailto:"]{text-decoration:underline;text-underline-offset:3px}
-a[href^="tel:"]{display:inline-block;min-height:24px;line-height:24px}
-/* Hover in the motion verb: snap into place (short lift, springy settle) */
+/* Site-wide polish: one place for fixes shared by every page */
+.pillbtn,.pillbtn .roll{white-space:nowrap}
+a:focus-visible,button:focus-visible,input:focus-visible,select:focus-visible,textarea:focus-visible,summary:focus-visible{outline:2px solid #4894C4!important;outline-offset:3px}
+input:focus-visible,select:focus-visible,textarea:focus-visible{outline-offset:1px}
+.reg-code a,.form-note a{display:inline-block;padding:6px 0}
+@media(max-width:820px){body:has(.mbar) #rnc-btn{bottom:calc(84px + env(safe-area-inset-bottom))}}
 .nav-links a{position:relative}
-.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;border-radius:2px;background:currentColor;scale:0 1;transform-origin:left;transition:scale .35s cubic-bezier(.34,1.56,.64,1)}
-.nav-links a:hover::after,.nav-links a.active::after{scale:1 1}
-.nav-logochip{transition:scale .35s cubic-bezier(.34,1.56,.64,1)}
-.nav-logochip:hover{scale:1.04}
-.nav-sec,.nav-cta{transition:translate .3s cubic-bezier(.34,1.56,.64,1),background .2s,border-color .2s}
-.nav-sec:hover,.nav-cta:hover{translate:0 -2px}
-.chip{transition:translate .3s cubic-bezier(.34,1.56,.64,1),border-color .2s,background .2s}
-.chip:hover{translate:0 -2px}
-.mcard{transition:translate .35s cubic-bezier(.34,1.56,.64,1),box-shadow .35s}
-.mcard:hover{translate:0 -4px;box-shadow:0 14px 30px rgba(22,24,27,.10)}
-.mc-more svg,.mc-open svg{transition:translate .3s cubic-bezier(.34,1.56,.64,1)}
-.mcard:hover .mc-more svg,.mc-more:hover svg{translate:3px 0}
-.call-btn{transition:background .2s,translate .3s cubic-bezier(.34,1.56,.64,1)}
-.call-btn:hover{translate:0 -2px}
-.rh-pop a{transition:translate .3s cubic-bezier(.34,1.56,.64,1),color .2s}
-.rh-pop a:hover{translate:0 -2px}
-main p a:hover,.ty-back a:hover{text-decoration-thickness:2px}
-@media(prefers-reduced-motion:reduce){.nav-links a::after,.nav-logochip,.nav-sec,.nav-cta,.chip,.mcard,.call-btn,.rh-pop a{transition:none}}
-/* Call button: name and number read as two parts */
-.call-btn .num{display:inline-flex;align-items:center;padding-left:12px;margin-left:2px;border-left:1px solid rgba(255,255,255,.35);font-weight:500;opacity:.88}
-.call-btn{display:flex!important;align-items:center;justify-content:center;gap:10px!important}
-.call-btn svg{flex-shrink:0;margin-right:2px}
-/* More primary links answer in the motion verb */
-.mc-open,.dir-cta a,.ph-cta a,.ty-back a,.nf-trades a,.pillbtn{transition:translate .3s cubic-bezier(.34,1.56,.64,1),background .2s,border-color .2s,color .2s}
-.mc-open:hover,.dir-cta a:hover,.ph-cta a:hover,.pillbtn:hover{translate:0 -2px}
-.ty-back a{display:inline-block}
-.ty-back a:hover{translate:0 -1px}
-.ty-card h1{font-weight:800;letter-spacing:-.03em}
-/* Skip link sits above the floating header */
-.skip-link:focus{left:12px!important;top:12px!important;z-index:100000!important;background:#16181B!important;color:#fff!important;border-radius:8px!important;box-shadow:0 8px 20px rgba(0,0,0,.25)}
-/* Photo upload shows focus when its hidden input is focused */
-label:has(> .pp-input:focus-visible),.pp-input:focus-visible + *{outline:2px solid #1F6FA8;outline-offset:3px}
-/* Page to page: a short fade and rise, header held still */
-@view-transition{navigation:auto}
-::view-transition-old(root){animation:vtOut .22s cubic-bezier(.4,0,1,1) both}
-::view-transition-new(root){animation:vtIn .38s cubic-bezier(.22,1,.36,1) both}
-.navwrap{view-transition-name:site-nav}
-@keyframes vtOut{to{opacity:0;transform:translateY(-8px)}}
-@keyframes vtIn{from{opacity:0;transform:translateY(14px)}}
-@media(prefers-reduced-motion:reduce){::view-transition-old(root),::view-transition-new(root){animation:none}.mc-open,.dir-cta a,.ph-cta a,.pillbtn{transition:none}}
-/* Floating helper steps aside over the footer */
-#rnc-btn{transition:opacity .25s,translate .35s cubic-bezier(.34,1.56,.64,1)}
-#rnc-btn.rnc-away{opacity:0;translate:0 16px;pointer-events:none}
-.ty-back a{padding:2px 0;min-height:24px}
-form a:hover,label a:hover,.aside-card a:hover{text-decoration-thickness:2px}
-.mc-more{display:inline-flex;align-items:center;gap:6px;transition:translate .3s cubic-bezier(.34,1.56,.64,1),color .2s}
-.mc-more:hover{translate:2px 0}
+.nav-links a::after{content:"";position:absolute;left:0;right:0;bottom:-4px;height:2px;background:currentColor;transform:scaleX(0);transform-origin:left;transition:transform .35s cubic-bezier(.22,1,.36,1)}
+.nav-links a:hover::after,.nav-links a[aria-current]::after,.nav-links a.active::after{transform:scaleX(1)}
+a[href^="tel:"]:not(.pillbtn):not(.call):not(.book){transition:transform .25s cubic-bezier(.22,1,.36,1)}
+a[href^="tel:"]:not(.pillbtn):not(.call):not(.book):hover{transform:translateX(4px)}
+@media (prefers-reduced-motion:reduce){.nav-links a::after{transition:none}a[href^="tel:"]:hover{transform:none}}
+/* Inner page heroes: a real photo fills the right half on wide screens */
+@media(min-width:1024px){
+.page-hero.ph-photo::before{content:"";position:absolute;top:0;right:0;bottom:0;width:46%;z-index:1;background:linear-gradient(90deg,var(--olive-deep,#16181B) 0%,rgba(22,24,27,.55) 28%,rgba(22,24,27,.15) 70%),var(--ph-img) center/cover no-repeat;pointer-events:none}
+}
+/* Trade chip row: fade the cut edge so it reads as scrollable */
+.chips{-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 64px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 64px),transparent);padding-right:48px}
+/* About: Sam's own photos fill the two story cards */
+.about-desktop .slot-a,.about-imgs .slot-a{background:#16181B url(/about-card-a.webp) center/cover no-repeat}
+.about-desktop .slot-b,.about-imgs .slot-b{background:#16181B url(/about-card-b.webp) center/cover no-repeat}
+.about-desktop .img-slot .slot-contours,.about-imgs .img-slot .slot-contours{display:none}
+.about-desktop .img-slot .img-shade,.about-imgs .img-slot .img-shade{background:linear-gradient(180deg,rgba(22,24,27,.15) 30%,rgba(22,24,27,.85))!important;opacity:1!important}
