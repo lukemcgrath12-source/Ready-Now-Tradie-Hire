@@ -487,6 +487,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <style id="ft-fix">footer h2.f-h{font-family:var(--mono);font-size:12px;font-weight:500;letter-spacing:.18em;text-transform:uppercase;color:var(--gold);margin-bottom:16px;line-height:1.4}footer{padding-top:56px!important}footer .footer-grid{gap:28px;padding-bottom:40px}footer .footer-logo-img{height:64px;margin-bottom:14px}footer .f-brand p{max-width:34ch;font-size:14px;line-height:1.6}footer .f-col h4{margin-bottom:16px}footer .f-col li{margin-bottom:10px}footer .f-col a{font-size:14px}footer .f-area{margin-top:10px}footer .footer-bar{padding:18px 20px}@media(max-width:767px){footer{padding-top:40px!important}footer .footer-grid{display:flex;flex-flow:row wrap;justify-content:center;text-align:center;gap:18px 20px;padding-bottom:28px}footer .f-brand,footer .f-contact{width:100%}footer .footer-logo-img{height:56px;margin:0 auto 12px}footer .f-brand p,footer .f-col h4,footer .f-x,footer .f-hide{display:none!important}footer .f-socials{justify-content:center}footer .f-col ul{display:flex;flex-wrap:wrap;justify-content:center;gap:8px 20px}footer .f-col li{margin:0}footer .f-contact{display:flex;flex-direction:column;align-items:center;gap:4px}footer .footer-bar p{font-size:12px}}@media(max-width:767px){footer .f-socials a{width:auto!important;height:40px!important;padding:0 16px 0 14px!important;gap:10px;display:inline-flex!important;align-items:center;justify-content:center;border-radius:999px!important;background:rgba(255,255,255,.04)!important;border:1px solid rgba(255,255,255,.16)!important;color:rgba(255,255,255,.88)!important;font-size:14px;font-weight:500;text-decoration:none;box-shadow:none;transition:transform .25s cubic-bezier(.22,1,.36,1),opacity .2s}footer .f-socials a:active{transform:scale(.96)}footer .f-socials a svg{width:18px;height:18px}footer .f-soc-t{display:inline!important}}footer .f-soc-t{display:none}</style>
 <link rel="stylesheet" href="/polish.css">
 <link rel="stylesheet" href="/design.css">
+<script src="/crew.js"></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
@@ -744,7 +745,7 @@ function findTrade(v){
     var href = safeTel(m.tel);
     if(!href) return null;
     var first = String(m.name).split(/\s+/)[0];
-    return el('a', {class: 'call-btn', href: href, 'aria-label': 'Call ' + m.name + ' on ' + m.phone}, [svg(ICON_PHONE), 'Call ' + first, el('span', {class: 'num', text: m.phone})]);
+    return el('a', {class: 'call-btn', href: href, 'aria-label': m.crew ? 'Call Ready Now on ' + m.phone + ' to book ' + m.name : 'Call ' + m.name + ' on ' + m.phone}, [svg(ICON_PHONE), (m.crew ? 'Book ' : 'Call ') + first, el('span', {class: 'num', text: m.phone})]);
   }
 
   function card(m){
@@ -894,11 +895,12 @@ function findTrade(v){
   fetch(API, {headers: {'Accept': 'application/json'}}).then(function(r){
     return r.json().catch(function(){ return {}; }).then(function(d){ return {ok: r.ok, status: r.status, d: d}; });
   }).then(function(res){
-    if(!res.ok){
+    var crew = window.RN_CREW || [];
+    if(!res.ok && !crew.length){
       fail(res.status === 503 ? 'The directory is being set up. Check back soon.' : 'The directory did not load.');
       return;
     }
-    state.all = (res.d.members || []).filter(function(m){ return m && m.id && m.name; });
+    state.all = crew.concat(((res.ok && res.d.members) || []).filter(function(m){ return m && m.id && m.name; }));
     state.loaded = true;
     renderChips(); renderGrid();
     var id = params.get('id');
