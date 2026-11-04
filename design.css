@@ -199,3 +199,44 @@ h3{letter-spacing:-.02em}
 .nav-links a{display:inline-flex;align-items:center;min-height:44px}
 .story-sec .rey,.nf-eye{font-family:var(--mono,"IBM Plex Mono",monospace);font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--tk-blue)}
 .nf-eye{color:var(--tk-blue-l)!important}
+
+/* ================= Pass 7: one grid, one logo, one button, one label ================= */
+:root{--g:48px}
+@media(min-width:1024px){
+  .wrap,.rw,.pv-wrap,.footer-grid{max-width:calc(1248px + 2 * var(--g))!important;margin-left:auto!important;margin-right:auto!important;padding-left:var(--g)!important;padding-right:var(--g)!important;box-sizing:border-box}
+  .wrap .px{padding-left:0!important;padding-right:0!important}
+  .pv-sec .pv-wrap{max-width:calc(1248px + 2 * var(--g))!important}
+  footer{padding-left:0!important;padding-right:0!important}
+}
+
+/* Hero word: no clipped tape, the word carries itself */
+.rh .tword::after{display:none!important}
+
+/* Footer uses the header wordmark, bigger */
+.footer-logo-img{height:48px!important;width:auto!important;filter:brightness(1.15)}
+footer .f-col a{min-height:28px;display:flex!important;width:max-content;align-items:center;padding:2px 0!important}
+
+/* One button language: pills */
+.rbtn,.rs-go,.sr-go{border-radius:999px!important}
+@media(min-width:720px){.rs-f{border-radius:999px!important}.rs-f .rs-go{border-radius:999px!important}}
+.rbtn{transition:transform .35s var(--tk-ease),background .2s}
+.rbtn:hover{transform:translateY(-2px)}
+.rbtn:active{transform:scale(.97)}
+
+/* One section-label system: the ruler eyebrow replaces numbered pills */
+.badge-row .badge-num{display:none!important}
+.badge-row .badge-label,.badge-row .badge-pill{background:none!important;border:0!important;box-shadow:none!important;padding:0!important;
+  display:inline-flex;align-items:center;gap:12px;font-family:var(--mono,"IBM Plex Mono",monospace);font-size:11px!important;letter-spacing:.26em;text-transform:uppercase;color:var(--tk-blue)!important}
+.badge-row .badge-label::before{content:"";width:40px;height:9px;flex:none;opacity:.7;
+  background:linear-gradient(currentColor,currentColor) 0 100%/100% 1px no-repeat,repeating-linear-gradient(90deg,currentColor 0 1px,transparent 1px 8px) 0 100%/100% 5px no-repeat,repeating-linear-gradient(90deg,currentColor 0 1.5px,transparent 1.5px 32px) 0 100%/100% 9px no-repeat}
+
+/* How it works: figures printed in the clear band under the ticks */
+@media(min-width:720px){.rhw-s .rhw-n{top:-76px!important;font-size:30px!important;left:14px!important;letter-spacing:-.02em}}
+
+/* FAQ call card: ticks sit inside the card */
+.fq-side{background:var(--ticks-long-light) 24px calc(100% - 16px)/calc(100% - 48px) 12px no-repeat,var(--ticks-light) 24px calc(100% - 16px)/calc(100% - 48px) 6px no-repeat,linear-gradient(rgba(255,255,255,.5),rgba(255,255,255,.5)) 24px calc(100% - 16px)/calc(100% - 48px) 1px no-repeat,var(--tk-ink)!important;padding-bottom:44px!important}
+
+/* Member card: one hover target, name underline sweeps in */
+.mcard .mc-more{display:none!important}
+.mcard .mc-name{background:linear-gradient(var(--tk-blue),var(--tk-blue)) 0 100%/0% 2px no-repeat;transition:background-size .45s var(--tk-ease),color .2s;padding-bottom:2px}
+.mcard:hover .mc-name{background-size:100% 2px}
