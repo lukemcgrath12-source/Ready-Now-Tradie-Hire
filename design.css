@@ -340,3 +340,43 @@ footer{overflow-x:clip}
     font-family:var(--mono,"IBM Plex Mono",monospace);font-size:13px;letter-spacing:.3em;text-transform:uppercase;color:#fff;
     opacity:calc(var(--t) * 2 - 1);translate:0 calc((1 - var(--t)) * 30px);pointer-events:none}
 }
+
+/* ===== Pass 9: one typeface everywhere, and the crew ===== */
+:root:root{--mono:Poppins,system-ui,-apple-system,"Segoe UI",sans-serif}
+.rey,.ph-eyebrow,.pv-eyebrow,.badge-row .badge-label,.story-sec .rey,.nf-eye,.st-k,.fq-side-k,.rt-g .tl-n,.rt-g .tl::before,.mc-listed,.mc-trade,.rh-nums,.rh-cue,
+footer h2.f-h,.f-col h4,.cb-eyebrow,.slot-tag,.c-tag,.register-head span,.reg-code,.reg-idx,.reg-status,.sr-f label,.rs-f label{font-family:Poppins,system-ui,sans-serif!important;font-weight:600!important}
+.rey,.ph-eyebrow,.pv-eyebrow,.badge-row .badge-label,.nf-eye,.st-k,.fq-side-k,footer h2.f-h,.f-col h4{letter-spacing:.14em!important;font-size:12px!important}
+.rh-pin .rh-stage::after{font-family:Poppins,system-ui,sans-serif;font-weight:600;letter-spacing:.18em;font-size:14px}
+
+.cr-sec{background:var(--tk-ink)!important;color:#F6F7F9;padding:96px 0 104px!important;margin-top:0!important}
+@media(min-width:1024px){.cr-sec{padding:136px 0 144px!important}}
+.cr-sec .rey{color:var(--tk-blue-l)}
+.cr-h{display:grid;gap:14px;margin-bottom:48px}
+@media(min-width:960px){.cr-h{grid-template-columns:1.2fr .8fr;grid-template-areas:"ey ." "h p";column-gap:64px;align-items:end}.cr-h .rey{grid-area:ey}.cr-h h2{grid-area:h}.cr-lead{grid-area:p}}
+.cr-h h2{font-size:clamp(2.2rem,5vw,4rem)!important;line-height:.98;letter-spacing:-.045em!important;color:#F6F7F9;margin:0}
+.cr-h h2 em{font-style:normal;color:var(--tk-blue-l)}
+.cr-lead{font-size:17px;line-height:1.7;color:rgba(246,247,249,.7);margin:0 0 6px;max-width:40ch}
+.cr-g{list-style:none;margin:0;padding:28px 0 0;display:grid;grid-template-columns:1fr 1fr;gap:12px;
+  background:var(--ticks-long-light) 0 0/100% 16px no-repeat,var(--ticks-light) 0 0/100% 8px no-repeat}
+@media(min-width:720px){.cr-g{grid-template-columns:repeat(4,1fr);gap:16px}}
+.cr-t{position:relative;display:block;aspect-ratio:4/5;border-radius:16px;overflow:hidden;text-decoration:none;color:#fff;background:#23272C;isolation:isolate}
+.cr-ph,.cr-ph img{position:absolute;inset:0;width:100%;height:100%}
+.cr-ph img{object-fit:cover;object-position:50% 30%;transform:scale(1.02);transition:transform .9s var(--tk-ease);filter:saturate(.9)}
+.cr-ph::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 45%,rgba(16,19,21,.92));z-index:1}
+.cr-tx{position:absolute;left:16px;right:16px;bottom:16px;z-index:2;display:flex;flex-direction:column;gap:4px}
+.cr-n{font-weight:700;font-size:clamp(1.05rem,1.7vw,1.4rem);letter-spacing:-.025em;line-height:1.1}
+.cr-k{font-size:12px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--tk-blue-l)}
+.cr-tx::after{content:"";height:2px;margin-top:8px;background:var(--tk-blue-l);transform:scaleX(0);transform-origin:left;transition:transform .55s var(--tk-ease)}
+.cr-t:hover .cr-ph img,.cr-t:focus-visible .cr-ph img{transform:scale(1.08)}
+.cr-t:hover .cr-tx::after,.cr-t:focus-visible .cr-tx::after{transform:scaleX(1)}
+.cr-t:active{transform:scale(.98)}
+.cr-t:focus-visible{outline:2px solid var(--tk-blue-l);outline-offset:3px}
+.cr-you{background:var(--tk-blue);background:linear-gradient(160deg,#2a7cb6,var(--tk-blue) 55%,#175A8A)}
+.cr-you-in{position:absolute;inset:0;padding:20px;display:flex;flex-direction:column;justify-content:flex-end;gap:8px;
+  background:var(--ticks-long-light) 20px 20px/calc(100% - 40px) 16px no-repeat,var(--ticks-light) 20px 20px/calc(100% - 40px) 8px no-repeat}
+.cr-you .cr-k{color:rgba(255,255,255,.8)}
+.cr-you .cr-n{font-size:clamp(1.4rem,2.4vw,2rem)}
+.cr-go{display:inline-flex;align-items:center;gap:8px;font-weight:600;font-size:15px;margin-top:6px}
+.cr-go svg{transition:transform .4s var(--tk-ease)}
+.cr-you:hover .cr-go svg{transform:translateX(5px)}
+@media (prefers-reduced-motion:reduce){.cr-ph img,.cr-tx::after{transition:none}}
