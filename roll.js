@@ -19,7 +19,7 @@
     pops.forEach(function (a) { a.classList.toggle('is-on', a.textContent.trim().toLowerCase() === word); });
   }
   function next() {
-    if (!onScreen || document.hidden) { schedule(); return; }
+    if (!onScreen || document.hidden || window.RH_HOLD) { schedule(); return; }
     busy = true;
     i = (i + 1) % trades.length;
     var word = trades[i];

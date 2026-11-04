@@ -26,6 +26,7 @@
     rh.style.setProperty('--a', ease(seg(0, .42)).toFixed(4));   /* text breaks apart, word grows */
     rh.style.setProperty('--t', ease(seg(.05, .72)).toFixed(4)); /* tape runs out */
     rh.style.setProperty('--f', ease(seg(.78, 1)).toFixed(4));   /* frame closes to a window */
+    window.RH_HOLD = wide.matches && p > 0.02; /* hold the rolling word still while it is scaled up */
   }
   function onScroll() { if (!queued) { queued = true; requestAnimationFrame(update); } }
 
