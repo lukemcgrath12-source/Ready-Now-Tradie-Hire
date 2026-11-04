@@ -19,7 +19,7 @@ export const PHOTO_TYPES = { 'image/jpeg': 'jpg', 'image/png': 'png', 'image/web
 
 export const TRADES = [
   'Builders', 'Carpenters', 'Electricians', 'Plumbers', 'Roofers', 'Concreters', 'Tilers',
-  'Painters', 'Plasterers', 'Bricklayers', 'Landscapers', 'Labourers', 'Traffic Control', 'Other',
+  'Painters', 'Plasterers', 'Bricklayers', 'Landscapers', 'Labourers', 'Traffic Control', 'Scaffolders', 'Renderers', 'Floorers', 'Formworkers', 'Other',
 ];
 
 export const LIMITS = { name: 60, business: 80, area: 60, bio: 400, email: 120 };

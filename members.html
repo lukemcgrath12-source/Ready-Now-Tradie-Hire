@@ -545,7 +545,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <div class="dir-search">
         <label for="q" class="vh">Search by suburb, name or business</label>
         <svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><line x1="21" y1="21" x2="16.65" y2="16.65"/></svg>
-        <input type="search" id="q" name="q" placeholder="Suburb, name or business" autocomplete="off" enterkeyhint="search" maxlength="60">
+        <input type="search" id="q" name="q" placeholder="Suburb or name" autocomplete="off" enterkeyhint="search" maxlength="60">
       </div>
       <div class="dir-sort">
         <label for="sort">Sort</label>
@@ -642,8 +642,8 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   </div>
 </footer>
 <script>
-var TRADES = ["Builders", "Carpenters", "Electricians", "Plumbers", "Roofers", "Concreters", "Tilers", "Painters", "Plasterers", "Bricklayers", "Landscapers", "Labourers", "Traffic Control", "Other"];
-var SINGULAR = {"Builders":"Builder","Carpenters":"Carpenter","Electricians":"Electrician","Plumbers":"Plumber","Roofers":"Roofer","Concreters":"Concreter","Tilers":"Tiler","Painters":"Painter","Plasterers":"Plasterer","Bricklayers":"Bricklayer","Landscapers":"Landscaper","Labourers":"Labourer","Traffic Control":"Traffic Control","Other":"Other trade"};
+var TRADES = ["Builders", "Carpenters", "Electricians", "Plumbers", "Roofers", "Concreters", "Tilers", "Painters", "Plasterers", "Bricklayers", "Landscapers", "Labourers", "Traffic Control", "Scaffolders", "Renderers", "Floorers", "Formworkers", "Other"];
+var SINGULAR = {"Builders":"Builder","Carpenters":"Carpenter","Electricians":"Electrician","Plumbers":"Plumber","Roofers":"Roofer","Concreters":"Concreter","Tilers":"Tiler","Painters":"Painter","Plasterers":"Plasterer","Bricklayers":"Bricklayer","Landscapers":"Landscaper","Labourers":"Labourer","Traffic Control":"Traffic Control","Scaffolders":"Scaffolder","Renderers":"Renderer","Floorers":"Floorer","Formworkers":"Formworker","Other":"Other trade"};
 function el(tag, attrs, kids){
   var n = document.createElement(tag);
   if(attrs) for(var k in attrs){

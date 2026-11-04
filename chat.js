@@ -2,8 +2,8 @@
 (function(){
   if(window.__rnChat) return; window.__rnChat = true;
   var PHONE = '0432 910 369', TEL = '+61432910369', EMAIL = 'info@tradiehire.net';
-  var TRADES = ['Builders','Carpenters','Electricians','Plumbers','Roofers','Concreters','Tilers','Painters','Plasterers','Bricklayers','Landscapers','Labourers','Traffic Control'];
-  var SING = {Builders:'builder',Carpenters:'carpenter',Electricians:'electrician',Plumbers:'plumber',Roofers:'roofer',Concreters:'concreter',Tilers:'tiler',Painters:'painter',Plasterers:'plasterer',Bricklayers:'bricklayer',Landscapers:'landscaper',Labourers:'labourer','Traffic Control':'traffic control'};
+  var TRADES = ['Builders','Carpenters','Electricians','Plumbers','Roofers','Concreters','Tilers','Painters','Plasterers','Bricklayers','Landscapers','Labourers','Traffic Control','Scaffolders','Renderers','Floorers','Formworkers'];
+  var SING = {Builders:'builder',Carpenters:'carpenter',Electricians:'electrician',Plumbers:'plumber',Roofers:'roofer',Concreters:'concreter',Tilers:'tiler',Painters:'painter',Plasterers:'plasterer',Bricklayers:'bricklayer',Landscapers:'landscaper',Labourers:'labourer','Traffic Control':'traffic control',Scaffolders:'scaffolder',Renderers:'renderer',Floorers:'floorer',Formworkers:'formworker'};
   var ALIAS = {sparky:'Electricians',sparkie:'Electricians',electric:'Electricians',power:'Electricians',lights:'Electricians',plumbing:'Plumbers',drain:'Plumbers',leak:'Plumbers','hot water':'Plumbers',tap:'Plumbers',chippy:'Carpenters',carpentry:'Carpenters',deck:'Carpenters',framing:'Carpenters',roof:'Roofers',gutter:'Roofers',tiling:'Tilers',tile:'Tilers',bathroom:'Tilers',paint:'Painters',concrete:'Concreters',driveway:'Concreters',slab:'Concreters',plaster:'Plasterers',gyprock:'Plasterers',brick:'Bricklayers',garden:'Landscapers',landscaping:'Landscapers',labour:'Labourers',labor:'Labourers','clean up':'Labourers',traffic:'Traffic Control',build:'Builders',reno:'Builders',renovation:'Builders',extension:'Builders'};
   var state = {step:'start', trade:''};
 
@@ -50,6 +50,7 @@
     '<div id="rnc-log" role="log" aria-live="polite"></div>'+
     '<form id="rnc-f" autocomplete="off"><label for="rnc-i" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)">Type a message</label><input id="rnc-i" type="text" maxlength="120" placeholder="Type a trade, suburb or question"><button id="rnc-s" type="submit" aria-label="Send" disabled><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9z"/></svg></button></form><p class="rnc-note">Automated helper. For anything else call 0432 910 369.</p>';
   document.body.appendChild(btn); document.body.appendChild(box);
+  var ft = document.querySelector('footer'); if (ft && 'IntersectionObserver' in window) { new IntersectionObserver(function(es){ btn.classList.toggle('rnc-away', es[0].isIntersecting && !box.classList.contains('open')); }, {threshold: 0.05}).observe(ft); }
   var log = box.querySelector('#rnc-log'), inp = box.querySelector('#rnc-i'), send = box.querySelector('#rnc-s'), started = false;
   inp.addEventListener('input', function(){ send.disabled = !inp.value.trim(); });
 
