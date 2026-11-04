@@ -646,7 +646,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
           <div class="form-err" id="formErr" role="alert"></div>
 
           <div class="form-foot">
-            <p class="form-note" id="formNote">Free for now, no lock-in. Need to change something later? Message Sam on <a href="tel:+61432910369">0432 910 369</a>.</p>
+            <p class="form-note" id="formNote">Free for now, no lock-in. Need to change something later? Message us on <a href="tel:+61432910369">0432 910 369</a>.</p>
             <button type="submit" class="pillbtn pillbtn-gold join-submit" id="joinBtn"><span class="roll"><i><b class="lbl">Join Free</b><b class="lbl" aria-hidden="true">Join Free</b></i></span><span class="circ"><svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span></button>
           </div>
         </form>
@@ -679,7 +679,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
         </div>
         <div class="aside-card">
           <h3>Changing your profile</h3>
-          <p>There are no logins. If you need to update your photo, number or bio, or come off the list, message Sam on <a href="tel:+61432910369">0432 910 369</a> and we'll sort it.</p>
+          <p>There are no logins. If you need to update your photo, number or bio, or come off the list, message us on <a href="tel:+61432910369">0432 910 369</a> and we'll sort it.</p>
         </div>
       </aside>
     </div>
@@ -725,7 +725,6 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <p class="f-area f-hide">3/22 Searl Rd, Cronulla Beach NSW<br>Servicing wider Sydney</p>
     </div>
   </div>
-  <div class="f-giant" aria-hidden="true">Ready <span>now.</span></div>
   <div class="footer-bar">
     <p>&copy; 2026 Ready Now Tradie Hire. ABN 38 659 734 077 | <a href="/privacy" class="f-privacy">Privacy policy</a> | <a href="/terms" class="f-privacy">Terms of use</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
@@ -977,7 +976,7 @@ function safeTel(t){ t = String(t || ''); return /^\+?\d{6,12}$/.test(t) ? 'tel:
       .then(function(res){
         if(!res.ok){
           if(res.d.field && document.getElementById('fld-' + res.d.field)){ setErr(res.d.field, res.d.error); document.getElementById('fld-' + res.d.field).scrollIntoView({block: 'center', behavior: 'smooth'}); }
-          else { formErr.textContent = res.d.code === 'storage_not_ready' ? 'Sign-ups are not open just yet. Ring Sam on 0432 910 369 and he will get you listed.' : (res.d.error || 'That did not save. Please try again, or ring 0432 910 369.'); formErr.classList.add('on'); }
+          else { formErr.textContent = res.d.code === 'storage_not_ready' ? 'Sign-ups are not open just yet. Ring us on 0432 910 369 and we will get you listed.' : (res.d.error || 'That did not save. Please try again, or ring 0432 910 369.'); formErr.classList.add('on'); }
           busy(false, idle);
           return;
         }

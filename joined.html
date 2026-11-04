@@ -533,7 +533,7 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
   <div class="wrap px ph-inner">
     <span class="ph-eyebrow" id="jEyebrow">Profile live</span>
     <h1 id="jTitle">You're listed. <em>Keep your phone handy.</em></h1>
-    <p class="ph-sub" id="jSub">Your Ready Now Tradie Hire profile is up on the Find a Tradie page under your trade. If anything needs changing, message Sam on 0432 910 369.</p>
+    <p class="ph-sub" id="jSub">Your Ready Now Tradie Hire profile is up on the Find a Tradie page under your trade. If anything needs changing, message us on 0432 910 369.</p>
     <div class="jcard-wrap" id="jCardWrap" hidden></div>
     <div id="jShare" hidden>
       <p class="ph-sub" style="margin-top:28px">Send your profile to builders you've worked with. One tap and they've got your number.</p>
@@ -589,7 +589,6 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
       <p class="f-area f-hide">3/22 Searl Rd, Cronulla Beach NSW<br>Servicing wider Sydney</p>
     </div>
   </div>
-  <div class="f-giant" aria-hidden="true">Ready <span>now.</span></div>
   <div class="footer-bar">
     <p>&copy; 2026 Ready Now Tradie Hire. ABN 38 659 734 077 | <a href="/privacy" class="f-privacy">Privacy policy</a> | <a href="/terms" class="f-privacy">Terms of use</a> | Built by <span class="f-latitude">Latitude Marketing</span></p>
   </div>
@@ -613,7 +612,7 @@ function initials(name){ return String(name || '?').trim().split(/\s+/).slice(0,
   var okId = id && /^[A-Za-z0-9_-]{4,20}$/.test(id);
   if(p.get('paid')){
     document.getElementById('jEyebrow').textContent = 'Payment received';
-    document.getElementById('jSub').textContent = 'Thanks. Your profile goes live as soon as Stripe confirms the payment, usually within a minute. If it is not showing after a few minutes, message Sam on 0432 910 369.';
+    document.getElementById('jSub').textContent = 'Thanks. Your profile goes live as soon as Stripe confirms the payment, usually within a minute. If it is not showing after a few minutes, message us on 0432 910 369.';
   }
   if(!okId) return;
   var url = location.origin + '/members?id=' + encodeURIComponent(id);
