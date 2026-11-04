@@ -380,3 +380,13 @@ footer h2.f-h,.f-col h4,.cb-eyebrow,.slot-tag,.c-tag,.register-head span,.reg-co
 .cr-go svg{transition:transform .4s var(--tk-ease)}
 .cr-you:hover .cr-go svg{transform:translateX(5px)}
 @media (prefers-reduced-motion:reduce){.cr-ph img,.cr-tx::after{transition:none}}
+
+/* ===== Pass 10: real Ready Now photos, one grade ===== */
+.rh-img img{object-position:62% 38%;filter:saturate(.82) contrast(1.06)}
+.rh-img::after{content:"";position:absolute;inset:0;background:#1F6FA8;mix-blend-mode:multiply;opacity:.16;pointer-events:none}
+.rh-img{position:absolute;inset:0}
+.page-hero.ph-photo::before{filter:saturate(.82) contrast(1.06)}
+.rb-i img,.cr-ph img,.mc-photo img,.about img{filter:saturate(.85) contrast(1.05)}
+.rb-i{position:relative}
+.rb-i::after{content:"";position:absolute;inset:0;background:#1F6FA8;mix-blend-mode:multiply;opacity:.18;pointer-events:none;border-radius:inherit}
+.rh-shade{opacity:calc(.85 + .35 * var(--p))}
