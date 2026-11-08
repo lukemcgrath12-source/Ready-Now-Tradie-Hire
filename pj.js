@@ -11,7 +11,7 @@
       err.textContent = ''; btn.disabled = true; btn.textContent = 'Posting...';
       var o = {_captcha: 'false', _template: 'table', _subject: 'Job posted: ' + f.trade.value + ' in ' + f.suburb.value, page: location.pathname};
       new FormData(f).forEach(function(v, k){ if(k !== '_gotcha') o[k] = v; });
-      fetch('https://formsubmit.co/ajax/info@tradiehire.net', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(o)})
+      fetch('https://formsubmit.co/ajax/samlongmuir77@gmail.com', {method: 'POST', headers: {'Content-Type': 'application/json', 'Accept': 'application/json'}, body: JSON.stringify(o)})
         .then(function(r){ if(!r.ok) throw new Error(); Array.prototype.forEach.call(f.querySelectorAll('.rq-grid,.rq-send,.pj-note,.rq-err'), function(n){ n.hidden = true; }); done.hidden = false; done.focus(); })
         .catch(function(){ btn.disabled = false; btn.textContent = 'Post my job'; err.textContent = 'That did not send. Please try again or ring 0432 910 369.'; });
     });
