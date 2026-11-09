@@ -348,6 +348,40 @@ body{font-size:16px;line-height:1.6;color:var(--charcoal)}
 .eq5-t b span{font-size:12px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--blue-700);background:#fff;border:1px solid var(--blue-100);border-radius:999px;padding:3px 10px}
 .eq5-t p{font-size:16px;color:var(--charcoal);margin-top:4px}
 @media(prefers-reduced-motion:reduce){.tl-box,.sr-go,.btn5-w,.nav-cta,.nav-sec{transition:none}}
+
+/* three options, matching the truck panels */
+.o3{padding:clamp(28px,5vw,56px) 0 clamp(8px,2vw,20px);background:var(--fog)}
+.o3-g{display:grid;grid-template-columns:1.5fr 1fr 1fr;gap:16px}
+.o3-c{position:relative;display:flex;flex-direction:column;gap:10px;padding:clamp(22px,3vw,32px);border-radius:18px;background:var(--white,#fff);color:var(--ink);text-decoration:none;box-shadow:var(--shadow-1);border:1px solid var(--line);transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s cubic-bezier(.22,1,.36,1)}
+.o3-c:hover{transform:translateY(-3px);box-shadow:var(--shadow-2)}
+.o3-c:active{transform:translateY(-1px)}
+.o3-c:focus-visible{outline:2px solid var(--gold-dark);outline-offset:3px}
+.o3-k{font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--blue-600)}
+.o3-c h2{font-family:var(--display);font-size:clamp(22px,2.4vw,28px);font-weight:800;line-height:1.1;margin:0;letter-spacing:-.01em}
+.o3-c p{margin:0;color:var(--charcoal);font-size:15px;line-height:1.55}
+.o3-ic{width:46px;height:46px;border-radius:12px;display:grid;place-items:center;background:var(--blue-50);color:var(--blue-600)}
+.o3-ic svg{width:24px;height:24px}
+.o3-go{margin-top:auto;display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:14px;color:var(--blue-700)}
+.o3-c:hover .arw{transform:translateX(3px)}.o3-go .arw{transition:transform .3s cubic-bezier(.22,1,.36,1)}
+.o3-main{background:linear-gradient(150deg,#1F6FA8,#175A8A);color:#fff;border:0;box-shadow:var(--shadow-3)}
+.o3-main .o3-k{color:#BFDDF2}.o3-main p{color:rgba(255,255,255,.86)}.o3-main .o3-ic{background:rgba(255,255,255,.14);color:#fff}
+.o3-main h2{font-size:clamp(28px,3.4vw,40px)}
+.o3-btn{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:10px;padding:16px 26px;border-radius:999px;background:#fff;color:#175A8A;font-weight:800;font-size:16px;box-shadow:0 8px 24px rgba(10,30,50,.25)}
+.o3-tag{display:inline-block;align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--mist);color:var(--charcoal)}
+@media (max-width:900px){.o3-g{grid-template-columns:1fr 1fr}.o3-main{grid-column:1/-1}}
+@media (max-width:560px){.o3-g{grid-template-columns:1fr}}
+/* equipment and materials slide */
+.mat{padding:clamp(40px,6vw,72px) 0}
+.mat-b{display:grid;grid-template-columns:1.1fr 1fr;gap:clamp(20px,4vw,48px);align-items:center;background:var(--ink);color:#fff;border-radius:22px;padding:clamp(26px,4vw,48px);overflow:hidden}
+.mat-b h2{color:#fff !important;font-family:var(--display);font-size:clamp(26px,3.2vw,38px);font-weight:800;line-height:1.08;margin:8px 0 12px}
+.mat-b p{color:rgba(255,255,255,.78);margin:0 0 18px;line-height:1.6}
+.mat-l{list-style:none;margin:0 0 22px;padding:0;display:grid;gap:8px}
+.mat-l li{display:flex;gap:10px;align-items:center;color:rgba(255,255,255,.9)}
+.mat-l li::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--gold)}
+.mat-soon{display:inline-block;font-family:var(--mono);font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--gold)}
+.mat-b .rbtn{background:#fff;color:#175A8A}
+.mat-i img{width:100%;height:auto;border-radius:14px;display:block}
+@media (max-width:800px){.mat-b{grid-template-columns:1fr}}
 </style>
 <style id="rn">
 /* Ready Now homepage system: 4/8 spacing, type scale 13/14/16/18/24/36/60 */
@@ -676,6 +710,32 @@ footer .f-col a{display:inline-block;padding:3px 0}
  </div>
 </section>
 
+
+<section class="o3" aria-label="Choose what you need">
+  <div class="rw o3-g">
+    <a class="o3-c o3-main" href="/join">
+      <span class="o3-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></span>
+      <span class="o3-k">Tradies</span>
+      <h2>Want more work? Sign up now.</h2>
+      <p>Get your trade in front of builders and locals across wider Sydney. Your own profile, customers call you direct.</p>
+      <span class="o3-btn">Sign up free<svg class="arw" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+    </a>
+    <a class="o3-c" href="/members">
+      <span class="o3-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 21h18M5 21V10l7-5 7 5v11"/><path d="M9 21v-6h6v6"/></svg></span>
+      <span class="o3-k">Builders</span>
+      <h2>Need a tradie?</h2>
+      <p>We have them available. Search by trade and suburb, then call them direct.</p>
+      <span class="o3-go">Find a tradie<svg class="arw" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></span>
+    </a>
+    <a class="o3-c" href="#materials">
+      <span class="o3-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="2" y="9" width="13" height="8" rx="1"/><path d="M15 12h4l3 3v2h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></span>
+      <span class="o3-k">Equipment</span>
+      <h2>Hire out yours. Use someone else's.</h2>
+      <p>Equipment and materials hire between tradies.</p>
+      <span class="o3-tag">Coming soon</span>
+    </a>
+  </div>
+</section>
 <section class="rsec rf" id="feat" aria-labelledby="featH" hidden>
   <div class="rw">
     <div class="rsec-h"><div><p class="rey">Local profiles</p><h2 id="featH">Ready now near you</h2></div><a class="rmore" href="/members">See all tradies<svg class="arw" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a></div>
@@ -757,6 +817,21 @@ footer .f-col a{display:inline-block;padding:3px 0}
   </div>
 </section>
 
+
+<section class="rsec mat" id="materials" aria-labelledby="matH">
+  <div class="rw">
+    <div class="mat-b">
+      <div>
+        <span class="mat-soon">Coming soon</span>
+        <h2 id="matH">Equipment and materials hire</h2>
+        <p>Got gear sitting in the shed or leftover materials from the last job? Soon you'll be able to hire it out to other tradies, or hire what you need for the next one.</p>
+        <ul class="mat-l"><li>Hire out your tools and machinery</li><li>Find gear for a one-off job</li><li>Move leftover materials on</li></ul>
+        <a href="/join" class="rbtn">Sign up now to be first in<svg class="arw" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg></a>
+      </div>
+      <div class="mat-i"><img src="gear.jpg" alt="Tradie tools and gear ready for hire" loading="lazy" decoding="async"></div>
+    </div>
+  </div>
+</section>
 <section class="rsec rtr" aria-labelledby="trH">
   <div class="rw">
     <h2 id="trH" class="vh">Why use Ready Now</h2>
