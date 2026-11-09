@@ -598,7 +598,7 @@ html.holding,html.holding body{overflow:hidden}
 .rb-sec{background:var(--r-blue-d);padding:0!important}
 .rb-sec .rw{max-width:none;padding:0}
 .rb{border-radius:0;background:transparent;max-width:none}
-@media(min-width:900px){.rb{grid-template-columns:1fr 1fr;min-height:520px}.rb-t{padding:88px max(56px,calc((100vw - 1152px)/2 + 32px)) 88px max(32px,calc((100vw - 1152px)/2 + 32px))}}
+@media(min-width:900px){.rb{grid-template-columns:1fr 1fr;min-height:520px}.rb-t{padding:88px clamp(48px,5vw,96px) 88px max(32px,calc((100vw - 1152px)/2 + 32px));align-self:center}.rb-t>*{max-width:520px}.rb-i img{object-position:center 30%}}
 .rb-sec .rey-l,.rb-ben svg{color:#B9D9F2}
 .rb-t>p:not(.rey){color:rgba(255,255,255,.85)}
 .rtr{background:var(--r-fog);padding-top:56px!important;padding-bottom:56px!important}
