@@ -690,5 +690,22 @@ footer{background:var(--olive-deep);color:var(--white);padding:72px 20px 0}
 <script src="/rn-tools.js"></script>
 <script src="/area.js"></script>
 <script src="/pj.js"></script>
+<!-- lm-track -->
+<script>
+(function(){
+  function ev(n,p){try{if(typeof window.gtag==='function')window.gtag('event',n,p||{});}catch(e){}}
+  document.addEventListener('click',function(e){
+    var a=e.target&&e.target.closest?e.target.closest('a[href^="tel:"],a[href^="mailto:"]'):null; if(!a)return;
+    var h=a.getAttribute('href')||'';
+    if(h.indexOf('tel:')===0)ev('phone_call',{phone:h.slice(4).replace(/\s/g,''),page_path:location.pathname});
+    else ev('email_click',{page_path:location.pathname});
+  },true);
+  if(window.fetch){var _f=window.fetch;window.fetch=function(u,o){
+    var url=typeof u==='string'?u:(u&&u.url)||'';var m=((o&&o.method)||'GET').toUpperCase();var p=_f.apply(this,arguments);
+    if(m==='POST'){var kind=/formspree|formsubmit|web3forms/.test(url)?'generate_lead':(/\/api\/join/.test(url)?'sign_up':'');
+      if(kind)p.then(function(r){if(r&&r.ok)ev(kind,{page_path:location.pathname});}).catch(function(){});}
+    return p;};}
+})();
+</script>
 </body>
 </html>
